@@ -14,6 +14,7 @@ import Services from './pages/Services';
 import Solutions from './pages/Solutions';
 import Industries from './pages/Industries';
 import Portfolio from './pages/Portfolio';
+import Team from './pages/Team';
 import Contact from './pages/Contact';
 
 // Scroll to top helper on route transitions
@@ -66,6 +67,7 @@ function App() {
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
