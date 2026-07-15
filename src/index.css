@@ -18,12 +18,12 @@
   --or: #00488D;
 
   /* Backgrounds — clean cool light gray/blue tint, not warm cream */
-  --bg:      #F8FAFC;
-  --bg-2:    #F1F5F9;
-  --bg-3:    #E2E8F0;
-  --surf:    rgba(255,255,255,0.75);
-  --surf-2:  rgba(255,255,255,0.55);
-  --surf-3:  rgba(255,255,255,0.40);
+  --bg:      #F1F5F9;
+  --bg-2:    #E2E8F0;
+  --bg-3:    #CBD5E1;
+  --surf:    rgba(248,250,252,0.80);
+  --surf-2:  rgba(241,245,249,0.60);
+  --surf-3:  rgba(226,232,240,0.45);
 
   /* Text — cool dark */
   --tx1: #0F172A;
@@ -161,7 +161,7 @@ img{max-width:100%;display:block}
   background:transparent;
 }
 .navbar.scrolled{
-  background:rgba(250,248,244,.96);
+  background:rgba(241, 245, 249,.96);
   backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
   border-bottom:1px solid rgba(93, 224, 230,.12);
   padding:4px 0;
@@ -210,7 +210,7 @@ img{max-width:100%;display:block}
 .navbar-toggler{border:1px solid var(--gb4);background:var(--surf);backdrop-filter:var(--blur-sm);padding:7px 10px}
 .navbar-toggler-icon{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23C9A84C' stroke-width='2.2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")}
 .dropdown-menu{
-  background:rgba(250,248,240,.92);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  background:rgba(241, 245, 249,.92);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
   border:1px solid var(--gb1);border-radius:var(--r);padding:8px;
   box-shadow:var(--sh-lg),var(--sh-inner);
 }
@@ -531,14 +531,14 @@ img{max-width:100%;display:block}
 .dash-title{font-family:var(--fm);font-size:.66rem;color:var(--tx4);margin-left:auto}
 .dm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
 .dm{
-  background:rgba(250,248,244,.75);border:1px solid var(--gb3);
+  background:rgba(241, 245, 249,.75);border:1px solid var(--gb3);
   border-radius:var(--r);padding:13px 10px;text-align:center;
 }
 .dm-val{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--tx1)}
 .dm-lbl{font-size:.6rem;color:var(--tx4);margin-top:2px}
 .dm-tr {font-size:.62rem;color:var(--a1);font-weight:600;margin-top:2px}
 .dash-chart{
-  background:rgba(250,248,244,.75);border:1px solid var(--gb3);
+  background:rgba(241, 245, 249,.75);border:1px solid var(--gb3);
   border-radius:var(--r);height:78px;
   display:flex;align-items:flex-end;gap:4px;padding:10px;overflow:hidden;
 }
@@ -793,7 +793,7 @@ img{max-width:100%;display:block}
 .ccontact::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent)}
 .flabel{font-size:.79rem;font-weight:600;color:var(--tx2);margin-bottom:7px;display:block}
 .finput,.fselect{
-  background:rgba(250,248,244,.65);backdrop-filter:var(--blur-sm);
+  background:rgba(241, 245, 249,.65);backdrop-filter:var(--blur-sm);
   border:1.5px solid var(--gb2);border-radius:var(--r);
   color:var(--tx1);padding:12px 15px;font-family:var(--fb);font-size:.9rem;
   width:100%;outline:none;transition:var(--t);
@@ -811,7 +811,7 @@ textarea.finput{resize:vertical;min-height:115px}
 .cico{width:38px;height:38px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
 .cinfo-item h6{font-size:.84rem;font-weight:700;margin-bottom:2px}
 .cinfo-item p {font-size:.79rem;color:var(--tx3);margin:0}
-.map-box{border-radius:var(--r-lg);overflow:hidden;height:220px;background:rgba(250,248,244,.65);border:1px solid var(--gb2);display:flex;align-items:center;justify-content:center;text-align:center;margin-top:20px}
+.map-box{border-radius:var(--r-lg);overflow:hidden;height:220px;background:rgba(241, 245, 249,.65);border:1px solid var(--gb2);display:flex;align-items:center;justify-content:center;text-align:center;margin-top:20px}
 
 /* ── FAQ ── */
 .fitem{
@@ -841,7 +841,7 @@ textarea.finput{resize:vertical;min-height:115px}
 .nlwrap::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent)}
 .nlform{display:flex;gap:10px;max-width:450px;margin:22px auto 0}
 .nlinput{
-  flex:1;background:rgba(250,248,244,.80);backdrop-filter:var(--blur-sm);
+  flex:1;background:rgba(241, 245, 249,.80);backdrop-filter:var(--blur-sm);
   border:1.5px solid var(--gb2);border-radius:var(--r);
   padding:12px 18px;color:var(--tx1);font-family:var(--fb);font-size:.9rem;outline:none;transition:var(--t);
 }
