@@ -283,7 +283,7 @@ const Contact = () => {
                   <div className="cico i-b"><i className="bi bi-geo-alt-fill"></i></div>
                   <div>
                     <h6>🇵🇰 Pakistan (HQ)</h6>
-                    <p>2nd Floor, Eagle Plaza, Blue Area, Islamabad, Pakistan</p>
+                    <p>Islamabad, Pakistan</p>
                   </div>
                 </div>
               </div>
@@ -304,13 +304,6 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="cinfo-item">
-                  <div className="cico i-v"><i className="bi bi-telephone-fill"></i></div>
-                  <div>
-                    <h6>HQ Phone (Pakistan)</h6>
-                    <p><a href="tel:+924200000000" style={{ color: 'var(--p1)' }}>+92 42 0000 0000</a></p>
-                  </div>
-                </div>
-                <div className="cinfo-item">
                   <div className="cico i-o"><i className="bi bi-clock-fill"></i></div>
                   <div>
                     <h6>Business Hours (PKT)</h6>
@@ -323,7 +316,7 @@ const Contact = () => {
                 <div>
                   <i className="bi bi-map-fill" style={{ fontSize: '2.4rem', color: 'var(--p1)', opacity: 0.35, display: 'block', marginBounding: '10px' }}></i>
                   <p style={{ fontWeight: 600, color: 'var(--tx1)', marginBottom: '4px' }}>NovuLabs HQ</p>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--tx3)', marginBottom: '12px' }}>Eagle Plaza, Blue Area, Islamabad</p>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--tx3)', marginBottom: '12px' }}>Islamabad, Pakistan</p>
                   <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn-glass" style={{ padding: '7px 16px', fontSize: '0.8rem' }}>
                     <i className="bi bi-box-arrow-up-right me-1"></i>Open Maps
                   </a>

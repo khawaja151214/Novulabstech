@@ -36,11 +36,8 @@ const Footer = () => {
                 <a href="Info@novulabstech.net" className="ft-contact-item">
                   <i className="bi bi-envelope-fill"></i>hello@NovuLabsTech.com
                 </a>
-                <a href="tel:+924200000000" className="ft-contact-item">
-                  <i className="bi bi-telephone-fill"></i>+92 42 0000 0000
-                </a>
                 <span className="ft-contact-item">
-                  <i className="bi bi-geo-alt-fill"></i>Blue Area, Islamabad, Pakistan
+                  <i className="bi bi-geo-alt-fill"></i>Islamabad, Pakistan
                 </span>
               </div>
               <div className="ft-socs">
