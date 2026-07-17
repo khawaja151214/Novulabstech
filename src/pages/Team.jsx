@@ -13,10 +13,17 @@ const Team = () => {
     },
     {
       name: 'Shamroz Ali Zaidi',
-      role: 'CTO & COO',
+      role: 'CTO',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&q=80',
-      bio: 'Directing core software engineering frameworks, multi-tenant cloud operations, and operational systems.',
-      skills: ['Architecture', 'Cloud Systems', 'Operations']
+      bio: 'Directing core software engineering frameworks, multi-tenant cloud architectures, and systems scalability.',
+      skills: ['Architecture', 'Cloud Systems', 'Security']
+    },
+    {
+      name: 'Ali Zaidi',
+      role: 'COO',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80',
+      bio: 'Managing global operations, compliance policies, service delivery pipelines, and corporate scaling.',
+      skills: ['Operations', 'Compliance', 'Scaling']
     }
   ];
 
