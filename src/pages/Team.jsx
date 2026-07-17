@@ -5,32 +5,18 @@ import GlowCard from '../components/GlowCard';
 const Team = () => {
   const members = [
     {
-      name: 'Shamroz',
-      role: 'Founder & Principal Architect',
+      name: 'Muneeb Ali Jaffari',
+      role: 'CEO & Founder',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80',
-      bio: 'Over 12 years of experience designing secure financial and identity architectures for banks and national agencies.',
-      skills: ['Security', 'Fintech', 'Architecture']
+      bio: 'Leading strategic corporate vision, global enterprise relations, and institutional delivery models at NovuLabs.',
+      skills: ['Strategy', 'Leadership', 'Compliance']
     },
     {
-      name: 'Rubab',
-      role: 'Lead MedTech Architect',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&q=80',
-      bio: 'Specializes in HIPAA-compliant EHR platforms and medical billing integrations across clinical environments.',
-      skills: ['MedTech', 'HL7 FHIR', 'HIPAA']
-    },
-    {
-      name: 'Qasim',
-      role: 'Principal Security Engineer',
+      name: 'Shamroz Ali Zaidi',
+      role: 'CTO & COO',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&q=80',
-      bio: 'Certified ethical hacker focusing on penetration testing, audit trails, and secure coding lifecycle principles.',
-      skills: ['Cybersecurity', 'PCI-DSS', 'OWASP']
-    },
-    {
-      name: 'Mam Sundas',
-      role: 'Director of Compliance',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80',
-      bio: 'Expert in FATF, SBP, and FMU AML compliance requirements. Translates compliance laws into software specifications.',
-      skills: ['AML/CFT', 'Audit', 'FATF']
+      bio: 'Directing core software engineering frameworks, multi-tenant cloud operations, and operational systems.',
+      skills: ['Architecture', 'Cloud Systems', 'Operations']
     }
   ];
 
