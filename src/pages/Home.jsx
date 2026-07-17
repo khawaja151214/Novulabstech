@@ -4,6 +4,7 @@ import ParticlesCanvas from '../components/ParticlesCanvas';
 import CountUp from '../components/CountUp';
 import TiltCard from '../components/TiltCard';
 import GlowCard from '../components/GlowCard';
+import teamWorking from '../assets/team-working.jpeg';
 
 const Home = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -141,7 +142,7 @@ const Home = () => {
             <div className="col-lg-5" data-aos="fade-right">
               <div style={{ position: 'relative' }}>
                 <div className="about-img">
-                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="NovuLabs global team collaboration" loading="lazy" />
+                  <img src={teamWorking} alt="NovuLabs global team collaboration" loading="lazy" />
                 </div>
                 <div className="about-glass-pill agp1">
                   <div className="agp-num">

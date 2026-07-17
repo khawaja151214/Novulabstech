@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import teamWorking from '../assets/team-working.jpeg';
 
 const About = () => {
   return (
@@ -78,7 +79,7 @@ const About = () => {
           <div className="row g-4">
             <div className="col-md-6" data-aos="fade-right">
               <div className="sec-img">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=75" alt="Team working together" loading="lazy" style={{ height: '300px', width: '100%', objectFit: 'cover' }} />
+                <img src={teamWorking} alt="Team working together" loading="lazy" style={{ height: '300px', width: '100%', objectFit: 'cover' }} />
               </div>
             </div>
             <div className="col-md-6" data-aos="fade-left">

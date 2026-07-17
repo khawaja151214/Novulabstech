@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import teamWorking from '../assets/team-working.jpeg';
 
 const Contact = () => {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -57,7 +58,7 @@ const Contact = () => {
     <>
       <section className="phero">
         <div className="phero-bg">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&q=80" alt="Contact" loading="lazy" />
+          <img src={teamWorking} alt="Contact" loading="lazy" />
         </div>
         <div className="phero-ov"></div>
         <div className="phero-grid"></div>
