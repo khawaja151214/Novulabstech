@@ -1204,7 +1204,7 @@ footer::before{
 #process{
   background:
     linear-gradient(rgba(255,255,255,.95),rgba(253,252,248,.94)),
-    url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=70') center/cover no-repeat;
+    url('/team-working.jpeg') center/cover no-repeat;
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 
@@ -1309,7 +1309,7 @@ footer::before{
 #leadership{
   background:
     linear-gradient(rgba(255,255,255,.95),rgba(253,252,248,.94)),
-    url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=70') center/cover no-repeat;
+    url('/team-working.jpeg') center/cover no-repeat;
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #certifications{
@@ -1429,7 +1429,7 @@ footer::before{
 #contact-form-sec{
   background:
     linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95)),
-    url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=70') center/cover no-repeat;
+    url('/team-working.jpeg') center/cover no-repeat;
 }
 #contact-faq{
   background:
