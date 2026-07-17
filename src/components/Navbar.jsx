@@ -28,7 +28,7 @@ const Navbar = () => {
     <nav className={navbarClasses}>
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <img src="/Novulabs.svg" alt="NovuLabs" className="nav-logo" />
+          <img src="/logo.png" alt="NovuLabs" className="nav-logo" />
         </Link>
         <button 
           className="navbar-toggler" 

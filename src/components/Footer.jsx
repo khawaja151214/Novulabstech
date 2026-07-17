@@ -27,13 +27,13 @@ const Footer = () => {
         <div className="container">
           <div className="row g-5 ft-top">
             <div className="col-lg-3">
-              <img src="/Novulabs.svg" alt="NovuLabs" className="ft-logo" />
+              <img src="/logo.png" alt="NovuLabs" className="ft-logo" />
               <p className="ft-tag">
                 <br />
                 A premier international enterprise software house headquartered in Islamabad. Engineering mission-critical platforms across 40+ countries since 2026.
               </p>
               <div className="ft-contact-items">
-                <a href="mailto:hello@NovuLabsTech.com" className="ft-contact-item">
+                <a href="Info@novulabstech.net" className="ft-contact-item">
                   <i className="bi bi-envelope-fill"></i>hello@NovuLabsTech.com
                 </a>
                 <a href="tel:+924200000000" className="ft-contact-item">
