@@ -33,19 +33,17 @@ const Footer = () => {
                 A premier international enterprise software house headquartered in Islamabad. Engineering mission-critical platforms across 40+ countries since 2026.
               </p>
               <div className="ft-contact-items">
-                <a href="Info@novulabstech.net" className="ft-contact-item">
-                  <i className="bi bi-envelope-fill"></i>hello@NovuLabsTech.com
+                <a href="mailto:Info@novulabstech.net" className="ft-contact-item">
+                  <i className="bi bi-envelope-fill"></i>Info@novulabstech.net
                 </a>
                 <span className="ft-contact-item">
                   <i className="bi bi-geo-alt-fill"></i>Islamabad, Pakistan
                 </span>
               </div>
               <div className="ft-socs">
-                <a href="#" className="fsoc" title="LinkedIn"><i className="bi bi-linkedin"></i></a>
-                <a href="#" className="fsoc" title="Twitter / X"><i className="bi bi-twitter-x"></i></a>
-                <a href="#" className="fsoc" title="GitHub"><i className="bi bi-github"></i></a>
-                <a href="#" className="fsoc" title="YouTube"><i className="bi bi-youtube"></i></a>
-                <a href="#" className="fsoc" title="Facebook"><i className="bi bi-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/novu-labs/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="fsoc" title="LinkedIn"><i className="bi bi-linkedin"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61592003789179" target="_blank" rel="noopener noreferrer" className="fsoc" title="Facebook"><i className="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/novu_labs?igsh=ZXZsYmF0dnFubHJn" target="_blank" rel="noopener noreferrer" className="fsoc" title="Instagram"><i className="bi bi-instagram"></i></a>
               </div>
             </div>
 

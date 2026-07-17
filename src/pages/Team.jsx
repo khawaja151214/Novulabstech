@@ -103,7 +103,7 @@ const Team = () => {
               <div className="col-lg-5 text-lg-end">
                 <div className="cta-card text-start">
                   <div className="cta-card-label">Send us your CV</div>
-                  <a href="mailto:hello@NovuLabsTech.com" className="btn-grad w-100 justify-content-center mb-3">
+                  <a href="mailto:Info@novulabstech.net" className="btn-grad w-100 justify-content-center mb-3">
                     <i className="bi bi-envelope"></i>Apply Now
                   </a>
                   <p className="cta-card-note">All applicants must undergo a rigorous code-writing and architecture challenge. Only senior positions are currently open.</p>

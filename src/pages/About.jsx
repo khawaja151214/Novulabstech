@@ -108,7 +108,7 @@ const About = () => {
                 <div className="cta-card">
                   <div className="cta-card-label">Start the conversation</div>
                   <Link to="/contact" className="btn-grad w-100 justify-content-center mb-3"><i className="bi bi-calendar-check"></i>Book a Free Call</Link>
-                  <a href="mailto:hello@NovuLabsTech.com" className="btn-glass w-100 justify-content-center"><i className="bi bi-envelope"></i>Email Us Directly</a>
+                  <a href="mailto:Info@novulabstech.net" className="btn-glass w-100 justify-content-center"><i className="bi bi-envelope"></i>Email Us Directly</a>
                   <p className="cta-card-note">No demos, no pitch scripts. Just a straight conversation about your project and whether we're the right fit.</p>
                 </div>
               </div>

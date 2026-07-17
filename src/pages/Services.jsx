@@ -356,7 +356,7 @@ const Services = () => {
                 <div className="cta-card">
                   <div className="cta-card-label">Book your call</div>
                   <Link to="/contact" className="btn-grad w-100 justify-content-center mb-3"><i className="bi bi-calendar-check"></i>Book a Free Call</Link>
-                  <a href="mailto:hello@NovuLabsTech.com" className="btn-glass w-100 justify-content-center"><i className="bi bi-envelope"></i>Send Us Your Brief</a>
+                  <a href="mailto:Info@novulabstech.net" className="btn-glass w-100 justify-content-center"><i className="bi bi-envelope"></i>Send Us Your Brief</a>
                   <p className="cta-card-note">If our services aren't the right fit for your project, we'll tell you that clearly — and often point you in a better direction.</p>
                 </div>
               </div>

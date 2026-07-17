@@ -195,7 +195,7 @@ const Solutions = () => {
                   <Link to="/contact" className="btn-grad w-100 justify-content-center mb-3" style={{ fontSize: '0.94rem' }}>
                     <i className="bi bi-calendar-check"></i>Book a Free Call
                   </Link>
-                  <a href="mailto:hello@NovuLabsTech.com" className="btn-glass w-100 justify-content-center" style={{ fontSize: '0.94rem' }}>
+                  <a href="mailto:Info@novulabstech.net" className="btn-glass w-100 justify-content-center" style={{ fontSize: '0.94rem' }}>
                     <i className="bi bi-envelope"></i>Send Us Your Brief
                   </a>
                   <p className="cta-card-note">200+ organizations started exactly this way — with a straightforward conversation about a specific problem they were trying to solve.</p>

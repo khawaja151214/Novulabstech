@@ -293,14 +293,14 @@ const Contact = () => {
                   <div className="cico i-t"><i className="bi bi-envelope-fill"></i></div>
                   <div>
                     <h6>General Inquiries</h6>
-                    <p><a href="mailto:hello@NovuLabsTech.com" style={{ color: 'var(--p1)' }}>hello@NovuLabsTech.com</a></p>
+                    <p><a href="mailto:Info@novulabstech.net" style={{ color: 'var(--p1)' }}>Info@novulabstech.net</a></p>
                   </div>
                 </div>
                 <div className="cinfo-item">
                   <div className="cico i-b"><i className="bi bi-envelope-fill"></i></div>
                   <div>
                     <h6>Enterprise Sales</h6>
-                    <p><a href="mailto:enterprise@NovuLabsTech.com" style={{ color: 'var(--p1)' }}>enterprise@NovuLabsTech.com</a></p>
+                    <p><a href="mailto:Info@novulabstech.net" style={{ color: 'var(--p1)' }}>Info@novulabstech.net</a></p>
                   </div>
                 </div>
                 <div className="cinfo-item">
