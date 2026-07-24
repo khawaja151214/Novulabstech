@@ -51,38 +51,7 @@ const Team = () => {
       <div className="divider"></div>
 
       {/* Team Grid */}
-      <section className="sec bg-w" id="team-grid">
-        <div className="container">
-          <div className="row justify-content-center text-center mb-5" data-aos="fade-up">
-            <div className="col-lg-6">
-              <span className="stag">Core Leadership</span>
-              <h2 className="stitle mt-3">Expertise Built on <span className="gtxt">Experience</span></h2>
-              <p className="ssub">Our leadership team remains hands-on with every codebase and architecture design that passes through our doors.</p>
-            </div>
-          </div>
-
-          <div className="row g-4 justify-content-center">
-            {members.map((m, idx) => (
-              <div className="col-md-6 col-lg-3" key={idx} data-aos="fade-up" data-aos-delay={idx * 60}>
-                <GlowCard className="gcard h-100 text-center" style={{ padding: '24px' }}>
-                  <div className="mb-3" style={{ width: '120px', height: '120px', margin: '0 auto', borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--gb2)' }}>
-                    <img src={m.image} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  </div>
-                  <h4 style={{ fontFamily: 'var(--fh)', fontWeight: 700, fontSize: '1.15rem', color: 'var(--tx1)', marginBottom: '4px' }}>{m.name}</h4>
-                  <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--p1)', marginBottom: '12px' }}>{m.role}</div>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--tx3)', lineHeight: 1.6, marginBottom: '16px' }}>{m.bio}</p>
-                  <div className="d-flex gap-1 justify-content-center flex-wrap">
-                    {m.skills.map((s, sidx) => (
-                      <span className="tbadge" key={sidx} style={{ fontSize: '0.66rem', padding: '3px 8px' }}>{s}</span>
-                    ))}
-                  </div>
-                </GlowCard>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* Careers CTA */}
       <section id="cta-banner">
         <div className="container">

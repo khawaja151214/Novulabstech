@@ -33,8 +33,8 @@ const Footer = () => {
                 A premier international enterprise software house headquartered in Islamabad. Engineering mission-critical platforms across 40+ countries since 2026.
               </p>
               <div className="ft-contact-items">
-                <a href="mailto:Info@novulabstech.net" className="ft-contact-item">
-                  <i className="bi bi-envelope-fill"></i>Info@novulabstech.net
+                <a href="mailto:Info@novulabs.net" className="ft-contact-item">
+                  <i className="bi bi-envelope-fill"></i>Info@novulabs.net
                 </a>
                 <span className="ft-contact-item">
                   <i className="bi bi-geo-alt-fill"></i>Islamabad, Pakistan
