@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import teamWorking from '../assets/team-working.jpeg';
+
+// ── EmailJS config — replace with your own IDs from emailjs.com dashboard ──
+const SERVICE_ID = 'service_ogn7v0d';
+const TEMPLATE_ID = 'template_niiq07k';
+const PUBLIC_KEY = 'M34BR02JCVsynFlTi';
 
 const Contact = () => {
   const [activeFaq, setActiveFaq] = useState(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState(false);
+  const formRef = useRef(null);
   const [formData, setFormData] = useState({
-    name: '',
+    full_name: '',
     organization: '',
-    email: '',
+    work_email: '',
     phone: '',
     country: 'Pakistan',
-    budget: '',
-    service: '',
+    budget_range: '',
+    service_needed: '',
     message: ''
   });
 
@@ -30,20 +38,30 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({
-        name: '',
-        organization: '',
-        email: '',
-        phone: '',
-        country: 'Pakistan',
-        budget: '',
-        service: '',
-        message: ''
+    setFormError(false);
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, { publicKey: PUBLIC_KEY })
+      .then(() => {
+        setFormSubmitted(true);
+        setTimeout(() => {
+          setFormSubmitted(false);
+          setFormData({
+            full_name: '',
+            organization: '',
+            work_email: '',
+            phone: '',
+            country: 'Pakistan',
+            budget_range: '',
+            service_needed: '',
+            message: ''
+          });
+        }, 4000);
+      })
+      .catch((err) => {
+        console.error('EmailJS error:', err);
+        setFormError(true);
       });
-    }, 4000);
   };
 
   const faqs = [
@@ -126,16 +144,16 @@ const Contact = () => {
               <div className="ccontact">
                 <h3 className="mb-1">Tell Us About Your Project</h3>
                 <p style={{ color: 'var(--tx3)', fontSize: '0.86rem', marginBottom: '26px' }}>We respond within 4 business hours. For urgent inquiries, call us directly.</p>
-                <form id="contact-form" onSubmit={handleSubmit}>
+                <form id="contact-form" ref={formRef} onSubmit={handleSubmit}>
                   <div className="row g-3">
                     <div className="col-md-6">
                       <label className="flabel">Full Name *</label>
                       <input 
                         type="text" 
-                        name="name"
+                        name="full_name"
                         className="finput" 
                         placeholder="John Smith" 
-                        value={formData.name}
+                        value={formData.full_name}
                         onChange={handleInputChange}
                         required 
                         disabled={formSubmitted}
@@ -158,10 +176,10 @@ const Contact = () => {
                       <label className="flabel">Work Email *</label>
                       <input 
                         type="email" 
-                        name="email"
+                        name="work_email"
                         className="finput" 
                         placeholder="john@company.com" 
-                        value={formData.email}
+                        value={formData.work_email}
                         onChange={handleInputChange}
                         required 
                         disabled={formSubmitted}
@@ -199,9 +217,9 @@ const Contact = () => {
                     <div className="col-md-6">
                       <label className="flabel">Budget Range</label>
                       <select 
-                        name="budget"
+                        name="budget_range"
                         className="fselect"
-                        value={formData.budget}
+                        value={formData.budget_range}
                         onChange={handleInputChange}
                         disabled={formSubmitted}
                       >
@@ -215,9 +233,9 @@ const Contact = () => {
                     <div className="col-12">
                       <label className="flabel">What do you need? *</label>
                       <select 
-                        name="service"
+                        name="service_needed"
                         className="fselect" 
-                        value={formData.service}
+                        value={formData.service_needed}
                         onChange={handleInputChange}
                         required 
                         disabled={formSubmitted}
