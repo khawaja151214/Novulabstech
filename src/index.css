@@ -296,6 +296,40 @@ img{max-width:100%;display:block}
     justify-content: center;
     display: inline-flex;
   }
+
+  /* Override nav-inv dark styles for mobile expanded menu */
+  .navbar.nav-inv:not(.scrolled) .navbar-collapse {
+    background: rgba(241, 245, 249, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .navbar.nav-inv:not(.scrolled) .navbar-collapse .nav-link {
+    color: var(--tx2) !important;
+  }
+  .navbar.nav-inv:not(.scrolled) .navbar-collapse .nav-link:hover,
+  .navbar.nav-inv:not(.scrolled) .navbar-collapse .nav-link.active {
+    color: var(--p1) !important;
+    background: rgba(93, 224, 230, 0.07);
+  }
+  .navbar.nav-inv:not(.scrolled) .navbar-collapse .nav-link::after {
+    background: var(--g-main);
+  }
+  .navbar.nav-inv:not(.scrolled) .navbar-collapse .dropdown-menu {
+    background: rgba(241, 245, 249, 0.95);
+    border: 1px solid var(--gb1);
+  }
+  .navbar.nav-inv:not(.scrolled) .navbar-collapse .dropdown-item {
+    color: var(--tx2) !important;
+  }
+  .navbar.nav-inv:not(.scrolled) .navbar-collapse .dropdown-item:hover {
+    color: var(--p1) !important;
+    background: rgba(93, 224, 230, 0.08) !important;
+  }
+  .navbar.nav-inv:not(.scrolled) .navbar-collapse .nav-cta {
+    color: #1A1208 !important;
+    background: var(--g-main) !important;
+  }
 }
 
 /* ── BUTTONS ── */

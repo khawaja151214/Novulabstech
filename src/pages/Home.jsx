@@ -1,13 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import ParticlesCanvas from '../components/ParticlesCanvas';
 import CountUp from '../components/CountUp';
 import TiltCard from '../components/TiltCard';
 import GlowCard from '../components/GlowCard';
 import teamWorking from '../assets/team-working.jpeg';
 
+// ── EmailJS config ──
+const SERVICE_ID = 'service_ogn7v0d';
+const TEMPLATE_ID = 'template_niiq07k';
+const PUBLIC_KEY = 'M34BR02JCVsynFlTi';
+
 const Home = () => {
   const [activeFaq, setActiveFaq] = useState(null);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState(false);
+  const formRef = useRef(null);
+  const [formData, setFormData] = useState({
+    full_name: '',
+    work_email: '',
+    service_needed: '',
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleCtaSubmit = (e) => {
+    e.preventDefault();
+    setFormError(false);
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, { publicKey: PUBLIC_KEY })
+      .then(() => {
+        setFormSubmitted(true);
+        setTimeout(() => {
+          setFormSubmitted(false);
+          setFormData({ full_name: '', work_email: '', service_needed: '', message: '' });
+        }, 4000);
+      })
+      .catch((err) => {
+        console.error('EmailJS error:', err);
+        setFormError(true);
+      });
+  };
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -500,13 +538,75 @@ const Home = () => {
               </div>
               <div className="col-lg-5">
                 <div className="cta-card">
-                  <div className="cta-card-label">Get in touch</div>
-                  <Link to="/contact" className="btn-grad w-100 justify-content-center mb-3">
-                    <i className="bi bi-calendar-check"></i>Book a Free Call
-                  </Link>
-                  <Link to="/portfolio" className="btn-glass w-100 justify-content-center">
-                    <i className="bi bi-folder2-open"></i>See Our Work First
-                  </Link>
+                  <div className="cta-card-label">Quick Inquiry</div>
+                  <form ref={formRef} onSubmit={handleCtaSubmit}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      <input
+                        type="text"
+                        name="full_name"
+                        className="finput"
+                        placeholder="Your Name *"
+                        value={formData.full_name}
+                        onChange={handleInputChange}
+                        required
+                        disabled={formSubmitted}
+                      />
+                      <input
+                        type="email"
+                        name="work_email"
+                        className="finput"
+                        placeholder="Work Email *"
+                        value={formData.work_email}
+                        onChange={handleInputChange}
+                        required
+                        disabled={formSubmitted}
+                      />
+                      <select
+                        name="service_needed"
+                        className="fselect"
+                        value={formData.service_needed}
+                        onChange={handleInputChange}
+                        required
+                        disabled={formSubmitted}
+                      >
+                        <option value="">— Select a Service —</option>
+                        <option>Enterprise Software Development</option>
+                        <option>Financial Software / Fintech</option>
+                        <option>AML / CFT Compliance</option>
+                        <option>Healthcare Software</option>
+                        <option>Mobile App Development</option>
+                        <option>ERP / CRM Systems</option>
+                        <option>Government Solutions</option>
+                        <option>Cloud &amp; AI</option>
+                        <option>General Consultation</option>
+                      </select>
+                      <textarea
+                        name="message"
+                        className="finput"
+                        rows="3"
+                        placeholder="Tell us about your project *"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        disabled={formSubmitted}
+                      ></textarea>
+                      <button
+                        type="submit"
+                        className="btn-grad w-100 justify-content-center"
+                        style={{ padding: '13px', fontSize: '0.93rem' }}
+                        disabled={formSubmitted}
+                      >
+                        {formSubmitted ? (
+                          <><i className="bi bi-check-circle"></i> Sent Successfully!</>
+                        ) : (
+                          <><i className="bi bi-send"></i> Send Inquiry</>
+                        )}
+                      </button>
+                      {formError && (
+                        <p style={{ color: '#ef4444', fontSize: '0.8rem', margin: 0, textAlign: 'center' }}>Something went wrong. Please try again.</p>
+                      )}
+                    </div>
+                  </form>
                   <p className="cta-card-note">Most started with a single conversation.</p>
                 </div>
               </div>
