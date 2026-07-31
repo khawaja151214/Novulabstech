@@ -1,0 +1,26 @@
+import React from 'react';
+import Button from './Button';
+import { IndustryItem } from '@/types';
+
+interface IndustryCardProps {
+  item: IndustryItem;
+  index: number;
+}
+
+const IndustryCard: React.FC<IndustryCardProps> = ({ item, index }) => {
+  return (
+    <div className="col" data-aos="fade-up" data-aos-delay={index * 20}>
+      <Button href="/industries" variant="none" className="icard" style={{ textAlign: 'left', display: 'flex', textDecoration: 'none' }}>
+        <div className={`iico ${item.color}`}>
+          <i className={`bi ${item.icon}`}></i>
+        </div>
+        <div>
+          <h5>{item.title}</h5>
+          <p>{item.desc}</p>
+        </div>
+      </Button>
+    </div>
+  );
+};
+
+export default IndustryCard;
