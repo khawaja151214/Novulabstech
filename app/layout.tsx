@@ -22,7 +22,7 @@ export const viewport: Viewport = {
 // Global Metadata
 // ---------------------------------------------------------------------------
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.novulabstech.com'),
+  metadataBase: new URL('https://www.novulabs.net'),
   title: {
     default: 'NovuLabs – Enterprise Software Solutions | NovuLabsTech.com',
     template: '%s | NovuLabs',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     'software outsourcing Pakistan',
     'ISO 27001 software development',
   ],
-  authors: [{ name: 'NovuLabs Technology', url: 'https://www.novulabstech.com' }],
+  authors: [{ name: 'NovuLabs Technology', url: 'https://www.novulabs.net' }],
   creator: 'NovuLabs Technology',
   publisher: 'NovuLabs Technology',
   robots: {
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
-    url: 'https://www.novulabstech.com/',
+    url: 'https://www.novulabs.net/',
     title: 'NovuLabs – Next-Gen Enterprise Software House',
     description:
       'Mission-critical platforms for fintech, healthcare, government & global enterprises. AML/CFT, HIPAA, PCI-DSS, ISO 27001 certified solutions. 200+ projects. 40+ countries.',
@@ -96,8 +96,8 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'NovuLabs Technology',
   alternateName: 'NovuLabs',
-  url: 'https://www.novulabstech.com',
-  logo: 'https://www.novulabstech.com/logo.png',
+  url: 'https://www.novulabs.net',
+  logo: 'https://www.novulabs.net/logo.png',
   description:
     'NovuLabs is a premier enterprise software house headquartered in Islamabad, Pakistan. We build mission-critical platforms for fintech, healthcare, AML/CFT compliance, and government sectors across 40+ countries.',
   foundingDate: '2015',
@@ -136,10 +136,10 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'NovuLabs',
-  url: 'https://www.novulabstech.com',
+  url: 'https://www.novulabs.net',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://www.novulabstech.com/blog?q={search_term_string}',
+    target: 'https://www.novulabs.net/blog?q={search_term_string}',
     'query-input': 'required name=search_term_string',
   },
 };

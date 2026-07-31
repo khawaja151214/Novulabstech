@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Portfolio – Enterprise Software Projects | NovuLabs',
     description: 'AML engines, HIPAA EHR, payment switches, government portals and 200+ enterprise projects.',
-    url: 'https://www.novulabstech.com/portfolio',
+    url: 'https://www.novulabs.net/portfolio',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Portfolio' }],
   },
   twitter: {
@@ -38,13 +38,13 @@ const portfolioSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'NovuLabs Portfolio – Enterprise Software Projects',
-  url: 'https://www.novulabstech.com/portfolio',
+  url: 'https://www.novulabs.net/portfolio',
   description: '200+ enterprise software projects delivered across fintech, healthcare, government, and corporate sectors.',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.novulabstech.com' },
-      { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://www.novulabstech.com/portfolio' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.novulabs.net' },
+      { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://www.novulabs.net/portfolio' },
     ],
   },
 };

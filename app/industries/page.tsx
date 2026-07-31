@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Industries – Banking, Healthcare & Government IT | NovuLabs',
     description: 'Software built for critical industries: fintech, healthcare, government, retail, manufacturing and more.',
-    url: 'https://www.novulabstech.com/industries',
+    url: 'https://www.novulabs.net/industries',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Industries' }],
   },
   twitter: {
@@ -43,13 +43,13 @@ const industriesSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Industries Served by NovuLabs',
-  url: 'https://www.novulabstech.com/industries',
+  url: 'https://www.novulabs.net/industries',
   description: 'Enterprise IT solutions for banking, fintech, healthcare, government, retail, manufacturing, education, and telecom.',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.novulabstech.com' },
-      { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://www.novulabstech.com/industries' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.novulabs.net' },
+      { '@type': 'ListItem', position: 2, name: 'Industries', item: 'https://www.novulabs.net/industries' },
     ],
   },
 };

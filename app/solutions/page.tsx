@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Enterprise Platforms – NovuERP, CRM, Pay & Shield | NovuLabs',
     description: 'Production-ready enterprise platforms: ERP, AI CRM, Mastercard/Visa payment switch, and AML compliance engine.',
-    url: 'https://www.novulabstech.com/solutions',
+    url: 'https://www.novulabs.net/solutions',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Solutions' }],
   },
   twitter: {
@@ -43,12 +43,12 @@ const solutionsSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'NovuLabs Enterprise Product Platforms',
-  url: 'https://www.novulabstech.com/solutions',
+  url: 'https://www.novulabs.net/solutions',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'NovuERP – Enterprise Resource Planning', url: 'https://www.novulabstech.com/solutions#erp' },
-    { '@type': 'ListItem', position: 2, name: 'NovuCRM – AI Customer Relationship Management', url: 'https://www.novulabstech.com/solutions#crm' },
-    { '@type': 'ListItem', position: 3, name: 'NovuPay – PCI-DSS Payment Infrastructure', url: 'https://www.novulabstech.com/solutions#pay' },
-    { '@type': 'ListItem', position: 4, name: 'NovuShield – AML/CFT Compliance Platform', url: 'https://www.novulabstech.com/solutions#aml' },
+    { '@type': 'ListItem', position: 1, name: 'NovuERP – Enterprise Resource Planning', url: 'https://www.novulabs.net/solutions#erp' },
+    { '@type': 'ListItem', position: 2, name: 'NovuCRM – AI Customer Relationship Management', url: 'https://www.novulabs.net/solutions#crm' },
+    { '@type': 'ListItem', position: 3, name: 'NovuPay – PCI-DSS Payment Infrastructure', url: 'https://www.novulabs.net/solutions#pay' },
+    { '@type': 'ListItem', position: 4, name: 'NovuShield – AML/CFT Compliance Platform', url: 'https://www.novulabs.net/solutions#aml' },
   ],
 };
 

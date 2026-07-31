@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: post.title,
       description: post.description,
       type: 'article',
-      url: `https://www.novulabstech.com/blog/${post.slug}`,
+      url: `https://www.novulabs.net/blog/${post.slug}`,
       images: [{ url: post.coverImage }],
     },
     twitter: {

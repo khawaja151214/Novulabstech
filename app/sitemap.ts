@@ -5,7 +5,7 @@ import { MetadataRoute } from 'next';
  * Accessible automatically at /sitemap.xml.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.novulabstech.com';
+  const baseUrl = 'https://www.novulabs.net';
 
   // Static pages
   const staticRoutes = [

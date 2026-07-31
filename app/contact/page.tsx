@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Book a Free Technical Consultation | NovuLabs',
     description: 'Free 45-minute call with a senior architect. Fintech, AML, healthcare, and enterprise software consulting.',
-    url: 'https://www.novulabstech.com/contact',
+    url: 'https://www.novulabs.net/contact',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact NovuLabs' }],
   },
   twitter: {
@@ -37,7 +37,7 @@ const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   name: 'Contact NovuLabs',
-  url: 'https://www.novulabstech.com/contact',
+  url: 'https://www.novulabs.net/contact',
   description: 'Contact NovuLabs for a free technical consultation on enterprise software development.',
   mainEntity: {
     '@type': 'Organization',

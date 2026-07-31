@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Engineering Team – NovuLabs',
     description: 'Senior architects, fintech engineers and AML/CFT compliance experts at NovuLabs.',
-    url: 'https://www.novulabstech.com/team',
+    url: 'https://www.novulabs.net/team',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Team' }],
   },
   twitter: {

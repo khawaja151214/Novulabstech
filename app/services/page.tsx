@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Enterprise Software Services – NovuLabs',
     description:
       'Custom fintech, AML compliance, healthcare, mobile, ERP/CRM, and cloud software development for global enterprises.',
-    url: 'https://www.novulabstech.com/services',
+    url: 'https://www.novulabs.net/services',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Services' }],
   },
   twitter: {
@@ -63,8 +63,8 @@ const servicesSchema = {
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.novulabstech.com' },
-      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.novulabstech.com/services' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.novulabs.net' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.novulabs.net/services' },
     ],
   },
 };

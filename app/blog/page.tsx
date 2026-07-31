@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Insights & Technical Articles | NovuLabs',
     description: 'Deep technical articles on AML compliance, HIPAA healthcare IT, enterprise architecture, and fintech from NovuLabs engineers.',
-    url: 'https://www.novulabstech.com/blog',
+    url: 'https://www.novulabs.net/blog',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Insights' }],
   },
   twitter: {
@@ -37,12 +37,12 @@ const blogSchema = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
   name: 'NovuLabs Insights',
-  url: 'https://www.novulabstech.com/blog',
+  url: 'https://www.novulabs.net/blog',
   description: 'Technical articles and regulatory insights on enterprise software, AML/CFT, healthcare IT, fintech, and cloud architecture.',
   publisher: {
     '@type': 'Organization',
     name: 'NovuLabs Technology',
-    logo: { '@type': 'ImageObject', url: 'https://www.novulabstech.com/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https://www.novulabs.net/logo.png' },
   },
 };
 

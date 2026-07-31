@@ -11,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://www.novulabstech.com/sitemap.xml',
+    sitemap: 'https://www.novulabs.net/sitemap.xml',
   };
 }

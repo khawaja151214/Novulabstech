@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'NovuLabs – Enterprise Software House',
     description: 'Mission-critical fintech, AML compliance, healthcare, and government software. 200+ projects. 40+ countries.',
-    url: 'https://www.novulabstech.com',
+    url: 'https://www.novulabs.net',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs' }],
   },
 };
@@ -39,7 +39,7 @@ const homeSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'NovuLabs – Enterprise Software House',
-  url: 'https://www.novulabstech.com',
+  url: 'https://www.novulabs.net',
   description: 'Mission-critical enterprise software for fintech, healthcare, AML compliance, and government sectors.',
   specialty: ['Fintech Software', 'AML Compliance', 'Healthcare IT', 'Government Software'],
 };
