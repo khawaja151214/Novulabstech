@@ -42,12 +42,12 @@ const contactSchema = {
   mainEntity: {
     '@type': 'Organization',
     name: 'NovuLabs Technology',
-    email: 'Info@novulabstech.net',
+    email: 'Info@novulabs.net',
     address: { '@type': 'PostalAddress', addressLocality: 'Islamabad', addressCountry: 'PK' },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'Info@novulabstech.net',
+      email: 'Info@novulabs.net',
       availableLanguage: ['English', 'Urdu'],
     },
   },

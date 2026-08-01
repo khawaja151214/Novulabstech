@@ -23,7 +23,7 @@ const AboutCta: React.FC = () => {
                 <Button href="/contact" variant="grad" className="w-100 justify-content-center mb-3">
                   <i className="bi bi-calendar-check me-1"></i>Book a Free Call
                 </Button>
-                <Button href="mailto:Info@novulabstech.net" variant="glass" className="w-100 justify-content-center">
+                <Button href="mailto:Info@novulabs.net" variant="glass" className="w-100 justify-content-center">
                   <i className="bi bi-envelope me-1"></i>Email Us Directly
                 </Button>
                 <p className="cta-card-note">No demos, no pitch scripts. Just a straight conversation about your project and whether we're the right fit.</p>

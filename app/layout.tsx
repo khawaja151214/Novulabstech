@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.novulabs.net'),
   title: {
-    default: 'NovuLabs – Enterprise Software Solutions | NovuLabsTech.com',
+    default: 'NovuLabs – Enterprise Software Solutions | novulabs.net',
     template: '%s | NovuLabs',
   },
   description:
@@ -110,7 +110,7 @@ const organizationSchema = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      email: 'Info@novulabstech.net',
+      email: 'Info@novulabs.net',
       contactType: 'customer service',
       availableLanguage: ['English', 'Urdu'],
     },

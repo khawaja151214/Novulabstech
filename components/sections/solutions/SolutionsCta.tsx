@@ -32,7 +32,7 @@ const SolutionsCta: React.FC = () => {
                 <Button href="/contact" variant="grad" className="w-100 justify-content-center mb-3" style={{ fontSize: '0.94rem' }}>
                   <i className="bi bi-calendar-check me-1"></i>Book a Free Call
                 </Button>
-                <Button href="mailto:Info@novulabstech.net" variant="glass" className="w-100 justify-content-center" style={{ fontSize: '0.94rem' }}>
+                <Button href="mailto:Info@novulabs.net" variant="glass" className="w-100 justify-content-center" style={{ fontSize: '0.94rem' }}>
                   <i className="bi bi-envelope me-1"></i>Send Us Your Brief
                 </Button>
                 <p className="cta-card-note">200+ organizations started exactly this way — with a straightforward conversation about a specific problem they were trying to solve.</p>

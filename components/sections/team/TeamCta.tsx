@@ -15,7 +15,7 @@ const TeamCta: React.FC = () => {
             <div className="col-lg-5 text-lg-end">
               <div className="cta-card text-start">
                 <div className="cta-card-label">Send us your CV</div>
-                <Button href="mailto:Info@novulabstech.net" variant="grad" className="w-100 justify-content-center mb-3">
+                <Button href="mailto:Info@novulabs.net" variant="grad" className="w-100 justify-content-center mb-3">
                   <i className="bi bi-envelope me-1"></i>Apply Now
                 </Button>
                 <p className="cta-card-note">All applicants must undergo a rigorous code-writing and architecture challenge. Only senior positions are currently open.</p>

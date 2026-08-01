@@ -23,7 +23,7 @@ const ServicesCta: React.FC = () => {
                 <Button href="/contact" variant="grad" className="w-100 justify-content-center mb-3">
                   <i className="bi bi-calendar-check me-1"></i>Book a Free Call
                 </Button>
-                <Button href="mailto:Info@novulabstech.net" variant="glass" className="w-100 justify-content-center">
+                <Button href="mailto:Info@novulabs.net" variant="glass" className="w-100 justify-content-center">
                   <i className="bi bi-envelope me-1"></i>Send Us Your Brief
                 </Button>
                 <p className="cta-card-note">If our services aren't the right fit for your project, we'll tell you that clearly — and often point you in a better direction.</p>
