@@ -24,6 +24,7 @@ source — every claim here was checked in the actual output.
 | `<img>` without an `alt` attribute | unknown | 0 of 129 |
 | Structured data types emitted | 0 detected | 11 types |
 | Remote Unsplash images on hero critical path | 8 | 0 |
+| Render-blocking third-party requests | 2 CSS + 2 JS | 0 |
 | Sitemap URLs | 12 | 33 |
 | Words rendered without JavaScript (AML service page) | n/a | 1,230 |
 
@@ -177,6 +178,15 @@ metric carries a provenance note until `metricsVerified` is flipped.
   answer text is now in the raw HTML on first byte (required for FAQ rich
   results and non-JS AI crawlers), the fixed 200px max-height that clipped long
   answers is gone, and keyboard/screen-reader behaviour is native.
+- **Bootstrap and Bootstrap Icons CSS moved from `cdn.jsdelivr.net` into the
+  bundle; Bootstrap JS and AOS self-hosted from `/vendor`.** Two render-blocking
+  third-party stylesheets sat on the critical path of every page, each costing a
+  DNS lookup and TLS handshake before first paint and disclosing every visitor's
+  IP and user agent to that CDN. Everything is now same-origin, hashed and
+  long-cached. Zero references to jsdelivr remain in any rendered page.
+- Long-form article typography added. Bootstrap's reboot was stripping list
+  markers inside article bodies, so semantic `<ul>`/`<ol>` content rendered as
+  unmarked prose — the visual structure no longer contradicts the markup.
 - Viewport meta confirmed present and correct (`width=device-width,
   initial-scale=1`). No stray `noindex`. `max-image-preview:large` and
   `max-snippet:-1` already set and retained.

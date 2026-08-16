@@ -80,7 +80,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
       <section className="phero">
         <div className="phero-bg">
           <Image
-            src={`/portfolio/${cs.slug}.jpg`}
+            src="/hero/portfolio.jpg"
             alt=""
             fill
             priority

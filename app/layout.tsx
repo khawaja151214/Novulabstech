@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: '%s | NovuLabs',
   },
   description:
-    'NovuLabs delivers mission-critical enterprise software for fintech, healthcare, AML/CFT compliance, government, and global enterprises. 200+ projects. 40+ countries.',
+    'Enterprise software house in Islamabad building AML/CFT compliance systems for SBP-regulated banks, HIPAA healthcare platforms and PCI-DSS payment infrastructure.',
   keywords: [
     'enterprise software house Pakistan',
     'AML compliance software Pakistan',
@@ -116,24 +116,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Preconnect to CDN — reduces TLS + DNS handshake time */}
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-
-        {/* Bootstrap CSS — loaded server-side to prevent flash of unstyled content */}
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          crossOrigin="anonymous"
-        />
-        {/* Bootstrap Icons — loaded server-side (icons used in nav/buttons) */}
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-          crossOrigin="anonymous"
-        />
-        {/* AOS CSS — only needed after scroll, deferred via CDNStyleLoader */}
-
         {/* Sitewide entity graph — ProfessionalService + WebSite, linked by @id.
             Server-rendered so non-JS crawlers (GPTBot, ClaudeBot, PerplexityBot,
             CCBot) can read it. Definitions live in lib/schema.ts. */}
@@ -150,16 +132,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main-content">{children}</main>
         <Footer />
 
-        {/* Bootstrap JS: load after user interaction */}
-        <Script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          strategy="afterInteractive"
-        />
-        {/* AOS JS: lowest priority */}
-        <Script
-          src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"
-          strategy="lazyOnload"
-        />
+        {/* Both scripts self-hosted from /vendor. They were loaded from
+            cdn.jsdelivr.net, which put a third-party DNS lookup and TLS
+            handshake in front of each one and disclosed every visitor's IP and
+            user agent to that CDN. Same-origin now, immutably cached, and no
+            longer a third-party dependency for the site to function. */}
+        <Script src="/vendor/bootstrap.bundle.min.js" strategy="afterInteractive" />
+        <Script src="/vendor/aos.js" strategy="lazyOnload" />
       </body>
     </html>
   );

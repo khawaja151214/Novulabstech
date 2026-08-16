@@ -99,7 +99,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <section className="phero">
         <div className="phero-bg">
           <Image
-            src={post.coverImage}
+            src="/hero/blog.jpg"
             alt=""
             fill
             priority

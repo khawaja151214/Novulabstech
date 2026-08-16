@@ -89,7 +89,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <section className="phero">
         <div className="phero-bg">
           <Image
-            src={`/og/${svc.slug}.jpg`}
+            src="/hero/services.jpg"
             alt=""
             fill
             priority

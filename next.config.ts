@@ -71,11 +71,9 @@ const nextConfig: NextConfig = {
         // Apply to all routes
         source: '/(.*)',
         headers: [
-          // Preconnect hints to CDN (reduces DNS lookup + TLS handshake time)
-          {
-            key: 'Link',
-            value: '<https://cdn.jsdelivr.net>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin',
-          },
+          // The jsdelivr preconnect was removed with the CDN itself: Bootstrap
+          // and AOS are now bundled/self-hosted, so there is no third-party
+          // origin left on the critical path to preconnect to.
           // Security headers for Lighthouse Best Practices
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
@@ -118,6 +116,10 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/:path*.ico',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
+      {
+        source: '/vendor/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
       {
