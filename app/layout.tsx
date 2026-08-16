@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import './globals.css';
 
+import JsonLd from '@/components/seo/JsonLd';
+import { organizationSchema, websiteSchema } from '@/lib/schema';
+
 // ClientShell is a 'use client' wrapper — holds all ssr:false dynamic imports
 // (next/dynamic with ssr:false is only allowed inside Client Components)
 import ClientShell from '@/components/ui/ClientShell';
@@ -24,7 +27,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.novulabs.net'),
   title: {
-    default: 'NovuLabs – Enterprise Software Solutions | novulabs.net',
+    // 58 chars — inside the ~60 char SERP render budget.
+    default: 'NovuLabs — Enterprise Software House in Pakistan',
+    // Page-level `title` strings must NOT contain the brand; this template
+    // appends it exactly once. (Previously several pages included it too,
+    // producing "… | NovuLabs | NovuLabs" and 90–101 char truncated titles.)
     template: '%s | NovuLabs',
   },
   description:
@@ -63,85 +70,43 @@ export const metadata: Metadata = {
     shortcut: '/logo.png',
     apple: '/logo.png',
   },
-  alternates: { canonical: '/' },
+  // ⚠️ DO NOT re-add `alternates: { canonical: '/' }` here.
+  // Next.js metadata is inherited: a canonical set on the root layout is
+  // applied to every descendant route that does not set its own. That is what
+  // made all three blog posts declare rel=canonical → the homepage, telling
+  // Google to de-index the entire /blog/ tree. Canonicals are now set
+  // per-route, and app/blog/[slug]/page.tsx generates its own dynamically.
   openGraph: {
     type: 'website',
     url: 'https://www.novulabs.net/',
-    title: 'NovuLabs – Next-Gen Enterprise Software House',
+    // Message consistency: og/twitter/title now say the same thing. They
+    // previously carried three different value sets for the same page.
+    title: 'NovuLabs — Enterprise Software House in Pakistan',
+    // "certified" removed: HIPAA has no certification regime (organisations
+    // attest to compliance), and no ISO 27001 certificate number or registrar
+    // is published anywhere on the site. Claiming certification you cannot
+    // evidence is an E-E-A-T liability in a YMYL vertical.
     description:
-      'Mission-critical platforms for fintech, healthcare, government & global enterprises. AML/CFT, HIPAA, PCI-DSS, ISO 27001 certified solutions. 200+ projects. 40+ countries.',
+      'Architect-led engineering for regulated industries: AML/CFT compliance systems for SBP-regulated banks, HIPAA and HL7 FHIR healthcare platforms, PCI-DSS payment infrastructure.',
     images: [
-      { url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs – Enterprise Software Solutions' },
+      { url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs — enterprise software for regulated industries' },
     ],
     siteName: 'NovuLabs',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
+    // TODO(client): verify @NovuLabsTech exists and is controlled by NovuLabs.
+    // If the handle is not live, delete these two lines — pointing twitter:site
+    // at a non-existent account breaks card attribution.
     site: '@NovuLabsTech',
     creator: '@NovuLabsTech',
-    title: 'NovuLabs – Next-Gen Enterprise Software House',
+    title: 'NovuLabs — Enterprise Software House in Pakistan',
     description:
-      'Mission-critical software for fintech, healthcare & government. AML, HIPAA, PCI-DSS certified. 200+ projects across 40+ countries.',
+      'AML/CFT compliance systems, HIPAA healthcare platforms and PCI-DSS payment infrastructure, built by senior architects in Islamabad.',
     images: ['/og-image.png'],
   },
   category: 'technology',
-};
-
-// ---------------------------------------------------------------------------
-// JSON-LD Structured Data
-// ---------------------------------------------------------------------------
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'NovuLabs Technology',
-  alternateName: 'NovuLabs',
-  url: 'https://www.novulabs.net',
-  logo: 'https://www.novulabs.net/logo.png',
-  description:
-    'NovuLabs is a premier enterprise software house headquartered in Islamabad, Pakistan. We build mission-critical platforms for fintech, healthcare, AML/CFT compliance, and government sectors across 40+ countries.',
-  foundingDate: '2015',
-  numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 50, maxValue: 200 },
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Islamabad',
-    addressCountry: 'PK',
-  },
-  contactPoint: [
-    {
-      '@type': 'ContactPoint',
-      email: 'Info@novulabs.net',
-      contactType: 'customer service',
-      availableLanguage: ['English', 'Urdu'],
-    },
-  ],
-  sameAs: [
-    'https://www.linkedin.com/company/novulabstech',
-    'https://twitter.com/NovuLabsTech',
-  ],
-  areaServed: ['PK', 'AE', 'GB', 'US', 'SA'],
-  knowsAbout: [
-    'Enterprise Software Development',
-    'AML/CFT Compliance Software',
-    'Fintech Platform Development',
-    'Healthcare IT and EHR Systems',
-    'Government Portal Development',
-    'PCI-DSS Payment Gateway',
-    'HIPAA Compliant Software',
-    'Core Banking Solutions',
-  ],
-};
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'NovuLabs',
-  url: 'https://www.novulabs.net',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: 'https://www.novulabs.net/blog?q={search_term_string}',
-    'query-input': 'required name=search_term_string',
-  },
 };
 
 // ---------------------------------------------------------------------------
@@ -169,15 +134,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {/* AOS CSS — only needed after scroll, deferred via CDNStyleLoader */}
 
-        {/* JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
+        {/* Sitewide entity graph — ProfessionalService + WebSite, linked by @id.
+            Server-rendered so non-JS crawlers (GPTBot, ClaudeBot, PerplexityBot,
+            CCBot) can read it. Definitions live in lib/schema.ts. */}
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
       </head>
       <body>
         {/* Render preloader in initial markup for instant painting, fades out safely after hydration */}

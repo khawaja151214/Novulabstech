@@ -4,9 +4,9 @@ import TeamGridSection from '@/components/sections/team/TeamGridSection';
 import TeamCta from '@/components/sections/team/TeamCta';
 
 export const metadata: Metadata = {
-  title: 'Our Engineering Team – Senior Architects & Compliance Experts | NovuLabs',
+  title: 'Engineering & Compliance Team',
   description:
-    'Meet the NovuLabs engineering team: senior architects, fintech compliance engineers, healthcare IT specialists, and AML/CFT experts. Every team member is an active practitioner — no sales reps.',
+    'The architects and compliance engineers who do the work, with the credentials to check. Every person listed is an active practitioner, not a sales rep.',
   keywords: [
     'NovuLabs team',
     'software engineers Pakistan',
