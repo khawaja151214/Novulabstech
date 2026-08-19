@@ -14,6 +14,7 @@ const CustomCursor   = dynamic(() => import('@/components/ui/CustomCursor'),   {
 const FloatingCTA    = dynamic(() => import('@/components/ui/FloatingCTA'),    { ssr: false });
 const ScrollReveal   = dynamic(() => import('@/components/ui/ScrollReveal'),   { ssr: false });
 const Parallax       = dynamic(() => import('@/components/ui/Parallax'),       { ssr: false });
+const SmoothScroll   = dynamic(() => import('@/components/ui/SmoothScroll'),   { ssr: false });
 
 export default function ClientShell() {
   return (
@@ -25,6 +26,7 @@ export default function ClientShell() {
       <FloatingCTA />
       <ScrollReveal />
       <Parallax />
+      <SmoothScroll />
     </>
   );
 }

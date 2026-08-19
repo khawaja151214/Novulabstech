@@ -40,7 +40,7 @@ const fontMono = JetBrains_Mono({
 });
 
 import JsonLd from '@/components/seo/JsonLd';
-import { organizationSchema, websiteSchema } from '@/lib/schema';
+import { organizationSchema, websiteSchema, siteNavigationSchema } from '@/lib/schema';
 
 // ClientShell is a 'use client' wrapper — holds all ssr:false dynamic imports
 // (next/dynamic with ssr:false is only allowed inside Client Components)
@@ -159,7 +159,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Sitewide entity graph — ProfessionalService + WebSite, linked by @id.
             Server-rendered so non-JS crawlers (GPTBot, ClaudeBot, PerplexityBot,
             CCBot) can read it. Definitions live in lib/schema.ts. */}
-        <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        <JsonLd data={[organizationSchema(), websiteSchema(), siteNavigationSchema()]} />
 
         {/* [data-reveal] starts at opacity:0 and is revealed by ScrollReveal.
             Without this guard, a visitor with JavaScript disabled would see an

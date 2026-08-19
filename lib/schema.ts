@@ -281,3 +281,40 @@ export function webPageSchema(opts: {
     inLanguage: 'en',
   };
 }
+
+/**
+ * SiteNavigationElement — the primary navigation, declared as structured data.
+ *
+ * This is one of the few remaining signals Google uses when deciding which
+ * sitelinks to render under a brand-name result. It does not guarantee sitelinks
+ * (nothing does), but it removes the ambiguity of Google having to infer the
+ * site's primary sections from link position alone.
+ *
+ * Deliberately limited to the real top-level sections, in navigation order.
+ * Padding this list with every URL on the site is counterproductive — it
+ * flattens the hierarchy the markup is supposed to express.
+ */
+export function siteNavigationSchema() {
+  const items: { name: string; path: string }[] = [
+    { name: 'Services', path: '/services' },
+    { name: 'Solutions', path: '/solutions' },
+    { name: 'Industries', path: '/industries' },
+    { name: 'Case Studies', path: '/portfolio' },
+    { name: 'Team', path: '/team' },
+    { name: 'Insights', path: '/blog' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': `${canonical('/')}#site-navigation`,
+    name: 'Primary navigation',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'SiteNavigationElement',
+      position: i + 1,
+      name: item.name,
+      url: canonical(item.path),
+    })),
+  };
+}
