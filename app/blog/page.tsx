@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     title: 'Insights & Technical Articles | NovuLabs',
     description: 'Deep technical articles on AML compliance, HIPAA healthcare IT, enterprise architecture, and fintech from NovuLabs engineers.',
     url: 'https://www.novulabs.net/blog',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Insights' }],
+    images: [{ url: '/hero/blog.jpg', width: 1920, height: 1080, alt: 'NovuLabs Insights' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Insights & Technical Articles | NovuLabs',
     description: 'AML compliance, HIPAA, fintech, and enterprise architecture guides from our engineering team.',
-    images: ['/og-image.png'],
+    images: ['/hero/blog.jpg'],
   },
 };
 

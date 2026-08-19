@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     title: 'Industries – Banking, Healthcare & Government IT | NovuLabs',
     description: 'Software built for critical industries: fintech, healthcare, government, retail, manufacturing and more.',
     url: 'https://www.novulabs.net/industries',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Industries' }],
+    images: [{ url: '/hero/industries.jpg', width: 1920, height: 1080, alt: 'NovuLabs Industries' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Industries – Banking, Healthcare & Government | NovuLabs',
     description: 'Mission-critical software for banking, healthcare IT, government portals and enterprise sectors globally.',
-    images: ['/og-image.png'],
+    images: ['/hero/industries.jpg'],
   },
 };
 

@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     title: 'Book a Free Technical Consultation | NovuLabs',
     description: 'Free 45-minute call with a senior architect. Fintech, AML, healthcare, and enterprise software consulting.',
     url: 'https://www.novulabs.net/contact',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact NovuLabs' }],
+    images: [{ url: '/hero/contact.jpg', width: 1920, height: 1080, alt: 'Contact NovuLabs' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Book a Free Consultation | NovuLabs',
     description: 'Talk to a senior architect about your enterprise software project. No sales reps, no demos.',
-    images: ['/og-image.png'],
+    images: ['/hero/contact.jpg'],
   },
 };
 

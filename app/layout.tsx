@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     description:
       'Architect-led engineering for regulated industries: AML/CFT compliance systems for SBP-regulated banks, HIPAA and HL7 FHIR healthcare platforms, PCI-DSS payment infrastructure.',
     images: [
-      { url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs — enterprise software for regulated industries' },
+      { url: '/og/enterprise-software-development.jpg', width: 1200, height: 630, alt: 'NovuLabs — enterprise software for regulated industries' },
     ],
     siteName: 'NovuLabs',
     locale: 'en_US',
@@ -141,7 +141,7 @@ export const metadata: Metadata = {
     title: 'NovuLabs — Enterprise Software House in Pakistan',
     description:
       'AML/CFT compliance systems, HIPAA healthcare platforms and PCI-DSS payment infrastructure, built by senior architects in Islamabad.',
-    images: ['/og-image.png'],
+    images: ['/og/enterprise-software-development.jpg'],
   },
   category: 'technology',
 };

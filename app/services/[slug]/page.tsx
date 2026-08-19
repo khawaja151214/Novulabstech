@@ -87,7 +87,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       {/* Hero */}
       <section className="phero">
-        <div className="phero-bg">
+        <div className="phero-bg" data-parallax="38">
           <Image
             src="/hero/services.jpg"
             alt=""
@@ -98,7 +98,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           />
         </div>
         <div className="phero-ov"></div>
-        <div className="phero-grid"></div>
+        <div className="phero-grid" data-parallax="14"></div>
         <div className="container phero-inner">
           <Breadcrumbs
             className="mb-4"

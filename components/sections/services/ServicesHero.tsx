@@ -5,11 +5,11 @@ import Image from 'next/image';
 const ServicesHero: React.FC = () => {
   return (
     <section className="phero">
-      <div className="phero-bg">
+      <div className="phero-bg" data-parallax="38">
         <Image src="/hero/services.jpg" alt="" fill priority sizes="100vw" style={{ objectFit: 'cover' }} />
       </div>
       <div className="phero-ov"></div>
-      <div className="phero-grid"></div>
+      <div className="phero-grid" data-parallax="14"></div>
       <div className="container phero-inner">
         <Breadcrumbs className="mb-4" items={[{ name: 'Services' }]} />
         <span className="stag">What We Build</span>

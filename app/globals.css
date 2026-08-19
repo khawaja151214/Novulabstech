@@ -42,7 +42,12 @@
   --tx1: #0F172A;
   --tx2: #334155;
   --tx3: #475569;
-  --tx4: #64748B;
+  /* Was #64748B, which measured 4.34:1 on --bg and 3.86:1 on --bg-2 —
+     under the 4.5:1 WCAG AA threshold for normal-size text, and this token is
+     used for muted labels and small metadata that are almost always below the
+     large-text exemption. #5B6977 is the smallest darkening that clears AA on
+     both surface tones (5.14:1 and 4.56:1). */
+  --tx4: #5B6977;
 
   /* Glass borders */
   --gb1: rgba(255,255,255,0.80);
@@ -1875,4 +1880,34 @@ p, li {
 
   #particles-canvas,
   .particles-canvas { display: none !important; }
+}
+
+/* ── Parallax depth headroom ───────────────────────────────────
+   Parallax.tsx moves .phero-bg by at most ±38px. The layer fills its
+   container exactly (inset:0), so without extra scale that travel would
+   drag the image's own edge into frame at the extremes.
+
+   The base rule already applies scale(1.04). A ±38px excursion inside a
+   hero of ~360px needs roughly 2 × 38 / 360 ≈ 21% of extra height, so
+   1.28 leaves a comfortable margin at the shortest hero size while
+   staying well below the point where the upscale becomes visible.
+
+   Scoped to [data-parallax] so heroes without it keep the original
+   framing. */
+.phero-bg[data-parallax] img {
+  transform: scale(1.28);
+}
+
+/* The grid overlay is a repeating 60px pattern with no edges to expose,
+   so it only needs enough bleed to cover its own ±14px travel. */
+.phero-grid[data-parallax] {
+  inset: -24px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Parallax.tsx bails before attaching any listener under reduced motion,
+     so no transform is ever written. Reset the compensating scale and bleed
+     too, otherwise the hero sits permanently over-zoomed for these users. */
+  .phero-bg[data-parallax] img { transform: scale(1.04); }
+  .phero-grid[data-parallax]   { inset: 0; }
 }

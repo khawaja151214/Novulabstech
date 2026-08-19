@@ -5,11 +5,11 @@ import Image from 'next/image';
 const ContactHero: React.FC = () => {
   return (
     <section className="phero">
-      <div className="phero-bg">
+      <div className="phero-bg" data-parallax="38">
         <img src="/team-working.jpeg" alt="Contact" />
       </div>
       <div className="phero-ov"></div>
-      <div className="phero-grid"></div>
+      <div className="phero-grid" data-parallax="14"></div>
       <div className="container phero-inner">
         <Breadcrumbs className="mb-4" items={[{ name: 'Contact' }]} />
         <span className="stag">Let's Talk</span>

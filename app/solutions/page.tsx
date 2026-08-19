@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     title: 'Enterprise Platforms – NovuERP, CRM, Pay & Shield | NovuLabs',
     description: 'Production-ready enterprise platforms: ERP, AI CRM, Mastercard/Visa payment switch, and AML compliance engine.',
     url: 'https://www.novulabs.net/solutions',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Solutions' }],
+    images: [{ url: '/hero/solutions.jpg', width: 1920, height: 1080, alt: 'NovuLabs Solutions' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Enterprise Platforms – NovuLabs Solutions',
     description: 'ERP, AI CRM, PCI-DSS payment, and FATF AML compliance platforms for global enterprises.',
-    images: ['/og-image.png'],
+    images: ['/hero/solutions.jpg'],
   },
 };
 

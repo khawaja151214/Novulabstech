@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     description:
       'Founded in Islamabad, NovuLabs engineers mission-critical platforms for fintech institutions, healthcare networks, and government agencies globally.',
     url: 'https://www.novulabs.net/about',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Team' }],
+    images: [{ url: '/hero/about.jpg', width: 1920, height: 1080, alt: 'NovuLabs Team' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About NovuLabs – Enterprise Software House',
     description: 'Islamabad-based software house delivering fintech, healthcare and government platforms for regulated institutions.',
-    images: ['/og-image.png'],
+    images: ['/hero/about.jpg'],
   },
 };
 

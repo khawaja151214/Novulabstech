@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     title: 'Portfolio – Enterprise Software Projects | NovuLabs',
     description: 'AML engines, HIPAA EHR, payment switches, government portals and 200+ enterprise projects.',
     url: 'https://www.novulabs.net/portfolio',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Portfolio' }],
+    images: [{ url: '/hero/portfolio.jpg', width: 1920, height: 1080, alt: 'NovuLabs Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Portfolio – 200+ Enterprise Projects | NovuLabs',
     description: 'AML compliance, healthcare, payments, and government software. Explore our work.',
-    images: ['/og-image.png'],
+    images: ['/hero/portfolio.jpg'],
   },
 };
 

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'NovuLabs – Enterprise Software House',
     description: 'Mission-critical fintech, AML compliance, healthcare, and government software. 200+ projects. 40+ countries.',
     url: 'https://www.novulabs.net',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs' }],
+    images: [{ url: '/og/enterprise-software-development.jpg', width: 1200, height: 630, alt: 'NovuLabs' }],
   },
 };
 

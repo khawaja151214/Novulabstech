@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     description:
       'Custom fintech, AML compliance, healthcare, mobile, ERP/CRM, and cloud software development for global enterprises.',
     url: 'https://www.novulabs.net/services',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NovuLabs Services' }],
+    images: [{ url: '/hero/services.jpg', width: 1920, height: 1080, alt: 'NovuLabs Services' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Enterprise Software Development Services – NovuLabs',
     description: 'Fintech, AML/CFT, healthcare, mobile and cloud engineering built to PCI-DSS, HIPAA and ISO 27001 standards.',
-    images: ['/og-image.png'],
+    images: ['/hero/services.jpg'],
   },
 };
 

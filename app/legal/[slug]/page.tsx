@@ -30,6 +30,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: canonical(`/legal/${page.slug}`),
       title: page.title,
       description: page.description,
+      // Was omitted entirely. Because Next.js metadata is inherited only when a
+      // field is absent — and `openGraph` here replaces the parent object
+      // wholesale — these pages ended up with no og:image at all, so a shared
+      // privacy-policy or terms link rendered as a bare text row.
+      images: [
+        {
+          url: '/og/enterprise-software-development.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'NovuLabs — enterprise software for regulated industries',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.title,
+      description: page.description,
+      images: ['/og/enterprise-software-development.jpg'],
     },
   };
 }
