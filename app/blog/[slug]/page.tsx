@@ -140,7 +140,16 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8">
+              {/* data-reveal is driven by components/ui/ScrollReveal.tsx. Long-form
+                  article bodies are outside AOS's reach — AOS is attached to
+                  section wrappers, and this content is injected as raw HTML — so
+                  the article previously appeared with no entrance at all while
+                  every surrounding section animated. A <noscript> guard in
+                  layout.tsx forces it visible when JS is unavailable, and the
+                  reduced-motion block in globals.css does the same when motion
+                  is not wanted. */}
               <article
+                data-reveal
                 className="blog-post-content"
                 style={{ fontSize: '1.05rem', lineHeight: '1.8', color: 'var(--tx2)' }}
               >

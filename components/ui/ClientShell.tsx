@@ -12,6 +12,7 @@ const AOSInitializer = dynamic(() => import('@/components/ui/AOSInitializer'), {
 const ScrollProgress = dynamic(() => import('@/components/ui/ScrollProgress'), { ssr: false });
 const CustomCursor   = dynamic(() => import('@/components/ui/CustomCursor'),   { ssr: false });
 const FloatingCTA    = dynamic(() => import('@/components/ui/FloatingCTA'),    { ssr: false });
+const ScrollReveal   = dynamic(() => import('@/components/ui/ScrollReveal'),   { ssr: false });
 
 export default function ClientShell() {
   return (
@@ -21,6 +22,7 @@ export default function ClientShell() {
       <ScrollProgress />
       <CustomCursor />
       <FloatingCTA />
+      <ScrollReveal />
     </>
   );
 }

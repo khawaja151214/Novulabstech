@@ -12,7 +12,6 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 /* ============================================================
@@ -84,9 +83,9 @@
   --t-s:  all .55s cubic-bezier(.4,0,.2,1);
   --blur: blur(18px) saturate(160%);
   --blur-sm: blur(8px) saturate(140%);
-  --fh:  'Space Grotesk',sans-serif;
-  --fb:  'Outfit',sans-serif;
-  --fm:  'JetBrains Mono',monospace;
+  --fh:  var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  --fb:  var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --fm:  var(--font-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
 /* ── Reset ── */
@@ -1699,3 +1698,181 @@ footer::before{
   font-style:italic;color:var(--tx1);
 }
 .blog-post-content strong{color:var(--tx1);font-weight:700}
+
+/* ============================================================
+   TYPOGRAPHY & MOTION REFINEMENT LAYER
+   ------------------------------------------------------------
+   Appended deliberately at the end of the file so every rule here
+   wins on cascade order without needing !important. Nothing above
+   this line was rewritten.
+
+   Design register: "Trust & Authority" — the buyer is a bank CTO,
+   a head of compliance or a government procurement officer. Motion
+   is used to establish reading order and spatial continuity, never
+   for decoration. Anything that reads as playful is out of register
+   and costs credibility with this audience.
+   ============================================================ */
+
+/* ── Fluid type scale ──────────────────────────────────────────
+   A single ratio-based scale replaces ad-hoc clamp() values so
+   heading sizes relate to each other predictably at every width.
+   Steps are ~1.25 (major third) at mobile, opening to ~1.33 at
+   desktop where there is room for more contrast. */
+:root {
+  --step--1: clamp(0.83rem, 0.80rem + 0.14vw, 0.92rem);
+  --step-0:  clamp(1.00rem, 0.96rem + 0.20vw, 1.13rem);
+  --step-1:  clamp(1.20rem, 1.13rem + 0.36vw, 1.50rem);
+  --step-2:  clamp(1.44rem, 1.32rem + 0.61vw, 2.00rem);
+  --step-3:  clamp(1.73rem, 1.53rem + 0.98vw, 2.66rem);
+  --step-4:  clamp(2.07rem, 1.76rem + 1.55vw, 3.55rem);
+  --step-5:  clamp(2.49rem, 2.01rem + 2.40vw, 4.73rem);
+
+  /* Comfortable reading measure. 66ch is the middle of the 45–75ch
+     band that reads fastest for continuous prose. */
+  --measure: 66ch;
+}
+
+/* ── Heading rhythm ──────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  /* Keeps multi-line headings from leaving one orphaned word on the
+     last line. Supported in all current evergreen browsers and
+     silently ignored elsewhere, so it degrades safely. */
+  text-wrap: balance;
+  /* Tighter tracking as size increases is what makes large type read
+     as deliberate rather than merely scaled up. */
+  font-optical-sizing: auto;
+}
+
+h1 { font-size: var(--step-5); line-height: 1.04; letter-spacing: -0.038em; }
+h2 { font-size: var(--step-4); line-height: 1.10; letter-spacing: -0.030em; }
+h3 { font-size: var(--step-2); line-height: 1.22; letter-spacing: -0.018em; }
+h4 { font-size: var(--step-1); line-height: 1.30; letter-spacing: -0.012em; }
+
+/* Body copy: `pretty` prevents orphans without the reflow cost that
+   `balance` carries on long text blocks. */
+p, li {
+  text-wrap: pretty;
+}
+
+/* Constrain the measure on continuous prose only — never on grid or
+   card copy, where the container already sets the width. */
+/* Descendant, not child: the article body is injected through a
+   dangerouslySetInnerHTML wrapper div, so these elements are grandchildren of
+   .blog-post-content. A child combinator here matches nothing. */
+.blog-post-content :is(p, ul, ol, blockquote) {
+  max-width: var(--measure);
+}
+
+.blog-post-content p { font-size: var(--step-0); line-height: 1.78; }
+
+/* Numerals in metrics, stats and tables should align in columns and
+   share a common width, otherwise animated counters visibly jitter as
+   digits change. */
+.dm-val, .agp-num, .stat-num, .counter, table td, table th {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+/* ── Focus visibility ──────────────────────────────────────────
+   Keyboard focus was inheriting the browser default, which is close
+   to invisible against the dark surfaces. WCAG 2.4.7. Uses
+   :focus-visible so pointer users never see a ring. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--a1);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Skip link ─────────────────────────────────────────────────
+   Keyboard and screen-reader users currently tab through the whole
+   navigation on every page load. */
+.skip-to-content {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -120%);
+  z-index: 100000;
+  padding: 10px 20px;
+  background: var(--p1);
+  color: #fff;
+  font-family: var(--fh);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 0 0 10px 10px;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.skip-to-content:focus {
+  transform: translate(-50%, 0);
+}
+
+/* ── Entrance reveal ───────────────────────────────────────────
+   A CSS-only reveal used by the ScrollReveal component. AOS already
+   drives most existing sections and is left untouched; this covers
+   content AOS does not reach, and gives a consistent easing curve.
+
+   Distance is deliberately short (14px). Long travel distances read
+   as a slideshow; short ones read as the page settling into place. */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+[data-reveal='is-visible'] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  /* Released once the animation has run so the compositor is not
+     holding a layer for every revealed element for the page's life. */
+  will-change: auto;
+}
+
+/* Stagger: children of a [data-reveal-group] resolve in sequence.
+   Capped at 8 steps — beyond roughly half a second of cumulative
+   delay the last item reads as broken rather than choreographed. */
+[data-reveal-group] > * { transition-delay: 0ms; }
+[data-reveal-group] > *:nth-child(2) { transition-delay: 60ms; }
+[data-reveal-group] > *:nth-child(3) { transition-delay: 120ms; }
+[data-reveal-group] > *:nth-child(4) { transition-delay: 180ms; }
+[data-reveal-group] > *:nth-child(5) { transition-delay: 240ms; }
+[data-reveal-group] > *:nth-child(6) { transition-delay: 300ms; }
+[data-reveal-group] > *:nth-child(7) { transition-delay: 360ms; }
+[data-reveal-group] > *:nth-child(n+8) { transition-delay: 420ms; }
+
+/* ── Reduced motion ────────────────────────────────────────────
+   The site had no prefers-reduced-motion handling at all: parallax,
+   particles, a custom cursor, animated counters, a pulsing floating
+   CTA and 97 AOS reveals all ran regardless of the OS setting. For
+   users with vestibular disorders that is not a preference, it is an
+   accessibility barrier (WCAG 2.3.3).
+
+   Content still appears — only the movement is removed. Reveal
+   elements are forced to their final state so nothing stays
+   invisible when transitions are disabled. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html { scroll-behavior: auto; }
+
+  [data-reveal],
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Purely decorative motion is removed outright rather than sped up. */
+  .cursor,
+  .cursor-f { display: none !important; }
+
+  #particles-canvas,
+  .particles-canvas { display: none !important; }
+}
