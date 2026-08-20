@@ -52,6 +52,13 @@ export interface CaseStudy {
   challenge: string[];
   constraints: string[];
   approach: { heading: string; body: string[] }[];
+  /**
+   * Deeper engineering narrative — the decisions and trade-offs behind the
+   * approach. Kept separate because `approach` answers "what did you do", while
+   * this answers "why, and what did it cost", which is the part a technical
+   * evaluator is actually reading for.
+   */
+  engineeringNotes?: { heading: string; body: string[] }[];
   outcome: string[];
   metrics: CaseStudyMetric[];
   metricsVerified: boolean;
@@ -114,6 +121,31 @@ export const caseStudies: CaseStudy[] = [
         heading: 'goAML validation moved before submission',
         body: [
           'We built XSD validation against the published goAML schema into the pipeline, running in the bank\'s own environment. Report generation also enforces narrative quality rules, because the reason-for-suspicion text is read by a human analyst at FMU and its quality reflects on the whole programme.',
+        ],
+      },
+    ],
+    engineeringNotes: [
+      {
+        heading: 'Why an immutable event stream rather than mutable state',
+        body: [
+          'The decisive constraint in AML work is not detection quality, it is reconstruction. An examiner does not ask what the system believes today; they ask what it knew on the day a decision was taken, and expect the answer to be evidenced rather than asserted.',
+          'A conventional mutable schema cannot answer that. Once a customer risk rating is updated in place, the rating that actually drove a decision six months ago is gone. Storing an append-only stream of events, with derived state projected from it, means any historical position can be rebuilt exactly — including the configuration that produced it.',
+          'The cost is real and worth stating: projections add operational complexity, and engineers unfamiliar with the pattern find the indirection uncomfortable at first. In a regulated context that cost is straightforwardly worth paying, because the alternative is an audit answer of "we cannot reconstruct that".',
+        ],
+      },
+      {
+        heading: 'Screening thresholds as governed configuration',
+        body: [
+          'Name matching against sanctions and proscribed-persons lists is a tuning problem, not a correctness problem. Set the threshold too tight and real matches are missed; too loose and the alert queue becomes noise an analyst learns to dismiss reflexively — which is the more dangerous failure, because it degrades quietly.',
+          'Thresholds were therefore treated as governed parameters rather than deployment settings: versioned, change-controlled, and recorded with the testing that justified each value and the person who approved it. When an examiner asks why a threshold sits where it does, "that is what the vendor shipped" is not an answer that survives the follow-up question.',
+          'Transliteration from Urdu makes this materially harder than in Latin-script markets. The same person legitimately appears under several Roman spellings, so exact matching under-detects and naive fuzzy matching over-alerts. Matching is tuned per list rather than globally, because the lists have different risk profiles and different tolerance for false negatives.',
+        ],
+      },
+      {
+        heading: 'Keeping the model off the decision path',
+        body: [
+          'There was commercial appetite for machine learning in the monitoring layer. The design keeps deterministic rules as the alerts of record and uses a model only to order the review queue.',
+          'This is not conservatism about the technique. It is that explainability is a regulatory obligation here, and an alert whose only justification is a score cannot be defended in an examination. Ordering a queue is a decision that being wrong about is recoverable; deciding whether to file is not.',
         ],
       },
     ],
@@ -188,6 +220,30 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
     ],
+    engineeringNotes: [
+      {
+        heading: 'Idempotency enforced at the database, not in application code',
+        body: [
+          'The failure that matters in payment engineering is the ambiguous one. A timeout tells you nothing about whether the payment executed — only that you did not hear back. If a retry is treated as a fresh instruction, money moves twice, and on an irrevocable rail that becomes a recovery case rather than a rollback.',
+          'Every initiation carries a client-generated idempotency key persisted before the outbound call, with uniqueness enforced by a database constraint rather than by an application-level check. Application-level checks lose to concurrency: two workers can both read "not seen" before either writes. A constraint cannot be raced.',
+          'This is well-understood and remains the most common serious defect we find in payment code, precisely because it is invisible until the day the network misbehaves.',
+        ],
+      },
+      {
+        heading: 'Separating the ledger from the payment status',
+        body: [
+          'A single mutable status field is the design that makes incidents unresolvable. When the rail and your own records disagree — and eventually they will — you need both positions to diagnose which is wrong.',
+          'The ledger records what is believed true financially. The payment status records what the rail last reported. Keeping them distinct means a discrepancy is a visible, queryable state rather than a value that was silently overwritten by whichever update landed last.',
+        ],
+      },
+      {
+        heading: 'Reconciliation as a process, not an error handler',
+        body: [
+          'Any payment left in a non-final state is driven to a final one by an explicit reconciliation process using status inquiry, rather than by assumption or by waiting for a customer to complain.',
+          'The design principle is that the system, not the customer, is responsible for noticing. A payment that has been in flight for an hour is an incident; if nothing in the architecture surfaces that, the support queue is functioning as the monitoring system.',
+        ],
+      },
+    ],
     outcome: [
       'Duplicate settlements arising from retry behaviour were eliminated by construction. Reconciliation breaks are detected in minutes rather than at end of day.',
       'The platform passed scheme certification within the planned window, and the reduced cardholder data environment scope simplified the client\'s subsequent PCI-DSS assessment.',
@@ -249,6 +305,30 @@ export const caseStudies: CaseStudy[] = [
         heading: 'Screening inside the wallet, not beside it',
         body: [
           'As a licensed EMI the client carries its own AML/CFT obligations. Sanctions and PEP screening runs against the wallet\'s own customer record, with the same governed-threshold approach used in our banking work.',
+        ],
+      },
+    ],
+    engineeringNotes: [
+      {
+        heading: 'Onboarding designed around the unhappy paths',
+        body: [
+          'Wallet onboarding is where most digital financial products lose their users, and almost never because of the happy path. Verification mismatches on entirely legitimate customers are common: names transliterated from Urdu have several valid Roman spellings, and honorifics and middle names appear inconsistently across records.',
+          'Exact string comparison against an authoritative record therefore rejects real people at a rate that surprises teams building it for the first time. Comparison is normalised aggressively, and near-matches are routed to review rather than refused outright.',
+          'Upstream verification services also have outages. Onboarding degrades rather than fails: the customer completes what they can and verification resolves asynchronously. A flow that dead-ends on an upstream timeout loses that customer permanently — they do not come back and try again later.',
+        ],
+      },
+      {
+        heading: 'Tiered limits instead of a single verification gate',
+        body: [
+          'Assurance is modelled in tiers, each unlocking a defined level of capability, rather than as one binary gate. A customer who cannot complete a biometric check is not rejected; they hold a capped product with a documented route to upgrade.',
+          'This is better product and better compliance simultaneously. Regulators expect risk-based customer due diligence, and a single fixed gate is not risk-based — it applies the same friction to a low-value wallet as to full transfer capability.',
+        ],
+      },
+      {
+        heading: 'Fraud controls that assume a shared device',
+        body: [
+          'Device-binding heuristics imported from markets where one person owns one phone behave badly where handset sharing is ordinary. Controls calibrated on that assumption generate false positives concentrated among lower-income users — the population financial inclusion is meant to reach.',
+          'Signals were weighted accordingly, with behavioural and velocity patterns given more weight than device identity alone.',
         ],
       },
     ],
@@ -321,6 +401,29 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
     ],
+    engineeringNotes: [
+      {
+        heading: 'FHIR resources as the domain model, not an export format',
+        body: [
+          'The common error in healthcare integration is building an internal record model and mapping to FHIR at the boundary. That holds until the standard needs something the internal model has no room for — provenance, coded observations, the granularity of a care-team relationship — and the gap is then closed under deadline.',
+          'Letting the interoperability standard inform the domain model from the start costs more in early design and considerably less across the life of the system. It also means an external integration request is a configuration exercise rather than a project.',
+        ],
+      },
+      {
+        heading: 'Audit logging sized as a primary feature',
+        body: [
+          'Under HIPAA the access log is not infrastructure, it is evidence. It has to be append-only, because a log the writing system can amend proves nothing, and it has to be queryable by patient and by time window, because that is the axis an investigation actually uses.',
+          'Both properties are cheap at design time and painful to retrofit onto a live system carrying years of history. The retention policy was set as a product decision with clinical and legal input rather than as a database default.',
+        ],
+      },
+      {
+        heading: 'Minimum necessary access enforced structurally',
+        body: [
+          'The HIPAA minimum-necessary principle is frequently implemented as a policy document and a training slide. Enforced structurally, it means role and care-relationship checks sit in the data access layer rather than in each screen, so a new interface cannot accidentally widen access.',
+          'Break-glass access is provided deliberately — clinicians need it — but it is loud rather than silent: separately recorded, attributed, and surfaced for review rather than buried in a general log.',
+        ],
+      },
+    ],
     outcome: [
       'Patient identity is unified across sites. PHI access is fully reconstructible for audit and has been exercised against real queries.',
       'Laboratory and billing integrations run over FHIR where partners support it and HL7 v2 where they do not, without a separate adapter per partner.',
@@ -381,6 +484,29 @@ export const caseStudies: CaseStudy[] = [
         heading: 'Remote vitals with provenance',
         body: [
           'Vitals captured from patient devices are stored with their source and capture method attached, so a clinician reading them later knows whether a reading came from a validated device or a patient\'s self-report. An unlabelled measurement is a liability.',
+        ],
+      },
+    ],
+    engineeringNotes: [
+      {
+        heading: 'Designing for degraded connectivity as the normal case',
+        body: [
+          'Telemedicine built on the assumption of stable bandwidth fails exactly where it is most needed. Sessions degrade progressively — video drops to audio, audio drops to structured asynchronous exchange — rather than terminating on a connectivity dip.',
+          'The clinically important consequence is that a consultation interrupted mid-way does not lose the record of what was already discussed. Notes and orders persist independently of session state, so a reconnect resumes rather than restarts.',
+        ],
+      },
+      {
+        heading: 'Clinical safety constraints on the interface',
+        body: [
+          'The interface treats identity confirmation and consent as blocking steps rather than as dismissible prompts, because a consultation conducted with the wrong record open is a patient safety event, not a data quality issue.',
+          'Prescribing and referral actions are deliberately harder to complete than everything else in the product. Optimising them for speed would be optimising the wrong variable.',
+        ],
+      },
+      {
+        heading: 'Handling of recordings and sensitive media',
+        body: [
+          'The default is not to retain consultation media. Where retention is required, it is scoped by explicit consent, encrypted under a distinct key context from general application data, and access to it is individually auditable.',
+          'Data not held cannot be breached or mishandled by a future integration nobody has designed yet — the strongest control available, and the cheapest.',
         ],
       },
     ],
@@ -448,6 +574,29 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
     ],
+    engineeringNotes: [
+      {
+        heading: 'Verification as graded evidence rather than a boolean',
+        body: [
+          'A national identity portal serves the whole population, including the part of it whose records are imperfect. Treating verification as pass or fail leaves no defined behaviour for the substantial minority who are legitimate but do not match cleanly.',
+          'Assurance tiers make the ambiguous cases ordinary rather than exceptional, each with a documented path to a higher tier, so a mismatch becomes a next step rather than a dead end.',
+        ],
+      },
+      {
+        heading: 'Biometric fallback as an accessibility requirement',
+        body: [
+          'Fingerprint capture fails at rates that correlate with occupation and age — manual work wears ridges down, and older citizens have measurably higher failure rates. A system that requires biometric success excludes specific groups of people by construction.',
+          'A documented alternative route is therefore not a convenience feature. For a public-sector platform it is the difference between a service and a barrier, and it has to be designed rather than improvised at a counter.',
+        ],
+      },
+      {
+        heading: 'Storing outcomes, not raw biometrics',
+        body: [
+          'The system retains the fact of verification, its timestamp, the assurance level reached and a reference — not raw templates or images, absent a specific documented lawful reason.',
+          'Biometric data is the highest-consequence category anyone can hold: permanently identifying and impossible to reissue after a compromise, unlike a password or a card number. Most platforms have no need for it once the check has completed.',
+        ],
+      },
+    ],
     outcome: [
       'Verification moved from in-person to online with asynchronous handling that tolerates upstream outages rather than propagating them to citizens.',
       'The portal met the agency\'s accessibility requirement as a build property rather than through a remediation project.',
@@ -509,6 +658,29 @@ export const caseStudies: CaseStudy[] = [
         heading: 'E-signature with a retention model',
         body: [
           'Signature validity has a legal retention requirement attached, so the signing workflow was designed together with the retention model rather than treating storage as an afterthought.',
+        ],
+      },
+    ],
+    engineeringNotes: [
+      {
+        heading: 'Calculation logic versioned against effective dates',
+        body: [
+          'Revenue rules change, and they change with effect from a date rather than from deployment. A system that applies current logic to a historical filing produces a wrong answer confidently, which is worse than failing.',
+          'Calculation rules are versioned and selected by the effective date of the filing rather than by what is current, so a reassessment of a prior period reproduces the position that actually applied at the time.',
+        ],
+      },
+      {
+        heading: 'Designing for citizens who file once a year',
+        body: [
+          'A tax portal has no regular users. Almost everyone arrives unfamiliar, under deadline, and often anxious — the opposite of a daily-use enterprise tool where learned behaviour carries the interface.',
+          'That argues for explicitness over efficiency: no hidden state, no assumed prior knowledge, and validation that explains what is wrong in the filer\'s terms rather than reporting a field-level error. Saving partial progress is essential rather than a nicety, because sessions are interrupted.',
+        ],
+      },
+      {
+        heading: 'Peak load is the design point, not the average',
+        body: [
+          'Filing traffic is extremely non-uniform: a large share of annual volume arrives in the final days before a statutory deadline. Capacity planned from averages fails precisely when failure is most visible and least excusable.',
+          'Because the deadline is statutory, an outage is not lost revenue but a citizen unable to meet a legal obligation. The asymmetry justifies provisioning that looks wasteful for most of the year.',
         ],
       },
     ],
@@ -575,6 +747,29 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
     ],
+    engineeringNotes: [
+      {
+        heading: 'Deciding the system of record before anything else',
+        body: [
+          'The integration problems we are most often asked to remediate reduce to two systems both believing they own the same entity. Once that exists there is no principled way to resolve a conflict, and reconciliation becomes permanent operational work.',
+          'Ownership was therefore settled per entity — item master, inventory position, order, customer — before any interface was designed. Copies are explicitly copies, with a defined direction of authority.',
+        ],
+      },
+      {
+        heading: 'Migration of non-conforming history as a business decision',
+        body: [
+          'Historical manufacturing data almost never conforms to the model a new system expects: missing mandatory fields, identifiers that were free text, duplicate entities never merged, units recorded inconsistently.',
+          'What to do with that history is a business decision with regulatory and financial implications, not a technical one. It needs a named owner early, because the alternative is engineers silently deciding what a record means — which is how a migration produces a clean-looking dataset nobody trusts.',
+        ],
+      },
+      {
+        heading: 'Shop-floor interfaces designed for the actual environment',
+        body: [
+          'Interfaces intended for a production floor are used with gloves, in poor light, by people who cannot stop what they are doing to read a dialogue. Touch targets, contrast and error recovery were designed against that reality rather than against an office desktop.',
+          'Where an action is destructive or hard to reverse, the interface is deliberately slower. Speed is the wrong objective at exactly the points where a mistake is expensive.',
+        ],
+      },
+    ],
     outcome: [
       'Statutory reporting across three jurisdictions is maintained by the package vendor. Engineering effort concentrated on the scheduling capability that differentiates the business.',
       'Either side of the architecture can be replaced independently, which was not true of the original plan.',
@@ -635,6 +830,30 @@ export const caseStudies: CaseStudy[] = [
         heading: 'One forecast definition, regional inputs',
         body: [
           'Forecasting logic was unified so the consolidated number means one thing, while allowing regions to reflect genuinely different sales motions in their inputs. The disagreements that remain are now about inputs rather than about definitions, which is a much more productive argument.',
+        ],
+      },
+    ],
+    engineeringNotes: [
+      {
+        heading: 'Explainability chosen for adoption, not compliance',
+        body: [
+          'The compliance work in this practice keeps models off the decision path because regulators require justification. Here the same architecture was chosen for an entirely different reason: adoption.',
+          'A salesperson shown a bare number will ignore it, and a scoring system that is ignored produces no value while continuing to cost money — which is what the client had already bought once. Surfacing the factors behind a score converts it from an assertion into an argument, and an argument can be engaged with.',
+          'It is worth noting that the same design answers two unrelated problems. That is usually a sign the constraint is real rather than local.',
+        ],
+      },
+      {
+        heading: 'Unifying the forecast definition without flattening the regions',
+        body: [
+          'Regional sales motions differ genuinely, and forcing one process onto all of them produces compliance in the tool and reality in a spreadsheet somewhere else.',
+          'The definition of the forecast was unified so the consolidated number means one thing, while inputs remain regional. The arguments that survive are now about inputs rather than about definitions, which is a considerably more productive disagreement to be having.',
+        ],
+      },
+      {
+        heading: 'Keeping the existing marketing automation in place',
+        body: [
+          'Replacing adjacent systems that work is a common way to turn a contained project into an unbounded one. The existing automation stayed, with a defined ownership boundary and a single direction of data authority.',
+          'Integrating with a system you did not build and cannot change is more constrained engineering than replacing it, and almost always the cheaper decision overall.',
         ],
       },
     ],

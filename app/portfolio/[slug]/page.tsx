@@ -150,6 +150,23 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   </React.Fragment>
                 ))}
 
+                {/* Engineering detail — the trade-offs behind the approach.
+                    Rendered only when present so a case study without it is
+                    unaffected. */}
+                {cs.engineeringNotes && cs.engineeringNotes.length > 0 && (
+                  <>
+                    <h2>Engineering notes</h2>
+                    {cs.engineeringNotes.map((n) => (
+                      <React.Fragment key={n.heading}>
+                        <h3>{n.heading}</h3>
+                        {n.body.map((p, i) => (
+                          <p key={i}>{p}</p>
+                        ))}
+                      </React.Fragment>
+                    ))}
+                  </>
+                )}
+
                 <h2>Outcome</h2>
                 {cs.outcome.map((p, i) => (
                   <p key={i}>{p}</p>

@@ -435,6 +435,30 @@ export const servicePages: ServicePage[] = [
           'App store review is also a schedule dependency, not an afterthought — particularly for health and finance categories, where additional documentation is routinely requested.',
         ],
       },
+      {
+        heading: 'Choosing native or cross-platform on the actual constraint',
+        body: [
+          'This decision is usually argued on developer preference and settled on cost. Neither is the right axis. The question that matters is how much of the product depends on platform capability that cross-platform frameworks reach late or imperfectly — deep background execution, specialised hardware, biometric and secure-enclave behaviour, or heavy real-time graphics.',
+          'Where an application is mostly presenting data, capturing input and calling services, cross-platform is straightforwardly the better economics: one codebase, one set of business logic, consistent behaviour. Where the product lives close to platform capability, the cross-platform saving evaporates into bridging code that is harder to maintain than two native implementations would have been.',
+          'We would rather have this conversation before the estimate than after the first platform-specific requirement lands.',
+        ],
+      },
+      {
+        heading: 'Offline is a data-model decision, not a caching feature',
+        body: [
+          'Teams frequently plan to add offline support later, which is rarely possible, because offline capability is determined by whether the data model tolerates divergence and reconciliation rather than by whether responses are cached.',
+          'The hard question is what happens when two devices change the same record while both are disconnected. Last-write-wins is simple and silently destroys data. Anything better requires deciding, per entity, what a conflict means and who resolves it. That is a domain decision, and it has to be taken before the schema is fixed.',
+          'For field and clinical applications, where connectivity is genuinely unreliable, this is the single most consequential design decision in the product.',
+        ],
+      },
+      {
+        heading: 'Security on a device you do not control',
+        body: [
+          'A mobile application runs on hardware the user owns, which may be rooted, shared, or compromised. Anything the client can decide, an attacker can decide. Authorisation is therefore enforced server-side without exception, and the client is treated as a rendering surface rather than as a trust boundary.',
+          'Credentials and tokens belong in platform secure storage rather than in application preferences, session lifetimes are short with silent refresh, and sensitive data is not written to logs, screenshots or crash reports — all three of which routinely leak more than teams expect.',
+          'For financial and health applications we also assume the device may be shared, which changes session and notification design: a push preview that reveals a balance or a clinical detail on a lock screen is a disclosure.',
+        ],
+      },
     ],
     includes: [
       'Native iOS (Swift) and Android (Kotlin) development',
@@ -510,6 +534,28 @@ export const servicePages: ServicePage[] = [
           'It does not belong on a regulatory critical path. If a decision must be explained to an examiner, a model score is not an explanation. In AML in particular we keep models beside the deterministic rule engine rather than inside it: the rules produce the alerts of record, the model orders the queue. The same logic applies wherever an auditable reason is required for each individual decision.',
         ],
       },
+      {
+        heading: 'Where automation pays, and where it quietly costs',
+        body: [
+          'Automation returns most on work that is high-volume, rule-stable and currently manual — reconciliation, document extraction, routine triage. It returns least on work that looks repetitive but carries frequent judgement calls, because each exception has to be handled somewhere, and an automation that covers eighty per cent of cases while making the remaining twenty harder to resolve is a net loss.',
+          'The honest measure is not the proportion of volume automated. It is total effort before against total effort after, including the effort of handling what the automation could not.',
+        ],
+      },
+      {
+        heading: 'Keeping models off paths that require justification',
+        body: [
+          'The pattern we recommend in compliance work generalises further than people expect: use models where being right most of the time is valuable and being wrong is recoverable, and keep deterministic logic wherever a decision has to be explained.',
+          'Prioritising a queue, drafting a summary, extracting a field for human confirmation — all recoverable. Deciding an outcome that a regulator, an auditor or a customer can challenge is not, and a model score is not a defensible answer to "why did the system do that".',
+          'This is not scepticism about the technology. It is placing it where its failure mode is affordable.',
+        ],
+      },
+      {
+        heading: 'Cloud cost is an architecture property',
+        body: [
+          'Cloud spend that grows faster than usage is almost never a pricing problem. It is data egress between regions nobody intended, over-provisioned capacity sized for a peak that occurs twice a year, storage tiers never revisited, and non-production environments running around the clock.',
+          'Each of those is an architectural decision, which means each is fixable by design rather than by negotiation. We would rather size infrastructure against a measured load profile than against a guess with a safety multiple applied, because the multiple is where the money goes.',
+        ],
+      },
     ],
     includes: [
       'Cloud migration assessment and execution (AWS, Azure)',
@@ -583,6 +629,29 @@ export const servicePages: ServicePage[] = [
         body: [
           'Core Web Vitals are measured on real devices on real networks. A platform tuned on a fast connection and a modern laptop will disappoint a user on a mid-range Android phone on a congested mobile network — which, for most of the markets our clients serve, is the median user rather than the edge case.',
           'The work is mostly unglamorous: bounded image dimensions to prevent layout shift, self-hosted critical assets rather than third-party requests on the critical path, deferred non-essential JavaScript, and a real budget on the largest contentful paint.',
+        ],
+      },
+      {
+        heading: 'Core Web Vitals are a measurement problem before they are a code problem',
+        body: [
+          'Most teams optimise against a lab score produced on a fast machine over a fast connection, then find the field data disagrees. The two measure different things: the lab number is a synthetic run, while ranking-relevant data comes from real users on real devices and networks.',
+          'We instrument field measurement first, because it is the only thing that tells you which of the three metrics is actually failing and for whom. Largest Contentful Paint problems are usually an image or font loading decision. Interaction to Next Paint problems are usually long tasks blocking the main thread, frequently from third-party scripts nobody has audited. Cumulative Layout Shift is nearly always unreserved space for an image, an ad slot, or a late-loading font.',
+          'Fixing the wrong one is common and expensive. The diagnosis is cheap by comparison.',
+        ],
+      },
+      {
+        heading: 'Third-party scripts are the usual cause of poor performance',
+        body: [
+          'A site that scores well on its own code can still be slow because of tag managers, chat widgets, analytics and marketing pixels — each adding a DNS lookup, a TLS handshake and main-thread work, and each typically added by someone outside engineering with no performance review.',
+          'The practical discipline is a budget: every third-party script has a named owner and a stated business justification, and anything failing both is removed. Where a script has to stay, it is loaded so that it cannot block first paint, and self-hosted where licensing permits so the request stays same-origin.',
+          'This also has a privacy dimension that matters in regulated sectors. Every third-party request discloses your visitor\'s IP address and user agent to that provider, which is a disclosure your privacy policy has to be able to describe accurately.',
+        ],
+      },
+      {
+        heading: 'Rendering strategy chosen per route, not per project',
+        body: [
+          'The choice between static generation, server rendering and client rendering is usually made once for a whole application and then defended everywhere, which produces a site that is either needlessly dynamic or awkwardly stale.',
+          'Content that changes rarely should be static and served from the edge. Content personalised per request has to be server-rendered. An interactive tool where only the user sees the result can be client-rendered without cost to search visibility. Deciding this per route is more thought up front and materially better on every axis afterwards.',
         ],
       },
     ],
