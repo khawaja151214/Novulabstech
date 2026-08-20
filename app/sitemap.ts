@@ -4,6 +4,7 @@ import { servicePages } from '@/content/servicePages';
 import { caseStudies } from '@/content/caseStudies';
 import { blogPosts } from '@/content/blogPosts';
 import { legalPages } from '@/content/legalPages';
+import { teamMembers } from '@/content/siteData';
 
 /**
  * XML sitemap, served at /sitemap.xml.
@@ -64,6 +65,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Author profiles. Bylines used to point at /team#slug, a fragment Google
+  // does not treat as a distinct entity, so no author had an indexable page on
+  // which to build topical authority.
+  const authorRoutes: MetadataRoute.Sitemap = teamMembers.map((m) => ({
+    url: `${SITE_URL}/team/${m.slug}`,
+    lastModified: buildDate,
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  }));
+
   const legalRoutes: MetadataRoute.Sitemap = legalPages.map((p) => ({
     url: `${SITE_URL}/legal/${p.slug}`,
     lastModified: buildDate,
@@ -71,5 +82,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.2,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...blogRoutes, ...legalRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...blogRoutes, ...authorRoutes, ...legalRoutes];
 }

@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: post.seoTitle ?? post.title,
     description: post.description,
     keywords: post.tags,
-    authors: [{ name: post.author, url: canonical(`/team#${post.authorSlug}`) }],
+    authors: [{ name: post.author, url: canonical(`/team/${post.authorSlug}`) }],
     // THE FIX. Previously absent, so the root layout's `alternates.canonical:
     // '/'` was inherited and every post declared rel=canonical → the homepage,
     // instructing Google to drop the entire /blog/ tree from the index.
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.description,
       publishedTime: post.publishedISO,
       modifiedTime: post.modifiedISO,
-      authors: [canonical(`/team#${post.authorSlug}`)],
+      authors: [canonical(`/team/${post.authorSlug}`)],
       section: post.category,
       tags: post.tags,
       images: [{ url: post.coverImage, width: 1200, height: 630, alt: post.coverAlt }],
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             datePublished: post.publishedISO,
             dateModified: post.modifiedISO,
             authorName: post.author,
-            authorPath: `/team#${post.authorSlug}`,
+            authorPath: `/team/${post.authorSlug}`,
             section: post.category,
             keywords: post.tags,
           }),
@@ -125,7 +125,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 string, which is unresolvable for E-E-A-T and for LLM retrieval. */}
             <span>
               By{' '}
-              <Link href={`/team#${post.authorSlug}`} rel="author">
+              <Link href={`/team/${post.authorSlug}`} rel="author">
                 <strong>{post.author}</strong>
               </Link>
             </span>{' '}
@@ -221,7 +221,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       />
                       <div>
                         <div style={{ fontWeight: 700 }}>
-                          <Link href={`/team#${author.slug}`}>{author.name}</Link>
+                          <Link href={`/team/${author.slug}`}>{author.name}</Link>
                         </div>
                         <div style={{ fontSize: '0.85rem', color: 'var(--tx3)' }}>{author.role}</div>
                         <p className="mt-2 mb-0" style={{ fontSize: '0.92rem' }}>

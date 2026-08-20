@@ -65,7 +65,7 @@ export default function BlogPage() {
               url: canonical(`/blog/${p.slug}`),
               datePublished: p.publishedISO,
               dateModified: p.modifiedISO,
-              author: { '@type': 'Person', name: p.author, url: canonical(`/team#${p.authorSlug}`) },
+              author: { '@type': 'Person', name: p.author, url: canonical(`/team/${p.authorSlug}`) },
             })),
           },
         ]}
