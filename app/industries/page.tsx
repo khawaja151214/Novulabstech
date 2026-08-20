@@ -6,6 +6,7 @@ import FintechDeepDive from '@/components/sections/industries/FintechDeepDive';
 import HealthcareDeepDive from '@/components/sections/industries/HealthcareDeepDive';
 import GovernmentDeepDive from '@/components/sections/industries/GovernmentDeepDive';
 import MoreSectorsSection from '@/components/sections/industries/MoreSectorsSection';
+import RegulatedDeliverySection from '@/components/sections/industries/RegulatedDeliverySection';
 import IndustriesCta from '@/components/sections/industries/IndustriesCta';
 
 export const metadata: Metadata = {
@@ -59,6 +60,7 @@ export default function IndustriesPage() {
       <HealthcareDeepDive />
       <GovernmentDeepDive />
       <MoreSectorsSection />
+      <RegulatedDeliverySection />
       <IndustriesCta />
     </>
   );

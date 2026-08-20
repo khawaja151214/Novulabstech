@@ -6,6 +6,7 @@ import ErpSection from '@/components/sections/solutions/ErpSection';
 import CrmSection from '@/components/sections/solutions/CrmSection';
 import PaySection from '@/components/sections/solutions/PaySection';
 import AmlSection from '@/components/sections/solutions/AmlSection';
+import PlatformSelectionSection from '@/components/sections/solutions/PlatformSelectionSection';
 import SolutionsCta from '@/components/sections/solutions/SolutionsCta';
 
 export const metadata: Metadata = {
@@ -123,6 +124,7 @@ export default function SolutionsPage() {
       <CrmSection />
       <PaySection />
       <AmlSection />
+      <PlatformSelectionSection />
       <SolutionsCta />
     </>
   );

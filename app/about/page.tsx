@@ -3,6 +3,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import { webPageSchema } from '@/lib/schema';
 import AboutHero from '@/components/sections/about/AboutHero';
 import MissionSection from '@/components/sections/about/MissionSection';
+import HowWeWorkSection from '@/components/sections/about/HowWeWorkSection';
 import AboutPhotos from '@/components/sections/about/AboutPhotos';
 import AboutCta from '@/components/sections/about/AboutCta';
 
@@ -52,6 +53,7 @@ export default function AboutPage() {
       <AboutHero />
       <div className="divider"></div>
       <MissionSection />
+      <HowWeWorkSection />
       <AboutPhotos />
       <AboutCta />
     </>
