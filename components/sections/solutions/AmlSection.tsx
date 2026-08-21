@@ -28,7 +28,15 @@ const AmlSection: React.FC = () => {
           </div>
           <div className="col-lg-6" data-aos="fade-right">
             <div className="sec-img">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=75" alt="AML Platform" style={{ height: '380px', width: '100%', objectFit: 'cover' }} />
+              <img
+                src="/og/aml-cft-compliance-software.jpg"
+                alt="NovuShield AML and CFT compliance platform"
+                width={1200}
+                height={630}
+                loading="lazy"
+                decoding="async"
+                style={{ height: '380px', width: '100%', objectFit: 'cover' }}
+              />
             </div>
           </div>
         </div>

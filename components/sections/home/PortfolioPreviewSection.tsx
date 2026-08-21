@@ -33,7 +33,7 @@ const PortfolioPreviewSection: React.FC = () => {
             </Button>
           </div>
         </div>
-        <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="row row-cols-1 row-cols-md-3 g-4 depth-row">
           {previewProjects.map((project, i) => (
             <PortfolioCard key={project.slug} project={project} index={i} />
           ))}

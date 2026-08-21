@@ -44,10 +44,13 @@ const HeroSection: React.FC = () => {
           <div className="col-lg-6 hero-visual">
             <TiltCard className="hero-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=80"
-                alt="Enterprise software development team"
-                width={900}
-                height={600}
+                src="/og/enterprise-software-development.jpg"
+                alt="Enterprise software engineering for regulated industries"
+                width={1200}
+                height={630}
+                loading="lazy"
+                decoding="async"
+                
               />
               <div className="hero-img-overlay"></div>
               <div className="hero-img-shine"></div>

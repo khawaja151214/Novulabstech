@@ -1377,41 +1377,35 @@ footer::before{
 
 #stats{
   background:
-    linear-gradient(rgba(248, 250, 252, 0.95),rgba(226, 232, 240, 0.94)),
-    url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248, 250, 252, 0.95),rgba(226, 232, 240, 0.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 
 #services{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(245,240,222,.95)),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(245,240,222,.95));
 }
 
 #why{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 
 #industries{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95)),
-    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95));
 }
 
 #tech{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 
 #portfolio{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95)),
-    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95));
 }
 
 #process{
@@ -1423,14 +1417,12 @@ footer::before{
 
 #faq{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(245,240,222,.95)),
-    url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(245,240,222,.95));
 }
 
 #cta-banner{
   background:
-    linear-gradient(rgba(248,244,232,.88),rgba(243,238,218,.85)),
-    url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.88),rgba(243,238,218,.85));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 
@@ -1500,8 +1492,7 @@ footer::before{
 
 #about{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 
@@ -1510,14 +1501,12 @@ footer::before{
    ═══════════════════════════════════════════════ */
 #mission{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #team-photos{
   background:
-    linear-gradient(rgba(248,244,232,.92),rgba(245,240,222,.91)),
-    url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.92),rgba(245,240,222,.91));
 }
 #leadership{
   background:
@@ -1527,8 +1516,7 @@ footer::before{
 }
 #certifications{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95)),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95));
 }
 
 /* ═══════════════════════════════════════════════
@@ -1536,41 +1524,34 @@ footer::before{
    ═══════════════════════════════════════════════ */
 #web{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(253,252,248,.94)),
-    url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(253,252,248,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #enterprise{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95)),
-    url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95));
 }
 #fintech{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #mobile{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(245,240,222,.95)),
-    url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(245,240,222,.95));
 }
 #healthcare{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #compliance{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95)),
-    url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95));
 }
 #cloud{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 
@@ -1579,25 +1560,21 @@ footer::before{
    ═══════════════════════════════════════════════ */
 #erp{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #crm{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(245,240,222,.95)),
-    url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(245,240,222,.95));
 }
 #pay{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #aml{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95)),
-    url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95));
 }
 
 /* ═══════════════════════════════════════════════
@@ -1605,20 +1582,17 @@ footer::before{
    ═══════════════════════════════════════════════ */
 #banking{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #government{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #more-sectors{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95)),
-    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95));
 }
 
 /* ═══════════════════════════════════════════════
@@ -1626,8 +1600,7 @@ footer::before{
    ═══════════════════════════════════════════════ */
 #portfolio-grid{
   background:
-    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95)),
-    url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(248,244,232,.96),rgba(243,238,218,.95));
 }
 
 /* ═══════════════════════════════════════════════
@@ -1635,8 +1608,7 @@ footer::before{
    ═══════════════════════════════════════════════ */
 #contact-process{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 #contact-form-sec{
@@ -1646,8 +1618,7 @@ footer::before{
 }
 #contact-faq{
   background:
-    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94)),
-    url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=70') center/cover no-repeat;
+    linear-gradient(rgba(255,255,255,.95),rgba(252,250,246,.94));
   backdrop-filter:var(--blur-sm);-webkit-backdrop-filter:var(--blur-sm);
 }
 
@@ -1910,4 +1881,103 @@ p, li {
      too, otherwise the hero sits permanently over-zoomed for these users. */
   .phero-bg[data-parallax] img { transform: scale(1.04); }
   .phero-grid[data-parallax]   { inset: 0; }
+}
+
+/* ============================================================
+   ROUTE TRANSITION, 3D DEPTH, HORIZONTAL RAIL
+   ============================================================ */
+
+/* ── Route transition ──────────────────────────────────────────
+   Enter-only. A leave animation would hold the old page on screen
+   while the new one is already rendered, adding latency to every
+   navigation in exchange for a flourish. 280ms is long enough to
+   read as intentional and short enough not to be felt as a wait. */
+.route-enter {
+  animation: routeEnter 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes routeEnter {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── 3D card depth ─────────────────────────────────────────────
+   Perspective lives on the row so sibling cards share one vanishing
+   point. Setting perspective per-card gives each its own, which reads
+   as a set of unrelated objects rather than one plane — the usual
+   reason CSS 3D looks cheap.
+
+   Guarded on `hover: hover` and `pointer: fine`: on touch there is no
+   hover state, and applying these rules there leaves a card stuck in
+   a tilted position after a tap. */
+@media (hover: hover) and (pointer: fine) {
+  .depth-row { perspective: 1200px; }
+
+  .depth-row > * { transform-style: preserve-3d; }
+
+  .depth-row .pcard,
+  .depth-row .gcard {
+    transition:
+      transform 420ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 420ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: auto;
+  }
+
+  .depth-row > *:hover .pcard,
+  .depth-row > *:hover .gcard {
+    /* Small angles only. Beyond ~4deg the text edge softens and the
+       card reads as a gimmick rather than as depth. */
+    transform: translate3d(0, -6px, 0) rotateX(2.2deg) rotateY(-2.2deg);
+    box-shadow: var(--sh-xl);
+  }
+
+  /* Lift inner content slightly off the card face so the tilt has
+     genuine parallax rather than being a flat rotated image. */
+  .depth-row .pcard > *,
+  .depth-row .gcard > * {
+    transform: translateZ(18px);
+  }
+}
+
+/* ── Horizontal scroll rail ────────────────────────────────────
+   A real scroll container. The vertical-scroll coupling in
+   HorizontalScroll.tsx only assists; swipe, shift-wheel, drag,
+   keyboard and assistive tech all work without it. Overflow is
+   contained here so the document never scrolls sideways. */
+.hscroll-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: auto;
+  padding-bottom: 1rem;
+  /* No scroll-snap here. Snapping re-targets the container whenever
+     scrollLeft is written, which silently reverts every frame the
+     scroll-linked coupling produces — the two mechanisms are trying to
+     own the same property. Native scrolling still works; it just has
+     no snap points. */
+  -webkit-overflow-scrolling: touch;
+}
+.hscroll-track > * {
+  flex: 0 0 auto;
+  width: min(340px, 78vw);
+}
+.hscroll-track:focus-visible {
+  outline: 2px solid var(--a1);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+/* Thin, visible scrollbar — the affordance is what tells a user the
+   rail is scrollable at all. Hiding it is a common and bad default. */
+.hscroll-track::-webkit-scrollbar { height: 6px; }
+.hscroll-track::-webkit-scrollbar-track { background: var(--bg-2); border-radius: 100px; }
+.hscroll-track::-webkit-scrollbar-thumb { background: var(--p1); border-radius: 100px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .route-enter { animation: none; }
+  .depth-row .pcard,
+  .depth-row .gcard,
+  .depth-row > *:hover .pcard,
+  .depth-row > *:hover .gcard { transform: none; transition: none; }
+  .depth-row .pcard > *,
+  .depth-row .gcard > * { transform: none; }
 }

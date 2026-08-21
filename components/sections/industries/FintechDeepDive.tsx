@@ -46,7 +46,15 @@ const FintechDeepDive: React.FC = () => {
           </div>
           <div className="col-lg-6" data-aos="fade-left">
             <div className="sec-img text-center">
-              <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=700&q=75" alt="Banking Fintech" style={{ height: '400px', width: '100%', objectFit: 'cover' }} />
+              <img
+                src="/og/fintech-software-development.jpg"
+                alt="Core banking and fintech platform engineering"
+                width={1200}
+                height={630}
+                loading="lazy"
+                decoding="async"
+                style={{ height: '400px', width: '100%', objectFit: 'cover' }}
+              />
             </div>
           </div>
         </div>

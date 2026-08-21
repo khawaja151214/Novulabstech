@@ -46,7 +46,7 @@ const InsightsSection: React.FC = () => {
             </Button>
           </div>
         </div>
-        <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="row row-cols-1 row-cols-md-3 g-4 depth-row">
           {latest.map((post, i) => (
             <BlogCard key={post.slug} post={post} index={i} />
           ))}

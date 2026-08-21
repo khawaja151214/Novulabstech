@@ -21,7 +21,15 @@ const GovernmentDeepDive: React.FC = () => {
           </div>
           <div className="col-lg-6" data-aos="fade-left">
             <div className="sec-img">
-              <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=700&q=75" alt="Government Public Sector" style={{ height: '400px', width: '100%', objectFit: 'cover' }} />
+              <img
+                src="/portfolio/natid-verification-portal.jpg"
+                alt="National identity verification portal for the public sector"
+                width={1200}
+                height={630}
+                loading="lazy"
+                decoding="async"
+                style={{ height: '400px', width: '100%', objectFit: 'cover' }}
+              />
             </div>
           </div>
         </div>
