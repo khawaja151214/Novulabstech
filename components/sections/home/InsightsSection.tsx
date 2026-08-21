@@ -25,7 +25,7 @@ const InsightsSection: React.FC = () => {
     <section className="sec bg-w z1" id="insights">
       <div className="container">
         <div className="row justify-content-between align-items-end mb-5">
-          <div className="col-lg-7" data-aos="fade-up">
+          <div className="col-lg-7" data-reveal="up">
             <span className="stag">Insights</span>
             {/* Deliberately not "Our Blog" — the heading targets the engineering
                 intent the articles actually serve, and avoids competing with
@@ -40,7 +40,7 @@ const InsightsSection: React.FC = () => {
               interoperability, with primary sources cited throughout.
             </p>
           </div>
-          <div className="col-auto" data-aos="fade-up">
+          <div className="col-auto" data-reveal="up">
             <Button href="/blog" variant="glass">
               All insights <i className="bi bi-arrow-right ms-1"></i>
             </Button>

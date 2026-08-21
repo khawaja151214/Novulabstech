@@ -6,7 +6,7 @@ const PaySection: React.FC = () => {
     <section id="pay" className="sec bg-w">
       <div className="container">
         <div className="row align-items-center g-5">
-          <div className="col-lg-6" data-aos="fade-right">
+          <div className="col-lg-6" data-reveal="right">
             <span className="stag">Solution 03</span>
             <h2 className="stitle mt-3">NovuPay<br /><span className="gtxt">Payment Infrastructure</span></h2>
             <p className="ssub mb-4">Enterprise payment processing platform — Mastercard and Visa certified, engineered to PCI-DSS, handling billions in annual transaction volume with 99.99% uptime SLA.</p>
@@ -19,7 +19,7 @@ const PaySection: React.FC = () => {
             </ul>
             <Button href="/contact" variant="grad"><i className="bi bi-calendar-check me-1"></i>Consult About NovuPay</Button>
           </div>
-          <div className="col-lg-6" data-aos="fade-left">
+          <div className="col-lg-6" data-reveal="left">
             <div className="sec-img">
               <img
                 src="/portfolio/tranzaxis-payment-gateway.jpg"

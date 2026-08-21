@@ -10,7 +10,10 @@
 
    Do not move these back to <link rel="stylesheet"> tags. */
 @import 'bootstrap/dist/css/bootstrap.min.css';
-@import 'bootstrap-icons/font/bootstrap-icons.css';
+/* Subset — see app/bootstrap-icons.subset.css. The full stylesheet ships 2,050
+   glyph rules for the 60 icons this site uses, ~96KB of CSS per page for icons
+   that never render. Regenerate with: node scripts/subset-bootstrap-icons.js */
+@import './bootstrap-icons.subset.css';
 
 @import "tailwindcss";
 
@@ -1838,8 +1841,7 @@ p, li {
 
   html { scroll-behavior: auto; }
 
-  [data-reveal],
-  [data-aos] {
+  [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -1980,4 +1982,45 @@ p, li {
   .depth-row > *:hover .gcard { transform: none; transition: none; }
   .depth-row .pcard > *,
   .depth-row .gcard > * { transform: none; }
+}
+
+/* ── Directional entrance reveal ───────────────────────────────
+   Replaces AOS entirely. AOS cost 14KB of JS, a remote stylesheet
+   from jsdelivr, and an init that polled every 100ms for up to five
+   seconds waiting for its own global to appear. Only three of its
+   animations were ever used, all of which are two CSS rules.
+
+   Direction is carried by the attribute value so one selector set
+   covers every case: [data-reveal] alone fades up.    ============================================================ */
+[data-reveal='right'] { transform: translate3d(-26px, 0, 0); }
+[data-reveal='left']  { transform: translate3d(26px, 0, 0); }
+[data-reveal='up']    { transform: translate3d(0, 18px, 0); }
+
+[data-reveal='is-visible'] { transform: translate3d(0, 0, 0); }
+
+/* ── Kinetic headline ──────────────────────────────────────────
+   Words rise and settle in sequence. Split is done at build time in
+   the component, not by a runtime text-splitting library, so there
+   is no layout thrash and no dependency.
+
+   The whole phrase remains a single accessible string: the wrapper
+   keeps the readable text for assistive tech while the visual spans
+   are hidden from it. Splitting text into per-word spans without
+   this makes a screen reader announce each word as a separate item. */
+.kinetic { display: inline; }
+.kinetic-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 0.5em, 0);
+  animation: kineticIn 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes kineticIn {
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kinetic-word { animation: none; opacity: 1; transform: none; }
+  [data-reveal='right'],
+  [data-reveal='left'],
+  [data-reveal='up'] { transform: none !important; }
 }

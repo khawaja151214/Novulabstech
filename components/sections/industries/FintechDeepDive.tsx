@@ -7,7 +7,7 @@ const FintechDeepDive: React.FC = () => {
     <section id="banking" className="sec bg-w">
       <div className="container">
         <div className="row align-items-center g-5">
-          <div className="col-lg-6" data-aos="fade-right">
+          <div className="col-lg-6" data-reveal="right">
             <span className="stag">Industry 01</span>
             <h2 className="stitle mt-3">Banking &amp; <span className="gtxt">Fintech</span></h2>
             <p className="mb-3">NovuLabs is the trusted technology partner for Tier-1 banks, microfinance institutions, digital banks, and fintech startups across Pakistan, UAE, and the wider MENA region.</p>
@@ -44,7 +44,7 @@ const FintechDeepDive: React.FC = () => {
             </div>
             <Button href="/contact" variant="grad"><i className="bi bi-calendar-check me-1"></i>Consult About Banking Solutions</Button>
           </div>
-          <div className="col-lg-6" data-aos="fade-left">
+          <div className="col-lg-6" data-reveal="left">
             <div className="sec-img text-center">
               <img
                 src="/og/fintech-software-development.jpg"

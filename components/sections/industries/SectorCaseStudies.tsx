@@ -41,7 +41,7 @@ const SectorCaseStudies: React.FC = () => {
     <section className="sec bg-g" id="sector-work">
       <div className="container">
         <div className="row justify-content-center mb-5">
-          <div className="col-lg-8 text-center" data-aos="fade-up">
+          <div className="col-lg-8 text-center" data-reveal="up">
             <span className="stag">Delivered work</span>
             <h2 className="stitle mt-3">
               Engagements in <span className="gtxt">each sector</span>

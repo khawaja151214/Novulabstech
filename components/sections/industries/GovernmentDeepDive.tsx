@@ -6,7 +6,7 @@ const GovernmentDeepDive: React.FC = () => {
     <section id="government" className="sec bg-w">
       <div className="container">
         <div className="row align-items-center g-5">
-          <div className="col-lg-6" data-aos="fade-right">
+          <div className="col-lg-6" data-reveal="right">
             <span className="stag">Industry 03</span>
             <h2 className="stitle mt-3">Government &amp; <span className="gtxt">Public Sector</span></h2>
             <p className="mb-3">We have extensive experience delivering government-grade software for regulatory agencies, tax authorities, and national identity infrastructure — where security, availability, and auditability are non-negotiable.</p>
@@ -19,7 +19,7 @@ const GovernmentDeepDive: React.FC = () => {
             </ul>
             <Button href="/contact" variant="grad"><i className="bi bi-calendar-check me-1"></i>Consult About Government Solutions</Button>
           </div>
-          <div className="col-lg-6" data-aos="fade-left">
+          <div className="col-lg-6" data-reveal="left">
             <div className="sec-img">
               <img
                 src="/portfolio/natid-verification-portal.jpg"

@@ -7,7 +7,7 @@ const ErpSection: React.FC = () => {
     <section id="erp" className="sec bg-w">
       <div className="container">
         <div className="row align-items-center g-5">
-          <div className="col-lg-6" data-aos="fade-right">
+          <div className="col-lg-6" data-reveal="right">
             <span className="stag">Solution 01</span>
             <h2 className="stitle mt-3">NovuERP<br /><span className="gtxt">Enterprise Resource Planning</span></h2>
             <p className="ssub mb-4">A fully integrated ERP platform covering every operational domain — finance, HR, production, procurement, inventory, and reporting — in one unified system.</p>
@@ -43,7 +43,7 @@ const ErpSection: React.FC = () => {
             </div>
             <Button href="/contact" variant="grad"><i className="bi bi-calendar-check me-1"></i>Consult About NovuERP</Button>
           </div>
-          <div className="col-lg-6" data-aos="fade-left">
+          <div className="col-lg-6" data-reveal="left">
             <div className="sec-img">
               <img
                 src="/portfolio/omnierp-manufacturing-suite.jpg"

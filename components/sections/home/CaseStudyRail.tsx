@@ -22,7 +22,7 @@ const CaseStudyRail: React.FC = () => {
     <section className="sec bg-g z1" id="case-rail">
       <div className="container">
         <div className="row justify-content-between align-items-end mb-5">
-          <div className="col-lg-7" data-aos="fade-up">
+          <div className="col-lg-7" data-reveal="up">
             <span className="stag">Every engagement</span>
             <h2 className="stitle mt-3">
               Nine builds, <span className="gtxt">start to finish</span>

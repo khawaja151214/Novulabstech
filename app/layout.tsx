@@ -199,7 +199,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             user agent to that CDN. Same-origin now, immutably cached, and no
             longer a third-party dependency for the site to function. */}
         <Script src="/vendor/bootstrap.bundle.min.js" strategy="afterInteractive" />
-        <Script src="/vendor/aos.js" strategy="lazyOnload" />
       </body>
     </html>
   );
