@@ -16,28 +16,28 @@ const MissionSection: React.FC = () => {
             <div className="row g-3">
               <div className="col-6">
                 <div className="vcard">
-                  <span className="vico">🎯</span>
+                  <span className="vico" aria-hidden="true"><i className="bi bi-bullseye"></i></span>
                   <h3 className="ctitle">Mission-Driven</h3>
                   <p className="ctext">Every project starts with understanding what success truly means for your organization.</p>
                 </div>
               </div>
               <div className="col-6">
                 <div className="vcard">
-                  <span className="vico">🔐</span>
+                  <span className="vico" aria-hidden="true"><i className="bi bi-shield-lock-fill"></i></span>
                   <h3 className="ctitle">Security-First</h3>
                   <p className="ctext">Security is the foundation of everything we build — from day one, not bolted on later.</p>
                 </div>
               </div>
               <div className="col-6">
                 <div className="vcard">
-                  <span className="vico">🚀</span>
+                  <span className="vico" aria-hidden="true"><i className="bi bi-rocket-takeoff-fill"></i></span>
                   <h3 className="ctitle">Innovation</h3>
                   <p className="ctext">We adopt emerging technologies early, keeping our clients ahead of the curve.</p>
                 </div>
               </div>
               <div className="col-6">
                 <div className="vcard">
-                  <span className="vico">🤝</span>
+                  <span className="vico" aria-hidden="true"><i className="bi bi-people-fill"></i></span>
                   <h3 className="ctitle">Partnership</h3>
                   <p className="ctext">Long-term partnerships with shared goals and shared accountability — not one-off projects.</p>
                 </div>

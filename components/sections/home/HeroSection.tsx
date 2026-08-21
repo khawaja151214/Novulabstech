@@ -5,14 +5,12 @@ import Button from '@/components/ui/Button';
 import KineticHeading from '@/components/ui/KineticHeading';
 
 // Lazy-load heavy canvas + 3D tilt — only allowed in Client Components
-const ParticlesCanvas = dynamic(() => import('@/components/ui/ParticlesCanvas'), { ssr: false });
 const TiltCard        = dynamic(() => import('@/components/ui/TiltCard'),        { ssr: false });
 
 const HeroSection: React.FC = () => {
   return (
     <section id="hero">
       <div className="hero-grid"></div>
-      <ParticlesCanvas />
       <div className="container">
         <div className="row align-items-center g-5">
           {/* Left */}

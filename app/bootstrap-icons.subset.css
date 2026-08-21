@@ -1,7 +1,7 @@
 /* Bootstrap Icons — SUBSET, generated.
    ---------------------------------------------------------------------------
    The full stylesheet declares 2050 glyph rules. This site uses
-   84. Shipping the rest cost roughly 100KB of CSS on every page for
+   85. Shipping the rest cost roughly 100KB of CSS on every page for
    icons that are never rendered.
 
    REGENERATE after adding an icon:
@@ -46,6 +46,7 @@
 .bi-box-arrow-up-right::before { content: "\f1c5"; }
 .bi-broadcast-pin::before { content: "\f1d5"; }
 .bi-bug-fill::before { content: "\f1db"; }
+.bi-bullseye::before { content: "\f1de"; }
 .bi-calendar-check::before { content: "\f1e2"; }
 .bi-cart-fill::before { content: "\f23d"; }
 .bi-chat-dots-fill::before { content: "\f249"; }

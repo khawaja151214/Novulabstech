@@ -2024,3 +2024,113 @@ p, li {
   [data-reveal='left'],
   [data-reveal='up'] { transform: none !important; }
 }
+
+/* ============================================================
+   EDITORIAL PASS — removing the generated-template tells
+   ------------------------------------------------------------
+   The theme header above still reads "Premium Glassmorphism
+   2026". That aesthetic — gradient-filled headings, glass panels,
+   glowing cards, a particle field, a custom cursor and a fake
+   preloader — is the visual signature of a generated template,
+   and for a vendor selling AML systems to bank CTOs it reads as
+   a template rather than as a practice.
+
+   Nothing structural changes here. These rules sit last and
+   override the decorative layer, so the markup is untouched and
+   any of it can be reverted by deleting this block.
+   ============================================================ */
+
+/* ── Headings: weight and colour, not gradient fill ────────────
+   63 headings used background-clip gradient text. Beyond being
+   the single most recognisable generated-design tell, clipped
+   gradient text renders with softer edges than painted text at
+   the same size, and it silently drops to transparent if the
+   background fails to paint. Emphasis now comes from colour and
+   weight, which is how editorial typography has always done it. */
+.gtxt {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: currentColor;
+  color: var(--p1);
+}
+/* On the dark hero the accent needs to be the light tone to hold
+   contrast against #001f3d. */
+.phero-inner .gtxt,
+#hero .gtxt {
+  color: var(--a1);
+}
+
+/* ── Glass, dialled back ───────────────────────────────────────
+   Blur is retained only on the navigation, where it does real
+   work separating a translucent bar from content scrolling under
+   it. On cards it costs a compositor layer per element for an
+   effect that mostly reads as haze. */
+.pcard,
+.gcard,
+.vcard,
+.cta-card {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: var(--surf);
+  border: 1px solid var(--gb4);
+  box-shadow: var(--sh-sm);
+}
+
+/* ── Card hover: lift, no glow ─────────────────────────────────
+   A coloured glow around a card is decoration that carries no
+   information. A small lift and a firmer shadow says the same
+   "this is interactive" with less noise. */
+.pcard:hover,
+.gcard:hover,
+.vcard:hover {
+  box-shadow: var(--sh-lg);
+  border-color: var(--gb5);
+}
+
+/* ── Icon tiles ────────────────────────────────────────────────
+   The four value cards used emoji as icons, which renders
+   differently on every platform and is flagged in every design
+   review checklist. They now use the same icon set as the rest
+   of the site. */
+.vico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(0, 72, 141, 0.08);
+  color: var(--p1);
+  font-size: 1.15rem;
+  margin-bottom: 0.9rem;
+}
+
+/* ── Radius, normalised ────────────────────────────────────────
+   Radii ranged across 3, 9, 10, 13 and 100px with no system.
+   Two values: one for surfaces, one for pills. */
+.pcard, .gcard, .vcard, .cta-card, .sec-img, .pimg-wrap {
+  border-radius: 12px;
+}
+.tbadge, .stag, .hero-badge {
+  border-radius: 100px;
+}
+
+/* The hero heading kept an animated multi-stop gradient with a glow
+   drop-shadow and a 3s infinite shimmer loop, at a specificity the
+   .gtxt rule above cannot reach. An infinitely animating headline is
+   the loudest generated-template tell on the page, it never settles
+   for a reader, and an always-running animation keeps the compositor
+   awake for the life of the tab. */
+.hero-title .gtxt,
+.phero-inner .hero-title .gtxt,
+.phero-inner h1 .gtxt,
+.phero-inner h2 .gtxt {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: currentColor !important;
+  filter: none !important;
+  animation: none !important;
+  color: var(--a1);
+}
