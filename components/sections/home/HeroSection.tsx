@@ -1,11 +1,19 @@
 "use client";
 
-import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import KineticHeading from '@/components/ui/KineticHeading';
+import TiltCard from '@/components/ui/TiltCard';
 
-// Lazy-load heavy canvas + 3D tilt — only allowed in Client Components
-const TiltCard        = dynamic(() => import('@/components/ui/TiltCard'),        { ssr: false });
+// TiltCard was previously loaded with next/dynamic + ssr:false, which meant the
+// entire right-hand hero visual — the largest element above the fold, and the
+// LCP candidate on this page — was absent from the server HTML and only
+// appeared after hydration. That delays LCP by the whole JS round trip and
+// hides the image from any crawler that does not execute JavaScript.
+//
+// TiltCard only uses a ref and two pointer handlers, so it server-renders
+// perfectly well. It is now a normal import: the markup ships in the HTML and
+// the tilt attaches on hydration as a progressive enhancement.
 
 const HeroSection: React.FC = () => {
   return (
@@ -57,20 +65,23 @@ const HeroSection: React.FC = () => {
                   <i className="bi bi-folder2-open me-1"></i>View Our Work
                 </Button>
               </div>
-              <br />
             </div>
           </div>
           {/* Right: Hero Image */}
           <div className="col-lg-6 hero-visual">
             <TiltCard className="hero-img-wrap">
-              <img
+              {/* `priority` — this is the LCP element. It was carrying
+                  loading="lazy", which tells the browser to defer the one image
+                  it should fetch first. next/image also emits a preload hint and
+                  a responsive srcset, so phones stop downloading a 1200px asset
+                  to paint it at ~360px. */}
+              <Image
                 src="/og/enterprise-software-development.jpg"
                 alt="Enterprise software engineering for regulated industries"
                 width={1200}
                 height={630}
-                loading="lazy"
-                decoding="async"
-                
+                priority
+                sizes="(max-width: 991px) 100vw, 50vw"
               />
               <div className="hero-img-overlay"></div>
               <div className="hero-img-shine"></div>
