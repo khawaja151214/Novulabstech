@@ -9,7 +9,13 @@ const PaySection: React.FC = () => {
           <div className="col-lg-6" data-reveal="right">
             <span className="stag">Solution 03</span>
             <h2 className="stitle mt-3">NovuPay<br /><span className="gtxt">Payment Infrastructure</span></h2>
-            <p className="ssub mb-4">Enterprise payment processing platform — Mastercard and Visa certified, engineered to PCI-DSS, handling billions in annual transaction volume with 99.99% uptime SLA.</p>
+            {/* "certified" removed for the same reason it was removed in app/layout.tsx:121 —
+                scheme certification is issued to the entity operating the platform, not to the
+                development firm. The /services FAQ already states this correctly ("We have taken
+                payment platforms through scheme certification"). Volume and uptime figures also
+                removed: they described a client platform, not a NovuLabs SLA, and are
+                unevidenced on this site. See CLIENT-ACTIONS.md item 7. */}
+            <p className="ssub mb-4">Enterprise payment processing platform — engineered to PCI-DSS, and taken through Mastercard and Visa scheme certification with the institutions that operate it.</p>
             <ul className="chk mb-4">
               <li><span className="chk-ico"><i className="bi bi-check"></i></span>Mastercard MDES tokenization</li>
               <li><span className="chk-ico"><i className="bi bi-check"></i></span>Visa VTS &amp; Visa Direct</li>
