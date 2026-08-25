@@ -44,3 +44,6 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Local analysis output from ruflo-office/pipeline.js — not site source.
+artifacts/

@@ -9,6 +9,8 @@ import MoreSectorsSection from '@/components/sections/industries/MoreSectorsSect
 import SectorCaseStudies from '@/components/sections/industries/SectorCaseStudies';
 import RegulatedDeliverySection from '@/components/sections/industries/RegulatedDeliverySection';
 import IndustriesCta from '@/components/sections/industries/IndustriesCta';
+import PageFaq from '@/components/sections/shared/PageFaq';
+import { industriesFaqs } from '@/content/pageFaqs';
 
 export const metadata: Metadata = {
   title: 'Industries: Banking, Healthcare & Government',
@@ -63,6 +65,7 @@ export default function IndustriesPage() {
       <MoreSectorsSection />
       <SectorCaseStudies />
       <RegulatedDeliverySection />
+      <PageFaq items={industriesFaqs} path="/industries" />
       <IndustriesCta />
     </>
   );
