@@ -24,9 +24,25 @@ import { canonical } from '@/lib/seo';
  */
 export const metadata: Metadata = {
   title: 'Sitemap',
+  // 148 chars — was 112, which left SERP real estate unused.
   description:
-    'Every page on novulabs.net in one place: services, case studies, technical articles, company pages and policies.',
+    'Every page on novulabs.net in one place: services, platforms, case studies, technical articles, testimonials, company pages, FAQs and policies.',
   alternates: { canonical: canonical('/site-map') },
+  // Same inherited-og:url problem as /legal — see the note there.
+  openGraph: {
+    type: 'website',
+    title: 'Sitemap — NovuLabs',
+    description: 'Every page on novulabs.net, in one list.',
+    url: canonical('/site-map'),
+    images: [
+      {
+        url: '/og/enterprise-software-development.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'NovuLabs — enterprise software for regulated industries',
+      },
+    ],
+  },
 };
 
 function Group({
@@ -87,6 +103,8 @@ export default function SiteMapPage() {
                 { href: '/about', label: 'About NovuLabs' },
                 { href: '/team', label: 'Engineering & compliance team' },
                 { href: '/industries', label: 'Industries served' },
+                { href: '/testimonials', label: 'Client testimonials & reviews' },
+                { href: '/faq', label: 'Frequently asked questions' },
                 { href: '/contact', label: 'Contact & consultation' },
               ]}
             />

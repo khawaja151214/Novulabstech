@@ -178,7 +178,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       {/* FAQ — visible on the page, which is what makes the FAQPage schema above
           legitimate. Marking up hidden content is a policy violation. */}
-      <section className="sec bg-g">
+      {/* id="faq" so /faq can deep-link into the set that owns these answers.
+          Every FAQ block on the site uses the same anchor. */}
+      <section className="sec bg-g" id="faq">
         <div className="container">
           <div className="row justify-content-center text-center mb-5">
             <div className="col-lg-7" data-reveal="up">

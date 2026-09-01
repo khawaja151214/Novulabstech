@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { SITE_URL } from '@/lib/seo';
+import { SITE_URL, canonical } from '@/lib/seo';
 import { servicePages } from '@/content/servicePages';
 import { caseStudies } from '@/content/caseStudies';
 import { blogPosts } from '@/content/blogPosts';
@@ -32,11 +32,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/blog', priority: 0.8, changeFrequency: 'weekly' as const },
     { path: '/about', priority: 0.7, changeFrequency: 'monthly' as const },
     { path: '/team', priority: 0.7, changeFrequency: 'monthly' as const },
+    { path: '/testimonials', priority: 0.7, changeFrequency: 'monthly' as const },
+    { path: '/faq', priority: 0.7, changeFrequency: 'monthly' as const },
     { path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/site-map', priority: 0.3, changeFrequency: 'monthly' as const },
     { path: '/legal', priority: 0.3, changeFrequency: 'yearly' as const },
   ].map((r) => ({
-    url: `${SITE_URL}${r.path}`,
+    // canonical() rather than string concatenation: the homepage entry was
+    // emitting `https://www.novulabs.net` while its own rel=canonical says
+    // `https://www.novulabs.net/`. A sitemap URL that does not match the page's
+    // declared canonical is a (mild) mixed signal, and it costs nothing to fix.
+    url: canonical(r.path),
     lastModified: buildDate,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
