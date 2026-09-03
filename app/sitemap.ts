@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { SITE_URL, canonical } from '@/lib/seo';
 import { servicePages } from '@/content/servicePages';
+import { serviceSpokes } from '@/content/serviceSpokes';
 import { caseStudies } from '@/content/caseStudies';
 import { blogPosts } from '@/content/blogPosts';
 import { legalPages } from '@/content/legalPages';
@@ -56,6 +57,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // The 22 narrower spoke pages nested under the 7 services above. Priority
+  // set below the pillars: each spoke targets a narrower search intent than
+  // its parent, and priority is a relative hint to crawlers about where to
+  // spend budget first, not a claim about the page's importance to the site.
+  const serviceSpokeRoutes: MetadataRoute.Sitemap = serviceSpokes.map((s) => ({
+    url: `${SITE_URL}/services/${s.slug}`,
+    lastModified: buildDate,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((c) => ({
     url: `${SITE_URL}/portfolio/${c.slug}`,
     lastModified: buildDate,
@@ -88,5 +100,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.2,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...blogRoutes, ...authorRoutes, ...legalRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...serviceSpokeRoutes, ...caseStudyRoutes, ...blogRoutes, ...authorRoutes, ...legalRoutes];
 }

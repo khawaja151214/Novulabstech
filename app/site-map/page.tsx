@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { servicePages } from '@/content/servicePages';
+import { serviceSpokes } from '@/content/serviceSpokes';
 import { caseStudies } from '@/content/caseStudies';
 import { blogPosts } from '@/content/blogPosts';
 import { legalPages } from '@/content/legalPages';
@@ -114,6 +115,10 @@ export default function SiteMapPage() {
                 { href: '/services', label: 'All services' },
                 ...servicePages.map((s) => ({ href: `/services/${s.slug}`, label: s.h1 })),
               ]}
+            />
+            <Group
+              heading="All 22 services"
+              links={serviceSpokes.map((s) => ({ href: `/services/${s.slug}`, label: s.h1 }))}
             />
             <Group
               heading="Platforms"

@@ -2361,3 +2361,56 @@ p, li {
     align-items:center;
   }
 }
+
+/* ── SERVICE GROUP LIST (/services "all 22 by track") ─────────
+   Compact link groups under each pillar name, deliberately plainer
+   than a card grid — 22 more .gcard instances on one page would be
+   the visually-excessive version of the same information. */
+.service-group-title{
+  font-family:var(--fh);
+  font-size:1.02rem;
+  font-weight:700;
+  letter-spacing:-.01em;
+  color:var(--tx1);
+  margin:0 0 14px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(93,224,230,.18);
+}
+.service-group-title a{color:inherit;text-decoration:none}
+.service-group-title a:hover{color:var(--a1)}
+.service-group-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+.service-group-list li{
+  position:relative;
+  padding-left:16px;
+  font-size:.86rem;
+  line-height:1.5;
+}
+.service-group-list li::before{
+  content:'';
+  position:absolute;
+  left:0;top:.6em;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--a1);
+  opacity:.55;
+}
+.service-group-list a{
+  color:var(--tx3);
+  text-decoration:none;
+  display:block;
+  min-height:24px;
+  padding:2px 0;
+}
+.service-group-list a:hover,
+.service-group-list a:focus-visible{color:var(--p1);text-decoration:underline}
+
+@media (hover:none) and (pointer:coarse){
+  .service-group-list a{min-height:36px;display:flex;align-items:center;padding:4px 0}
+  .service-group-title a{min-height:36px;display:inline-flex;align-items:center}
+}

@@ -331,3 +331,84 @@ Headless Chromium against `next start`, mobile viewport (390×844):
 localhost with no network latency and no CDN, and they should not be quoted as
 field data. CLS is layout-driven rather than network-driven, so the 0.0000 does
 transfer. Real LCP and INP need CrUX or a RUM beacon on production traffic.
+
+---
+
+# Third pass — 22 dedicated service pages, homepage title alignment
+
+## Why 22 pages, not 22 near-duplicates
+
+The homepage lists 22 service cards (`content/siteData.ts`, `services`). Every
+one of them linked straight to `/contact` with no page in between — a visitor
+could not read a sentence about "Mastercard / Visa" or "Transaction Monitoring"
+before being asked to book a call.
+
+Building 22 fully independent pages from those 22 card titles verbatim would
+have meant several pages competing for the same intent the site's 7 existing
+pillar pages already own in depth — "Mastercard / Visa", "Payment Gateways" and
+"Financial Software" are all facets of the one fintech practice already covered
+at length by `/services/fintech-software-development`. That is textbook keyword
+cannibalisation, which this same task explicitly warned against.
+
+So `content/serviceSpokes.ts` implements a hub-and-spoke structure instead:
+
+- The 7 existing pillar pages are **unchanged**.
+- 22 new spoke pages, one per homepage card, each narrowed to a genuinely
+  distinct search intent nested under its pillar via `parentSlug`. Three cards
+  whose title is otherwise identical to their pillar's own subject
+  ("Enterprise Software", "AML Systems", "Healthcare Software") were given the
+  specific, real sub-capability their pillar's own summary already names but
+  never expanded on — legacy modernisation, case management and risk scoring,
+  and EHR/clinical systems — rather than restating the pillar a second time.
+
+Full reasoning and the complete 22-card-to-slug mapping is documented in the
+header comment of `content/serviceSpokes.ts`.
+
+## What each of the 22 pages has
+
+Unique H1, SEO title, meta description (140–165 chars), canonical, Open Graph
+and Twitter metadata, `Breadcrumbs` (`Home > Services > {Pillar} > {Page}`)
+with matching `BreadcrumbList` schema, `Service` schema, and visible FAQ with
+matching `FAQPage` schema. Body content: intro, "What We Offer" (H3
+sub-sections), "How We Help", "Our Approach", "Technologies We Use" and
+"Industries We Support" (both pulled only from what the parent pillar already
+lists — nothing invented), "Why Choose NovuLabs", "Related services"
+(sibling spokes + the parent pillar), and a CTA. No fabricated pricing,
+timelines, client names or certifications; FAQs answer real buyer questions by
+explaining what determines an answer where a fixed number would be a guess.
+
+## Wiring
+
+- `types/index.ts` — `ServiceItem` gained a `slug` field.
+- `content/siteData.ts` — all 22 homepage cards now carry the slug of the page
+  they link to.
+- `components/ui/ServiceCard.tsx` — links to the dedicated page instead of
+  `/contact`; the page itself carries its own CTA once a visitor has read it.
+- `app/services/[slug]/page.tsx` — one dynamic route now serves both pillars
+  and spokes from the same flat URL space (`generateStaticParams` returns
+  both arrays; slugs are guaranteed distinct).
+- `app/services/page.tsx` — new "All 22 services, by track" section, grouped
+  under each pillar, so every spoke has an inbound link from the hub in
+  addition to the homepage card.
+- `app/sitemap.ts`, `app/site-map/page.tsx` — all 22 included.
+
+## Homepage title
+
+`app/page.tsx` title changed from "Software House in Islamabad | NovuLabs" to
+"Enterprise Software House in Islamabad | NovuLabs" (50 chars), matching the
+H1 exactly instead of a shortened version of it. The H1 itself was already
+correct — "Enterprise Software House in Islamabad" — and was left unchanged.
+"Best" was deliberately not added to either, continuing a decision already
+documented in `HeroSection.tsx`: it is an unverifiable superlative and, in most
+markets, a comparative advertising claim needing substantiation the site does
+not publish.
+
+## Verified
+
+Production build: 68 routes, 0 type errors. `verify-seo-claims.py`: 12/12,
+including 0 duplicate titles and 0 duplicate descriptions across all 64
+prerendered pages. Crawled from `/`: 63/63 pages reachable, 0 broken links, 0
+dead `#fragment` targets. `sitemap.xml`: 63 URLs, matching the crawlable set
+exactly. 0 horizontal overflow at 320/375/390/414/768/1024/1280/1440px across
+6 spot-checked routes including 4 of the new spoke pages. 0 em dashes in any
+new visible page content (checked programmatically, comments excluded).
