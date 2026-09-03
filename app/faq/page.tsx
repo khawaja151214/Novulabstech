@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/faq' },
   openGraph: {
     type: 'website',
-    title: 'Frequently Asked Questions — NovuLabs',
+    title: 'Frequently Asked Questions | NovuLabs',
     description:
       'What NovuLabs builds, who we build it for, the standards we engineer to, and how an engagement starts. Answered directly, without a sales layer.',
     url: 'https://www.novulabs.net/faq',
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
         url: '/og/enterprise-software-development.jpg',
         width: 1200,
         height: 630,
-        alt: 'NovuLabs — frequently asked questions',
+        alt: 'NovuLabs frequently asked questions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Frequently Asked Questions — NovuLabs',
+    title: 'Frequently Asked Questions | NovuLabs',
     description:
       'What NovuLabs builds, the regulators we work under, and how an engagement starts.',
     images: ['/og/enterprise-software-development.jpg'],
@@ -175,7 +175,7 @@ export default function FaqPage() {
               <p className="ssub mt-3">
                 Anything not covered here is worth a conversation rather than a longer page. The
                 discovery call is 45 minutes, carries no commitment, and is taken by an architect
-                who would be accountable for the technical outcome — not a salesperson.
+                who would be accountable for the technical outcome, not a salesperson.
               </p>
               <p className="mb-0">
                 <Link href="/contact" className="btn-grad">

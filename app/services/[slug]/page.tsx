@@ -443,17 +443,6 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
                   </>
                 )}
 
-                <h2>Why Choose NovuLabs</h2>
-                <p>
-                  The person who takes your first call is an architect who would be accountable for
-                  the technical outcome, not a salesperson reading from a deck. There is no pre-sales
-                  layer here, the engineering team is based together in Islamabad rather than assembled
-                  from contractors per project, and we are direct about where a requirement is better
-                  served by an existing product than by custom work. See what{' '}
-                  <Link href="/testimonials">clients say about working with us</Link> and how we
-                  approach engagements on the <Link href="/about">about page</Link>.
-                </p>
-
                 {relatedCases.length > 0 && (
                   <>
                     <h2>Related case studies</h2>
@@ -579,6 +568,16 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
                   <Button href="/portfolio" variant="glass" className="w-100 justify-content-center">
                     <i className="bi bi-folder2-open me-1"></i>See case studies
                   </Button>
+                  {/* Same two links on every spoke page, deliberately identical
+                      wording. This lives in the CTA widget, not the article body,
+                      for the same reason the CTA itself is not an <h2>: it is site
+                      chrome (like a footer link), not page content, and repeated
+                      chrome across pages is not the duplicate-content problem a
+                      repeated paragraph inside <article> was. */}
+                  <p className="cta-card-note">
+                    <Link href="/testimonials">Client testimonials</Link> ·{' '}
+                    <Link href="/about">How we work</Link>
+                  </p>
                 </div>
               </div>
             </div>

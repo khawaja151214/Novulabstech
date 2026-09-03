@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/testimonials' },
   openGraph: {
     type: 'website',
-    title: 'Client Testimonials & Reviews — NovuLabs',
+    title: 'Client Testimonials & Reviews | NovuLabs',
     description:
       'How organisations in banking, healthcare, government and enterprise software describe working with the NovuLabs engineering team.',
     url: 'https://www.novulabs.net/testimonials',
@@ -59,13 +59,13 @@ export const metadata: Metadata = {
         url: '/og/enterprise-software-development.jpg',
         width: 1200,
         height: 630,
-        alt: 'NovuLabs — client testimonials and reviews',
+        alt: 'NovuLabs client testimonials and reviews',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Client Testimonials & Reviews — NovuLabs',
+    title: 'Client Testimonials & Reviews | NovuLabs',
     description:
       'What clients say about working with NovuLabs across banking, healthcare, government and enterprise software.',
     images: ['/og/enterprise-software-development.jpg'],
@@ -106,7 +106,7 @@ export default function TestimonialsPage() {
           </h1>
           <p className="hero-sub">
             NovuLabs works with institutions whose software has to answer to a regulator as well as
-            to a user — banks, hospital networks, government agencies and the platforms that serve
+            to a user, banks, hospital networks, government agencies, and the platforms that serve
             them. What clients consistently describe valuing is the engineering judgement applied
             before a line of code is written, and a system that can still explain its own decisions
             a year later.
@@ -129,7 +129,7 @@ export default function TestimonialsPage() {
                     <strong>Sample content.</strong> The testimonials on this page are illustrative
                     placeholders written to show the format, not statements from real clients. They
                     are here so the page can be reviewed before publication and must be replaced
-                    with verified client feedback — a role and a sector is sufficient attribution
+                    with verified client feedback. A role and a sector is sufficient attribution
                     where an NDA prevents naming the institution. No star ratings, review counts or
                     review structured data appear anywhere on this page, because no client has given
                     any.
@@ -171,7 +171,7 @@ export default function TestimonialsPage() {
                     <span className="tcard-role">{t.role}</span>
                     <span className="tcard-org">{t.organisation}</span>
                     {hasPlaceholderTestimonials && t.placeholder && (
-                      <span className="tcard-flag">Sample — awaiting verified testimonial</span>
+                      <span className="tcard-flag">Sample: awaiting verified testimonial</span>
                     )}
                   </figcaption>
                 </figure>
@@ -220,7 +220,7 @@ export default function TestimonialsPage() {
                             </Link>
                           )}
                           {hasPlaceholderTestimonials && t.placeholder && (
-                            <span className="tcard-flag">Sample — awaiting verified testimonial</span>
+                            <span className="tcard-flag">Sample: awaiting verified testimonial</span>
                           )}
                         </figcaption>
                       </figure>

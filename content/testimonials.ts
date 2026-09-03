@@ -112,7 +112,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'The NADRA integration was the part we expected to slip and the part that did not. They had already handled the failure modes we had not thought to ask about — timeouts, partial matches, and what the citizen sees when verification fails.',
+      'The NADRA integration was the part we expected to slip and the part that did not. They had already handled the failure modes we had not thought to ask about, like timeouts, partial matches, and what the citizen sees when verification fails.',
     role: 'Head of Digital Services',
     organisation: 'Provincial government department',
     sector: 'Government',
