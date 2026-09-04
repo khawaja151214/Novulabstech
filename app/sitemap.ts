@@ -26,6 +26,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { path: '', priority: 1.0, changeFrequency: 'weekly' as const },
+    // Local landing page for the 'software house in Islamabad' cluster.
+    // Priority matches /services, not the 0.7 the informational pages carry:
+    // it is a commercial head-term page, and the only URL on the site that
+    // targets the local query directly.
+    { path: '/software-house-in-islamabad', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/services', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/solutions', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/industries', priority: 0.8, changeFrequency: 'monthly' as const },

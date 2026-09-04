@@ -159,6 +159,65 @@ export function serviceSchema(opts: {
   });
 }
 
+/**
+ * Service node scoped to a city rather than a list of countries.
+ *
+ * `serviceSchema` above maps `areaServed` to Country nodes, which is right for
+ * the practice-area pages: those describe work delivered to five markets. It is
+ * wrong for a local landing page, where the whole point of the entity is that
+ * it is bounded to one city inside one administrative region. A City node with
+ * `containedInPlace` gives Google and answer engines the geographic hierarchy
+ * explicitly instead of asking them to infer "Islamabad" from prose.
+ *
+ * Deliberately a Service and not a second LocalBusiness. There is exactly one
+ * NovuLabs, already declared as a ProfessionalService in the root layout, and
+ * emitting a second business entity for a marketing page is how sites end up
+ * with a duplicate, competing entity in the knowledge graph. This node links
+ * back to that one organisation by @id.
+ */
+export function localServiceSchema(opts: {
+  name: string;
+  description: string;
+  path: string;
+  serviceType: string;
+  city: string;
+  region: string;
+  country: string;
+  offers?: string[];
+}) {
+  return clean({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${canonical(opts.path)}#service`,
+    name: opts.name,
+    description: opts.description,
+    serviceType: opts.serviceType,
+    url: canonical(opts.path),
+    provider: { '@id': ORG_ID },
+    areaServed: {
+      '@type': 'City',
+      name: opts.city,
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: opts.region,
+        containedInPlace: { '@type': 'Country', name: opts.country },
+      },
+    },
+    ...(opts.offers?.length
+      ? {
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: `${opts.name} — capabilities`,
+            itemListElement: opts.offers.map((o) => ({
+              '@type': 'Offer',
+              itemOffered: { '@type': 'Service', name: o },
+            })),
+          },
+        }
+      : {}),
+  });
+}
+
 export function softwareApplicationSchema(opts: {
   name: string;
   description: string;

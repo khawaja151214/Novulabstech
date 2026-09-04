@@ -18,7 +18,7 @@ import ServicesCta from '@/components/sections/services/ServicesCta';
 export const metadata: Metadata = {
   title: 'Enterprise Software Development Services',
   description:
-    'Seven enterprise engineering services: AML/CFT compliance, fintech, healthcare IT, enterprise systems, mobile, cloud & AI, and web. Pick your track.',
+    'Seven engineering services from our Islamabad team: AML/CFT compliance, fintech, healthcare IT, enterprise systems, mobile apps, cloud and AI, and web.',
   keywords: [
     'enterprise software development services',
     'fintech software development Pakistan',

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 const AboutSection: React.FC = () => {
@@ -47,6 +48,19 @@ const AboutSection: React.FC = () => {
                 declares five served markets (PK, AE, GB, US, SA). */}
             <p className="ssub mb-4">NovuLabs is an enterprise software house headquartered in Islamabad. We engineer platforms that power financial systems, healthcare networks and government portals, for institutions that answer to a regulator as well as to a user.</p>
             
+            {/* Contextual link into the local landing page. The homepage is
+                the strongest internal source of link equity on the site, and
+                the anchor text here is the head term itself in a sentence that
+                actually needs it, not a bolted-on keyword link. */}
+            <p className="ssub mb-4">
+              If you are comparing suppliers locally, the{' '}
+              <Link href="/software-house-in-islamabad">
+                software house in Islamabad
+              </Link>{' '}
+              page covers where we are, how we engage, and the questions worth asking any firm
+              before you sign.
+            </p>
+
             <div className="d-flex gap-3 flex-wrap">
               <Button href="/about" variant="grad">
                 <i className="bi bi-arrow-right me-1"></i>About NovuLabs

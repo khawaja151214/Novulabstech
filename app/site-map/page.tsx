@@ -102,6 +102,7 @@ export default function SiteMapPage() {
               links={[
                 { href: '/', label: 'Home' },
                 { href: '/about', label: 'About NovuLabs' },
+                { href: '/software-house-in-islamabad', label: 'Software house in Islamabad' },
                 { href: '/team', label: 'Engineering & compliance team' },
                 { href: '/industries', label: 'Industries served' },
                 { href: '/testimonials', label: 'Client testimonials & reviews' },
