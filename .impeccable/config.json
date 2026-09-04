@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "border-left:3px solid var(--p1)",
+        "createdAt": "2026-09-04T17:48:26.224Z",
+        "reason": "Claude: rule targets card side-tabs; this is .blog-post-content blockquote, where a left rule is standard pull-quote typography predating the pattern the rule detects. Not a card, not an accent tab."
+      }
+    ]
+  }
+}

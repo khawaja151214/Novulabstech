@@ -2618,3 +2618,96 @@ h2, h3, h4, h5, h6 { font-weight: 600; }
 .ft-sub-input::placeholder { color: #8797AA; }
 .ft-sub-input:focus-visible { outline: 2px solid var(--a1); outline-offset: 2px; }
 .ft-head { color: #FFFFFF; }
+
+/* ── 11. Layout-property animations ────────────────────────────
+   Three elements animated width or max-height. Both are layout
+   properties: every frame forces the browser to re-run layout for
+   the whole subtree, which is the classic source of scroll jank
+   on mid-range phones. transform and opacity are composited and
+   cost nothing on the main thread.
+
+   The scroll-progress bar: width -> scaleX from a left origin,
+   which is visually identical and free. */
+#sp {
+  width: 100% !important;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.1s linear !important;
+}
+
+/* The card underline reveal: width -> scaleX, same origin trick. */
+.wcard::before {
+  width: 100% !important;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.wcard:hover::before { transform: scaleX(1); }
+
+/* The FAQ accordion animated max-height, which additionally caps
+   the answer at a guessed 320px and clips anything longer.
+   grid-template-rows 0fr -> 1fr animates to the content's real
+   height with no magic number and no clipping. */
+.fans {
+  display: grid;
+  grid-template-rows: 0fr;
+  max-height: none !important;
+  transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.fans > * { min-height: 0; }
+.fitem.open .fans {
+  grid-template-rows: 1fr;
+  max-height: none !important;
+}
+
+/* ── 12. Decorative grid overlay ───────────────────────────────
+   A hairline grid tiled at a fixed 60px cell across every hero.
+   It reads as blueprint chrome on a page that is not a canvas, a
+   map or a measurement surface, and it is one of the more
+   recognisable generated-UI signatures. The heroes already have
+   a photograph and a gradient scrim doing the work. */
+.hero-grid,
+.phero-grid {
+  display: none !important;
+}
+
+/* ── 13. Touch targets ─────────────────────────────────────────
+   The three footer social icons rendered at 34x34 and the footer
+   legal links at 40x36, below the 44x44 minimum. On a phone these
+   are the links most likely to be mis-tapped, because they sit in
+   a dense row at the very bottom of the page where the thumb is
+   least accurate.
+
+   Padding rather than a larger icon: the visual weight stays the
+   same, only the hit area grows. WCAG 2.5.8 (Target Size, minimum)
+   and Apple/Material both put the floor at 44px. */
+.fsoc {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ft-legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.35rem;
+}
+/* Keeps the enlarged targets from spreading the rows visually. */
+.ft-socs { gap: 0.25rem; }
+.ft-legal { gap: 0.4rem; flex-wrap: wrap; }
+
+/* Mobile menu rows. Ten of the twenty-one links in the collapsed
+   navigation rendered under 44px tall. A dense vertical list of
+   short rows is the worst case for thumb accuracy, and it is the
+   first thing a phone visitor touches. */
+@media (max-width: 991px) {
+  .navbar-collapse .nav-link,
+  .navbar-collapse .dropdown-item,
+  .navbar-collapse a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
