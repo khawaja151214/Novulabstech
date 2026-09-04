@@ -6,7 +6,7 @@
  * The site previously carried 22 services on a single /services URL with only
  * fragment anchors (/services#fintech, /services#compliance, …). A URL fragment
  * is not a document: Google indexes one page, so ~1,200 words had to represent
- * 22 distinct commercial intents — roughly 55 words per service. A competitor
+ * 22 distinct commercial intents, roughly 55 words per service. A competitor
  * with a dedicated 1,500-word page on one of those intents wins that comparison
  * mechanically, regardless of domain authority.
  *
@@ -27,7 +27,7 @@ export interface ServiceFaq {
 
 export interface ServicePage {
   slug: string;
-  /** H1 — matches search intent, not internal naming. */
+  /** H1: matches search intent, not internal naming. */
   h1: string;
   /** <title> without the brand; layout appends " | NovuLabs". Keep ≤ 49 chars. */
   seoTitle: string;
@@ -42,7 +42,7 @@ export interface ServicePage {
   keywords: string[];
   /** Body sections. `heading` renders as <h2>. */
   sections: { heading: string; body: string[] }[];
-  /** "What's included" capability list — also becomes the OfferCatalog. */
+  /** "What's included" capability list, also becomes the OfferCatalog. */
   includes: string[];
   /** Technology and standards actually named elsewhere on the site. */
   stack: string[];
@@ -84,14 +84,14 @@ export const servicePages: ServicePage[] = [
         heading: 'Compliance is an architectural property, not a bolt-on',
         body: [
           'Most AML remediation work we are asked to do exists because compliance was added to a transaction platform after the platform was designed. The symptoms are consistent: screening runs against a customer record that three services disagree about, alerts cannot be reproduced six months later because the transaction table is mutable, and the reporting pipeline was written against a sample XML file rather than against the schema the Financial Monitoring Unit actually validates.',
-          'We build the other way round. The customer record is resolved to one authoritative entity before screening is designed. The transaction stream is append-only, so any alert can be reconstructed exactly as the system saw it at decision time. The reporting pipeline validates against the goAML schema in your own environment before anything is submitted. None of this is exotic — it is just considerably cheaper to decide at design time than to retrofit under examination pressure.',
+          'We build the other way round. The customer record is resolved to one authoritative entity before screening is designed. The transaction stream is append-only, so any alert can be reconstructed exactly as the system saw it at decision time. The reporting pipeline validates against the goAML schema in your own environment before anything is submitted. None of this is exotic; it is just considerably cheaper to decide at design time than to retrofit under examination pressure.',
         ],
       },
       {
         heading: 'Screening that survives Pakistani name data',
         body: [
           'Identity screening against the NACTA Proscribed Persons list, UN Security Council Consolidated List and OFAC SDN is straightforward to describe and difficult to tune. Urdu-to-Roman transliteration produces several valid spellings for the same person, honorifics and patronymics appear inconsistently, and the same CNIC frequently sits against differently spelled name records inside a single institution.',
-          'Exact matching misses real hits. Untuned fuzzy matching produces alert queues an analyst cannot work honestly — and an analyst dismissing hundreds of alerts a day will eventually dismiss the one that mattered. We tune phonetic and edit-distance matching per list, treat the threshold as a governed, version-controlled parameter, and log every tuning change with its false-negative testing and its approver. That log is what turns "why is your threshold 0.82?" from an awkward question into a two-minute answer.',
+          'Exact matching misses real hits. Untuned fuzzy matching produces alert queues an analyst cannot work honestly, and an analyst dismissing hundreds of alerts a day will eventually dismiss the one that mattered. We tune phonetic and edit-distance matching per list, treat the threshold as a governed, version-controlled parameter, and log every tuning change with its false-negative testing and its approver. That log is what turns "why is your threshold 0.82?" from an awkward question into a two-minute answer.',
         ],
       },
       {
@@ -105,7 +105,7 @@ export const servicePages: ServicePage[] = [
         heading: 'goAML reporting, validated before submission',
         body: [
           'FMU accepts STRs and CTRs through goAML, which validates every submission against a strict XML schema. A rejected report is a report you did not file, and rejections cluster around a small set of causes: party identifiers placed in the wrong typed field, conditionally-mandatory fields modelled as optional, locale-formatted dates and separators, and narratives that are schema-valid but analytically useless to the human who reads them.',
-          'We build the reporting pipeline against the schema from the first iteration, with an XSD validation stage that runs in your environment before submission, and we treat the reason-for-suspicion narrative as a product surface rather than a free-text box — because it is read by an analyst, and its quality is a visible reflection of your programme.',
+          'We build the reporting pipeline against the schema from the first iteration, with an XSD validation stage that runs in your environment before submission, and we treat the reason-for-suspicion narrative as a product surface rather than a free-text box: because it is read by an analyst, and its quality is a visible reflection of your programme.',
         ],
       },
     ],
@@ -129,7 +129,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: 'Can you work with our existing core banking system?',
-        a: 'Usually, yes. Most of our AML work sits alongside an incumbent core rather than replacing it — we integrate at the transaction event and customer record level. The main question is whether the core can emit an immutable transaction event stream; where it cannot, we build that layer.',
+        a: 'Usually, yes. Most of our AML work sits alongside an incumbent core rather than replacing it; we integrate at the transaction event and customer record level. The main question is whether the core can emit an immutable transaction event stream; where it cannot, we build that layer.',
       },
       {
         // This page's FAQ used to duplicate a question, word for word, that
@@ -184,7 +184,7 @@ export const servicePages: ServicePage[] = [
         heading: 'Payments engineering is a latency and correctness problem',
         body: [
           'Payment systems fail in two directions and both are expensive. Correctness failures produce reconciliation breaks, duplicate settlements and disputes that cost more to resolve than the transactions were worth. Latency failures produce authorisation timeouts, which your scheme partners measure and your customers feel immediately.',
-          'The engineering discipline that prevents both is unglamorous: idempotency keys on every mutating operation so retries are safe, a settlement model that reconciles continuously rather than nightly, and an explicit decision about which checks run inside the authorisation path and which run after it. We make that last decision deliberately and document it, because when it happens by accident — usually as an ordering artefact of implementation — you discover it during a traffic peak.',
+          'The engineering discipline that prevents both is unglamorous: idempotency keys on every mutating operation so retries are safe, a settlement model that reconciles continuously rather than nightly, and an explicit decision about which checks run inside the authorisation path and which run after it. We make that last decision deliberately and document it, because when it happens by accident, usually as an ordering artefact of implementation, you discover it during a traffic peak.',
         ],
       },
       {
@@ -218,7 +218,7 @@ export const servicePages: ServicePage[] = [
     faqs: [
       {
         q: 'Can you integrate RAAST into an existing wallet or core?',
-        a: 'Yes, and it is one of the more common engagements we take. The main design question is whether your internal transaction abstraction can represent RAAST settlement finality correctly alongside card authorisation semantics — collapsing the two usually causes problems later.',
+        a: 'Yes, and it is one of the more common engagements we take. The main design question is whether your internal transaction abstraction can represent RAAST settlement finality correctly alongside card authorisation semantics, collapsing the two usually causes problems later.',
       },
       {
         q: 'Are you PCI-DSS certified?',
@@ -230,7 +230,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: 'Can you modernise a legacy core banking system incrementally?',
-        a: 'That is usually the only sane approach. We favour strangler-pattern migration — routing specific capabilities to new services behind a stable interface while the legacy core continues to run — over a cutover, which concentrates all the risk on a single night.',
+        a: 'That is usually the only sane approach. We favour strangler-pattern migration, routing specific capabilities to new services behind a stable interface while the legacy core continues to run, over a cutover, which concentrates all the risk on a single night.',
       },
     ],
     relatedCaseStudies: ['tranzaxis-payment-gateway', 'finsync-digital-wallet', 'corebanking-aml-suite'],
@@ -247,7 +247,7 @@ export const servicePages: ServicePage[] = [
     h1: 'HIPAA-Compliant Healthcare Software Development',
     seoTitle: 'HIPAA Healthcare Software Development',
     description:
-      'EHR, telemedicine and clinical integration platforms built to the HIPAA Security Rule with genuine HL7 FHIR interoperability — not just a FHIR endpoint.',
+      'EHR, telemedicine and clinical integration platforms built to the HIPAA Security Rule with genuine HL7 FHIR interoperability, not just a FHIR endpoint.',
     serviceType: 'Healthcare software development',
     summary:
       'Electronic health records, telemedicine and clinical integration platforms engineered to the HIPAA Security Rule and to real HL7 FHIR interoperability.',
@@ -271,15 +271,15 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'The audit log is the part that fails assessments',
         body: [
-          'Encryption in transit and at rest is universally implemented. The technical safeguard that actually fails assessments is audit controls, because the requirement is not "log access" — it is to record activity in systems containing protected health information in a way that supports later review.',
-          'In practice: who viewed which patient record, when, from where, under what access justification, in a store the viewer cannot alter. Application logs mixed into general telemetry on a 30-day retention will not satisfy this. A separate append-only PHI access log will, and it is dramatically cheaper to build in the first sprint than to reconstruct after an assessment finding — reconstruction being, in the strict sense, impossible.',
+          'Encryption in transit and at rest is universally implemented. The technical safeguard that actually fails assessments is audit controls, because the requirement is not "log access"; it is to record activity in systems containing protected health information in a way that supports later review.',
+          'In practice: who viewed which patient record, when, from where, under what access justification, in a store the viewer cannot alter. Application logs mixed into general telemetry on a 30-day retention will not satisfy this. A separate append-only PHI access log will, and it is dramatically cheaper to build in the first sprint than to reconstruct after an assessment finding: reconstruction being, in the strict sense, impossible.',
         ],
       },
       {
         heading: 'FHIR: native model or translation layer',
         body: [
-          'HL7 FHIR replaces bespoke point-to-point integration with defined RESTful resources — Patient, Encounter, Observation, Condition, MedicationRequest — exchanged over ordinary HTTP. The decision that matters is whether FHIR resources are your data model or whether you map to them at the boundary.',
-          'Modelling natively gives the cleanest interoperability story and removes a class of mapping bugs, but FHIR resources are shaped for exchange rather than transactional workloads. For a platform with substantial clinical workflow, a translation layer over a domain-appropriate internal model is usually the better trade — provided mapping tests are treated as first-class tests, because a silently dropped code system produces an observation that looks right and means something else.',
+          'HL7 FHIR replaces bespoke point-to-point integration with defined RESTful resources (Patient, Encounter, Observation, Condition, MedicationRequest) exchanged over ordinary HTTP. The decision that matters is whether FHIR resources are your data model or whether you map to them at the boundary.',
+          'Modelling natively gives the cleanest interoperability story and removes a class of mapping bugs, but FHIR resources are shaped for exchange rather than transactional workloads. For a platform with substantial clinical workflow, a translation layer over a domain-appropriate internal model is usually the better trade: provided mapping tests are treated as first-class tests, because a silently dropped code system produces an observation that looks right and means something else.',
           'The genuinely hard part is terminology. LOINC, SNOMED CT, ICD and RxNorm mapping is clinical judgement, not data engineering, and it needs clinical review time in the budget. A platform exchanging structurally valid FHIR that carries unmapped local codes is interoperable in form and useless in substance.',
         ],
       },
@@ -300,11 +300,11 @@ export const servicePages: ServicePage[] = [
     faqs: [
       {
         q: 'Are your healthcare platforms HIPAA certified?',
-        a: 'No — and no vendor is, because HIPAA certification does not exist. HHS does not accredit anyone. We build to the HIPAA Security Rule safeguards, will operate under a Business Associate Agreement, and can walk you through the audit evidence a system produces.',
+        a: 'No: and no vendor is, because HIPAA certification does not exist. HHS does not accredit anyone. We build to the HIPAA Security Rule safeguards, will operate under a Business Associate Agreement, and can walk you through the audit evidence a system produces.',
       },
       {
         q: 'Can you add FHIR support to an existing EHR?',
-        a: 'Yes, usually as a translation layer over your existing model rather than a rewrite. The scoping question is which resources you actually need to exchange and what terminology mapping is required — the second one is normally the larger effort.',
+        a: 'Yes, usually as a translation layer over your existing model rather than a rewrite. The scoping question is which resources you actually need to exchange and what terminology mapping is required; the second one is normally the larger effort.',
       },
       {
         q: 'Do you handle HL7 v2 to FHIR migration?',
@@ -312,7 +312,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: 'Who does the clinical terminology mapping?',
-        a: 'It needs clinical review — mapping a local code to SNOMED CT is a clinical judgement. We build the tooling, the validation and the test coverage, and we work alongside your clinical staff or an appointed terminologist for the judgement calls.',
+        a: 'It needs clinical review, mapping a local code to SNOMED CT is a clinical judgement. We build the tooling, the validation and the test coverage, and we work alongside your clinical staff or an appointed terminologist for the judgement calls.',
       },
     ],
     relatedCaseStudies: ['medicore-ehr-platform', 'carepulse-telemedicine-app'],
@@ -329,7 +329,7 @@ export const servicePages: ServicePage[] = [
     h1: 'Custom Enterprise Software Development',
     seoTitle: 'Custom Enterprise Software Development',
     description:
-      'ERP, CRM and multi-tenant SaaS platforms built around the workflows that differentiate you — and honest advice about the ones you should buy instead.',
+      'ERP, CRM and multi-tenant SaaS platforms built around the workflows that differentiate you, and honest advice about the ones you should buy instead.',
     serviceType: 'Custom enterprise software development',
     summary:
       'ERP, CRM, multi-tenant SaaS and legacy modernisation for organisations whose workflow is their competitive advantage rather than a cost of doing business.',
@@ -346,7 +346,7 @@ export const servicePages: ServicePage[] = [
         heading: 'We will tell you when to buy instead',
         body: [
           'General ledger, payroll, statutory tax filing and standard procurement are solved problems governed by rules you do not control. Executing them differently from your competitors gains you nothing, and established vendors have absorbed decades of regulatory edge cases you will not anticipate. Building there is a category error, and we say so.',
-          'The case for building is specific: where your workflow is your differentiation — a lender\'s underwriting logic, a manufacturer\'s yield-optimising scheduling, a logistics operator\'s routing. The tell is heavy customisation of a single module. If eighty percent of a package fits and one module must be rebuilt, you are not buying software; you are buying a constraint and paying consultants to work around it.',
+          'The case for building is specific: where your workflow is your differentiation: a lender\'s underwriting logic, a manufacturer\'s yield-optimising scheduling, a logistics operator\'s routing. The tell is heavy customisation of a single module. If eighty percent of a package fits and one module must be rebuilt, you are not buying software; you are buying a constraint and paying consultants to work around it.',
         ],
       },
       {
@@ -379,7 +379,7 @@ export const servicePages: ServicePage[] = [
     faqs: [
       {
         q: 'How do you decide whether we should build or buy?',
-        a: 'One question does most of the work: would a competitor gain anything by running this exact process? If not, buy it. We also model seven-year total cost on both sides including the parts people skip — implementation consulting, forced upgrade cycles and workflow compromise on the buy side; maintenance at 15–20% annually, key-person risk and security patching on the build side.',
+        a: 'One question does most of the work: would a competitor gain anything by running this exact process? If not, buy it. We also model seven-year total cost on both sides including the parts people skip: implementation consulting, forced upgrade cycles and workflow compromise on the buy side; maintenance at 15–20% annually, key-person risk and security patching on the build side.',
       },
       {
         q: 'Can you modernise a legacy system without a big-bang cutover?',
@@ -391,7 +391,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: 'What happens after launch?',
-        a: 'A custom platform needs ongoing ownership — typically 15–20% of the original build cost annually for maintenance, dependency patching and change. We offer tiered support, but we would rather you plan for that cost explicitly than discover it in year two.',
+        a: 'A custom platform needs ongoing ownership: typically 15–20% of the original build cost annually for maintenance, dependency patching and change. We offer tiered support, but we would rather you plan for that cost explicitly than discover it in year two.',
       },
     ],
     relatedCaseStudies: ['omnierp-manufacturing-suite', 'novucrm-intelligence-suite'],
@@ -408,7 +408,7 @@ export const servicePages: ServicePage[] = [
     h1: 'Enterprise Mobile App Development',
     seoTitle: 'Enterprise Mobile App Development',
     description:
-      'Native and cross-platform mobile apps for regulated environments — wallets, telemedicine and field operations — with offline behaviour designed, not assumed.',
+      'Native and cross-platform mobile apps for regulated environments (wallets, telemedicine and field operations) with offline behaviour designed, not assumed.',
     serviceType: 'Mobile application development',
     summary:
       'Native and cross-platform applications for regulated environments: digital wallets, telemedicine, and field operations where connectivity is unreliable.',
@@ -439,13 +439,13 @@ export const servicePages: ServicePage[] = [
         heading: 'Mobile security in regulated contexts',
         body: [
           'For wallets and clinical apps the relevant controls are concrete: certificate pinning, secure-enclave or Keystore-backed credential storage, jailbreak and root detection calibrated so it does not lock out legitimate users, no protected data in logs or crash reports, and a session model that survives real usage patterns rather than the ideal one in the specification.',
-          'App store review is also a schedule dependency, not an afterthought — particularly for health and finance categories, where additional documentation is routinely requested.',
+          'App store review is also a schedule dependency, not an afterthought: particularly for health and finance categories, where additional documentation is routinely requested.',
         ],
       },
       {
         heading: 'Choosing native or cross-platform on the actual constraint',
         body: [
-          'This decision is usually argued on developer preference and settled on cost. Neither is the right axis. The question that matters is how much of the product depends on platform capability that cross-platform frameworks reach late or imperfectly — deep background execution, specialised hardware, biometric and secure-enclave behaviour, or heavy real-time graphics.',
+          'This decision is usually argued on developer preference and settled on cost. Neither is the right axis. The question that matters is how much of the product depends on platform capability that cross-platform frameworks reach late or imperfectly: deep background execution, specialised hardware, biometric and secure-enclave behaviour, or heavy real-time graphics.',
           'Where an application is mostly presenting data, capturing input and calling services, cross-platform is straightforwardly the better economics: one codebase, one set of business logic, consistent behaviour. Where the product lives close to platform capability, the cross-platform saving evaporates into bridging code that is harder to maintain than two native implementations would have been.',
           'We would rather have this conversation before the estimate than after the first platform-specific requirement lands.',
         ],
@@ -462,7 +462,7 @@ export const servicePages: ServicePage[] = [
         heading: 'Security on a device you do not control',
         body: [
           'A mobile application runs on hardware the user owns, which may be rooted, shared, or compromised. Anything the client can decide, an attacker can decide. Authorisation is therefore enforced server-side without exception, and the client is treated as a rendering surface rather than as a trust boundary.',
-          'Credentials and tokens belong in platform secure storage rather than in application preferences, session lifetimes are short with silent refresh, and sensitive data is not written to logs, screenshots or crash reports — all three of which routinely leak more than teams expect.',
+          'Credentials and tokens belong in platform secure storage rather than in application preferences, session lifetimes are short with silent refresh, and sensitive data is not written to logs, screenshots or crash reports, all three of which routinely leak more than teams expect.',
           'For financial and health applications we also assume the device may be shared, which changes session and notification design: a push preview that reveals a balance or a clinical detail on a lock screen is a disclosure.',
         ],
       },
@@ -482,7 +482,7 @@ export const servicePages: ServicePage[] = [
     faqs: [
       {
         q: 'Should we build cross-platform or native?',
-        a: 'Cross-platform for most enterprise applications — the economics are real. Native where you need deep biometric or secure-enclave integration, hardware-backed key attestation, or strict platform-specific background behaviour. A cross-platform app with one native module is often the right compromise.',
+        a: 'Cross-platform for most enterprise applications; the economics are real. Native where you need deep biometric or secure-enclave integration, hardware-backed key attestation, or strict platform-specific background behaviour. A cross-platform app with one native module is often the right compromise.',
       },
       {
         q: 'Can the app work offline?',
@@ -507,7 +507,7 @@ export const servicePages: ServicePage[] = [
     h1: 'Cloud, AI & Automation Engineering',
     seoTitle: 'Cloud, AI & Automation Engineering',
     description:
-      'Cloud migration, Kubernetes platform engineering and applied AI for regulated workloads — including honest advice on where AI should not sit.',
+      'Cloud migration, Kubernetes platform engineering and applied AI for regulated workloads, including honest advice on where AI should not sit.',
     serviceType: 'Cloud infrastructure and AI engineering',
     summary:
       'Cloud migration, Kubernetes platform engineering, and applied machine learning for organisations with data residency and auditability constraints.',
@@ -523,7 +523,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Migration only pays if something changes',
         body: [
-          'Lift-and-shift migrations reliably produce the same architecture at a higher monthly cost. The savings people expect come from elasticity, managed services replacing self-operated ones, and shutting down what nobody was using — none of which happen automatically when you move a virtual machine.',
+          'Lift-and-shift migrations reliably produce the same architecture at a higher monthly cost. The savings people expect come from elasticity, managed services replacing self-operated ones, and shutting down what nobody was using, none of which happen automatically when you move a virtual machine.',
           'We scope migrations around what will actually change, and are direct when the answer is that a given workload should stay where it is. Not everything benefits from moving.',
         ],
       },
@@ -544,7 +544,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Where automation pays, and where it quietly costs',
         body: [
-          'Automation returns most on work that is high-volume, rule-stable and currently manual — reconciliation, document extraction, routine triage. It returns least on work that looks repetitive but carries frequent judgement calls, because each exception has to be handled somewhere, and an automation that covers eighty per cent of cases while making the remaining twenty harder to resolve is a net loss.',
+          'Automation returns most on work that is high-volume, rule-stable and currently manual: reconciliation, document extraction, routine triage. It returns least on work that looks repetitive but carries frequent judgement calls, because each exception has to be handled somewhere, and an automation that covers eighty per cent of cases while making the remaining twenty harder to resolve is a net loss.',
           'The honest measure is not the proportion of volume automated. It is total effort before against total effort after, including the effort of handling what the automation could not.',
         ],
       },
@@ -552,7 +552,7 @@ export const servicePages: ServicePage[] = [
         heading: 'Keeping models off paths that require justification',
         body: [
           'The pattern we recommend in compliance work generalises further than people expect: use models where being right most of the time is valuable and being wrong is recoverable, and keep deterministic logic wherever a decision has to be explained.',
-          'Prioritising a queue, drafting a summary, extracting a field for human confirmation — all recoverable. Deciding an outcome that a regulator, an auditor or a customer can challenge is not, and a model score is not a defensible answer to "why did the system do that".',
+          'Prioritising a queue, drafting a summary, extracting a field for human confirmation, all recoverable. Deciding an outcome that a regulator, an auditor or a customer can challenge is not, and a model score is not a defensible answer to "why did the system do that".',
           'This is not scepticism about the technology. It is placing it where its failure mode is affordable.',
         ],
       },
@@ -580,7 +580,7 @@ export const servicePages: ServicePage[] = [
     faqs: [
       {
         q: 'Can regulated financial data go to the cloud in Pakistan?',
-        a: 'It depends on your licence conditions, the data classification and your contractual obligations, and it is a question to settle with your compliance function before architecture rather than after. In practice a hybrid design frequently results — and we would rather establish that at the start than rebuild around it.',
+        a: 'It depends on your licence conditions, the data classification and your contractual obligations, and it is a question to settle with your compliance function before architecture rather than after. In practice a hybrid design frequently results, and we would rather establish that at the start than rebuild around it.',
       },
       {
         q: 'Will migrating to cloud reduce our costs?',
@@ -608,7 +608,7 @@ export const servicePages: ServicePage[] = [
       'Server-rendered web platforms, admin consoles and customer portals built for accessibility, Core Web Vitals and the crawlers that now read your site.',
     serviceType: 'Web application development',
     summary:
-      'Customer portals, admin consoles and public platforms built server-rendered, accessible, and fast — including for the AI crawlers that do not run JavaScript.',
+      'Customer portals, admin consoles and public platforms built server-rendered, accessible, and fast, including for the AI crawlers that do not run JavaScript.',
     keywords: [
       'enterprise web application development',
       'customer portal development',
@@ -627,14 +627,14 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Accessibility is a procurement requirement',
         body: [
-          'For government and enterprise buyers, WCAG conformance is frequently a hard procurement gate rather than a preference. Retrofitting it is substantially more expensive than building to it — semantic structure, keyboard operability, focus management and contrast are architectural properties of a component library, not a CSS pass at the end.',
+          'For government and enterprise buyers, WCAG conformance is frequently a hard procurement gate rather than a preference. Retrofitting it is substantially more expensive than building to it: semantic structure, keyboard operability, focus management and contrast are architectural properties of a component library, not a CSS pass at the end.',
           'It also correlates closely with the semantic HTML quality that determines how well search engines and LLMs chunk and understand a page, so the work pays twice.',
         ],
       },
       {
         heading: 'Performance where users actually are',
         body: [
-          'Core Web Vitals are measured on real devices on real networks. A platform tuned on a fast connection and a modern laptop will disappoint a user on a mid-range Android phone on a congested mobile network — which, for most of the markets our clients serve, is the median user rather than the edge case.',
+          'Core Web Vitals are measured on real devices on real networks. A platform tuned on a fast connection and a modern laptop will disappoint a user on a mid-range Android phone on a congested mobile network: which, for most of the markets our clients serve, is the median user rather than the edge case.',
           'The work is mostly unglamorous: bounded image dimensions to prevent layout shift, self-hosted critical assets rather than third-party requests on the critical path, deferred non-essential JavaScript, and a real budget on the largest contentful paint.',
         ],
       },
@@ -649,7 +649,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Third-party scripts are the usual cause of poor performance',
         body: [
-          'A site that scores well on its own code can still be slow because of tag managers, chat widgets, analytics and marketing pixels — each adding a DNS lookup, a TLS handshake and main-thread work, and each typically added by someone outside engineering with no performance review.',
+          'A site that scores well on its own code can still be slow because of tag managers, chat widgets, analytics and marketing pixels: each adding a DNS lookup, a TLS handshake and main-thread work, and each typically added by someone outside engineering with no performance review.',
           'The practical discipline is a budget: every third-party script has a named owner and a stated business justification, and anything failing both is removed. Where a script has to stay, it is loaded so that it cannot block first paint, and self-hosted where licensing permits so the request stays same-origin.',
           'This also has a privacy dimension that matters in regulated sectors. Every third-party request discloses your visitor\'s IP address and user agent to that provider, which is a disclosure your privacy policy has to be able to describe accurately.',
         ],
@@ -681,7 +681,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: 'Do you handle accessibility compliance?',
-        a: 'Yes, and we build to it rather than retrofitting. Semantic structure, keyboard operability, focus management and contrast are properties of the component library — adding them at the end costs several times more than designing them in.',
+        a: 'Yes, and we build to it rather than retrofitting. Semantic structure, keyboard operability, focus management and contrast are properties of the component library, adding them at the end costs several times more than designing them in.',
       },
       {
         q: 'Can you improve an existing site\'s Core Web Vitals?',

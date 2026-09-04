@@ -14,7 +14,7 @@ export const services: ServiceItem[] = [
   { icon: 'bi-credit-card-2-front', title: 'Payment Gateways', desc: 'PCI-DSS compliant integrations supporting global payment rails and local acquirers.', color: 'i-c', slug: 'payment-gateway-development' },
   // "Certified" removed — scheme certification is issued to the institution operating the
   // platform, not to the development firm. Matches app/layout.tsx:121 and the /services FAQ.
-  { icon: 'bi-patch-check-fill', title: 'Mastercard / Visa', desc: 'Direct integrations with Mastercard and Visa networks — issuing and acquiring.', color: 'i-o', slug: 'mastercard-visa-integration' },
+  { icon: 'bi-patch-check-fill', title: 'Mastercard / Visa', desc: 'Direct integrations with Mastercard and Visa networks, issuing and acquiring.', color: 'i-o', slug: 'mastercard-visa-integration' },
   { icon: 'bi-phone-fill', title: 'Mobile Apps', desc: 'Cross-platform iOS & Android apps built with Flutter and native Swift/Kotlin.', color: 'i-g', slug: 'cross-platform-app-development' },
   { icon: 'bi-heart-pulse-fill', title: 'Healthcare Software', desc: 'HIPAA-compliant EHR, telemedicine, and clinical workflow platforms for providers.', color: 'i-p', slug: 'ehr-clinical-software-development' },
   { icon: 'bi-clipboard2-pulse-fill', title: 'Medical Billing', desc: 'End-to-end billing with ICD-10/CPT coding, claim management, and payer integration.', color: 'i-c', slug: 'medical-billing-software-development' },
@@ -35,12 +35,12 @@ export const services: ServiceItem[] = [
 ];
 
 export const whyUs: WhyUsItem[] = [
-  { num: '01', icon: 'bi-shield-check', title: 'Security-First Engineering', desc: 'OWASP, PCI-DSS, ISO 27001, and HIPAA compliance built in from day one — never an afterthought.', color: 'i-t' },
+  { num: '01', icon: 'bi-shield-check', title: 'Security-First Engineering', desc: 'OWASP, PCI-DSS, ISO 27001, and HIPAA compliance built in from day one, never an afterthought.', color: 'i-t' },
   { num: '02', icon: 'bi-graph-up-arrow', title: 'Infinite Scalability', desc: 'Cloud-native architectures designed to scale from 1,000 to 100 million users without re-platforming.', color: 'i-b' },
-  { num: '03', icon: 'bi-award-fill', title: 'Regulatory Expertise', desc: 'Deep knowledge of FATF, FMU Pakistan, SBP, FCA, and global financial compliance — coded precisely.', color: 'i-v' },
+  { num: '03', icon: 'bi-award-fill', title: 'Regulatory Expertise', desc: 'Deep knowledge of FATF, FMU Pakistan, SBP, FCA, and global financial compliance, coded precisely.', color: 'i-v' },
   { num: '04', icon: 'bi-lightning-fill', title: 'Rapid Delivery', desc: 'Agile sprints with CI/CD pipelines deliver production-ready features every two weeks, consistently.', color: 'i-o' },
   { num: '05', icon: 'bi-headset', title: '24/7 Dedicated Support', desc: 'Round-the-clock NOC monitoring, SLA-backed support tiers, and dedicated account managers.', color: 'i-c' },
-  { num: '06', icon: 'bi-globe2', title: 'Global Delivery Model', desc: 'Office in Islamabad — follow-the-sun development velocity.', color: 'i-t' }
+  { num: '06', icon: 'bi-globe2', title: 'Global Delivery Model', desc: 'Office in Islamabad, follow-the-sun development velocity.', color: 'i-t' }
 ];
 
 export const industries: IndustryItem[] = [
@@ -74,7 +74,7 @@ export interface PortfolioProject extends PortfolioItem {
 // TODO(client): the 9 `img` values below are hotlinked Unsplash stock photographs standing in
 // for real project work. Same credibility problem as the team photos (CLIENT-ACTIONS.md item 1),
 // and hotlinking leaks every visitor to images.unsplash.com on page load. Replace with real
-// screenshots, redacted architecture diagrams, or neutral branded panels — self-hosted.
+// screenshots, redacted architecture diagrams, or neutral branded panels, self-hosted.
 // NOTE: SEO-CHANGELOG.md "Not done, and why" describes these as "~30 CSS background URLs in
 // globals.css". That is inaccurate: there are zero external url() references in any CSS file.
 // The real exposure is these 9 entries in this file.
@@ -159,10 +159,10 @@ export const portfolioProjects: PortfolioProject[] = [
 
 export const faqs: FaqItem[] = [
   { q: 'What industries does NovuLabs specialize in?', a: 'Banking & Fintech, Healthcare, Government, Manufacturing, and E-Commerce. Our deepest expertise is in AML, CFT, and FMU Pakistan compliance for regulated financial institutions.' },
-  { q: 'How do I start a project with NovuLabs?', a: 'Book a free consultation — a 45-minute discovery call with a senior architect, zero commitment. We listen first, then advise on the right approach for your specific needs.' },
+  { q: 'How do I start a project with NovuLabs?', a: 'Book a free consultation: a 45-minute discovery call with a senior architect, zero commitment. We listen first, then advise on the right approach for your specific needs.' },
   { q: 'Do you offer post-launch support and maintenance?', a: 'Yes. Tiered SLA packages from standard business-hours support to 24/7 platinum tiers with 4-hour guaranteed response. All enterprise clients get a dedicated account manager.' },
-  { q: 'Are your solutions compliant with FMU Pakistan regulations?', a: 'Absolutely. We have live deployments at multiple SBP-regulated institutions — GOAML integration, STR/CTR reporting, AML/CFT screening, all under FMU and FATF frameworks.' },
-  { q: 'Can you work alongside our existing team?', a: 'Yes. Staff augmentation, co-development, and full outsourcing — we adapt to your stack, tools, and methodologies. Many clients embed our engineers alongside their in-house teams.' }
+  { q: 'Are your solutions compliant with FMU Pakistan regulations?', a: 'Absolutely. We have live deployments at multiple SBP-regulated institutions: GOAML integration, STR/CTR reporting, AML/CFT screening, all under FMU and FATF frameworks.' },
+  { q: 'Can you work alongside our existing team?', a: 'Yes. Staff augmentation, co-development, and full outsourcing: we adapt to your stack, tools, and methodologies. Many clients embed our engineers alongside their in-house teams.' }
 ];
 
 /**
@@ -173,7 +173,7 @@ export const faqs: FaqItem[] = [
  * These three profiles previously used Unsplash stock photographs of strangers
  * under the real names of the company's CEO, CTO and COO. For a vendor asking a
  * bank to trust it with transaction monitoring, that is the single most
- * damaging credibility error on the site — and it is a Search Quality Rater
+ * damaging credibility error on the site, and it is a Search Quality Rater
  * Guidelines negative signal on top of the commercial cost.
  *
  * They have been replaced with neutral branded monograms, which is honest.
@@ -182,7 +182,7 @@ export const faqs: FaqItem[] = [
  * this branch combined.
  *
  * `credentials` is intentionally empty. Populate it only with credentials that
- * can be verified — CAMS, CISSP, AWS certifications, degrees, prior employers.
+ * can be verified: CAMS, CISSP, AWS certifications, degrees, prior employers.
  * An empty credentials array renders nothing; an invented one is a liability.
  */
 
@@ -194,7 +194,7 @@ export const faqs: FaqItem[] = [
  * the codebase changed, which is what keeps the markup policy-compliant.
  */
 export const contactFaqs: FaqItem[] = [
-  { q: 'What is the minimum project size NovuLabs works with?', a: 'Typically $15,000 USD for a standalone module or MVP. Full enterprise platforms start from $50,000. We focus on end-to-end delivery — not hourly freelance work.' },
+  { q: 'What is the minimum project size NovuLabs works with?', a: 'Typically $15,000 USD for a standalone module or MVP. Full enterprise platforms start from $50,000. We focus on end-to-end delivery, not hourly freelance work.' },
   { q: 'Do you sign NDAs before discussions?', a: 'Yes, mutual NDAs before any substantive technical discussion. Your IP and competitive information are protected from the first call.' },
   { q: 'Can you work alongside our existing in-house team?', a: 'Yes. Staff augmentation, co-development, and full outsourcing. Our engineers adapt to your existing stack, tools, sprint ceremonies, and communication preferences.' },
   { q: 'What compliance frameworks do you work to?', a: 'FATF, FMU Pakistan, SBP, HIPAA, HL7 FHIR, PCI-DSS, ISO 27001, GDPR, and Mastercard/Visa scheme requirements. To be precise about the distinction: we engineer to these standards. Where a framework issues certification, that certificate is held by the entity operating the environment, not by its development vendor.' },
@@ -225,7 +225,7 @@ export const teamMembers: TeamMemberProfile[] = [
     role: 'Chief Technology Officer',
     img: '/team/shamroz-ali-zaidi.jpg',
     imgAlt: 'Shamroz Ali Zaidi, Chief Technology Officer of NovuLabs',
-    bio: 'Owns platform architecture — multi-tenant systems, cloud, and the security posture underneath both.',
+    bio: 'Owns platform architecture: multi-tenant systems, cloud, and the security posture underneath both.',
     longBio:
       'Shamroz leads platform architecture at NovuLabs, covering multi-tenant SaaS design, cloud and Kubernetes platform engineering, and the security posture of regulated workloads. He writes here on HIPAA safeguards and HL7 FHIR interoperability.',
     skills: ['Platform architecture', 'Cloud & Kubernetes', 'Security engineering'],

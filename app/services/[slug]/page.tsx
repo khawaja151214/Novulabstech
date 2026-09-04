@@ -290,7 +290,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* CTA — deliberately not an <h2>. It is a conversion element, not a
+      {/* CTA, deliberately not an <h2>. It is a conversion element, not a
           section of the document, and marking it as a heading previously made
           it the highest-weighted heading on every article page. */}
       <section id="cta-banner">
@@ -304,7 +304,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </p>
                 <p className="ssub mt-4 mb-0">
                   A free 45-minute technical call with a senior engineer who has built this before. No
-                  demos, no sales scripts — bring your architecture and get an honest read on it.
+                  demos, no sales scripts, bring your architecture and get an honest read on it.
                 </p>
               </div>
               <div className="col-lg-5 text-lg-end">
@@ -327,7 +327,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 }
 
 // ---------------------------------------------------------------------------
-// Spoke page — one of the 22 narrower service pages nested under a pillar.
+// Spoke page, one of the 22 narrower service pages nested under a pillar.
 // ---------------------------------------------------------------------------
 function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
   const pillar = getServicePage(spoke.parentSlug);
@@ -543,7 +543,7 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
         </div>
       </section>
 
-      {/* CTA — deliberately not an <h2>, same reasoning as the pillar page:
+      {/* CTA, deliberately not an <h2>, same reasoning as the pillar page:
           it is a conversion element, not a section of the document. */}
       <section id="cta-banner">
         <div className="container">

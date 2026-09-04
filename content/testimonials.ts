@@ -1,37 +1,37 @@
 /**
- * /testimonials — client testimonials.
+ * /testimonials, client testimonials.
  * ---------------------------------------------------------------------------
  * ⚠️  EVERY TESTIMONIAL IN THIS FILE IS A PLACEHOLDER. NONE IS A REAL CLIENT.
  *
  * No genuine client testimonial exists anywhere in this repository or on the
  * live site, so none could be consolidated. Rather than ship an empty page or
  * invent quotes and pass them off as real, the page renders these with a
- * visible, unmissable notice saying they are samples — and every record
+ * visible, unmissable notice saying they are samples, and every record
  * carries `placeholder: true`, which is what drives that notice.
  *
  * WHAT MUST HAPPEN BEFORE THIS PAGE IS TRUE
  *   1. Collect real, attributable feedback. A role and a sector alone
  *      ("Head of Compliance, commercial bank") is enough when an NDA prevents
- *      naming the institution — that is the same convention /portfolio already
+ *      naming the institution; that is the same convention /portfolio already
  *      uses for unnamed clients, and it is honest.
  *   2. Replace `quote`, `role` and `sector` with the real words. Do not edit a
  *      real quote for flow; a tidied quote is no longer a quotation.
  *   3. Set `placeholder: false` on each replaced record. The sample banner
  *      disappears automatically once no record is a placeholder.
- *   4. Only then consider structured data — see the note in lib/schema.ts and
+ *   4. Only then consider structured data, see the note in lib/schema.ts and
  *      app/testimonials/page.tsx.
  *
  * WHY THERE IS NO Review / AggregateRating SCHEMA
  * Google's review snippet policy requires reviews that are genuine, collected
  * from real customers, and not written by the business about itself. Marking up
- * placeholder text — or even real testimonials the business solicited and
+ * placeholder text, or even real testimonials the business solicited and
  * published about itself — as `Review` with a `ratingValue` invites a manual
  * action for spammy structured data. There are no star ratings on this page
  * because nobody has given one. Do not add them to satisfy a validator.
  *
  * The copy below is written in the same voice as the rest of the site and is
  * deliberately specific about engineering, so it is usable as a starting
- * template for the real thing — but it describes no actual engagement.
+ * template for the real thing, but it describes no actual engagement.
  */
 
 export interface Testimonial {
@@ -39,7 +39,7 @@ export interface Testimonial {
   quote: string;
   /** Role of the person quoted. Never a fabricated personal name. */
   role: string;
-  /** Organisation descriptor — sector and scale, not a client name. */
+  /** Organisation descriptor: sector and scale, not a client name. */
   organisation: string;
   /** Which sector grouping this appears under on the page. */
   sector:
@@ -49,7 +49,7 @@ export interface Testimonial {
     | 'Enterprise Software'
     | 'AI & Automation'
     | 'SaaS';
-  /** Service page this engagement maps to — renders as an internal link. */
+  /** Service page this engagement maps to, renders as an internal link. */
   relatedService?: { label: string; href: string };
   /** TRUE until replaced with verified client feedback. Drives the page banner. */
   placeholder: boolean;
@@ -180,7 +180,7 @@ export const testimonialSectors = [
 ] as const;
 
 /**
- * "Why clients choose NovuLabs" — the differentiators, stated as method rather
+ * "Why clients choose NovuLabs"; the differentiators, stated as method rather
  * than as outcome. Each one is something the site can show elsewhere, which is
  * why each carries an internal link: an unlinked claim is just an assertion.
  */

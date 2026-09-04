@@ -6,7 +6,7 @@ import { caseStudies } from '@/content/caseStudies';
  * Sector-to-case-study links on /industries.
  *
  * /industries linked to seven service pages and three articles but to zero case
- * studies — the single strongest contextual link available on a sector page,
+ * studies; the single strongest contextual link available on a sector page,
  * because a buyer reading about banking wants the banking engagement, not a
  * generic portfolio index.
  *

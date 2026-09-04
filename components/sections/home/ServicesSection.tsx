@@ -11,7 +11,7 @@ const ServicesSection: React.FC = () => {
           <div className="col-lg-7" data-reveal="up">
             <span className="stag">What We Build</span>
             <h2 className="stitle mt-3">What we <span className="gtxt">build</span></h2>
-            <p className="ssub mx-auto">From compliant fintech platforms to AI-powered automation — mission-critical software that enterprises depend on.</p>
+            <p className="ssub mx-auto">From compliant fintech platforms to AI-powered automation, mission-critical software that enterprises depend on.</p>
           </div>
         </div>
         <div className="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4">

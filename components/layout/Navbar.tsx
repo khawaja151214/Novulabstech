@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
         <Link className="navbar-brand" href="/">
           {/* next/image: logo.png is a 1200x1200 / 154KB PNG rendered at 40px.
               As a raw <img> with no dimensions it was an unsized element in the
-              header of all 40 routes — the site's single largest CLS source —
+              header of all 40 routes; the site's single largest CLS source —
               and shipped 154KB for a 40px slot. The optimizer serves AVIF/WebP
               at 40px instead. */}
           <Image

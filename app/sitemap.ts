@@ -14,7 +14,7 @@ import { teamMembers } from '@/content/siteData';
  *
  * 1. Blog slugs were hardcoded in a second list, so the sitemap and the content
  *    could silently drift apart. Everything is now derived from the content
- *    modules — a new post, service or case study appears automatically.
+ *    modules: a new post, service or case study appears automatically.
  *
  * 2. Every URL shared an identical `lastModified` of `new Date()`, i.e. build
  *    time. That tells Google the dates are build artefacts rather than content
@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: r.priority,
   }));
 
-  // Dedicated service pages — the highest-value commercial URLs on the site.
+  // Dedicated service pages; the highest-value commercial URLs on the site.
   const serviceRoutes: MetadataRoute.Sitemap = servicePages.map((s) => ({
     url: `${SITE_URL}/services/${s.slug}`,
     lastModified: buildDate,

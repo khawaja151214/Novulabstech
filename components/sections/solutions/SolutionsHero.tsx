@@ -14,7 +14,7 @@ const SolutionsHero: React.FC = () => {
         <Breadcrumbs className="mb-4" items={[{ name: 'Platforms' }]} />
         <span className="stag">Product Platforms</span>
         <h1 className="hero-title mt-3">Proven Enterprise <span className="gtxt">Solutions</span></h1>
-        <p className="hero-sub">Four battle-tested platforms — adaptable to your organization's specific requirements, compliance needs, and technology landscape.</p>
+        <p className="hero-sub">Four battle-tested platforms: adaptable to your organization's specific requirements, compliance needs, and technology landscape.</p>
       </div>
     </section>
   );

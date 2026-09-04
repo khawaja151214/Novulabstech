@@ -16,7 +16,7 @@ import { canonical } from '@/lib/seo';
 /**
  * Author / profile pages.
  *
- * Why these exist: bylines previously resolved to `/team#slug` — a fragment, not
+ * Why these exist: bylines previously resolved to `/team#slug`; a fragment, not
  * a page. Google does not treat a fragment as a distinct entity, so:
  *
  *   - the `author` in every BlogPosting pointed at a URL that is really just
@@ -181,7 +181,7 @@ export default async function TeamProfilePage({ params }: PageProps) {
               </ul>
 
               {/* Rendered only when non-empty. The data model deliberately keeps
-                  `credentials` empty rather than inventing any — an unverifiable
+                  `credentials` empty rather than inventing any; an unverifiable
                   credential is an E-E-A-T liability, not an asset. */}
               {member.credentials.length > 0 && (
                 <>
@@ -200,7 +200,7 @@ export default async function TeamProfilePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Authored articles — the archive that ties the person to the work */}
+      {/* Authored articles; the archive that ties the person to the work */}
       {authored.length > 0 && (
         <>
           <div className="divider"></div>

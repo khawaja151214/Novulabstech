@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   // title tag — Google resolves that query by relevance and trust signals, not
   // by string-matching a superlative.
   title: { absolute: 'Enterprise Software House in Islamabad | NovuLabs' },
-  // 158 chars — was 189, which Google truncated mid-clause at ~160.
+  // 158 chars: was 189, which Google truncated mid-clause at ~160.
   description:
     'Enterprise software house in Islamabad building AML/CFT compliance systems, HIPAA healthcare platforms and PCI-DSS payments. Talk to an architect, not a rep.',
   keywords: [

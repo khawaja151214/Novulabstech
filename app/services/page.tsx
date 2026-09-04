@@ -82,7 +82,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <div className="divider"></div>
 
-      {/* Hub grid — every service now has its own indexable URL. This block is
+      {/* Hub grid, every service now has its own indexable URL. This block is
           the internal-linking backbone of the whole commercial cluster. */}
       <section className="sec bg-w" id="service-index">
         <div className="container">

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Space_Grotesk, Outfit, JetBrains_Mono } from 'next/font/google';
+import { Archivo, Source_Sans_3, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
 // ---------------------------------------------------------------------------
@@ -9,7 +9,7 @@ import './globals.css';
 // These were previously pulled in with `@import url('https://fonts.googleapis.com/...')`
 // at the top of globals.css. That import sat *after* the Bootstrap @imports, and
 // since CSS requires @import to precede all other rules, the production CSS
-// optimizer dropped it entirely — the built stylesheet contained no reference to
+// optimizer dropped it entirely; the built stylesheet contained no reference to
 // fonts.googleapis.com at all, while `font-family` still named Space Grotesk and
 // Outfit. Every visitor was served fallback system fonts.
 //
@@ -17,17 +17,18 @@ import './globals.css';
 // request to a third party, no extra DNS + TLS handshake before first paint, no
 // visitor IP disclosed to Google, and `display: swap` plus the generated
 // size-adjust fallback keeps CLS near zero. This also matches the reasoning in
-// the Bootstrap comment in globals.css — do not move these back to an @import.
-const fontHeading = Space_Grotesk({
+// the Bootstrap comment in globals.css, do not move these back to an @import.
+const fontHeading = Archivo({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['500', '600', '700'],
   variable: '--font-heading',
   display: 'swap',
 });
 
-const fontBody = Outfit({
+const fontBody = Source_Sans_3({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  weight: ['400', '600'],
+  style: ['normal', 'italic'],
   variable: '--font-body',
   display: 'swap',
 });
@@ -63,7 +64,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.novulabs.net'),
   title: {
-    // 58 chars — inside the ~60 char SERP render budget.
+    // 58 chars, inside the ~60 char SERP render budget.
     default: 'NovuLabs — Enterprise Software House in Pakistan',
     // Page-level `title` strings must NOT contain the brand; this template
     // appends it exactly once. (Previously several pages included it too,
@@ -155,7 +156,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fontHeading.variable} ${fontBody.variable} ${fontMono.variable}`}
     >
       <head>
-        {/* Sitewide entity graph — ProfessionalService + WebSite, linked by @id.
+        {/* Sitewide entity graph: ProfessionalService + WebSite, linked by @id.
             Server-rendered so non-JS crawlers (GPTBot, ClaudeBot, PerplexityBot,
             CCBot) can read it. Definitions live in lib/schema.ts. */}
         <JsonLd data={[organizationSchema(), websiteSchema(), siteNavigationSchema()]} />

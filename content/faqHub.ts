@@ -11,13 +11,13 @@ import {
 import { servicePages } from './servicePages';
 
 /**
- * /faq — the hub.
+ * /faq; the hub.
  * ---------------------------------------------------------------------------
  * The site already answers ~60 questions, but they were scattered across ten
  * pages with no single address. Someone searching "does NovuLabs do X" had no
  * document to land on, and neither did an answer engine.
  *
- * ARCHITECTURE — hub and spoke, deliberately not a copy-paste aggregate.
+ * ARCHITECTURE: hub and spoke, deliberately not a copy-paste aggregate.
  *
  * `hubFaqs` below are NEW questions, answered nowhere else on the site. They
  * are the broad orientation questions a buyer asks before they know which
@@ -27,12 +27,12 @@ import { servicePages } from './servicePages';
  * `faqDirectory` does NOT restate the answers that live on other pages. It
  * lists their questions as links into the section that owns each one. Copying
  * ~60 answers here would put every Q&A on the site at two URLs and two
- * FAQPage nodes, which splits the signal rather than concentrating it — the
+ * FAQPage nodes, which splits the signal rather than concentrating it; the
  * page competes with the very pages it is supposed to feed. A directory gives
  * the reader one place to scan, gives every spoke page an inbound contextual
  * link, and leaves each answer with exactly one canonical home.
  *
- * WRITING RULE — answer-first, same as content/pageFaqs.ts. The first sentence
+ * WRITING RULE: answer-first, same as content/pageFaqs.ts. The first sentence
  * is the answer; everything after it qualifies.
  *
  * HONESTY RULE — no pricing beyond what /contact already publishes, no
@@ -79,7 +79,7 @@ export const hubFaqs: FaqItem[] = [
   {
     // This used to restate the About page's own FAQ almost word for word
     // ("Is NovuLabs ISO 27001 or HIPAA certified?"), which is exactly what
-    // this file's header comment says hubFaqs should never do — that
+    // this file's header comment says hubFaqs should never do; that
     // question already has one canonical home in content/pageFaqs.ts
     // (aboutFaqs), and the directory below already links to it. Replaced
     // with a genuinely new orientation question this hub does not answer
@@ -93,7 +93,7 @@ export const hubFaqs: FaqItem[] = [
 /** One category in the directory. `href` is the section that owns the answers. */
 export interface FaqDirectoryGroup {
   title: string;
-  /** Why a reader would open this group — one line, not a keyword string. */
+  /** Why a reader would open this group: one line, not a keyword string. */
   blurb: string;
   href: string;
   items: FaqItem[];
@@ -163,6 +163,6 @@ export const faqDirectory: FaqDirectoryGroup[] = [
   })),
 ];
 
-/** Total questions the site answers — rendered on the page, so it must be real. */
+/** Total questions the site answers: rendered on the page, so it must be real. */
 export const totalAnsweredQuestions =
   hubFaqs.length + faqDirectory.reduce((n, g) => n + g.items.length, 0);

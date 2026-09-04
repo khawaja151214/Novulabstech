@@ -7,7 +7,7 @@
  * Design rules applied here:
  *  - Never emit a property whose value is a placeholder. A missing `telephone`
  *    is neutral; a fake one poisons the entity and every citation built on it.
- *  - Never emit Review/AggregateRating without real, verifiable reviews — that
+ *  - Never emit Review/AggregateRating without real, verifiable reviews; that
  *    is a manual-action risk, not a shortcut.
  *  - @id everywhere, so the graph resolves to one organisation rather than a
  *    dozen unlinked copies of the same company.
@@ -15,7 +15,7 @@
 
 import { ORG, SITE_NAME, SITE_URL, canonical, absoluteUrl } from './seo';
 
-/** Stable node identifiers — these make the JSON-LD a connected graph. */
+/** Stable node identifiers, these make the JSON-LD a connected graph. */
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
@@ -295,7 +295,7 @@ export function webPageSchema(opts: {
 }
 
 /**
- * SiteNavigationElement — the primary navigation, declared as structured data.
+ * SiteNavigationElement: the primary navigation, declared as structured data.
  *
  * This is one of the few remaining signals Google uses when deciding which
  * sitelinks to render under a brand-name result. It does not guarantee sitelinks
@@ -303,7 +303,7 @@ export function webPageSchema(opts: {
  * site's primary sections from link position alone.
  *
  * Deliberately limited to the real top-level sections, in navigation order.
- * Padding this list with every URL on the site is counterproductive — it
+ * Padding this list with every URL on the site is counterproductive; it
  * flattens the hierarchy the markup is supposed to express.
  */
 export function siteNavigationSchema() {

@@ -9,7 +9,7 @@ import ContactFaqSection from '@/components/sections/contact/ContactFaqSection';
 export const metadata: Metadata = {
   title: 'Contact — Book a Free Technical Call',
   description:
-    'Book a free 45-minute technical call with a senior architect. No demos, no sales scripts — bring your architecture and get an honest read on it.',
+    'Book a free 45-minute technical call with a senior architect. No demos, no sales scripts, bring your architecture and get an honest read on it.',
   keywords: [
     'contact NovuLabs',
     'book enterprise software consultation',

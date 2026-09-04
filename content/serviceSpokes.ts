@@ -7,7 +7,7 @@ import { FaqItem } from '../types';
  *
  * The homepage lists 22 service cards (content/siteData.ts, `services`). Until
  * now every one of those cards linked straight to /contact with no page in
- * between explaining what the service actually involves — a visitor had to
+ * between explaining what the service actually involves; a visitor had to
  * commit to a conversation before reading a single sentence about the work.
  *
  * WHY THESE AREN'T 22 INDEPENDENT PAGES
@@ -29,7 +29,7 @@ import { FaqItem } from '../types';
  * narrowing:
  *
  *   - "Enterprise Software" (the card) becomes "Legacy System Modernisation"
- *     (the page) — the pillar already owns the broad ERP/CRM/SaaS story;
+ *     (the page); the pillar already owns the broad ERP/CRM/SaaS story;
  *     modernising an existing system is a distinct enough problem, mentioned
  *     but never expanded on in the pillar's own summary, to deserve its own
  *     page.
@@ -75,15 +75,15 @@ export interface ServiceSpoke {
   description: string;
   /** One sentence, used on hub and pillar "related" cards. */
   summary: string;
-  /** Bootstrap icon class — reused from the matching homepage card. */
+  /** Bootstrap icon class, reused from the matching homepage card. */
   icon: string;
   /** Intro paragraph(s), before any heading. */
   intro: string[];
-  /** "What We Offer" — rendered as H3 subsections. */
+  /** "What We Offer", rendered as H3 subsections. */
   offerings: { title: string; body: string }[];
-  /** "How We Help" — the business problems this solves, as paragraphs. */
+  /** "How We Help": the business problems this solves, as paragraphs. */
   howWeHelp: string[];
-  /** "Our Approach" — method, as paragraphs. */
+  /** "Our Approach": method, as paragraphs. */
   approach: string[];
   /** Subset of the parent pillar's real stack. */
   technologies: string[];

@@ -5,14 +5,14 @@ import { useEffect } from 'react';
 /**
  * Scroll-linked depth for `[data-parallax]` elements.
  *
- * Usage: `<div data-parallax="40">` — the value is the maximum travel in pixels,
+ * Usage: `<div data-parallax="40">`; the value is the maximum travel in pixels,
  * reached when the element is at the very edge of the viewport. Omit it for the
  * 36px default.
  *
  * The offset is deliberately expressed as a bounded pixel maximum rather than
  * the more common "fraction of scroll distance". A fractional speed produces
  * unbounded travel on tall pages, which for a layer that fills its container —
- * a hero background — eventually drags its own edge into frame. Bounding the
+ * a hero background, eventually drags its own edge into frame. Bounding the
  * travel lets the matching CSS scale headroom be computed exactly.
  *
  * Implementation notes, because naive parallax is a reliable source of jank:
@@ -21,7 +21,7 @@ import { useEffect } from 'react';
  *   reads/writes happen in one rAF tick, so we never interleave layout reads
  *   with style writes and force synchronous reflow.
  * - Only `transform: translate3d` is written — never `top` or `background-position`
- *   — so the work stays on the compositor and off the main thread.
+ *  , so the work stays on the compositor and off the main thread.
  * - An IntersectionObserver keeps a live set of on-screen elements. Off-screen
  *   elements are not transformed at all, so a long page with many parallax
  *   targets costs the same as one with a few.

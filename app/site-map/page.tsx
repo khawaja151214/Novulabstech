@@ -19,17 +19,17 @@ import { canonical } from '@/lib/seo';
  * the /sitemap route segment to generate /sitemap.xml, and Next.js will not
  * allow two routes to resolve into the same segment.
  *
- * This complements, and does not replace, sitemap.xml — it gives every page a
+ * This complements, and does not replace, sitemap.xml; it gives every page a
  * second internal link from a crawlable hub, which is the cheapest available
  * fix for orphan and near-orphan pages.
  */
 export const metadata: Metadata = {
   title: 'Sitemap',
-  // 148 chars — was 112, which left SERP real estate unused.
+  // 148 chars: was 112, which left SERP real estate unused.
   description:
     'Every page on novulabs.net in one place: services, platforms, case studies, technical articles, testimonials, company pages, FAQs and policies.',
   alternates: { canonical: canonical('/site-map') },
-  // Same inherited-og:url problem as /legal — see the note there.
+  // Same inherited-og:url problem as /legal, see the note there.
   openGraph: {
     type: 'website',
     title: 'Sitemap — NovuLabs',

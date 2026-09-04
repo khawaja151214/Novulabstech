@@ -216,11 +216,11 @@ const ContactFormSection: React.FC = () => {
                     >
                       {formSubmitted ? (
                         <>
-                          <i className="bi bi-check-circle me-2"></i>Message Sent — We'll be in touch!
+                          <i className="bi bi-check-circle me-2"></i>Message Sent; We'll be in touch!
                         </>
                       ) : (
                         <>
-                          <i className="bi bi-send-fill me-2"></i>Send Message — We Respond in 4 Hours
+                          <i className="bi bi-send-fill me-2"></i>Send Message; We Respond in 4 Hours
                         </>
                       )}
                     </Button>

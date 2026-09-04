@@ -27,14 +27,14 @@ const PlatformSelectionSection: React.FC = () => {
 
             <p className="mt-4" style={{ fontSize: 'var(--step-0)', lineHeight: 1.78 }}>
               Four platforms with overlapping capability is genuinely confusing from the
-              outside. The distinction that matters is not feature lists — it is which system
+              outside. The distinction that matters is not feature lists; it is which system
               owns the record, and which regulatory obligation the deployment has to satisfy.
             </p>
 
             <h3 className="mt-5">Start from the system of record, not the feature list</h3>
             <p>
               Every platform decision in an enterprise estate reduces to one question: for a
-              given entity — a customer, a transaction, a case, an invoice — which system holds
+              given entity (a customer, a transaction, a case, an invoice) which system holds
               the authoritative version, and which systems hold copies?
             </p>
             <p>
@@ -72,7 +72,7 @@ const PlatformSelectionSection: React.FC = () => {
               .
             </p>
             <p>
-              <strong>NovuERP</strong> owns operational and financial process — the internal
+              <strong>NovuERP</strong> owns operational and financial process; the internal
               record of what the organisation did. <strong>NovuCRM</strong> owns the
               relationship record: who the counterparty is, every interaction with them, and
               the commercial pipeline. The two are frequently deployed together, and the
@@ -92,7 +92,7 @@ const PlatformSelectionSection: React.FC = () => {
             <p>
               All four platforms are designed to be deployed into infrastructure the client
               controls where that is required, rather than assuming a single shared tenancy.
-              What that means concretely for your estate — and what it costs in operational
+              What that means concretely for your estate, and what it costs in operational
               overhead — is a conversation to have with an architect, because the honest answer
               depends on your existing infrastructure and your regulator&apos;s position.
             </p>
@@ -128,7 +128,7 @@ const PlatformSelectionSection: React.FC = () => {
               The case for a platform like these is strongest where the requirement is shaped
               by a regulator whose schema you do not control, wired into systems nobody else
               runs, in a market too small for the large vendors to have built for properly.
-              That is a real and specific situation — it is most of what we do — but it is not
+              That is a real and specific situation, it is most of what we do, but it is not
               every situation, and a supplier who tells you it is should be treated with
               caution.
             </p>

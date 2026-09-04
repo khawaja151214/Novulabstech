@@ -5,7 +5,7 @@
  * the site can never again drift out of sync (which is what caused the
  * blog-posts-canonicalise-to-homepage bug).
  *
- * ⚠️  CLIENT ACTION REQUIRED — the values marked TODO below are placeholders.
+ * ⚠️  CLIENT ACTION REQUIRED; the values marked TODO below are placeholders.
  *     Replace them with verified facts before deploying to production. Publishing
  *     unverifiable claims is an E-E-A-T liability, especially in YMYL verticals
  *     (financial compliance, healthcare data) where NovuLabs operates.
@@ -44,7 +44,7 @@ export const ORG = {
   email: 'info@novulabs.net',
 
   // Sourced from the verified Google Business Profile, which published this
-  // number while the website published none — the contact page told people to
+  // number while the website published none; the contact page told people to
   // "call us directly" with nothing to call. NAP consistency requires the same
   // number in both places, so this is now the GBP number in E.164 format.
   //
@@ -61,7 +61,7 @@ export const ORG = {
     streetAddress: 'I-10/4, I-10',
     addressLocality: 'Islamabad',
     addressRegion: 'Islamabad Capital Territory',
-    // TODO(client): still unknown — absent from both the website and the GBP.
+    // TODO(client): still unknown, absent from both the website and the GBP.
     // LocalBusiness will validate without it but the address is weaker for
     // map-pack matching. Left null rather than guessed.
     postalCode: null as string | null,
@@ -116,7 +116,7 @@ export const ORG = {
 export const BRAND_SUFFIX_LENGTH = ' | NovuLabs'.length; // 11
 
 /** Dev-time guard: warns if a page title will exceed the SERP render budget.
- *  Never throws — a title warning must not break a build. */
+ *  Never throws; a title warning must not break a build. */
 export function assertTitleBudget(title: string, route: string): string {
   if (process.env.NODE_ENV === 'development') {
     const rendered = title.length + BRAND_SUFFIX_LENGTH;
@@ -129,7 +129,7 @@ export function assertTitleBudget(title: string, route: string): string {
     if (/\|\s*NovuLabs/i.test(title)) {
       // eslint-disable-next-line no-console
       console.warn(
-        `[seo] Title for ${route} already contains the brand — the layout template will duplicate it.`
+        `[seo] Title for ${route} already contains the brand; the layout template will duplicate it.`
       );
     }
   }

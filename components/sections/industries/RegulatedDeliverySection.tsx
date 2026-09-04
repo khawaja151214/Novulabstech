@@ -7,7 +7,7 @@ import Link from 'next/link';
  * /industries measured 512 words across four sector deep-dives, which left the
  * page asserting sector experience without demonstrating the reasoning that
  * would evidence it. This section covers what is actually common across
- * regulated delivery — the part a buyer in any of these sectors is testing for
+ * regulated delivery; the part a buyer in any of these sectors is testing for
  * when they read an industries page.
  *
  * No client names, project counts, transaction volumes or contract values

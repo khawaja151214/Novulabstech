@@ -413,7 +413,7 @@ img{max-width:100%;display:block}
   padding:13px 28px;border-radius:var(--r);
   font-family:var(--fh);font-weight:700;font-size:.95rem;cursor:pointer;
   transition:var(--t);box-shadow:var(--sh-glow);
-  border:1.5px solid rgba(255,255,255,.30);
+  border:1.5px solid #8797AA;
   position:relative;overflow:hidden;text-decoration:none;
   isolation: isolate;
 }
@@ -425,7 +425,7 @@ img{max-width:100%;display:block}
 
 .btn-glass{
   display:inline-flex;align-items:center;gap:9px;
-  background:rgba(255,255,255,.72);color:var(--p1);
+  background:#CBD6E3;color:var(--p1);
   border:1.5px solid var(--gb1);
   padding:13px 28px;border-radius:var(--r);
   font-family:var(--fh);font-weight:600;font-size:.95rem;cursor:pointer;
@@ -493,7 +493,7 @@ img{max-width:100%;display:block}
   transition:var(--t);position:relative;overflow:hidden;
   box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
-.sico::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.5),transparent);border-radius:13px}
+.sico::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#AEBBCB,transparent);border-radius:13px}
 .i-b {background:rgba(93, 224, 230,.16);  color:var(--p1)}
 .i-t {background:rgba(0, 72, 141,.16);  color:var(--a1)}
 .i-v {background:rgba(165, 243, 252,.16);  color:var(--p3)}
@@ -531,7 +531,7 @@ img{max-width:100%;display:block}
 /* ── SECTION LABELS ── */
 .stag{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.72);
+  background:#CBD6E3;
   border:1px solid var(--gb4);
   backdrop-filter:var(--blur-sm);
   color:var(--p1);font-size:.73rem;font-weight:700;
@@ -618,7 +618,7 @@ img{max-width:100%;display:block}
   animation:titleShine 3s ease-in-out 1s infinite;
 }
 .hero-sub{
-  font-size:clamp(.93rem,1.4vw,1.1rem);color:rgba(255,255,255,.60)!important;
+  font-size:clamp(.93rem,1.4vw,1.1rem);color:#CBD6E3!important;
   max-width:520px;line-height:1.85;margin-bottom:38px;
   animation:fdUp .8s .3s ease both;
 }
@@ -650,7 +650,7 @@ img{max-width:100%;display:block}
   background:var(--g-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   line-height:1;
 }
-.hstat-l{font-size:.7rem;color:rgba(255,255,255,.40);letter-spacing:.04em;margin-top:3px}
+.hstat-l{font-size:.7rem;color:#AEBBCB;letter-spacing:.04em;margin-top:3px}
 
 /* ── HERO VISUAL ── */
 .hero-visual{position:relative;z-index:4;animation:fdRight 1s .3s ease both}
@@ -676,7 +676,7 @@ img{max-width:100%;display:block}
 }
 .hero-img-shine{
   position:absolute;top:-50%;left:-30%;width:160%;height:80%;
-  background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.25) 50%,transparent 100%);
+  background:linear-gradient(105deg,transparent 0%,#8797AA 50%,transparent 100%);
   transform:rotate(-8deg);
   animation:imgShine 5s ease-in-out infinite;
 }
@@ -701,7 +701,7 @@ img{max-width:100%;display:block}
 .hfc-ico.t{background:rgba(0, 72, 141,.18);color:#5DE0E6;box-shadow:0 0 12px rgba(0, 72, 141,.25)}
 .hfc-ico.b{background:rgba(93, 224, 230,.16);color:#00488D;box-shadow:0 0 12px rgba(93, 224, 230,.25)}
 .hfc-title{font-size:.82rem;font-weight:700;color:#FFFFFF;line-height:1.2}
-.hfc-sub  {font-size:.66rem;color:rgba(255,255,255,.48)}
+.hfc-sub  {font-size:.66rem;color:#AEBBCB}
 
 /* ── 3D HERO DASHBOARD ── */
 .h3d-scene{perspective:1100px}
@@ -811,7 +811,7 @@ img{max-width:100%;display:block}
 
 /* ── STATS ── */
 #stats{
-  background:rgba(255,255,255,.45);backdrop-filter:var(--blur-sm);
+  background:#AEBBCB;backdrop-filter:var(--blur-sm);
   border-top:1px solid var(--gb2);border-bottom:1px solid var(--gb2);
   padding:54px 0;position:relative;z-index:1;
 }
@@ -896,7 +896,7 @@ img{max-width:100%;display:block}
 /* ── PORTFOLIO ── */
 .pfilter{display:flex;gap:8px;flex-wrap:wrap}
 .pfbtn{
-  background:rgba(255,255,255,.72);backdrop-filter:var(--blur-sm);
+  background:#CBD6E3;backdrop-filter:var(--blur-sm);
   border:1px solid var(--gb2);color:var(--tx2);
   padding:8px 18px;border-radius:100px;font-size:.8rem;font-weight:600;
   cursor:pointer;transition:var(--t);font-family:var(--fb);
@@ -945,7 +945,7 @@ img{max-width:100%;display:block}
 
 /* ── CTA BANNER ── */
 #cta-banner{
-  background:rgba(255,255,255,.45);backdrop-filter:var(--blur-sm);
+  background:#AEBBCB;backdrop-filter:var(--blur-sm);
   border-top:1px solid var(--gb2);border-bottom:1px solid var(--gb2);
   padding:72px 0;position:relative;z-index:1;overflow:hidden;
 }
@@ -1010,7 +1010,7 @@ textarea.finput{resize:vertical;min-height:115px}
 
 /* ── FAQ ── */
 .fitem{
-  background:rgba(255,255,255,.72);backdrop-filter:var(--blur-sm);
+  background:#CBD6E3;backdrop-filter:var(--blur-sm);
   border:1px solid var(--gb2);border-radius:var(--r);
   margin-bottom:10px;transition:var(--t);overflow:hidden;
   box-shadow:var(--sh-xs),var(--sh-inner);
@@ -1026,7 +1026,7 @@ textarea.finput{resize:vertical;min-height:115px}
 
 /* ── NEWSLETTER ── */
 .nlwrap{
-  background:rgba(255,255,255,.65);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  background:#CBD6E3;backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
   border:1px solid var(--gb1);border-radius:var(--r-2xl);
   padding:48px;text-align:center;
   box-shadow:var(--sh-md),var(--sh-inner);
@@ -1088,11 +1088,11 @@ textarea.finput{resize:vertical;min-height:115px}
 .phero-inner h1 .gtxt,
 .phero-inner h2 .gtxt{-webkit-text-fill-color:transparent}
 .phero-inner p,
-.phero-inner .hero-sub{color:rgba(255,255,255,.68)!important}
-.phero-inner .breadcrumb-item{color:rgba(255,255,255,.45)}
+.phero-inner .hero-sub{color:#CBD6E3!important}
+.phero-inner .breadcrumb-item{color:#AEBBCB}
 .phero-inner .breadcrumb-item a{color:#5DE0E6}
-.phero-inner .breadcrumb-item.active{color:rgba(255,255,255,.45)}
-.phero-inner .breadcrumb-item+.breadcrumb-item::before{color:rgba(255,255,255,.25)}
+.phero-inner .breadcrumb-item.active{color:#AEBBCB}
+.phero-inner .breadcrumb-item+.breadcrumb-item::before{color:#8797AA}
 .phero-inner .stag{
   background:rgba(255,255,255,.10);
   border-color:rgba(93, 224, 230,.42);
@@ -1190,13 +1190,13 @@ footer::before{
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   margin-bottom:12px;display:inline-block;letter-spacing:-.035em;
 }
-.ft-tag{font-size:.84rem;color:rgba(255,255,255,.42);max-width:320px;line-height:1.78;margin-bottom:18px}
+.ft-tag{font-size:.84rem;color:#AEBBCB;max-width:320px;line-height:1.78;margin-bottom:18px}
 
 /* Contact mini items */
 .ft-contact-items{display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
 .ft-contact-item{
   display:flex;align-items:center;gap:9px;
-  font-size:.82rem;color:rgba(255,255,255,.42);text-decoration:none;
+  font-size:.82rem;color:#AEBBCB;text-decoration:none;
   transition:var(--t);
 }
 .ft-contact-item i{font-size:.78rem;color:var(--a1);flex-shrink:0;width:14px}
@@ -1208,7 +1208,7 @@ footer::before{
   width:34px;height:34px;border-radius:var(--r-sm);
   border:1px solid rgba(255,255,255,.09);
   display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.38);font-size:.82rem;
+  color:#AEBBCB;font-size:.82rem;
   transition:var(--t);background:rgba(255,255,255,.04);
 }
 .fsoc:hover{
@@ -1224,7 +1224,7 @@ footer::before{
 .ft-cert-badge{
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.11);
-  color:rgba(255,255,255,.48);
+  color:#AEBBCB;
   font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   padding:4px 10px;border-radius:100px;
   transition:var(--t);
@@ -1240,12 +1240,12 @@ footer::before{
 .ft-top{padding-top:64px;padding-bottom:32px}
 .ft-head{
   font-size:.69rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.65);margin-bottom:16px;font-family:var(--fh);
+  color:#CBD6E3;margin-bottom:16px;font-family:var(--fh);
 }
 .ft-links{list-style:none;padding:0}
 .ft-links li{margin-bottom:8px}
 .ft-links a{
-  font-size:.82rem;color:rgba(255,255,255,.36);
+  font-size:.82rem;color:#AEBBCB;
   display:flex;align-items:center;gap:5px;transition:var(--t);
 }
 .ft-links a i{font-size:.58rem;color:#5DE0E6;opacity:0;transition:var(--t)}
@@ -1267,7 +1267,7 @@ footer::before{
   color:#fff;font-family:var(--fb);font-size:.88rem;
   outline:none;transition:var(--t);
 }
-.ft-sub-input::placeholder{color:rgba(255,255,255,.32)}
+.ft-sub-input::placeholder{color:#8797AA}
 .ft-sub-input:focus{
   border-color:rgba(93, 224, 230,.58);
   background:rgba(93, 224, 230,.09);
@@ -1283,9 +1283,9 @@ footer::before{
   border-top:1px solid rgba(255,255,255,.06);
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
 }
-.ft-copy{font-size:.73rem;color:rgba(255,255,255,.24)}
+.ft-copy{font-size:.73rem;color:#8797AA}
 .ft-legal{display:flex;gap:16px;flex-wrap:wrap}
-.ft-legal a{font-size:.72rem;color:rgba(255,255,255,.26);transition:var(--t)}
+.ft-legal a{font-size:.72rem;color:#8797AA;transition:var(--t)}
 .ft-legal a:hover{color:#5DE0E6;text-shadow:0 0 12px rgba(93, 224, 230,.42)}
 
 /* ── RESPONSIVE FOOTER ── */
@@ -1662,7 +1662,7 @@ footer::before{
    wins on cascade order without needing !important. Nothing above
    this line was rewritten.
 
-   Design register: "Trust & Authority" — the buyer is a bank CTO,
+   Design register: "Trust & Authority"; the buyer is a bank CTO,
    a head of compliance or a government procurement officer. Motion
    is used to establish reading order and spatial continuity, never
    for decoration. Anything that reads as playful is out of register
@@ -1880,7 +1880,7 @@ p, li {
 /* ── 3D card depth ─────────────────────────────────────────────
    Perspective lives on the row so sibling cards share one vanishing
    point. Setting perspective per-card gives each its own, which reads
-   as a set of unrelated objects rather than one plane — the usual
+   as a set of unrelated objects rather than one plane; the usual
    reason CSS 3D looks cheap.
 
    Guarded on `hover: hover` and `pointer: fine`: on touch there is no
@@ -1929,7 +1929,7 @@ p, li {
   padding-bottom: 1rem;
   /* No scroll-snap here. Snapping re-targets the container whenever
      scrollLeft is written, which silently reverts every frame the
-     scroll-linked coupling produces — the two mechanisms are trying to
+     scroll-linked coupling produces; the two mechanisms are trying to
      own the same property. Native scrolling still works; it just has
      no snap points. */
   -webkit-overflow-scrolling: touch;
@@ -1943,7 +1943,7 @@ p, li {
   outline-offset: 4px;
   border-radius: 8px;
 }
-/* Thin, visible scrollbar — the affordance is what tells a user the
+/* Thin, visible scrollbar; the affordance is what tells a user the
    rail is scrollable at all. Hiding it is a common and bad default. */
 .hscroll-track::-webkit-scrollbar { height: 6px; }
 .hscroll-track::-webkit-scrollbar-track { background: var(--bg-2); border-radius: 100px; }
@@ -2279,14 +2279,14 @@ p, li {
   margin:0;
   font-size:.78rem;
   line-height:1.6;
-  color:rgba(255,255,255,.62);
+  color:#CBD6E3;
 }
 .ft-sub-status:empty{display:none}
 .ft-sub-status a{color:var(--a1);text-decoration:underline}
 
 
 /* The two homepage pills previously rendered a counted-up number. They now
-   carry a short label instead — same gradient treatment, sized for text. */
+   carry a short label instead: same gradient treatment, sized for text. */
 .agp-label{
   font-family:var(--fh);
   font-size:1.02rem;
@@ -2307,7 +2307,7 @@ p, li {
    enough vertical padding to clear it comfortably.
 
    Scoped to `(hover:none) and (pointer:coarse)` so the desktop
-   footer spacing is untouched — this is a finger problem, not a
+   footer spacing is untouched; this is a finger problem, not a
    cursor one. */
 @media (hover:none) and (pointer:coarse){
   .ft-links li{margin-bottom:2px}
@@ -2346,7 +2346,7 @@ p, li {
   }
 }
 
-/* Team cards were the last two tap targets under 24px on mobile — the name
+/* Team cards were the last two tap targets under 24px on mobile; the name
    link at 23px and the profile link at 22px. Same touch-only scoping as the
    block above. */
 @media (hover:none) and (pointer:coarse){
@@ -2414,3 +2414,215 @@ p, li {
   .service-group-list a{min-height:36px;display:flex;align-items:center;padding:4px 0}
   .service-group-title a{min-height:36px;display:inline-flex;align-items:center}
 }
+
+/* ============================================================
+   RESTRAINT PASS
+   ------------------------------------------------------------
+   Strips the trend vocabulary the rest of this stylesheet was
+   built on. Appended last so it wins on cascade order without
+   !important where possible, and nothing above is rewritten —
+   this whole block can be deleted to revert.
+   ============================================================ */
+
+/* ── 1. Gradients ──────────────────────────────────────────────
+   --g-main (cyan to navy) was painted into headings, buttons,
+   badges, avatars and the logo wordmark. A brand carried by a
+   gradient is a brand carried by a 2021 default. Colour and
+   weight carry the emphasis now; the gradient tokens resolve to
+   flat brand colour so every existing usage inherits the change. */
+:root {
+  --g-main:  var(--p1);
+  --g-main2: var(--p2);
+}
+
+/* The grain overlay: a full-viewport fixed SVG turbulence filter
+   composited above every page. It costs a permanent compositing
+   layer to simulate film stock on a compliance-software site. */
+body::before { content: none !important; }
+
+/* The ambient mesh sat on top of it doing the same job. */
+body::after { content: none !important; }
+
+/* ── 2. Type scale ─────────────────────────────────────────────
+   Archivo is a grotesque with real weight contrast, so headings
+   no longer need 800 to feel substantial. Dropping to 600 reads
+   as confident rather than shouted, and lets size do the work. */
+h1, h2, h3, h4, h5, h6 { font-weight: 600; }
+h1 { font-weight: 700; letter-spacing: -0.028em; }
+h2 { letter-spacing: -0.018em; }
+.stitle { font-weight: 600; }
+
+/* ── 3. The eyebrow badge ──────────────────────────────────────
+   A pill badge above the headline appeared 70 times; the single
+   most recognisable template tell on the page. It becomes a
+   typographic label: same information, no chrome. */
+.stag,
+.hero-badge {
+  display: inline-block;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-family: var(--fm);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tx3);
+  margin-bottom: 0.9rem;
+}
+.phero-inner .stag,
+#hero .hero-badge { color: var(--a1); }
+/* The pulsing dot that sat inside the hero badge. */
+.hero-dot { display: none !important; }
+
+/* ── 4. Glass ──────────────────────────────────────────────────
+   60 backdrop-filter declarations. Blur is kept only on the
+   navigation, where a translucent bar genuinely needs to separate
+   from content scrolling beneath it. Everywhere else it costs a
+   compositor layer per element to produce haze. */
+*:not(nav):not(.navbar):not(.nav-wrap) {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* ── 5. Surfaces ───────────────────────────────────────────────
+   Flat surfaces, one hairline rule, one shadow step. Coloured
+   borders and glow shadows are removed: a border that is brand-
+   coloured on every card stops signalling anything. */
+.pcard, .gcard, .vcard, .cta-card, .sec-img, .pimg-wrap, .qa, .tablewrap {
+  background: var(--surf);
+  border: 1px solid var(--gb4);
+  box-shadow: none;
+  border-radius: 10px;
+}
+.pcard:hover, .gcard:hover, .vcard:hover {
+  border-color: var(--tx4);
+  box-shadow: var(--sh-sm);
+}
+
+/* ── 6. Motion ─────────────────────────────────────────────────
+   Scroll-triggered fade-ins on 155 elements and parallax on 38.
+   Both are ambient rather than informative: they delay content
+   the reader has already scrolled to in order to signal that the
+   page is modern. Content is now simply present when it is
+   present. Transitions remain on genuine state changes — hover,
+   focus, open/close — where motion actually reports something. */
+[data-reveal],
+[data-reveal='up'],
+[data-reveal='left'],
+[data-reveal='right'],
+[data-reveal='is-visible'] {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+[data-parallax] {
+  transform: none !important;
+  will-change: auto !important;
+}
+.phero-bg[data-parallax] img { transform: scale(1.04); }
+.phero-grid[data-parallax] { inset: 0; }
+/* The kinetic per-word headline animation. */
+.kinetic-word { animation: none !important; opacity: 1 !important; transform: none !important; }
+/* Route transition: the page is static, so it should just be there. */
+.route-enter { animation: none !important; }
+/* Card tilt. */
+.depth-row .pcard, .depth-row .gcard,
+.depth-row > *:hover .pcard, .depth-row > *:hover .gcard { transform: none !important; }
+.depth-row .pcard > *, .depth-row .gcard > * { transform: none !important; }
+
+/* ── 7. Spacing ────────────────────────────────────────────────
+   Section padding ranged across a dozen ad-hoc values. One scale,
+   applied to the section class every page already uses. */
+:root {
+  --space-section: clamp(3.5rem, 7vw, 6.5rem);
+  --space-block: clamp(1.75rem, 3vw, 2.75rem);
+}
+.sec { padding-top: var(--space-section); padding-bottom: var(--space-section); }
+.sec > .container > .row + .row { margin-top: var(--space-block); }
+
+/* ── 8. Weight ceiling ─────────────────────────────────────────
+   Eleven rules asked for weight 800. Archivo is loaded at 500,
+   600 and 700, so 800 made the browser synthesise a faux bold:
+   it smears the glyph horizontally, which is exactly the muddy,
+   slightly-off look that reads as an unfinished site. It also
+   contradicts the point of choosing a grotesque with real weight
+   contrast.
+
+   700 for the page title, 600 everywhere else. Applied by
+   element and by the site's own heading classes, which is enough
+   to beat the earlier declarations on cascade order. */
+h1, .hero-title, .stitle, .ctitle, .pnum, .agp-num, .dm-val, .tavatar {
+  font-weight: 700;
+}
+h2, h3, h4, h5, h6 { font-weight: 600; }
+
+/* ── 9. Dark surfaces: contrast ────────────────────────────────
+   The dark hero and page-hero blocks put muted text on near-black
+   at ratios that pass for large display type and fail for the
+   body copy underneath it. These lift the muted tones used on
+   dark grounds to clear AA at normal size. */
+#hero .hero-sub,
+.phero-inner .hero-sub,
+.phero-inner p {
+  color: #C3CEDC;
+}
+#hero .stag,
+.phero-inner .stag,
+.phero-inner .breadcrumb-item,
+.phero-inner .breadcrumb-item.active {
+  color: #9FB2C6;
+}
+.phero-inner .breadcrumb-item a { color: var(--a1); }
+
+/* ── 10. The homepage H1 ───────────────────────────────────────
+   .hero-title carried a five-stop animated gradient with
+   -webkit-text-fill-color:transparent, a cyan drop-shadow glow,
+   and a 4s infinite shimmer. Removing the gradient machinery
+   above left the text falling back to the inherited near-black
+   body colour on a near-black hero: contrast 1.02, effectively
+   invisible.
+
+   Painted white explicitly. The accent span keeps the light
+   brand tone so the second line still reads as emphasis without
+   a gradient doing it. */
+#hero .hero-title,
+#hero .hero-title *,
+.phero-inner .hero-title,
+.phero-inner .hero-title * {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  filter: none !important;
+  animation: none !important;
+}
+#hero .hero-title .gtxt,
+#hero .hero-title .gtxt *,
+.phero-inner .hero-title .gtxt,
+.phero-inner .hero-title .gtxt * {
+  -webkit-text-fill-color: var(--a1) !important;
+  color: var(--a1) !important;
+}
+
+/* Any other heading sitting on a dark ground. */
+#hero h1, #hero h2, #hero h3,
+.phero-inner h1, .phero-inner h2, .phero-inner h3 {
+  color: #FFFFFF;
+  -webkit-text-fill-color: #FFFFFF;
+}
+
+/* Footer subscribe form: the input and its label sat at inherited body colour
+   on the dark footer ground. */
+.ft-sub-input {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+.ft-sub-input::placeholder { color: #8797AA; }
+.ft-sub-input:focus-visible { outline: 2px solid var(--a1); outline-offset: 2px; }
+.ft-head { color: #FFFFFF; }

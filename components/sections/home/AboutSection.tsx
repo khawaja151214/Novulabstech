@@ -11,7 +11,7 @@ const AboutSection: React.FC = () => {
             <div style={{ position: 'relative' }}>
               {/* next/image: the raw <img> shipped a 1280x960 / 147KB JPEG with
                   no width or height, so it was an unsized above-the-fold
-                  element on the homepage — a CLS source and an oversized
+                  element on the homepage; a CLS source and an oversized
                   payload for a 440px slot. */}
               <div className="about-img">
                 <Image
@@ -32,7 +32,7 @@ const AboutSection: React.FC = () => {
                   its own pages, which is why each links to one. */}
               <div className="about-glass-pill agp1">
                 <div className="agp-label">Architect-led</div>
-                <div className="agp-sub">No pre-sales layer — ever</div>
+                <div className="agp-sub">No pre-sales layer, ever</div>
               </div>
               <div className="about-glass-pill agp2">
                 <div className="agp-label">Islamabad HQ</div>
@@ -42,8 +42,8 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="col-lg-7" data-reveal="left">
             <span className="stag">Who We Are</span>
-            <h2 className="stitle mt-3">Building Digital Infrastructure <span className="gtxt">for Tomorrow</span></h2>
-            {/* "across 40+ countries" removed — unevidenced. lib/seo.ts
+            <h2 className="stitle mt-3">What we do, <span className="gtxt">and who for</span></h2>
+            {/* "across 40+ countries" removed, unevidenced. lib/seo.ts
                 declares five served markets (PK, AE, GB, US, SA). */}
             <p className="ssub mb-4">NovuLabs is an enterprise software house headquartered in Islamabad. We engineer platforms that power financial systems, healthcare networks and government portals, for institutions that answer to a regulator as well as to a user.</p>
             

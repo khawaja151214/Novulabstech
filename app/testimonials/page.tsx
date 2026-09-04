@@ -31,7 +31,7 @@ import {
  *      Clutch) where the review is independently held.
  *
  * The page therefore emits WebPage + BreadcrumbList only. That is not a
- * limitation to work around — it is the correct markup for what this page is.
+ * limitation to work around; it is the correct markup for what this page is.
  */
 
 export const metadata: Metadata = {

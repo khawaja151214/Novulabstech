@@ -6,7 +6,7 @@ const ContactHero: React.FC = () => {
   return (
     <section className="phero">
       <div className="phero-bg" data-parallax="38">
-        {/* Was a raw <img> with alt="Contact" — a decorative background given
+        {/* Was a raw <img> with alt="Contact"; a decorative background given
             a label that describes the page, not the image. Every other page
             hero already uses next/image with an empty alt here. */}
         <Image
@@ -24,7 +24,7 @@ const ContactHero: React.FC = () => {
         <Breadcrumbs className="mb-4" items={[{ name: 'Contact' }]} />
         <span className="stag">Let's Talk</span>
         <h1 className="hero-title mt-3">Book a Free <span className="gtxt">Consultation</span></h1>
-        <p className="hero-sub">No demos, no sales scripts. Just a genuine conversation about your project — and honest advice on the right path forward.</p>
+        <p className="hero-sub">No demos, no sales scripts. Just a genuine conversation about your project, and honest advice on the right path forward.</p>
       </div>
     </section>
   );

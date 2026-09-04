@@ -8,7 +8,7 @@ import { faqSchema, webPageSchema } from '@/lib/schema';
 import { hubFaqs, faqDirectory, totalAnsweredQuestions } from '@/content/faqHub';
 
 /**
- * /faq — the site's FAQ hub.
+ * /faq; the site's FAQ hub.
  *
  * WHY ONE FAQPage NODE, NOT NINETEEN.
  * Only `hubFaqs` is marked up. The directory below it links to questions whose

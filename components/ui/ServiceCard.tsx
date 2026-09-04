@@ -9,7 +9,7 @@ interface ServiceCardProps {
 }
 
 /**
- * Every card used to link straight to /contact with no page in between — a
+ * Every card used to link straight to /contact with no page in between; a
  * visitor could not read a sentence about a service before being asked to
  * book a call. Each of the 22 now has a dedicated page (content/serviceSpokes.ts)
  * and the card links there; the page itself carries its own CTA once someone

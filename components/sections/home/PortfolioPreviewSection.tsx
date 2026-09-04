@@ -9,7 +9,7 @@ import Button from '@/components/ui/Button';
  * Heading changed from "Selected Projects", which competed with /portfolio for
  * the same intent. The homepage previously contained a superset of every inner
  * page's content — including headings byte-identical to /services' and
- * /industries' H1s — so Google would frequently rank the homepage instead of
+ * /industries' H1s, so Google would frequently rank the homepage instead of
  * the purpose-built commercial page, and both underperformed.
  */
 const PortfolioPreviewSection: React.FC = () => {

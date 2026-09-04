@@ -7,14 +7,14 @@ import { FaqItem } from '../types';
  * /about, /solutions, /industries, /portfolio, /team and /blog. The homepage,
  * /contact and the service pages already had them.
  *
- * WRITING RULE — answer-first.
+ * WRITING RULE, answer-first.
  * Each answer opens with the actual answer in the first sentence, then
  * qualifies. Answer engines and featured snippets extract the opening clause;
  * an answer that starts with context and reaches the point in sentence three
  * gets truncated exactly where it stops being useful. This also happens to be
  * how a busy reader wants to be told something.
  *
- * HONESTY RULE — same as everywhere else on this site.
+ * HONESTY RULE, same as everywhere else on this site.
  * No pricing, no delivery timelines, no team size, no client names, no project
  * counts, no certifications. Every question a buyer genuinely asks that the
  * business has not published an answer to is answered by saying what
@@ -24,11 +24,11 @@ import { FaqItem } from '../types';
 export const aboutFaqs: FaqItem[] = [
   {
     q: 'Where is NovuLabs based?',
-    a: 'NovuLabs is an enterprise software house based in Islamabad, Pakistan. The engineering team sits together in one place rather than being distributed across contractors, and the regulatory environment we know best is Pakistan’s — the State Bank’s AML/CFT framework, the Financial Monitoring Unit’s reporting requirements, and the national identity infrastructure that financial onboarding depends on.',
+    a: 'NovuLabs is an enterprise software house based in Islamabad, Pakistan. The engineering team sits together in one place rather than being distributed across contractors, and the regulatory environment we know best is Pakistan’s: the State Bank’s AML/CFT framework, the Financial Monitoring Unit’s reporting requirements, and the national identity infrastructure that financial onboarding depends on.',
   },
   {
     q: 'What kind of projects does NovuLabs take on?',
-    a: 'We build software for regulated industries — banking and fintech, healthcare, and government. The common thread is that a regulator, not just a user, is an audience for the system: the platform has to be able to evidence what it did and why, months after the fact. That constraint shapes the architecture far more than the industry label does.',
+    a: 'We build software for regulated industries: banking and fintech, healthcare, and government. The common thread is that a regulator, not just a user, is an audience for the system: the platform has to be able to evidence what it did and why, months after the fact. That constraint shapes the architecture far more than the industry label does.',
   },
   {
     q: 'Do you work with clients outside Pakistan?',
@@ -36,7 +36,7 @@ export const aboutFaqs: FaqItem[] = [
   },
   {
     q: 'Who takes the first call?',
-    a: 'An architect who would be accountable for the technical outcome, not a salesperson. There is no pre-sales layer here. The call runs about forty-five minutes and is diagnostic rather than promotional — the most valuable outcome is frequently a scoping correction rather than a proposal.',
+    a: 'An architect who would be accountable for the technical outcome, not a salesperson. There is no pre-sales layer here. The call runs about forty-five minutes and is diagnostic rather than promotional; the most valuable outcome is frequently a scoping correction rather than a proposal.',
   },
   {
     q: 'Will you tell us if we should not build custom software?',
@@ -44,7 +44,7 @@ export const aboutFaqs: FaqItem[] = [
   },
   {
     q: 'Is NovuLabs ISO 27001 or HIPAA certified?',
-    a: 'We describe alignment with these standards, not certification against them. Where the site says our engineering practice follows a standard, that means the practice follows it — not that a registrar has audited us. HIPAA has no certification regime at all; organisations attest to compliance. We would rather be precise about which claims are attestations and which are audited facts than let a buyer assume the stronger reading.',
+    a: 'We describe alignment with these standards, not certification against them. Where the site says our engineering practice follows a standard, that means the practice follows it, not that a registrar has audited us. HIPAA has no certification regime at all; organisations attest to compliance. We would rather be precise about which claims are attestations and which are audited facts than let a buyer assume the stronger reading.',
   },
 ];
 
@@ -59,11 +59,11 @@ export const solutionsFaqs: FaqItem[] = [
   },
   {
     q: 'How long does a platform deployment take?',
-    a: 'The honest answer is that the platform configuration is rarely what determines the timeline. The work sits in the integration surface — the core system the platform has to run alongside, the identity source it authenticates against, and the migration from whatever is being replaced. Any supplier quoting a duration before seeing that surface is guessing.',
+    a: 'The honest answer is that the platform configuration is rarely what determines the timeline. The work sits in the integration surface: the core system the platform has to run alongside, the identity source it authenticates against, and the migration from whatever is being replaced. Any supplier quoting a duration before seeing that surface is guessing.',
   },
   {
     q: 'What usually goes wrong in a migration?',
-    a: 'Non-conforming historical data. Records with missing mandatory fields, identifiers that were free text, duplicate entities never merged, units recorded inconsistently. Deciding what to do with that history is a business decision with regulatory implications rather than a technical one, and it needs a named owner early — otherwise engineers end up silently deciding what a record means.',
+    a: 'Non-conforming historical data. Records with missing mandatory fields, identifiers that were free text, duplicate entities never merged, units recorded inconsistently. Deciding what to do with that history is a business decision with regulatory implications rather than a technical one, and it needs a named owner early, otherwise engineers end up silently deciding what a record means.',
   },
   {
     q: 'When is one of these platforms the wrong choice?',
@@ -74,7 +74,7 @@ export const solutionsFaqs: FaqItem[] = [
 export const industriesFaqs: FaqItem[] = [
   {
     q: 'What do banking, healthcare and government software have in common?',
-    a: 'They are largely one engineering problem wearing three regulators. Each has a second audience beyond the user — an examiner who arrives later, asks what happened months ago, and expects the system to answer with evidence. That single requirement drives audit design, data retention, identity handling and release process in all three sectors.',
+    a: 'They are largely one engineering problem wearing three regulators. Each has a second audience beyond the user: an examiner who arrives later, asks what happened months ago, and expects the system to answer with evidence. That single requirement drives audit design, data retention, identity handling and release process in all three sectors.',
   },
   {
     q: 'What does AML/CFT compliance actually require from a system?',
@@ -82,7 +82,7 @@ export const industriesFaqs: FaqItem[] = [
   },
   {
     q: 'Do you build HIPAA-compliant healthcare software?',
-    a: 'We build to HIPAA’s Security Rule safeguards — append-only access logging that is queryable by patient and time window, minimum-necessary access enforced in the data layer rather than per screen, and break-glass access that is loud rather than silent. HIPAA has no certification regime, so no vendor can honestly claim to be HIPAA certified; what matters is whether the safeguards are implemented and evidenced.',
+    a: 'We build to HIPAA’s Security Rule safeguards: append-only access logging that is queryable by patient and time window, minimum-necessary access enforced in the data layer rather than per screen, and break-glass access that is loud rather than silent. HIPAA has no certification regime, so no vendor can honestly claim to be HIPAA certified; what matters is whether the safeguards are implemented and evidenced.',
   },
   {
     q: 'Can you integrate with NADRA, FBR or RAAST?',
@@ -90,14 +90,14 @@ export const industriesFaqs: FaqItem[] = [
   },
   {
     q: 'Why does explainability matter more than machine learning accuracy here?',
-    a: 'Because explainability is a regulatory requirement rather than a preference. When an examiner asks why a transaction was or was not flagged, a model score is not a defensible answer. The pattern we recommend keeps deterministic rules as the decisions of record and uses a model only to prioritise the review queue — the analyst-efficiency benefit without an unexplainable artefact on the regulatory critical path.',
+    a: 'Because explainability is a regulatory requirement rather than a preference. When an examiner asks why a transaction was or was not flagged, a model score is not a defensible answer. The pattern we recommend keeps deterministic rules as the decisions of record and uses a model only to prioritise the review queue; the analyst-efficiency benefit without an unexplainable artefact on the regulatory critical path.',
   },
 ];
 
 export const portfolioFaqs: FaqItem[] = [
   {
     q: 'Why are your clients not named?',
-    a: 'Every engagement shown is covered by an NDA, and we do not publish client names or logos without written permission. Clients are described by verifiable category instead — "a Tier-1 commercial bank in Pakistan", for example. This costs us credibility with some buyers and we accept that, because the alternative is disclosing a relationship somebody asked us to keep confidential.',
+    a: 'Every engagement shown is covered by an NDA, and we do not publish client names or logos without written permission. Clients are described by verifiable category instead: "a Tier-1 commercial bank in Pakistan", for example. This costs us credibility with some buyers and we accept that, because the alternative is disclosing a relationship somebody asked us to keep confidential.',
   },
   {
     q: 'Are the product names in these case studies real products?',
@@ -105,7 +105,7 @@ export const portfolioFaqs: FaqItem[] = [
   },
   {
     q: 'Are the metrics in these case studies verified?',
-    a: 'Not yet, and each page says so. Every figure is drawn from delivery records held under NDA and is pending independent confirmation; each case study renders a provenance note stating this. Where a figure cannot be evidenced it will be removed rather than qualified — an unverifiable quantified claim is worse than no claim.',
+    a: 'Not yet, and each page says so. Every figure is drawn from delivery records held under NDA and is pending independent confirmation; each case study renders a provenance note stating this. Where a figure cannot be evidenced it will be removed rather than qualified; an unverifiable quantified claim is worse than no claim.',
   },
   {
     q: 'Can you provide references?',
@@ -113,7 +113,7 @@ export const portfolioFaqs: FaqItem[] = [
   },
   {
     q: 'What does a case study on this site actually tell me?',
-    a: 'The problem, the constraints we had to design within, the approach, and the engineering trade-offs behind it — including what each decision cost. The engineering notes section on each page is written for a technical evaluator deciding whether we reason about their class of problem the way they would want a supplier to.',
+    a: 'The problem, the constraints we had to design within, the approach, and the engineering trade-offs behind it, including what each decision cost. The engineering notes section on each page is written for a technical evaluator deciding whether we reason about their class of problem the way they would want a supplier to.',
   },
 ];
 
@@ -132,7 +132,7 @@ export const teamFaqs: FaqItem[] = [
   },
   {
     q: 'Can I speak to an engineer before committing to anything?',
-    a: 'Yes — that is the default rather than an exception. The first conversation is a forty-five minute technical consultation with an architect, with no obligation attached. If the outcome is that you should not build the thing you asked about, we will say so on that call.',
+    a: 'Yes; that is the default rather than an exception. The first conversation is a forty-five minute technical consultation with an architect, with no obligation attached. If the outcome is that you should not build the thing you asked about, we will say so on that call.',
   },
 ];
 
@@ -143,7 +143,7 @@ export const blogFaqs: FaqItem[] = [
   },
   {
     q: 'How are regulatory claims in these articles sourced?',
-    a: 'Every article that makes a claim about a regulation names the issuing body and links to the primary source — SBP, FMU, NADRA, FATF, UNODC, HHS or ISO as applicable. Where a fact depends on documentation only available to registered entities, the article says so and points at the source rather than guessing.',
+    a: 'Every article that makes a claim about a regulation names the issuing body and links to the primary source: SBP, FMU, NADRA, FATF, UNODC, HHS or ISO as applicable. Where a fact depends on documentation only available to registered entities, the article says so and points at the source rather than guessing.',
   },
   {
     q: 'How current is this material?',
@@ -151,6 +151,6 @@ export const blogFaqs: FaqItem[] = [
   },
   {
     q: 'Can I use this material to scope a project?',
-    a: 'That is what it is written for. The guides are aimed at the engineer or architect who has to build the thing, and they include the parts that are usually left out — what each decision costs, where the effort actually goes, and which constraints are worth resolving before writing any code.',
+    a: 'That is what it is written for. The guides are aimed at the engineer or architect who has to build the thing, and they include the parts that are usually left out: what each decision costs, where the effort actually goes, and which constraints are worth resolving before writing any code.',
   },
 ];

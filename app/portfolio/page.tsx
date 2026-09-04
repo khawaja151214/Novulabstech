@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/portfolio' },
   openGraph: {
     title: 'Portfolio – Enterprise Software Projects | NovuLabs',
-    // "200+ enterprise projects" removed — unevidenced project count.
-    description: 'AML engines, HIPAA EHR platforms, payment switches and government portals — how each was architected, and what constrained it.',
+    // "200+ enterprise projects" removed, unevidenced project count.
+    description: 'AML engines, HIPAA EHR platforms, payment switches and government portals: how each was architected, and what constrained it.',
     url: 'https://www.novulabs.net/portfolio',
     images: [{ url: '/hero/portfolio.jpg', width: 1920, height: 1080, alt: 'NovuLabs Portfolio' }],
   },

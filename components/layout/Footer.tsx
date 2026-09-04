@@ -9,7 +9,7 @@ import { ORG } from '@/lib/seo';
 
 /**
  * The subscribe form previously rendered "✓ Subscribed!" from local state
- * without sending anything anywhere — the address was discarded on the next
+ * without sending anything anywhere; the address was discarded on the next
  * render. Telling someone they have subscribed when no record of them exists is
  * a trust defect, not a cosmetic one, and it is the first thing a visitor can
  * personally verify is untrue.
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
           <div className="row g-5 ft-top">
             <div className="col-lg-3">
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                {/* Same 154KB PNG as the header, below the fold — lazy, sized. */}
+                {/* Same 154KB PNG as the header, below the fold: lazy, sized. */}
                 <Image
                   src="/logo.png"
                   alt="NovuLabs"
@@ -84,12 +84,9 @@ const Footer: React.FC = () => {
                   style={{
                     fontFamily: 'var(--fh)',
                     fontSize: '1.4rem',
-                    fontWeight: 800,
+                    fontWeight: 700,
                     letterSpacing: '-.03em',
-                    background: 'var(--g-main)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
+                    color: '#FFFFFF',
                     lineHeight: 1
                   }}
                 >
@@ -100,7 +97,7 @@ const Footer: React.FC = () => {
                   count is unevidenced anywhere on the site (lib/seo.ts declares
                   five served markets), and "since 2026" is the current year and
                   contradicted /about. Same claim class as the certification
-                  wording removed in 6daaa0c — see artifacts/FINDINGS.md. */}
+                  wording removed in 6daaa0c, see artifacts/FINDINGS.md. */}
               <p className="ft-tag">
                 An enterprise software house headquartered in Islamabad, engineering
                 mission-critical platforms for regulated finance, healthcare and government.
@@ -111,7 +108,7 @@ const Footer: React.FC = () => {
                 </a>
                 {/* Full NAP in the footer, on every page. Google and answer
                     engines corroborate an entity by finding the same name,
-                    address and phone repeated consistently — a city-only line
+                    address and phone repeated consistently; a city-only line
                     matched nothing the verified Business Profile carried.
                     Rendered from ORG so footer, contact page and schema stay in
                     lockstep. */}
@@ -142,7 +139,7 @@ const Footer: React.FC = () => {
               <div className="ft-head">Services</div>
               <ul className="ft-links">
                 {/* Previously seven /services#anchor fragments. Fragments pass
-                    no independent link equity — the footer looked like it linked
+                    no independent link equity; the footer looked like it linked
                     to seven places and linked to one. */}
                 {servicePages.map((s) => (
                   <li key={s.slug}>
@@ -176,7 +173,7 @@ const Footer: React.FC = () => {
                 Monthly fintech, compliance &amp; enterprise tech insights. No spam.
               </p>
               <form className="ft-subscribe-form" onSubmit={handleSubscribe}>
-                {/* The input had no label of any kind — a placeholder is not an
+                {/* The input had no label of any kind; a placeholder is not an
                     accessible name, so screen readers announced it as an
                     unlabelled edit field. WCAG 3.3.2. */}
                 <label htmlFor="ft-subscribe-email" className="visually-hidden">
@@ -209,7 +206,7 @@ const Footer: React.FC = () => {
                 {/* aria-live so the outcome is announced, not only shown. */}
                 <p className="ft-sub-status" role="status" aria-live="polite">
                   {status === 'done' &&
-                    'Thanks — your address has been sent to our team.'}
+                    'Thanks, your address has been sent to our team.'}
                   {status === 'error' && (
                     <>
                       That did not go through. Email{' '}

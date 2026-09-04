@@ -11,7 +11,7 @@ import { faqSchema } from '@/lib/schema';
  * This is the fastest available route to a rich result on this site: the Q&A
  * text was already written and already visible, and the only thing missing was
  * the JSON-LD. Converted from a client component to a server component so both
- * the answer text and the schema are in the raw HTML — the previous version
+ * the answer text and the schema are in the raw HTML; the previous version
  * hid answers behind React state and clipped them at a fixed max-height.
  */
 const FaqSection: React.FC = () => {
