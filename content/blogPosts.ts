@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
       </ul>
       <p>The practical consequence: SBP compliance is largely a policy-and-controls problem with an audit trail requirement. FMU compliance is a <em>data engineering</em> problem with a hard schema contract. Teams that treat them as one workstream typically under-build the reporting pipeline, because the policy work is more visible and the schema work looks like plumbing until the first rejection batch comes back.</p>
 
-      <h2>The three pillars, and what each one actually costs you</h2>
+      <h2>The three pillars, and what each one costs you</h2>
       <p>Every compliant transaction architecture we have built or remediated has the same three load-bearing components. What varies is how much pain each one causes.</p>
 
       <h3>1. Screening: sanctions, PEPs and proscribed persons</h3>
@@ -105,7 +105,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Scaling Healthcare Platforms: HIPAA and HL7 FHIR Without the Rewrite',
     seoTitle: 'HIPAA & HL7 FHIR: Scaling Healthcare Platforms',
     description:
-      'Engineering EHR and telemedicine systems that satisfy the HIPAA Security Rule while staying genuinely interoperable through HL7 FHIR resources.',
+      'Engineering EHR and telemedicine systems that satisfy the HIPAA Security Rule while staying interoperable through HL7 FHIR resources.',
     content: `
       <p>Healthcare platform teams tend to hit the same wall at the same moment. The product works, the first hospital is live, and then the second hospital asks to exchange data with a lab system, a billing clearinghouse and a patient app: and it becomes clear that the data model was designed for one deployment, not for an ecosystem.</p>
       <p>Retrofitting interoperability is one of the most expensive things you can do to a healthcare product. This piece covers what to get right first, and one claim to stop making.</p>
@@ -113,7 +113,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Stop saying "HIPAA certified"</h2>
       <p>Worth clearing up early, because it appears on a great many vendor websites, including, until recently, parts of ours.</p>
       <p><strong>There is no such thing as HIPAA certification.</strong> The US Department of Health and Human Services does not accredit anyone, and no body issues a HIPAA certificate that HHS recognises. Organisations <em>attest</em> to compliance and are assessed against the Security Rule; vendors can be assessed against frameworks like HITRUST CSF or SOC 2, which are real and verifiable, but those are not HIPAA certification either.</p>
-      <p>Hospital CIOs know this. A vendor advertising HIPAA certification is telling an experienced buyer that it has not worked seriously in the space. Say what is true instead: which Security Rule safeguards you implement, whether you will sign a Business Associate Agreement, and what independent assessment you have actually undergone.</p>
+      <p>Hospital CIOs know this. A vendor advertising HIPAA certification is telling an experienced buyer that it has not worked seriously in the space. Say what is true instead: which Security Rule safeguards you implement, whether you will sign a Business Associate Agreement, and what independent assessment you have undergone.</p>
 
       <h2>The Security Rule as an architecture spec</h2>
       <p>The HIPAA Security Rule organises safeguards into three families. Read as an engineer, it is a reasonably concrete specification.</p>
@@ -181,7 +181,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Buy when the process is not your advantage</h2>
       <p>General ledger. Payroll. Statutory tax filing. Standard procurement. These are solved problems, governed by external rules you do not control, and executing them differently than your competitors gains you exactly nothing. Established ERP vendors have absorbed decades of regulatory edge cases you have never heard of and will not anticipate.</p>
       <p>Building here is a category error. You will spend two years reproducing functionality you could have licensed, and then spend every subsequent year maintaining your reproduction against regulatory changes that the vendor would have handled.</p>
-      <p>The honest heuristic: <strong>if a process is a cost of doing business rather than a reason customers choose you, buy it.</strong></p>
+      <p>The honest heuristic: <strong>if a process is a cost of doing business instead of a reason customers choose you, buy it.</strong></p>
 
       <h2>Build when the process is the product</h2>
       <p>The opposite case is equally clear. Where your workflow <em>is</em> your differentiation (a lender's underwriting logic, a manufacturer's yield-optimising production scheduling, a logistics operator's routing) forcing it into a package means either abandoning the advantage or paying to customise the package until it is a bespoke system with someone else's licence attached and someone else's upgrade cycle imposed.</p>
@@ -190,7 +190,7 @@ export const blogPosts: BlogPost[] = [
       <h2>The total cost model people skip</h2>
       <p>Most build-versus-buy comparisons compare licence cost to development cost and stop. That comparison is wrong in both directions and reliably produces bad decisions. Over a realistic seven-year horizon, both sides carry costs that are invisible at signature.</p>
       <p><strong>Buy-side costs that are routinely omitted:</strong> per-seat licences that scale with headcount rather than value; implementation consulting, which frequently exceeds year-one licence cost; the customisation work needed to make the package fit; forced upgrade cycles that re-break those customisations; integration middleware; and the cost of workflow compromise, which is real, ongoing, and never appears in a spreadsheet because nobody bills you for it.</p>
-      <p><strong>Build-side costs that are routinely omitted:</strong> maintenance, which typically runs 15–20% of the original build annually and never stops; the key-person risk of a small team owning critical logic; security patching across your whole dependency tree; the true cost of the internal capability required to keep the thing alive; and the opportunity cost of engineers building an internal system rather than the product your customers pay for.</p>
+      <p><strong>Build-side costs that are omitted:</strong> maintenance, which typically runs 15–20% of the original build annually and never stops; the key-person risk of a small team owning critical logic; security patching across your whole dependency tree; the true cost of the internal capability required to keep the thing alive; and the opportunity cost of engineers building an internal system instead of the product your customers pay for.</p>
       <p>Compare those two lists and the answer is frequently different from what the licence-versus-build-cost comparison suggested: sometimes in favour of building, often not.</p>
 
       <h2>The composite pattern, which is what most mature organisations actually do</h2>
@@ -259,7 +259,7 @@ export const blogPosts: BlogPost[] = [
       <p>Locale-aware formatting is the enemy here. A date rendered per the server's locale, a currency amount with thousands separators, a decimal comma instead of a point, each is a rejection. Serialise to the schema's expected forms explicitly and never rely on a default <code>toString()</code>.</p>
 
       <h3>4. Narrative quality</h3>
-      <p>The reason-for-suspicion narrative is schema-free text, so it never fails validation, and it is the part a human analyst actually reads. "Unusual activity detected by system" is technically a submission and practically a waste of a filing. A useful narrative states what the expected behaviour for this customer profile was, what was observed instead, over what period, and what the institution's own review concluded. Give your compliance team a structured template rather than an empty textarea.</p>
+      <p>The reason-for-suspicion narrative is schema-free text, so it never fails validation, and it is the part a human analyst reads. "Unusual activity detected by system" is technically a submission and practically a waste of a filing. A useful narrative states what the expected behaviour for this customer profile was, what was observed instead, over what period, and what the institution's own review concluded. Give your compliance team a structured template rather than an empty textarea.</p>
 
       <h2>Build a validation stage that mirrors the receiver</h2>
       <p>The single highest-leverage design decision is this: <strong>run the same XSD validation FMU runs, inside your own pipeline, before submission.</strong> It is not difficult, the schema is available to registered reporting entities, and it converts a slow, opaque, externally-visible failure into a fast, local, invisible one.</p>
@@ -318,7 +318,7 @@ export const blogPosts: BlogPost[] = [
       <p>This guide covers what teams building on RAAST need to design for. It is deliberately not a substitute for SBP's participant documentation; you will get the authoritative message specifications and onboarding requirements from the regulator and your sponsor bank. It is the operational and architectural context that documentation tends not to cover.</p>
 
       <h2>The mental model shift: instant is irrevocable</h2>
-      <p>The most consequential property of an instant rail is finality, ahead of speed. In a batch world, a mistake discovered within the settlement window can often be corrected before money genuinely moves. On an instant rail, the credit is applied and final almost immediately, and correction becomes a commercial recovery problem rather than a technical one.</p>
+      <p>The most consequential property of an instant rail is finality, ahead of speed. In a batch world, a mistake discovered within the settlement window can often be corrected before money genuinely moves. On an instant rail, the credit is applied and final almost immediately, and correction becomes a commercial recovery problem instead of a technical one.</p>
       <p>Practically, this reorders your priorities. Pre-transaction validation gets much more important; post-transaction correction gets much less useful. Any check you were planning to run "before end of day" needs to run before you submit.</p>
 
       <h2>ISO 20022 is a modelling decision, not a serialisation detail</h2>
@@ -330,7 +330,7 @@ export const blogPosts: BlogPost[] = [
       <p>Alias lookup returns the account title associated with the alias. That confirmation screen, showing the sender the resolved name before they commit, is the primary defence against misdirected irrevocable payments, and skipping it or rendering it in a way users click through is how institutions end up with recovery cases. Show the resolved title prominently, and do not pre-select the confirm action.</p>
       <p>Design for the failure cases too: the alias may not be registered, may be registered to an institution that is temporarily unavailable, or may resolve to a name the sender does not recognise. Each needs a distinct, non-alarming message; a generic "transaction failed" for an unregistered alias produces support tickets and abandoned payments.</p>
 
-      <h2>Idempotency and reconciliation: the two things that actually break</h2>
+      <h2>Idempotency and reconciliation: the two things that break</h2>
       <p>If we could enforce only two engineering disciplines on an instant payments integration, it would be these.</p>
 
       <h3>Idempotency</h3>
@@ -346,7 +346,7 @@ export const blogPosts: BlogPost[] = [
       <p>The workable pattern is to do the expensive work early and keep the in-flight check cheap: screen and risk-rate at onboarding and on a schedule, cache the customer's standing, and let the per-transaction path do a fast lookup plus counterparty and behavioural checks. That keeps latency acceptable without moving a hard control off the critical path. It also means your transaction monitoring must handle a much higher event rate than a batch-era system was sized for: velocity rules written for daily windows behave differently when funds move in seconds.</p>
 
       <h2>What to get right before you write code</h2>
-      <p>Three things determine whether this project goes well. Confirm your participation model early: whether you connect directly or through a sponsor bank materially changes your obligations, your testing access and your timeline, and it is not a decision engineering can make alone. Get access to a test environment before committing to a delivery date, because integration timelines on regulated rails are driven by certification and access, not by how fast your team writes code. And design the reconciliation and idempotency layers in the first sprint rather than the last; they are architectural, and retrofitting them into a live payment path is genuinely dangerous.</p>
+      <p>Three things determine whether this project goes well. Confirm your participation model early: whether you connect directly or through a sponsor bank materially changes your obligations, your testing access and your timeline, and it is not a decision engineering can make alone. Get access to a test environment before committing to a delivery date, because integration timelines on regulated rails are driven by certification and access, not by how fast your team writes code. And design the reconciliation and idempotency layers in the first sprint instead of the last; they are architectural, and retrofitting them into a live payment path is genuinely dangerous.</p>
       <p>Instant payments reward boring engineering. The interesting parts of the system should be your product; the payment path should be predictable, observable and dull.</p>
     `,
     coverImage: '/portfolio/tranzaxis-payment-gateway.jpg',

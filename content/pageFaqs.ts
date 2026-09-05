@@ -36,7 +36,7 @@ export const aboutFaqs: FaqItem[] = [
   },
   {
     q: 'Who takes the first call?',
-    a: 'An architect who would be accountable for the technical outcome, not a salesperson. There is no pre-sales layer here. The call runs about forty-five minutes and is diagnostic rather than promotional; the most valuable outcome is frequently a scoping correction rather than a proposal.',
+    a: 'An architect who would be accountable for the technical outcome, not a salesperson. There is no pre-sales layer here. The call runs about forty-five minutes and is diagnostic rather than promotional; the most valuable outcome is frequently a scoping correction instead of a proposal.',
   },
   {
     q: 'Will you tell us if we should not build custom software?',
@@ -77,7 +77,7 @@ export const industriesFaqs: FaqItem[] = [
     a: 'They are largely one engineering problem wearing three regulators. Each has a second audience beyond the user: an examiner who arrives later, asks what happened months ago, and expects the system to answer with evidence. That single requirement drives audit design, data retention, identity handling and release process in all three sectors.',
   },
   {
-    q: 'What does AML/CFT compliance actually require from a system?',
+    q: 'What does AML/CFT compliance require from a system?',
     a: 'Three load-bearing components: screening against sanctions and proscribed-persons lists, transaction monitoring that detects behaviour rather than identity, and reporting that conforms to the Financial Monitoring Unit’s goAML schema. The reporting pipeline is the one teams most often under-build, because it looks like plumbing until the first batch of schema rejections comes back.',
   },
   {
@@ -90,7 +90,7 @@ export const industriesFaqs: FaqItem[] = [
   },
   {
     q: 'Why does explainability matter more than machine learning accuracy here?',
-    a: 'Because explainability is a regulatory requirement rather than a preference. When an examiner asks why a transaction was or was not flagged, a model score is not a defensible answer. The pattern we recommend keeps deterministic rules as the decisions of record and uses a model only to prioritise the review queue; the analyst-efficiency benefit without an unexplainable artefact on the regulatory critical path.',
+    a: 'Because explainability is a regulatory requirement instead of a preference. When an examiner asks why a transaction was or was not flagged, a model score is not a defensible answer. The pattern we recommend keeps deterministic rules as the decisions of record and uses a model only to prioritise the review queue; the analyst-efficiency benefit without an unexplainable artefact on the regulatory critical path.',
   },
 ];
 
@@ -132,7 +132,7 @@ export const teamFaqs: FaqItem[] = [
   },
   {
     q: 'Can I speak to an engineer before committing to anything?',
-    a: 'Yes; that is the default rather than an exception. The first conversation is a forty-five minute technical consultation with an architect, with no obligation attached. If the outcome is that you should not build the thing you asked about, we will say so on that call.',
+    a: 'Yes; that is the default instead of an exception. The first conversation is a forty-five minute technical consultation with an architect, with no obligation attached. If the outcome is that you should not build the thing you asked about, we will say so on that call.',
   },
 ];
 
@@ -147,10 +147,10 @@ export const blogFaqs: FaqItem[] = [
   },
   {
     q: 'How current is this material?',
-    a: 'Each article carries a published and a last-modified date, and the sitemap reports the real modification date rather than the build time. Regulatory content is written to describe durable engineering constraints rather than specific circular numbers or thresholds, which is deliberate: specifics of that kind age badly and are the most common way technical writing becomes confidently wrong.',
+    a: 'Each article carries a published and a last-modified date, and the sitemap reports the real modification date instead of the build time. Regulatory content is written to describe durable engineering constraints rather than specific circular numbers or thresholds, which is deliberate: specifics of that kind age badly and are the most common way technical writing becomes confidently wrong.',
   },
   {
     q: 'Can I use this material to scope a project?',
-    a: 'That is what it is written for. The guides are aimed at the engineer or architect who has to build the thing, and they include the parts that are usually left out: what each decision costs, where the effort actually goes, and which constraints are worth resolving before writing any code.',
+    a: 'That is what it is written for. The guides are aimed at the engineer or architect who has to build the thing, and they include the parts that are usually left out: what each decision costs, where the effort goes, and which constraints are worth resolving before writing any code.',
   },
 ];

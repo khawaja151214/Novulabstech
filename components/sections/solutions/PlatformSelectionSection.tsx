@@ -65,7 +65,7 @@ const PlatformSelectionSection: React.FC = () => {
               credit is applied and irrevocable within seconds, so validation moves ahead of
               the transaction and correction stops being a technical option. The engineering
               consequences (idempotency enforced at the database, reconciliation as a first
-              class process rather than an error path) are set out in our{' '}
+              class process instead of an error path) are set out in our{' '}
               <Link href="/blog/raast-integration-guide-instant-payments-pakistan">
                 RAAST integration guide
               </Link>
@@ -97,7 +97,7 @@ const PlatformSelectionSection: React.FC = () => {
               depends on your existing infrastructure and your regulator&apos;s position.
             </p>
 
-            <h3 className="mt-5">Integration is where the effort actually lives</h3>
+            <h3 className="mt-5">Integration is where the effort lives</h3>
             <p>
               In our experience of these deployments, the platform configuration is rarely the
               long pole. The work is in the integration surface: the core system these
@@ -106,7 +106,7 @@ const PlatformSelectionSection: React.FC = () => {
               between old and new during the transition window.
             </p>
             <p>
-              Migration in particular is routinely underestimated. Historical data almost never
+              Migration in particular is underestimated. Historical data almost never
               conforms to the model the new system expects: records with missing mandatory
               fields, identifiers that were free text, duplicate entities that were never
               merged. Deciding what to do with non-conforming history is a business decision

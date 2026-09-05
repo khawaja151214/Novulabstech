@@ -175,16 +175,16 @@ export default function SoftwareHouseIslamabadPage() {
                   <Link href="/contact">book it here</Link>.
                 </p>
                 <p>
-                  If you want to check our work before speaking to anyone, the{' '}
+                  You can check the work before speaking to anyone. The{' '}
                   <Link href="/portfolio">case studies</Link> describe how each system was
-                  architected and what constrained it, the{' '}
+                  architected and what constrained it. The{' '}
                   <Link href="/industries">industries pages</Link> cover the regulatory environment
-                  in banking, healthcare and government, the{' '}
-                  <Link href="/team">engineering team</Link> lists who would actually be doing the
-                  work, and the <Link href="/blog">technical articles</Link> are written by the same
-                  people. <Link href="/about">About NovuLabs</Link> explains how the company runs a
-                  project, and <Link href="/solutions">our platforms</Link> covers the products we
-                  have already built and can configure rather than write from scratch.
+                  in banking, healthcare and government, and the{' '}
+                  <Link href="/team">engineering team</Link> lists who would be doing the work.
+                  The <Link href="/blog">technical articles</Link> are written by those same
+                  people. <Link href="/about">About NovuLabs</Link> explains how a project runs
+                  here, and <Link href="/solutions">our platforms</Link> covers what we have
+                  already built and can configure instead of writing from scratch.
                 </p>
               </article>
             </div>

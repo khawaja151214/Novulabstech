@@ -85,7 +85,7 @@ export default function FaqPage() {
             Frequently asked <span className="gtxt">questions</span>
           </h1>
           <p className="hero-sub">
-            The questions buyers actually ask before an engagement, answered directly. The ten below
+            The questions buyers ask before an engagement, answered directly. The ten below
             are the orientation questions; the directory further down points to the{' '}
             {totalAnsweredQuestions} answers published across the rest of the site, each kept on the
             page that owns it.

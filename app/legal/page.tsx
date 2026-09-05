@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Legal & Policies — NovuLabs',
     description:
-      'Privacy policy, terms of service and cookie policy for NovuLabs, written to describe what this site actually does.',
+      'Privacy policy, terms of service and cookie policy for NovuLabs, written to describe what this site does.',
     url: canonical('/legal'),
     images: [
       {

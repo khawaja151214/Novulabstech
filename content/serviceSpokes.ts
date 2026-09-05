@@ -123,7 +123,7 @@ export const serviceSpokes: ServiceSpoke[] = [
       { title: 'Design system handoff', body: 'A component library the team can extend, so a new landing page or campaign site does not mean starting from a blank file.' },
     ],
     howWeHelp: [
-      'Most corporate sites we are asked to rebuild are not broken, they are slow, hard to update, or built on a stack the original agency stopped supporting. The fix is rarely a redesign; it is usually a rebuild on infrastructure the client actually controls.',
+      'Most corporate sites we are asked to rebuild are not broken, they are slow, hard to update, or built on a stack the original agency stopped supporting. The fix is rarely a redesign; it is usually a rebuild on infrastructure the client controls.',
       'The second common request is a site that was built to look good in a pitch and never accounted for how search engines or screen readers actually parse a page. We build for both from the first commit rather than retrofitting accessibility and SEO once traffic depends on it.',
     ],
     approach: [
@@ -162,7 +162,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     ],
     offerings: [
       { title: 'System and data audit', body: 'Mapping what the current system actually does, including the undocumented business logic and workarounds that accumulate over a decade, before deciding what to keep.' },
-      { title: 'Incremental migration paths', body: 'Running the old and new systems side by side where the business cannot tolerate downtime, with a defined cutover rather than a single high-risk switch.' },
+      { title: 'Incremental migration paths', body: 'Running the old and new systems side by side where the business cannot tolerate downtime, with a defined cutover instead of a single high-risk switch.' },
       { title: 'Data migration and reconciliation', body: 'Moving historical data with validation that the new system’s records reconcile against the old, not just that the migration script completed.' },
       { title: 'Integration continuity', body: 'Keeping every system that depends on the one being replaced working throughout the migration, not just on the day it goes live.' },
     ],
@@ -241,7 +241,7 @@ export const serviceSpokes: ServiceSpoke[] = [
       'A custom CRM makes sense once your relationship data, lead scoring logic, or pipeline structure has outgrown what the platform’s configuration options can express without workarounds.',
     ],
     offerings: [
-      { title: 'Pipeline and process modelling', body: 'Sales or relationship stages that match how deals or cases actually move through your organisation, including the branches and exceptions a generic pipeline flattens.' },
+      { title: 'Pipeline and process modelling', body: 'Sales or relationship stages that match how deals or cases move through your organisation, including the branches and exceptions a generic pipeline flattens.' },
       { title: 'Lead scoring and prioritisation', body: 'Scoring logic built around signals that are genuinely predictive for your business, not a default weighting borrowed from an unrelated industry.' },
       { title: 'Omnichannel record unification', body: 'Email, calls, meetings and support interactions attached to one customer record instead of scattered across the tools each team happens to use.' },
       { title: 'Analytics and forecasting', body: 'Pipeline and conversion reporting built on your actual stage definitions, so the numbers mean what leadership thinks they mean.' },
@@ -251,7 +251,7 @@ export const serviceSpokes: ServiceSpoke[] = [
       'We also build CRM systems for organisations whose relationship data has to integrate tightly with an internal system, like a core banking platform or a case management tool, where a general CRM’s integration options are too shallow.',
     ],
     approach: [
-      'We start with how deals or relationships actually move through your organisation today, including the exceptions and manual overrides, before designing the pipeline logic.',
+      'We start with how deals or relationships move through your organisation today, including the exceptions and manual overrides, before designing the pipeline logic.',
       'Where the data already lives in another system you are keeping, we integrate rather than duplicate, so the CRM is not a second, slightly different copy of the truth.',
     ],
     technologies: ['.NET', 'Java', 'React', 'Node.js', 'PostgreSQL'],
@@ -317,14 +317,14 @@ export const serviceSpokes: ServiceSpoke[] = [
     summary: 'APIs and integrations that connect the systems your organisation already runs, built with the security a shared endpoint needs.',
     icon: 'bi-plug-fill',
     intro: [
-      'Most enterprise problems that look like "we need a new system" are actually integration problems: two platforms that hold overlapping data and never agreed on which one is authoritative. Building an API is the easy part; deciding what the API actually represents, and securing it properly, is where the real work is.',
+      'Most enterprise problems that look like "we need a new system" are integration problems: two platforms that hold overlapping data and never agreed on which one is authoritative. Building an API is the easy part; deciding what the API represents, and securing it properly, is where the real work is.',
       'We design and build APIs for new systems and integration layers connecting existing ones, whether that means a public developer-facing API or an internal service boundary nobody outside the organisation will ever see.',
     ],
     offerings: [
       { title: 'API design', body: 'RESTful and GraphQL APIs designed around the resources and operations a consumer actually needs, with versioning that lets the underlying system change without breaking every integration.' },
       { title: 'Authentication and access control', body: 'Rate limiting, scoped access tokens and audit logging appropriate to what the API exposes, from a public developer portal to an internal-only service.' },
       { title: 'Legacy system integration', body: 'Building an API layer in front of a system that was never designed to expose one, so it can participate in newer architecture without a rewrite.' },
-      { title: 'Documentation and developer experience', body: 'Documentation that a third-party or internal developer can actually integrate against without a support ticket for every question.' },
+      { title: 'Documentation and developer experience', body: 'Documentation that a third-party or internal developer can integrate against without a support ticket for every question.' },
     ],
     howWeHelp: [
       'A recurring pattern: two systems both hold customer or transaction data, both are considered "the source of truth" by different teams, and nobody has designed which one actually owns which field. An integration project that skips that question ships a synchronisation bug instead of a solution.',
@@ -423,7 +423,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     faqs: [
       { q: 'Do you replace our existing core banking system or work alongside it?', a: 'Alongside it in most cases. Full core replacement is a significant undertaking that is only justified when the existing core genuinely cannot support what the institution needs, and we assess that honestly rather than defaulting to a replacement.' },
       { q: 'What if our current core cannot emit a real-time transaction feed?', a: 'That becomes the first thing we build: an event stream or polling layer that gives new systems a reliable view of transactions without modifying the core itself.' },
-      { q: 'How do you ensure a new ledger reconciles with our existing books?', a: 'Through continuous reconciliation against the core’s own records rather than a one-time validation at launch, so any discrepancy surfaces immediately instead of months later.' },
+      { q: 'How do you ensure a new ledger reconciles with our existing books?', a: 'Through continuous reconciliation against the core’s own records instead of a one-time validation at launch, so any discrepancy surfaces immediately instead of months later.' },
       { q: 'Can this support both digital wallets and traditional lending products?', a: 'Yes, both are built on the same underlying account and ledger architecture, which is more efficient than treating them as unrelated systems.' },
     ],
     relatedSpokes: ['payment-gateway-development', 'mastercard-visa-integration', 'transaction-monitoring-software-development'],
@@ -442,7 +442,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     icon: 'bi-credit-card-2-front',
     intro: [
       'A payment gateway sits at the point where a transaction can fail expensively and publicly, so the engineering discipline around it is different from most software: every state has to be recoverable, every failure mode has to be handled explicitly, and the system has to be built to PCI-DSS requirements from the start rather than audited into compliance afterwards.',
-      'We build payment gateways and switching infrastructure that connect card networks and local payment rails, for licensed institutions and EMIs that need infrastructure they control rather than a black-box processor.',
+      'We build payment gateways and switching infrastructure that connect card networks and local payment rails, for licensed institutions and EMIs that need infrastructure they control instead of a black-box processor.',
     ],
     offerings: [
       { title: 'Card processing and switching', body: 'Transaction routing and switching built on ISO 8583 and ISO 20022 messaging, handling authorisation, capture and reversal with the state machine correctness a payment flow requires.' },
@@ -530,7 +530,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     ],
     offerings: [
       { title: 'Risk scoring engine', body: 'Customer and transaction risk scoring based on factors your compliance team defines, adjustable as risk typologies change without a code deployment.' },
-      { title: 'Case management workflow', body: 'Alert assignment, investigation notes, escalation paths and disposition, built around how your compliance team actually works rather than a generic ticketing system relabelled for AML.' },
+      { title: 'Case management workflow', body: 'Alert assignment, investigation notes, escalation paths and disposition, built around how your compliance team actually works instead of a generic ticketing system relabelled for AML.' },
       { title: 'Audit trail and evidence packs', body: 'Every decision, the data behind it, the analyst who made it, and the reasoning, retained in a form an examiner can review without reconstructing it after the fact.' },
       { title: 'Regulatory reporting handoff', body: 'Cases that result in an STR or CTR flow directly into the goAML reporting pipeline (see the dedicated page) rather than requiring re-entry.' },
     ],
@@ -547,7 +547,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     faqs: [
       { q: 'How is this different from your transaction monitoring service?', a: 'Transaction monitoring is the detection engine that generates alerts from transaction patterns. This is what happens after an alert exists: assigning it, investigating it, scoring risk, and recording the decision. Most institutions need both, and they integrate directly.' },
       { q: 'Can compliance staff adjust risk scoring without engineering involvement?', a: 'Yes, that is a deliberate design goal. Risk typologies change faster than most institutions can get an engineering change deployed, so scoring rules are built to be configurable by the compliance team.' },
-      { q: 'What does the audit trail actually capture?', a: 'The alert, the data the analyst reviewed, the decision made, the reasoning recorded, and who made it, retained in a form that reconstructs the full picture for an examiner without requiring anyone to explain it after the fact.' },
+      { q: 'What does the audit trail capture?', a: 'The alert, the data the analyst reviewed, the decision made, the reasoning recorded, and who made it, retained in a form that reconstructs the full picture for an examiner without requiring anyone to explain it after the fact.' },
       { q: 'Does this integrate with our existing transaction monitoring system?', a: 'In most cases yes, through the alert data the monitoring system already generates. Where we also build the monitoring engine, the two are designed together; where we are adding case management to an existing monitoring system, we integrate against its alert output.' },
     ],
     relatedSpokes: ['transaction-monitoring-software-development', 'sanctions-pep-screening-software', 'goaml-fmu-reporting-integration'],
@@ -566,7 +566,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     icon: 'bi-flag-fill',
     intro: [
       'Screening a customer against a sanctions or politically-exposed-persons list sounds like a lookup. In practice it is a fuzzy-matching problem: names transliterate differently across languages, dates of birth are sometimes missing, and a screening engine tuned too loosely buries analysts in false positives while one tuned too tight misses genuine matches.',
-      'We build screening systems for onboarding and ongoing monitoring against OFAC, NACTA and equivalent sanctions and PEP data sources, tuned for your actual customer base rather than a generic default.',
+      'We build screening systems for onboarding and ongoing monitoring against OFAC, NACTA and equivalent sanctions and PEP data sources, tuned for your actual customer base instead of a generic default.',
     ],
     offerings: [
       { title: 'Name matching and fuzzy logic', body: 'Matching algorithms tuned for the transliteration and formatting variance in your actual customer data, not a naive exact-match or an untuned fuzzy match that floods analysts.' },
@@ -610,7 +610,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     ],
     offerings: [
       { title: 'Rule engine design', body: 'Deterministic detection rules built around your institution’s actual risk typologies, structured so a rule’s logic can be explained to an examiner in plain language.' },
-      { title: 'Real-time and batch monitoring', body: 'Streaming detection for time-sensitive typologies and batch analysis for patterns that only become visible over a longer window, depending on what each typology actually requires.' },
+      { title: 'Real-time and batch monitoring', body: 'Streaming detection for time-sensitive typologies and batch analysis for patterns that only become visible over a longer window, depending on what each typology requires.' },
       { title: 'ML-assisted prioritisation', body: 'A model that ranks the alert queue by likely relevance, improving analyst throughput without making an unexplainable model output the reason a case was opened or closed.' },
       { title: 'Threshold tuning and backtesting', body: 'Rules tested against historical transaction data before going live, so a new rule’s alert volume and accuracy are known quantities, not a surprise in production.' },
     ],
@@ -692,7 +692,7 @@ export const serviceSpokes: ServiceSpoke[] = [
       { title: 'STR and CTR filing pipeline', body: 'A pipeline from case disposition to goAML submission, so a decision to file does not require manual re-entry into a separate portal.' },
       { title: 'FMU and SBP compliance alignment', body: 'Reporting logic built against the specific obligations of the Anti-Money Laundering Act 2010 and SBP’s regulatory framework, not a generic AML reporting template.' },
       { title: 'Filing audit trail', body: 'A record of every filing, what triggered it, who approved it, and its submission status, retained for examination.' },
-      { title: 'Narrative quality support', body: 'Structured case data that supports writing a filing narrative with the detail an examiner expects, rather than a generic template narrative.' },
+      { title: 'Narrative quality support', body: 'Structured case data that supports writing a filing narrative with the detail an examiner expects, instead of a generic template narrative.' },
     ],
     howWeHelp: [
       'The gap we most often find in existing reporting processes is the manual step between a compliance decision and the actual goAML filing: someone re-entering case data into the portal by hand, with no system-level record connecting the two. That is both an operational burden and an audit weakness, since it is hard to prove the filing accurately reflects the case.',
@@ -735,7 +735,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     offerings: [
       { title: 'Electronic health records', body: 'Patient record systems built around clinical workflow, structured so the data model supports HL7 FHIR exchange natively rather than requiring a mapping layer bolted on afterward.' },
       { title: 'Telemedicine platforms', body: 'Video consultation and virtual care workflows integrated with the patient record, built on WebRTC for real-time video without a third-party platform dependency.' },
-      { title: 'HL7 FHIR and HL7 v2 integration', body: 'Interoperability with labs, pharmacy systems, and other providers using the HL7 standards actually deployed across most healthcare infrastructure today.' },
+      { title: 'HL7 FHIR and HL7 v2 integration', body: 'Interoperability with labs, pharmacy systems, and other providers using the HL7 standards deployed across most healthcare infrastructure today.' },
       { title: 'Clinical terminology support', body: 'LOINC and SNOMED CT coding where clinical data needs to be structured for interoperability and analytics, not stored as free text.' },
     ],
     howWeHelp: [
@@ -858,7 +858,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     ],
     offerings: [
       { title: 'Swift and SwiftUI development', body: 'Native apps built with current Apple frameworks, giving full access to platform capability and the performance characteristics of a compiled native app.' },
-      { title: 'App Store submission readiness', body: 'Building against Apple’s current review guidelines throughout development, so submission is a formality rather than a round of rejections and rework.' },
+      { title: 'App Store submission readiness', body: 'Building against Apple’s current review guidelines throughout development, so submission is a formality instead of a round of rejections and rework.' },
       { title: 'Platform-specific integration', body: 'Deep integration with iOS-specific capability such as biometric authentication, push notifications and background processing, built the way the platform expects rather than through a compatibility layer.' },
       { title: 'Performance engineering', body: 'Profiling and optimisation for the specific performance and battery characteristics iOS users and Apple’s review process both expect.' },
     ],
@@ -890,7 +890,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     seoTitle: 'Native Android App Development Services',
     description:
       'Native Android app development in Kotlin for a diverse device ecosystem, including enterprise Google Play deployment and platform-specific integration.',
-    summary: 'Kotlin-first native development built for the range of devices and OS versions an Android product actually has to run on.',
+    summary: 'Kotlin-first native development built for the range of devices and OS versions an Android product has to run on.',
     icon: 'bi-android2',
     intro: [
       'Android’s device diversity is the real engineering challenge native Android development solves: a product built for a flagship phone on the latest OS version behaves differently on a mid-range device three OS versions behind, and both are real users. That diversity is also why native development sometimes pays off over cross-platform, when an app needs to run well across genuinely varied hardware.',
@@ -951,7 +951,7 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Cost is the other common surprise. Cloud infrastructure that mirrors an on-premise architecture too literally often costs more than expected, because cloud pricing rewards a different design pattern (managed services, autoscaling, and workload-appropriate instance types) than a straight lift-and-shift assumes.',
     ],
     approach: [
-      'Migration planning starts with data residency, compliance and downtime constraints, since those determine what "migrated" actually has to mean for your organisation before any infrastructure work begins.',
+      'Migration planning starts with data residency, compliance and downtime constraints, since those determine what "migrated" has to mean for your organisation before any infrastructure work begins.',
       'Infrastructure is defined as code from the start using Terraform, so the environment is reproducible and auditable rather than manually configured and undocumented.',
     ],
     technologies: ['AWS', 'Azure', 'Kubernetes', 'Terraform', 'Docker', 'Prometheus', 'Grafana'],
@@ -987,7 +987,7 @@ export const serviceSpokes: ServiceSpoke[] = [
       { title: 'ML pipeline infrastructure', body: 'Training, deployment and monitoring infrastructure for models that need to be retrained as data patterns shift, not a one-time model handed off with no maintenance path.' },
     ],
     howWeHelp: [
-      'The mistake we see most often in applied AI projects is deploying a model as the decision-maker in a process where the decision genuinely needs to be explainable to a third party. We design for where a model adds real value (prioritisation, flagging, pattern detection at scale) without making it the unexplainable final word in a process an examiner or auditor will review.',
+      'The mistake we see most often in applied AI projects is deploying a model as the decision-maker in a process where the decision needs to be explainable to a third party. We design for where a model adds real value (prioritisation, flagging, pattern detection at scale) without making it the unexplainable final word in a process an examiner or auditor will review.',
       'We are also direct about where AI is not the right tool. A significant share of "we need AI" requests we receive describe a problem that deterministic logic solves more reliably and more cheaply, and we say so rather than building a model because it was requested.',
     ],
     approach: [

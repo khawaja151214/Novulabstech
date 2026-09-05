@@ -121,7 +121,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'We came in wanting a custom ERP. They mapped our processes, found that eighty per cent matched a product we could licence, and scoped a build for only the twenty per cent that was genuinely ours. They talked themselves out of most of the contract.',
+      'We came in wanting a custom ERP. They mapped our processes, found that eighty per cent matched a product we could licence, and scoped a build for only the twenty per cent that was ours. They talked themselves out of most of the contract.',
     role: 'Chief Operating Officer',
     organisation: 'Manufacturing group',
     sector: 'Enterprise Software',
@@ -212,7 +212,7 @@ export const whyClientsChoose: {
     icon: 'bi-diagram-3',
     color: 'i-v',
     body:
-      'Systems are designed around which record is authoritative and where it lives, so growth is an infrastructure question rather than a re-platforming one. Multi-tenancy and data residency are decided up front.',
+      'Systems are designed around which record is authoritative and where it lives, so growth is an infrastructure question instead of a re-platforming one. Multi-tenancy and data residency are decided up front.',
     link: { label: 'Platform architecture', href: '/solutions' },
   },
   {

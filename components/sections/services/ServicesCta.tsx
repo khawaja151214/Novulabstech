@@ -10,7 +10,7 @@ const ServicesCta: React.FC = () => {
             <div className="col-lg-7">
               <span className="stag">Not Sure Where to Start?</span>
               <p className="stitle mt-3">That is exactly<br /><span className="gtxt">what the first call is for.</span></p>
-              <p className="ssub mt-4 mb-0">Most clients come to us knowing they have a problem but unsure how to frame it. We're used to that. Bring us what you know: we'll help you figure out the right approach, the honest timeline, and what it's actually going to take.</p>
+              <p className="ssub mt-4 mb-0">Most clients come to us knowing they have a problem but unsure how to frame it. We're used to that. Bring us what you know: we'll help you figure out the right approach, the honest timeline, and what it's going to take.</p>
               <div className="cta-trust-row">
                 <div className="cta-trust-item"><i className="bi bi-person-check"></i>Speak with an architect who has shipped similar systems</div>
                 <div className="cta-trust-item"><i className="bi bi-chat-square-text"></i>We ask more questions than you will; that's the point</div>

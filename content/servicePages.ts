@@ -105,7 +105,7 @@ export const servicePages: ServicePage[] = [
         heading: 'goAML reporting, validated before submission',
         body: [
           'FMU accepts STRs and CTRs through goAML, which validates every submission against a strict XML schema. A rejected report is a report you did not file, and rejections cluster around a small set of causes: party identifiers placed in the wrong typed field, conditionally-mandatory fields modelled as optional, locale-formatted dates and separators, and narratives that are schema-valid but analytically useless to the human who reads them.',
-          'We build the reporting pipeline against the schema from the first iteration, with an XSD validation stage that runs in your environment before submission, and we treat the reason-for-suspicion narrative as a product surface rather than a free-text box: because it is read by an analyst, and its quality is a visible reflection of your programme.',
+          'We build the reporting pipeline against the schema from the first iteration, with an XSD validation stage that runs in your environment before submission, and we treat the reason-for-suspicion narrative as a product surface instead of a free-text box: because it is read by an analyst, and its quality is a visible reflection of your programme.',
         ],
       },
     ],
@@ -140,7 +140,7 @@ export const servicePages: ServicePage[] = [
         // as the pillar, is actually the right place to answer: how its own
         // five narrower sub-services fit together as one programme.
         q: 'How do screening, monitoring and reporting fit together as one programme?',
-        a: 'They are three connected subsystems, not three separate purchases. Sanctions and PEP screening happens at onboarding and on an ongoing basis; transaction monitoring watches behaviour after that; and a case that either produces goes to goAML reporting once a decision is made. We build them to integrate because a screening hit or a monitoring alert that dead-ends in a spreadsheet is where most AML programmes actually fail.',
+        a: 'They are three connected subsystems, not three separate purchases. Sanctions and PEP screening happens at onboarding and on an ongoing basis; transaction monitoring watches behaviour after that; and a case that either produces goes to goAML reporting once a decision is made. We build them to integrate because a screening hit or a monitoring alert that dead-ends in a spreadsheet is where most AML programmes fail.',
       },
       {
         q: 'How long does an AML/CFT implementation take?',
@@ -304,7 +304,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         q: 'Can you add FHIR support to an existing EHR?',
-        a: 'Yes, usually as a translation layer over your existing model rather than a rewrite. The scoping question is which resources you actually need to exchange and what terminology mapping is required; the second one is normally the larger effort.',
+        a: 'Yes, usually as a translation layer over your existing model instead of a rewrite. The scoping question is which resources you actually need to exchange and what terminology mapping is required; the second one is normally the larger effort.',
       },
       {
         q: 'Do you handle HL7 v2 to FHIR migration?',
@@ -332,7 +332,7 @@ export const servicePages: ServicePage[] = [
       'ERP, CRM and multi-tenant SaaS platforms built around the workflows that differentiate you, and honest advice about the ones you should buy instead.',
     serviceType: 'Custom enterprise software development',
     summary:
-      'ERP, CRM, multi-tenant SaaS and legacy modernisation for organisations whose workflow is their competitive advantage rather than a cost of doing business.',
+      'ERP, CRM, multi-tenant SaaS and legacy modernisation for organisations whose workflow is their competitive advantage instead of a cost of doing business.',
     keywords: [
       'custom enterprise software development',
       'custom ERP development',
@@ -531,7 +531,7 @@ export const servicePages: ServicePage[] = [
         heading: 'Data residency comes before architecture',
         body: [
           'For SBP-regulated institutions and healthcare providers, where data may physically reside is a constraint set by regulation and by contract, not by preference. It determines region selection, whether managed services are usable at all, and frequently pushes toward hybrid designs.',
-          'This has to be established before architecture, because discovering a residency constraint after selecting a managed service is a rebuild rather than a configuration change.',
+          'This has to be established before architecture, because discovering a residency constraint after selecting a managed service is a rebuild instead of a configuration change.',
         ],
       },
       {
@@ -621,7 +621,7 @@ export const servicePages: ServicePage[] = [
         heading: 'Server-render, because half your readers do not run JavaScript',
         body: [
           'This used to be an SEO nicety. It is now a distribution question. GPTBot, ClaudeBot, PerplexityBot and CCBot largely do not execute JavaScript, so a client-rendered application ships them an empty shell, invisible to every major AI assistant regardless of how good the content is.',
-          'We build server-rendered by default and treat "is the content in the raw HTML response?" as a release check rather than an assumption. It remains one of the few technical decisions with a direct, measurable effect on whether an AI system can cite you at all.',
+          'We build server-rendered by default and treat "is the content in the raw HTML response?" as a release check instead of an assumption. It remains one of the few technical decisions with a direct, measurable effect on whether an AI system can cite you at all.',
         ],
       },
       {
@@ -632,9 +632,9 @@ export const servicePages: ServicePage[] = [
         ],
       },
       {
-        heading: 'Performance where users actually are',
+        heading: 'Performance where users are',
         body: [
-          'Core Web Vitals are measured on real devices on real networks. A platform tuned on a fast connection and a modern laptop will disappoint a user on a mid-range Android phone on a congested mobile network: which, for most of the markets our clients serve, is the median user rather than the edge case.',
+          'Core Web Vitals are measured on real devices on real networks. A platform tuned on a fast connection and a modern laptop will disappoint a user on a mid-range Android phone on a congested mobile network: which, for most of the markets our clients serve, is the median user instead of the edge case.',
           'The work is mostly unglamorous: bounded image dimensions to prevent layout shift, self-hosted critical assets rather than third-party requests on the critical path, deferred non-essential JavaScript, and a real budget on the largest contentful paint.',
         ],
       },
@@ -642,7 +642,7 @@ export const servicePages: ServicePage[] = [
         heading: 'Core Web Vitals are a measurement problem before they are a code problem',
         body: [
           'Most teams optimise against a lab score produced on a fast machine over a fast connection, then find the field data disagrees. The two measure different things: the lab number is a synthetic run, while ranking-relevant data comes from real users on real devices and networks.',
-          'We instrument field measurement first, because it is the only thing that tells you which of the three metrics is actually failing and for whom. Largest Contentful Paint problems are usually an image or font loading decision. Interaction to Next Paint problems are usually long tasks blocking the main thread, frequently from third-party scripts nobody has audited. Cumulative Layout Shift is nearly always unreserved space for an image, an ad slot, or a late-loading font.',
+          'We instrument field measurement first, because it is the only thing that tells you which of the three metrics is failing and for whom. Largest Contentful Paint problems are usually an image or font loading decision. Interaction to Next Paint problems are usually long tasks blocking the main thread, frequently from third-party scripts nobody has audited. Cumulative Layout Shift is nearly always unreserved space for an image, an ad slot, or a late-loading font.',
           'Fixing the wrong one is common and expensive. The diagnosis is cheap by comparison.',
         ],
       },

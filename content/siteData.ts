@@ -245,7 +245,7 @@ export const teamMembers: TeamMemberProfile[] = [
     imgAlt: 'Ali Zaidi, Chief Operating Officer of NovuLabs',
     bio: 'Runs delivery and the compliance practice, including AML/CFT engagements with SBP-regulated institutions.',
     longBio:
-      'Ali runs delivery operations and the compliance practice at NovuLabs, including AML/CFT engagements with SBP-regulated institutions. He writes here on goAML integration, transaction monitoring design, and what regulatory examination actually asks of a system.',
+      'Ali runs delivery operations and the compliance practice at NovuLabs, including AML/CFT engagements with SBP-regulated institutions. He writes here on goAML integration, transaction monitoring design, and what regulatory examination asks of a system.',
     skills: ['AML/CFT programmes', 'Delivery operations', 'Regulatory engagement'],
     credentials: [],
     knowsAbout: [

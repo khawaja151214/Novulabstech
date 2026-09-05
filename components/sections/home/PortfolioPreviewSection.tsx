@@ -24,7 +24,7 @@ const PortfolioPreviewSection: React.FC = () => {
             <h2 className="stitle mt-3">Three engagements, <span className="gtxt">in detail</span></h2>
             <p className="ssub mt-3 mb-0">
               Each case study covers the problem, the constraints we designed within, and what
-              actually changed. Client names are withheld under NDA and described by category.
+              changed. Client names are withheld under NDA and described by category.
             </p>
           </div>
           <div className="col-auto" data-reveal="up">

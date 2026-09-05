@@ -75,7 +75,7 @@ const RegulatedDeliverySection: React.FC = () => {
             <p>
               The architecture that survives contact with reality treats verification as
               graded evidence feeding a risk decision, with defined assurance tiers and a
-              documented route between them, rather than a single gate that a legitimate
+              documented route between them, instead of a single gate that a legitimate
               person can fail with nowhere to go. The design detail is in our{' '}
               <Link href="/blog/nadra-ekyc-cnic-verification-integration-guide">
                 guide to CNIC and biometric verification
@@ -103,7 +103,7 @@ const RegulatedDeliverySection: React.FC = () => {
               <Link href="/blog/goaml-xml-integration-str-ctr-reporting-pakistan">
                 goAML
               </Link>{' '}
-              write-ups, because it is genuinely the same lesson.
+              write-ups, because it is the same lesson.
             </p>
 
             <h3 className="mt-5">Availability obligations are asymmetric</h3>

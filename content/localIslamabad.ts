@@ -36,7 +36,7 @@ export interface LocalSection {
 export const ISLAMABAD_INTRO: string[] = [
   'NovuLabs is a software house in Islamabad that builds custom software for organisations operating under regulatory supervision: banks and payment institutions, healthcare providers, government departments and the enterprises that supply them. We are located in I-10, Islamabad, and we work with clients across Pakistan, the Gulf, the United Kingdom and North America.',
   'A software house, in the sense the term is used in Pakistan, is a company that designs, builds, tests and maintains software for other organisations, as opposed to a product company selling one piece of software to many customers. In practice that means we are hired to own a system end to end: requirements, architecture, engineering, security review, deployment, and the long unglamorous years of maintenance afterwards.',
-  'What separates one software house in Islamabad from another is rarely the programming languages listed on its marketing page. It is whether the team has shipped systems that survive contact with an auditor, a penetration test, a central bank inspection or a payment scheme certification. That is the work we have chosen to specialise in, and it shapes everything below.',
+  'What separates one software house in Islamabad from another is rarely the programming languages listed on its marketing page. Everybody lists the same ones. What matters is whether the team has shipped systems that survive contact with an auditor, a penetration test, a central bank inspection or a payment scheme certification. That is the work we have chosen to specialise in, and it shapes everything below.',
 ];
 
 export const ISLAMABAD_SECTIONS: LocalSection[] = [
@@ -62,7 +62,7 @@ export const ISLAMABAD_SECTIONS: LocalSection[] = [
     heading: 'Why build software in Islamabad',
     body: [
       'Islamabad concentrates three things that matter to a software buyer: the regulators, the universities and the timezone. The State Bank of Pakistan, the Securities and Exchange Commission of Pakistan, the Financial Monitoring Unit, NADRA and the federal ministries are all headquartered here or nearby, which means the people who have built systems against those bodies are here too. For a compliance or government project that proximity is not a lifestyle preference, it is the difference between a two-week clarification loop and a meeting.',
-      'The city and the adjacent Rawalpindi campuses produce a steady supply of engineering graduates, and the sector is established enough that senior people already exist here rather than having to be imported. Pakistan Standard Time sits five hours ahead of London in winter and one hour behind Dubai, so a team here shares most of a working day with the Gulf, the majority of a morning with the United Kingdom and Europe, and can reach the United States east coast before lunch there.',
+      'The city and the adjacent Rawalpindi campuses produce a steady supply of engineering graduates, and the sector is established enough that senior people already exist here rather than having to be imported. Pakistan Standard Time sits five hours ahead of London in winter and one hour behind Dubai. A team here shares most of a working day with the Gulf, the majority of a morning with the UK and Europe, and can still reach the US east coast before lunch there. That is three markets in one shift.',
       'Cost is usually the reason a buyer starts looking at Pakistan, and it is a real advantage, but it is the least interesting one. Cost only matters if the system works. Rebuilding a failed platform costs more than the difference between any two day rates you were choosing between.',
     ],
   },
@@ -103,7 +103,7 @@ export const ISLAMABAD_FAQS: FaqItem[] = [
   },
   {
     q: 'Do you build mobile apps as well as enterprise systems?',
-    a: 'Yes. We build native iOS and Android apps and cross-platform apps, and in most of our engagements the app is one client of a larger platform rather than a standalone product. That matters for regulated work: a banking or health app inherits the compliance obligations of the system behind it, including data residency, session handling, audit logging and secure storage on the device.',
+    a: 'Yes. We build native iOS and Android apps and cross-platform apps, and in most of our engagements the app is one client of a larger platform instead of a standalone product. That matters for regulated work: a banking or health app inherits the compliance obligations of the system behind it, including data residency, session handling, audit logging and secure storage on the device.',
   },
   {
     q: 'Can you work with a client who has no in-house technical team?',

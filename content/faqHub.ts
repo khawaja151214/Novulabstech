@@ -50,7 +50,7 @@ export const hubFaqs: FaqItem[] = [
   },
   {
     q: 'Does NovuLabs build custom enterprise software, or sell products?',
-    a: 'Both, and the choice is made per engagement rather than sold in advance. Four platforms (NovuShield, NovuPay, NovuERP and NovuCRM) cover compliance, payments, operations and the customer record, and each can be deployed into infrastructure you control. Where an off-the-shelf product genuinely fits your requirement, we will say so; recommending a custom build against a product that fits sells you maintenance liability at a premium.',
+    a: 'Both, and the choice is made per engagement rather than sold in advance. Four platforms (NovuShield, NovuPay, NovuERP and NovuCRM) cover compliance, payments, operations and the customer record, and each can be deployed into infrastructure you control. Where an off-the-shelf product fits your requirement, we will say so; recommending a custom build against a product that fits sells you maintenance liability at a premium.',
   },
   {
     q: 'Which industries does NovuLabs serve?',
@@ -125,7 +125,7 @@ export const faqDirectory: FaqDirectoryGroup[] = [
   },
   {
     title: 'Regulated industries',
-    blurb: 'What AML/CFT, HIPAA and government integration actually demand of a system.',
+    blurb: 'What AML/CFT, HIPAA and government integration demand of a system.',
     href: '/industries#faq',
     items: industriesFaqs,
   },

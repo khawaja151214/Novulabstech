@@ -94,7 +94,7 @@ export default function ServicesPage() {
               </h2>
               <p className="ssub mx-auto">
                 Each track has its own page with the detail, the constraints we design within, and the
-                questions clients actually ask.
+                questions clients ask.
               </p>
             </div>
           </div>

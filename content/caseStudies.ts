@@ -412,7 +412,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Audit logging sized as a primary feature',
         body: [
-          'Under HIPAA the access log counts as evidence, and has to be built to that standard. It has to be append-only, because a log the writing system can amend proves nothing, and it has to be queryable by patient and by time window, because that is the axis an investigation actually uses.',
+          'Under HIPAA the access log counts as evidence, and has to be built to that standard. It has to be append-only, because a log the writing system can amend proves nothing, and it has to be queryable by patient and by time window, because that is the axis an investigation uses.',
           'Both properties are cheap at design time and painful to retrofit onto a live system carrying years of history. The retention policy was set as a product decision with clinical and legal input rather than as a database default.',
         ],
       },
@@ -707,7 +707,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Manufacturing ERP Where Scheduling Was the Competitive Edge',
     seoTitle: 'Case Study: Multi-Country Manufacturing ERP',
     description:
-      'A composite architecture: packaged finance and HR kept close to vanilla, with custom production scheduling built where the client\'s advantage actually lived.',
+      'A composite architecture: packaged finance and HR kept close to vanilla, with custom production scheduling built where the client\'s advantage lived.',
     industry: 'Manufacturing & Enterprise',
     category: 'enterprise',
     summary:
@@ -731,7 +731,7 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: 'Recommending they build less',
         body: [
-          'Our first recommendation was to stop building finance and HR and license them instead, keeping the package close to vanilla so statutory changes across three jurisdictions remain the vendor\'s problem rather than the group\'s. This reduced the scope of work available to us and was the right advice.',
+          'Our first recommendation was to stop building finance and HR and license them instead, keeping the package close to vanilla so statutory changes across three jurisdictions remain the vendor\'s problem instead of the group\'s. This reduced the scope of work available to us and was the right advice.',
         ],
       },
       {
