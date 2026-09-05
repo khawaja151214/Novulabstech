@@ -48,7 +48,7 @@ const PlatformSelectionSection: React.FC = () => {
             <h3 className="mt-5">Where each platform sits</h3>
             <p>
               <strong>NovuShield</strong> owns compliance decisions and the evidence behind
-              them — screening outcomes, monitoring alerts, case dispositions, and the
+              them: screening outcomes, monitoring alerts, case dispositions, and the
               regulatory submissions that follow. It is the only one of the four with a hard
               external schema contract, because reporting to a financial intelligence unit is
               validated on submission and rejected outright when it does not conform. That
@@ -64,8 +64,8 @@ const PlatformSelectionSection: React.FC = () => {
               defining requirement is finality rather than throughput: on an instant rail a
               credit is applied and irrevocable within seconds, so validation moves ahead of
               the transaction and correction stops being a technical option. The engineering
-              consequences — idempotency enforced at the database, reconciliation as a first
-              class process rather than an error path — are set out in our{' '}
+              consequences (idempotency enforced at the database, reconciliation as a first
+              class process rather than an error path) are set out in our{' '}
               <Link href="/blog/raast-integration-guide-instant-payments-pakistan">
                 RAAST integration guide
               </Link>
@@ -93,7 +93,7 @@ const PlatformSelectionSection: React.FC = () => {
               All four platforms are designed to be deployed into infrastructure the client
               controls where that is required, rather than assuming a single shared tenancy.
               What that means concretely for your estate, and what it costs in operational
-              overhead — is a conversation to have with an architect, because the honest answer
+              overhead, is a conversation to have with an architect, because the honest answer
               depends on your existing infrastructure and your regulator&apos;s position.
             </p>
 
@@ -107,7 +107,7 @@ const PlatformSelectionSection: React.FC = () => {
             </p>
             <p>
               Migration in particular is routinely underestimated. Historical data almost never
-              conforms to the model the new system expects — records with missing mandatory
+              conforms to the model the new system expects: records with missing mandatory
               fields, identifiers that were free text, duplicate entities that were never
               merged. Deciding what to do with non-conforming history is a business decision
               with regulatory implications, not a technical one, and it needs an owner early.
@@ -116,7 +116,7 @@ const PlatformSelectionSection: React.FC = () => {
             <h3 className="mt-5">When a platform is the wrong answer</h3>
             <p>
               If your requirement is genuinely standard, a mature commercial product will
-              almost always beat anything built or configured for you — on cost, on time to
+              almost always beat anything built or configured for you: on cost, on time to
               value, and on the amount of maintenance you inherit. We say so when that is the
               case, and we have written up the reasoning in{' '}
               <Link href="/blog/why-custom-saas-outperforms-off-the-shelf-erp">

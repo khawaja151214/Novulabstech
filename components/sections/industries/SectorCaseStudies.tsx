@@ -47,7 +47,7 @@ const SectorCaseStudies: React.FC = () => {
               Engagements in <span className="gtxt">each sector</span>
             </h2>
             <p className="ssub mt-3 mb-0">
-              Clients are described by category rather than named — every engagement below is
+              Clients are described by category rather than named: every engagement below is
               covered by an NDA. Each case study sets out the problem, the constraints we
               designed within, and the engineering decisions behind the result.
             </p>

@@ -40,7 +40,7 @@ const HowWeWorkSection: React.FC = () => {
               That is a deliberate constraint on how we grow: it does not scale the way a
               sales team scales, and it means we talk to fewer prospects than we otherwise
               could. We accept that trade because the alternative; a commercial conversation
-              that commits to an architecture nobody technical has examined — is how projects
+              that commits to an architecture nobody technical has examined, is how projects
               acquire the problems that surface in month five.
             </p>
             <p>
@@ -106,7 +106,7 @@ const HowWeWorkSection: React.FC = () => {
               not a defensible answer.
             </p>
             <p>
-              The pattern we favour is layered — deterministic rules produce the decisions of
+              The pattern we favour is layered: deterministic rules produce the decisions of
               record, and a model runs alongside to prioritise the review queue rather than to
               decide it. You get the analyst-efficiency benefit without putting an
               unexplainable artefact on the regulatory critical path. It is a less impressive
@@ -126,7 +126,7 @@ const HowWeWorkSection: React.FC = () => {
             </p>
             <p>
               We also do not claim certifications we cannot evidence. Where the site describes
-              alignment with a standard, it means the engineering practice follows it — not
+              alignment with a standard, it means the engineering practice follows it, not
               that a registrar has audited us against it. Buyers in this market are asked to
               take a great deal on trust, and the least we can do is be precise about which
               claims are attestations and which are audited facts.

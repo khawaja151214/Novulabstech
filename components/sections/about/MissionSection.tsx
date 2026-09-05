@@ -9,7 +9,7 @@ const MissionSection: React.FC = () => {
             <span className="stag">Our Mission</span>
             <h2 className="stitle mt-3">Powering <span className="gtxt">Critical Systems</span> Globally</h2>
             <p className="mb-3">NovuLabs was founded in Islamabad by a senior engineering team with a single purpose: build software that matters. Not generic apps: mission-critical platforms that power financial systems, protect public health, and serve governments.</p>
-            <p className="mb-3">Our team brings deep hands-on expertise in fintech compliance, healthcare IT, and enterprise architecture — accumulated across years of delivering complex systems for regulated industries.</p>
+            <p className="mb-3">Our team brings deep hands-on expertise in fintech compliance, healthcare IT, and enterprise architecture, accumulated across years of delivering complex systems for regulated industries.</p>
             <p>We measure success in transaction volumes processed, compliance standards met, and operations made more efficient through better software.</p>
           </div>
           <div className="col-lg-6" data-reveal="left">
@@ -18,7 +18,7 @@ const MissionSection: React.FC = () => {
                 <div className="vcard">
                   <span className="vico" aria-hidden="true"><i className="bi bi-bullseye"></i></span>
                   <h3 className="ctitle">Mission-Driven</h3>
-                  <p className="ctext">Every project starts with understanding what success truly means for your organization.</p>
+                  <p className="ctext">Every project starts with understanding what success truly means for your organisation.</p>
                 </div>
               </div>
               <div className="col-6">

@@ -193,7 +193,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     <ul>
                       {relatedCases.map((c) => (
                         <li key={c!.slug}>
-                          <Link href={`/portfolio/${c!.slug}`}>{c!.title}</Link> — {c!.summary}
+                          <Link href={`/portfolio/${c!.slug}`}>{c!.title}</Link>: {c!.summary}
                         </li>
                       ))}
                     </ul>

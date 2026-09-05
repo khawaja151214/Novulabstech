@@ -98,7 +98,7 @@ export const servicePages: ServicePage[] = [
         heading: 'Monitoring you can explain to an examiner',
         body: [
           'Transaction monitoring detects behaviour: structuring below CTR thresholds, velocity spikes, dormant-account reactivation, geography inconsistent with a stated customer profile, round-trip flows between related parties.',
-          'There is commercial pressure to lead with machine learning. We generally advise against putting a model on the regulatory critical path, because explainability is a requirement rather than a preference — "the model scored it 0.31" is not a defensible answer to an examiner. The pattern we build is layered: a deterministic rule engine produces the alerts of record with an auditable reason attached to every decision, and a model runs alongside to prioritise the analyst queue. You get the efficiency without the unexplainable artefact.',
+          'There is commercial pressure to lead with machine learning. We generally advise against putting a model on the regulatory critical path, because explainability is a requirement rather than a preference: "the model scored it 0.31" is not a defensible answer to an examiner. The pattern we build is layered: a deterministic rule engine produces the alerts of record with an auditable reason attached to every decision, and a model runs alongside to prioritise the analyst queue. You get the efficiency without the unexplainable artefact.',
         ],
       },
       {
@@ -431,7 +431,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Offline is a product decision before it is a technical one',
         body: [
-          'Field operations apps and wallets in areas with unreliable connectivity fail in the same way: someone assumes network availability, then bolts on caching, then discovers that the real problem is conflict resolution. Two users edited the same record offline — which one wins, and who is told?',
+          'Field operations apps and wallets in areas with unreliable connectivity fail in the same way: someone assumes network availability, then bolts on caching, then discovers that the real problem is conflict resolution. Two users edited the same record offline: which one wins, and who is told?',
           'That is a product decision with regulatory implications in financial and clinical contexts, and it needs answering before the sync layer is written. We surface it early rather than letting it be settled implicitly by whichever write arrives second.',
         ],
       },
@@ -537,7 +537,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Where AI belongs, and where it does not',
         body: [
-          'Applied machine learning earns its place in document processing, classification, forecasting, anomaly detection and analyst-queue prioritisation — tasks where being right most of the time is genuinely valuable and being wrong is recoverable.',
+          'Applied machine learning earns its place in document processing, classification, forecasting, anomaly detection and analyst-queue prioritisation, tasks where being right most of the time is genuinely valuable and being wrong is recoverable.',
           'It does not belong on a regulatory critical path. If a decision must be explained to an examiner, a model score is not an explanation. In AML in particular we keep models beside the deterministic rule engine rather than inside it: the rules produce the alerts of record, the model orders the queue. The same logic applies wherever an auditable reason is required for each individual decision.',
         ],
       },
@@ -620,7 +620,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Server-render, because half your readers do not run JavaScript',
         body: [
-          'This used to be an SEO nicety. It is now a distribution question. GPTBot, ClaudeBot, PerplexityBot and CCBot largely do not execute JavaScript, so a client-rendered application ships them an empty shell — invisible to every major AI assistant regardless of how good the content is.',
+          'This used to be an SEO nicety. It is now a distribution question. GPTBot, ClaudeBot, PerplexityBot and CCBot largely do not execute JavaScript, so a client-rendered application ships them an empty shell, invisible to every major AI assistant regardless of how good the content is.',
           'We build server-rendered by default and treat "is the content in the raw HTML response?" as a release check rather than an assumption. It remains one of the few technical decisions with a direct, measurable effect on whether an AI system can cite you at all.',
         ],
       },

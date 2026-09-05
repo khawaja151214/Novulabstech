@@ -35,7 +35,7 @@ const InsightsSection: React.FC = () => {
               Engineering notes from <span className="gtxt">regulated delivery</span>
             </h2>
             <p className="ssub mt-3 mb-0">
-              Build guides written for the engineer who has to ship the thing — goAML
+              Build guides written for the engineer who has to ship the thing: goAML
               submission, instant payment rails, identity verification and healthcare
               interoperability, with primary sources cited throughout.
             </p>

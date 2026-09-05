@@ -11,7 +11,7 @@ const WhyUsSection: React.FC = () => {
           <div className="col-lg-7" data-reveal="up">
             <span className="stag">Why NovuLabs</span>
             <h2 className="stitle mt-3">Why teams <span className="gtxt">choose us</span> You Need</h2>
-            <p className="ssub mx-auto">We build competitive advantages for the world's most demanding organizations, not just software.</p>
+            <p className="ssub mx-auto">We build competitive advantages for the world's most demanding organisations, not just software.</p>
           </div>
         </div>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

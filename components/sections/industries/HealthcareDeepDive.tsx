@@ -13,7 +13,7 @@ const HealthcareDeepDive: React.FC = () => {
                 metric flagged as unverified in CLIENT-ACTIONS.md item 7. It can
                 be reinstated once the client substantiates it. */}
             <p className="mb-3">Our healthcare work covers HIPAA-aligned EHR systems, telemedicine platforms and medical billing, delivered for hospital groups and providers in Pakistan, the UAE and North America.</p>
-            <p className="mb-4">We understand clinical workflows, HL7 FHIR messaging standards, and the regulatory landscape for healthcare data, building systems that clinicians actually use.</p>
+            <p className="mb-4">We understand clinical workflows, HL7 FHIR messaging standards, and the regulatory environment for healthcare data, building systems that clinicians actually use.</p>
             <ul className="chk mb-4">
               <li><span className="chk-ico"><i className="bi bi-check"></i></span>Electronic Health Records (EHR)</li>
               <li><span className="chk-ico"><i className="bi bi-check"></i></span>Telemedicine &amp; remote patient monitoring</li>

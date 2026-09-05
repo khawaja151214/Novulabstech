@@ -10,7 +10,7 @@ const AboutCta: React.FC = () => {
             <div className="col-lg-7">
               <span className="stag">Work With Us</span>
               <p className="stitle mt-3">Good software starts with<br /><span className="gtxt">understanding the problem.</span></p>
-              <p className="ssub mt-4 mb-0">We spend our first call listening: to what you're trying to build, what's gone wrong before, and what success actually looks like for your organization. The advice we give you is based on that, not a standard playbook.</p>
+              <p className="ssub mt-4 mb-0">We spend our first call listening: to what you're trying to build, what's gone wrong before, and what success actually looks like for your organisation. The advice we give you is based on that, not a standard playbook.</p>
               <div className="cta-trust-row">
                 <div className="cta-trust-item"><i className="bi bi-person-check"></i>Senior engineer on the call, not a pre-sales team</div>
                 <div className="cta-trust-item"><i className="bi bi-file-earmark-lock2"></i>Your IP and project details stay completely confidential</div>

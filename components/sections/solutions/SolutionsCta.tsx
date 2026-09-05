@@ -14,7 +14,7 @@ const SolutionsCta: React.FC = () => {
               <div className="cta-trust-row">
                 <div className="cta-trust-item">
                   <i className="bi bi-person-check"></i>
-                  You'll speak directly with an engineer — not a sales rep
+                  You'll speak directly with an engineer, not a sales rep
                 </div>
                 <div className="cta-trust-item">
                   <i className="bi bi-file-earmark-lock2"></i>

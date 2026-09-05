@@ -147,7 +147,7 @@ export const blogFaqs: FaqItem[] = [
   },
   {
     q: 'How current is this material?',
-    a: 'Each article carries a published and a last-modified date, and the sitemap reports the real modification date rather than the build time. Regulatory content is written to describe durable engineering constraints rather than specific circular numbers or thresholds, which is deliberate — specifics of that kind age badly and are the most common way technical writing becomes confidently wrong.',
+    a: 'Each article carries a published and a last-modified date, and the sitemap reports the real modification date rather than the build time. Regulatory content is written to describe durable engineering constraints rather than specific circular numbers or thresholds, which is deliberate: specifics of that kind age badly and are the most common way technical writing becomes confidently wrong.',
   },
   {
     q: 'Can I use this material to scope a project?',

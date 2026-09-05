@@ -97,7 +97,7 @@ const ContactFormSection: React.FC = () => {
                     />
                   </div>
                   <div className="col-md-6">
-                    <label className="flabel">Organization *</label>
+                    <label className="flabel">Organisation *</label>
                     <input 
                       type="text" 
                       name="organization"

@@ -67,7 +67,7 @@ const CtaSection: React.FC = () => {
                 </div>
                 <div className="cta-trust-item">
                   <i className="bi bi-file-earmark-lock2"></i>
-                  NDA signed upfront — your ideas stay yours
+                  NDA signed upfront: your ideas stay yours
                 </div>
                 <div className="cta-trust-item">
                   <i className="bi bi-arrow-right-circle"></i>

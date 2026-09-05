@@ -41,7 +41,7 @@ const RegulatedDeliverySection: React.FC = () => {
             </p>
             <p>
               Practically that means current state is not sufficient. You must be able to
-              reconstruct what the system knew at the moment a decision was taken — which rules
+              reconstruct what the system knew at the moment a decision was taken: which rules
               were active, which thresholds applied, which version of a policy was in force,
               and who approved the configuration that produced the outcome. Systems that store
               only the latest value can answer &ldquo;what is true now&rdquo; and cannot answer
@@ -51,7 +51,7 @@ const RegulatedDeliverySection: React.FC = () => {
 
             <h3 className="mt-5">The audit trail is a feature, with a budget</h3>
             <p>
-              Audit logging is routinely treated as infrastructure — something added late,
+              Audit logging is routinely treated as infrastructure: something added late,
               sized casually, and never tested against a real retrieval scenario. In regulated
               delivery it is a primary feature with its own data model, retention policy,
               access controls and performance characteristics.
@@ -59,8 +59,8 @@ const RegulatedDeliverySection: React.FC = () => {
             <p>
               Two properties matter more than completeness. It must be append-only, because an
               audit trail that can be edited by the system that writes it evidences nothing.
-              And it must be queryable along the axis an investigation actually uses — by
-              subject and by time — rather than only as a chronological stream you have to
+              And it must be queryable along the axis an investigation actually uses, by
+              subject and by time, rather than only as a chronological stream you have to
               grep. Retrofitting either property onto a live system with years of history is
               among the more painful pieces of work we get asked to do.
             </p>
@@ -69,7 +69,7 @@ const RegulatedDeliverySection: React.FC = () => {
             <p>
               Every sector here has to establish who someone is before granting them anything:
               a bank onboarding a customer, a hospital releasing a record, a government portal
-              issuing an entitlement. The failure mode is identical too — teams build the happy
+              issuing an entitlement. The failure mode is identical too: teams build the happy
               path and discover it covers perhaps seventy per cent of real traffic.
             </p>
             <p>
@@ -91,7 +91,7 @@ const RegulatedDeliverySection: React.FC = () => {
               national identity and revenue infrastructure on terms it does not set.
             </p>
             <p>
-              The common engineering error is treating these as export formats — build the
+              The common engineering error is treating these as export formats: build the
               internal model, map at the boundary. That holds until the external schema
               requires something the internal model has no room for, at which point it is
               retrofitted under deadline. Let the mandatory interface inform the domain model

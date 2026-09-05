@@ -95,7 +95,7 @@ export const caseStudies: CaseStudy[] = [
       'The existing core banking system could not be replaced or taken offline.',
       'Transaction data was mutable in place, with no event history, so historical alerts could not be reproduced.',
       'Regulatory examination was scheduled during the delivery window.',
-      'Analyst headcount was fixed — any increase in alert volume had to come with a corresponding increase in alert quality.',
+      'Analyst headcount was fixed: any increase in alert volume had to come with a corresponding increase in alert quality.',
     ],
     approach: [
       {
@@ -719,7 +719,7 @@ export const caseStudies: CaseStudy[] = [
       'multi-country ERP rollout',
     ],
     challenge: [
-      'The group had begun a full custom ERP build covering finance, HR, inventory and production. Finance and HR are governed by external rules the group does not control and gain them nothing by being different — building there was reproducing licensable functionality at considerable expense.',
+      'The group had begun a full custom ERP build covering finance, HR, inventory and production. Finance and HR are governed by external rules the group does not control and gain them nothing by being different; building there was reproducing licensable functionality at considerable expense.',
       'Meanwhile the one genuinely differentiating capability, yield-optimising production scheduling, was being squeezed into a generic work-order model that could not express it.',
     ],
     constraints: [
