@@ -339,8 +339,24 @@ export function webPageSchema(opts: {
   description: string;
   path: string;
   type?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage';
+  /**
+   * Named entities the page genuinely discusses, as schema.org Organization
+   * nodes. This is a semantic-SEO signal rather than a decorative one: it tells
+   * a retrieval system which real-world institutions the document is about,
+   * which is what lets it be surfaced for a question about those bodies rather
+   * than only for the words on the page.
+   *
+   * Only pass entities the page actually treats. Padding this with every
+   * regulator we can name is the schema equivalent of keyword stuffing, and it
+   * degrades the signal for the ones that are real.
+   */
+  mentions?: { name: string; url?: string }[];
+  /** Set true to declare authorship and publication by the organisation.
+   *  Honest for editorial pages the company wrote as a company; blog posts
+   *  attribute to a named Person instead, via blogPostingSchema. */
+  byOrganisation?: boolean;
 }) {
-  return {
+  return clean({
     '@context': 'https://schema.org',
     '@type': opts.type ?? 'WebPage',
     '@id': `${canonical(opts.path)}#webpage`,
@@ -350,7 +366,20 @@ export function webPageSchema(opts: {
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': ORG_ID },
     inLanguage: 'en',
-  };
+    ...(opts.byOrganisation
+      ? {
+          author: { '@id': ORG_ID },
+          publisher: { '@id': ORG_ID },
+        }
+      : {}),
+    ...(opts.mentions?.length
+      ? {
+          mentions: opts.mentions.map((m) =>
+            clean({ '@type': 'Organization', name: m.name, url: m.url ?? null })
+          ),
+        }
+      : {}),
+  });
 }
 
 /**

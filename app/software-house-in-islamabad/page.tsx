@@ -85,6 +85,13 @@ export default function SoftwareHouseIslamabadPage() {
             description:
               'NovuLabs is a software house in Islamabad building custom software for banks, healthcare providers, government departments and enterprises.',
             path: PATH,
+            byOrganisation: true,
+            mentions: [
+              { name: 'State Bank of Pakistan', url: 'https://www.sbp.org.pk/' },
+              { name: 'Financial Monitoring Unit', url: 'https://www.fmu.gov.pk/' },
+              { name: 'Securities and Exchange Commission of Pakistan', url: 'https://www.secp.gov.pk/' },
+              { name: 'National Database and Registration Authority', url: 'https://www.nadra.gov.pk/' },
+            ],
           }),
           localServiceSchema({
             name: 'Custom software development in Islamabad',
@@ -161,6 +168,17 @@ export default function SoftwareHouseIslamabadPage() {
                     )}
                   </React.Fragment>
                 ))}
+
+                <p>
+                  Islamabad is one part of a national picture, and the constraints that shape
+                  software work here apply across the country. We set out the regulators involved,
+                  which sectors have real engineering depth, how teams are formed and what an
+                  overseas buyer should settle before signing on{' '}
+                  <Link href="/software-development-in-pakistan">
+                    software development in Pakistan
+                  </Link>
+                  .
+                </p>
 
                 <h2>Where we are, and how to reach us</h2>
                 <p>

@@ -58,7 +58,9 @@ const AboutSection: React.FC = () => {
                 software house in Islamabad
               </Link>{' '}
               page covers where we are, how we engage, and the questions worth asking any firm
-              before you sign.
+              before you sign. For the national picture, including the regulators involved and
+              what to settle in a contract, see{' '}
+              <Link href="/software-development-in-pakistan">software development in Pakistan</Link>.
             </p>
 
             <div className="d-flex gap-3 flex-wrap">

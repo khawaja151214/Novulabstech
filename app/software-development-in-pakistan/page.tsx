@@ -77,6 +77,15 @@ export default function SoftwareDevelopmentPakistanPage() {
             description:
               'How software is built in Pakistan: the regulators involved, the sectors with real depth, how teams are formed, and the contract terms that matter to an overseas buyer.',
             path: PATH,
+            byOrganisation: true,
+            mentions: [
+              { name: 'State Bank of Pakistan', url: 'https://www.sbp.org.pk/' },
+              { name: 'Financial Monitoring Unit', url: 'https://www.fmu.gov.pk/' },
+              { name: 'Securities and Exchange Commission of Pakistan', url: 'https://www.secp.gov.pk/' },
+              { name: 'National Database and Registration Authority', url: 'https://www.nadra.gov.pk/' },
+              { name: 'Pakistan Telecommunication Authority', url: 'https://www.pta.gov.pk/' },
+              { name: 'Pakistan Software Export Board', url: 'https://www.pseb.org.pk/' },
+            ],
           }),
           localServiceSchema({
             name: 'Software development in Pakistan',

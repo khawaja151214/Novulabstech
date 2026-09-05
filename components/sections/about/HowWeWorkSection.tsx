@@ -136,7 +136,9 @@ const HowWeWorkSection: React.FC = () => {
             <p>
               The team is based in Islamabad (there is a fuller account of{' '}
               <Link href="/software-house-in-islamabad">what we do as a software house in
-              Islamabad</Link>), and the regulatory environment we know best is
+              Islamabad</Link>, and of{' '}
+              <Link href="/software-development-in-pakistan">software development in Pakistan</Link>{' '}
+              more broadly), and the regulatory environment we know best is
               Pakistan&apos;s; the State Bank&apos;s AML/CFT framework, the Financial
               Monitoring Unit&apos;s reporting requirements, RAAST, and the identity
               infrastructure that financial onboarding depends on. That depth is specific and
