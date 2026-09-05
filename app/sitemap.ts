@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // it is a commercial head-term page, and the only URL on the site that
     // targets the local query directly.
     { path: '/software-house-in-islamabad', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/software-development-in-pakistan', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/services', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/solutions', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/industries', priority: 0.8, changeFrequency: 'monthly' as const },

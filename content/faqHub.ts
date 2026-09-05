@@ -192,19 +192,9 @@ export const marketFaqs: FaqItem[] = [
     link: { href: '/software-house-in-islamabad', label: 'Why we build here' },
   },
   {
-    q: 'Can software companies in Islamabad work with international clients?',
-    a: 'Yes, and remote delivery to clients abroad is normal here rather than exceptional. What is worth checking before you commit is contractual rather than technical: who owns the intellectual property and from when, which entity you are actually contracting with, where your data will be stored and whether that satisfies your own regulator, how the team is reachable during your working hours, and what happens to the code and the accounts if the relationship ends. A firm that answers those crisply has done it before.',
-    link: { href: '/software-house-in-islamabad', label: 'How we work with clients abroad' },
-  },
-  {
     q: 'Where can I find a reliable list of software houses in Islamabad and Rawalpindi?',
     a: 'Company directories, LinkedIn, the Pakistan Software Export Board register and university placement offices are all reasonable starting points, and every one of them goes stale. Companies merge, relocate, change focus and stop hiring without updating their entries, so treat any list as a set of leads to verify rather than as current fact. Before contacting a firm, check that its own website is live and recently updated, that the services it lists match what you need, and that the contact details on the directory and the site agree.',
     link: { href: '/portfolio', label: 'Judge us on the work instead' },
-  },
-  {
-    q: 'Is Islamabad a good place to outsource software development?',
-    a: 'It can be, and the reasons that matter are not the ones usually advertised. Cost is real but it is the weakest argument, because a cheaper build that fails costs more than the difference between any two day rates. The stronger reasons are the timezone, which overlaps most of a working day with the Gulf and most of a morning with the UK, and domain proximity for anything touching Pakistani regulators. The risks are the ordinary outsourcing ones: unclear intellectual property assignment, a named senior who disappears after the sale, and no plan for what happens to the code and the cloud accounts if the relationship ends. Settle those three in writing before scope, not after.',
-    link: { href: '/software-house-in-islamabad', label: 'What building here actually involves' },
   },
 ];
 
