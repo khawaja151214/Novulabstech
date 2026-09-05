@@ -41,6 +41,15 @@ export interface PortfolioItem {
 export interface FaqItem {
   q: string;
   a: string;
+  /**
+   * Optional "read more" target rendered under the answer.
+   *
+   * Presentational only. faqSchema() builds Question/acceptedAnswer from `q`
+   * and `a` alone, so the structured-data answer stays clean prose rather than
+   * carrying markup, which is what answer engines quote verbatim. The link
+   * gives each Q&A a route onward to the page that treats the subject in full.
+   */
+  link?: { href: string; label: string };
 }
 
 export interface TeamMember {

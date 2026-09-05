@@ -3025,3 +3025,20 @@ footer a:not(.btn-grad) { color: var(--a1); }
     opacity: 1 !important;
   }
 }
+
+/* Per-FAQ onward link. Sits under the answer, visually subordinate to it:
+   the answer is the content, this is the route to more of it. */
+.faq-more {
+  margin: 0.85rem 0 0;
+  font-size: 0.88rem;
+}
+.faq-more a {
+  color: var(--a1);
+  font-weight: 500;
+}
+.faq-more a::after {
+  content: ' \2192';
+  transition: transform .18s ease;
+  display: inline-block;
+}
+.faq-more a:hover::after { transform: translateX(3px); }
