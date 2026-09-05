@@ -147,7 +147,15 @@ img{max-width:100%;display:block}
 /* ── Preloader ── */
 
 /* ── Scroll Progress ── */
-#sp{position:fixed;top:0;left:0;height:3px;background:var(--g-main);z-index:99998;width:0;transition:width .1s;border-radius:0 2px 2px 0}
+#sp{position:fixed;top:0;left:0;height:3px;background:var(--g-main);z-index:99998;
+    width:100%;transform:scaleX(0);transform-origin:0 50%;
+    transition:transform .1s linear;border-radius:0 2px 2px 0}
+/* Where scroll timelines exist the bar needs no JavaScript at all; the
+   component then renders a bare div and registers no scroll listener. */
+@supports (animation-timeline: scroll()) {
+  #sp{animation:sp-grow linear both;animation-timeline:scroll(root);transition:none}
+}
+@keyframes sp-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
 /* ── Custom Cursor ── */
 
@@ -579,14 +587,6 @@ img{max-width:100%;display:block}
   0%,100%{opacity:0;transform:translateX(-8%)}
   50%{opacity:1;transform:translateX(8%)}
 }
-.hero-grid{
-  position:absolute;inset:0;z-index:2;
-  background-image:
-    linear-gradient(rgba(176,125,43,.07) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(176,125,43,.07) 1px,transparent 1px);
-  background-size:60px 60px;
-  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,#000 40%,transparent 100%);
-}
 #particles-canvas{position:absolute;inset:0;z-index:3;pointer-events:none}
 .hero-inner{position:relative;z-index:4;padding-top:88px}
 
@@ -843,10 +843,12 @@ img{max-width:100%;display:block}
   position:relative;overflow:hidden;
   height:100%;display:flex;flex-direction:column;
 }
-.wcard::before{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--g-main);transition:width .4s ease;border-radius:0 3px 3px 0}
+.wcard::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;
+    background:var(--g-main);transform:scaleX(0);transform-origin:0 50%;
+    transition:transform .35s cubic-bezier(.16,1,.3,1);border-radius:0 3px 3px 0}
 .wcard::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent)}
 .wcard:hover{transform:translateY(-4px);border-color:rgba(176,125,43,.18);box-shadow:0 14px 40px rgba(26,18,8,.11),0 4px 12px rgba(176,125,43,.10),inset 0 1px 0 rgba(255,255,255,.95)}
-.wcard:hover::before{width:100%}
+.wcard:hover::before{transform:scaleX(1)}
 .wnum{font-family:var(--fm);font-size:.66rem;font-weight:700;color:var(--p1);opacity:.38;margin-bottom:10px;letter-spacing:.1em}
 
 /* ── INDUSTRY CARD ── */
@@ -1031,9 +1033,18 @@ textarea.finput{resize:vertical;min-height:115px}
 .fq-text{font-weight:600;font-size:.91rem;flex:1;color:var(--tx1)}
 .ftog{width:26px;height:26px;border-radius:50%;background:rgba(176,125,43,.09);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--p1);transition:var(--t);flex-shrink:0}
 .fitem.open .ftog{transform:rotate(45deg);background:rgba(176,125,43,.20)}
-.fans{max-height:0;overflow:hidden;transition:max-height .4s ease}
+/* NOTE: .fans styles components/ui/FaqItem.tsx, which nothing imports — the
+   live accordion is FaqAccordion.tsx using native <details>/<summary> (see
+   .faq-native-item below), which is why this markup appears zero times in the
+   built HTML. Correcting the record: commit ffb7502 claimed the old
+   `max-height:320px` here was clipping long FAQ answers on the site. It was
+   not, because this rule has no live consumer. The technique is fixed anyway
+   so the pair does not mislead the next reader. */
+.fans{display:grid;grid-template-rows:0fr;overflow:hidden;
+      transition:grid-template-rows .32s cubic-bezier(.16,1,.3,1)}
+.fans>*{min-height:0}
 .fans-in{padding:0 22px 18px;font-size:.86rem;color:var(--tx2);line-height:1.75}
-.fitem.open .fans{max-height:320px}
+.fitem.open .fans{grid-template-rows:1fr}
 
 /* ── NEWSLETTER ── */
 .nlwrap{
@@ -2634,54 +2645,20 @@ h2, h3, h4, h5, h6 { font-weight: 600; }
 .ft-sub-input:focus-visible { outline: 2px solid var(--a1); outline-offset: 2px; }
 .ft-head { color: #FFFFFF; }
 
-/* ── 11. Layout-property animations ────────────────────────────
-   Three elements animated width or max-height. Both are layout
-   properties: every frame forces the browser to re-run layout for
-   the whole subtree, which is the classic source of scroll jank
-   on mid-range phones. transform and opacity are composited and
-   cost nothing on the main thread.
+/* ── 11-12. Layout-property animations and the grid overlay ────
+   Both were originally patched here with !important overrides on
+   top of the untouched originals, which left the file carrying two
+   contradictory rules per element: #sp still read `transition:
+   width` at its own declaration, 2,500 lines above the rule that
+   actually governed it. The design hook flagged them again, and it
+   was right to.
 
-   The scroll-progress bar: width -> scaleX from a left origin,
-   which is visually identical and free. */
-#sp {
-  width: 100% !important;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  transition: transform 0.1s linear !important;
-}
-
-/* The card underline reveal: width -> scaleX, same origin trick. */
-.wcard::before {
-  width: 100% !important;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-.wcard:hover::before { transform: scaleX(1); }
-
-/* The FAQ accordion animated max-height, which additionally caps
-   the answer at a guessed 320px and clips anything longer.
-   grid-template-rows 0fr -> 1fr animates to the content's real
-   height with no magic number and no clipping. */
-.fans {
-  display: grid;
-  grid-template-rows: 0fr;
-  max-height: none !important;
-  transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-.fans > * { min-height: 0; }
-.fitem.open .fans {
-  grid-template-rows: 1fr;
-  max-height: none !important;
-}
-
-/* ── 12. Decorative grid overlay ───────────────────────────────
-   A hairline grid tiled at a fixed 60px cell across every hero.
-   It reads as blueprint chrome on a page that is not a canvas, a
-   map or a measurement surface, and it is one of the more
-   recognisable generated-UI signatures. The heroes already have
-   a photograph and a gradient scrim doing the work. */
-.hero-grid,
+   All three now animate transform or grid-template-rows at their
+   own declaration (#sp line ~150, .wcard::before ~846, .fans
+   ~1034), and the .hero-grid body was deleted rather than hidden.
+   One rule per element, no overrides. Only the .phero-grid hide
+   remains, because that element still has a live declaration
+   elsewhere. */
 .phero-grid {
   display: none !important;
 }
