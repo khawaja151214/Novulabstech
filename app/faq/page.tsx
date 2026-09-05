@@ -5,7 +5,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import FaqAccordion from '@/components/ui/FaqAccordion';
 import { faqSchema, webPageSchema } from '@/lib/schema';
-import { hubFaqs, faqDirectory, totalAnsweredQuestions } from '@/content/faqHub';
+import { hubFaqs, careerFaqs, marketFaqs, faqDirectory, totalAnsweredQuestions } from '@/content/faqHub';
 
 /**
  * /faq; the site's FAQ hub.
@@ -66,8 +66,10 @@ export default function FaqPage() {
               'Answers on what NovuLabs builds, the industries and regulators it works under, technologies, support, and how an engagement starts.',
             path: '/faq',
           }),
-          // Only the questions this page itself answers in full.
-          faqSchema(hubFaqs, '/faq'),
+          // Only the questions this page itself answers in full. All three
+          // clusters qualify; the directory below does not, because those
+          // answers live on the pages that own them.
+          faqSchema([...hubFaqs, ...careerFaqs, ...marketFaqs], '/faq'),
         ]}
       />
 
@@ -111,6 +113,69 @@ export default function FaqPage() {
           <div className="row justify-content-center">
             <div className="col-lg-8" data-reveal="up">
               <FaqAccordion items={hubFaqs} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Working in Islamabad's software market. Buyer and student orientation
+          questions the site previously answered nowhere. */}
+      <section className="sec bg-g" id="market">
+        <div className="container">
+          <div className="row justify-content-center text-center mb-5">
+            <div className="col-lg-8" data-reveal="up">
+              <span className="stag">The local market</span>
+              <h2 className="stitle mt-3">
+                Software companies <span className="gtxt">in Islamabad</span>
+              </h2>
+              <p className="ssub mt-3 mb-0">
+                General questions about the market here, answered without ranking anyone. We are
+                not in a position to verify which firms are currently staffed or hiring, so this
+                does not pretend to.
+              </p>
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-lg-8" data-reveal="up">
+              <FaqAccordion items={marketFaqs} />
+              <p className="mt-4 mb-0" style={{ fontSize: '0.92rem', color: 'var(--tx3)' }}>
+                Related: <Link href="/software-house-in-islamabad">what we do as a software house
+                in Islamabad</Link>, <Link href="/services">our practice areas</Link>, and the{' '}
+                <Link href="/industries">sector constraints</Link> behind them.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* Careers. Informational only: there is no advertised internship
+          programme, and these answers say so rather than implying otherwise. */}
+      <section className="sec bg-w" id="careers">
+        <div className="container">
+          <div className="row justify-content-center text-center mb-5">
+            <div className="col-lg-8" data-reveal="up">
+              <span className="stag">Students and graduates</span>
+              <h2 className="stitle mt-3">
+                Internships and <span className="gtxt">entry-level work</span>
+              </h2>
+              <p className="ssub mt-3 mb-0">
+                We do not currently run an internship programme. These answers are here because
+                the questions are asked constantly and deserve a straight answer, not because we
+                are recruiting.
+              </p>
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-lg-8" data-reveal="up">
+              <FaqAccordion items={careerFaqs} />
+              <p className="mt-4 mb-0" style={{ fontSize: '0.92rem', color: 'var(--tx3)' }}>
+                If you want to understand the kind of work this team does before reaching out, the{' '}
+                <Link href="/blog">engineering articles</Link> are written by the people who build
+                the systems, and the <Link href="/portfolio">case studies</Link> describe how each
+                one was architected.
+              </p>
             </div>
           </div>
         </div>

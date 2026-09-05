@@ -104,6 +104,79 @@ export interface FaqDirectoryGroup {
  * source set appears here automatically, so the directory cannot go stale or
  * list a question the destination page no longer answers.
  */
+/**
+ * Careers and internships.
+ *
+ * These exist because the questions are asked constantly in this market and
+ * the site answered none of them. They are informational, not recruitment
+ * copy: NovuLabs does not currently advertise an internship programme, and the
+ * answers say so rather than implying that applications are open. Nothing here
+ * describes eligibility, stipends, intake dates or roles, because none of that
+ * exists to describe.
+ *
+ * If a programme does open, this is the block to replace, and it should be
+ * replaced with a real /careers page rather than expanded here.
+ */
+export const careerFaqs: FaqItem[] = [
+  {
+    q: 'Does NovuLabs offer software development internships?',
+    a: 'Not at the moment. We do not run an advertised internship programme, and there is no open application process, so any list that shows NovuLabs among companies currently taking interns is out of date. If that changes it will appear on this site first. In the meantime you are welcome to send a short note and a link to your code through the contact page; we read them, but please treat a reply as unlikely rather than expected, because there is no intake to route it into.',
+  },
+  {
+    q: 'Which software houses in Islamabad offer internships?',
+    a: 'Availability changes every few months, so the reliable sources are the ones companies update themselves: their own careers pages, their LinkedIn company pages, and your university\'s placement office, which usually hears about intakes before they are advertised publicly. Aggregated "top software houses for internships" listicles are the least reliable source, because they are rarely revised after publication and often list companies that stopped taking interns years earlier. Roles commonly advertised in this city include frontend, backend, full-stack, mobile, QA, UI/UX, DevOps and data internships.',
+  },
+  {
+    q: 'What should a student actually look for in a software internship?',
+    a: 'Whether you will touch the real workflow, not the size of the company. The internships worth taking put you in the actual repository with a branch, a pull request and someone senior reviewing your code, and let you see how work reaches production: version control, code review, testing, deployment and the conversations where scope gets decided. The ones worth avoiding park you on an isolated practice project nobody will ever run. Two questions separate them quickly: will my work be merged into something real, and who reviews it?',
+  },
+  {
+    q: 'What skills should I have before applying for a software internship in Islamabad?',
+    a: 'Enough to build and finish something small on your own. For most development internships that means one language you are comfortable in, HTML, CSS and JavaScript, basic SQL and a relational data model, Git beyond commit and push, and enough understanding of HTTP and APIs to know what is happening when a request fails. For mobile roles, one of Flutter, React Native, Swift or Kotlin. What actually distinguishes applications is evidence: a public repository with readable commits and a project that runs is worth more than a longer list of technologies on a CV, because it is the only part a reviewer can verify.',
+  },
+  {
+    q: 'Can fresh graduates get software development jobs in Islamabad?',
+    a: 'Yes, and junior roles are advertised regularly across the city\'s software companies. The candidates who convert fastest tend to have narrowed rather than broadened: depth in one stack, a project someone other than an examiner has used, and the ability to explain a technical decision they made and what they would do differently. Contributing to an open-source project or shipping something small and real is usually a better use of the months after graduation than collecting further certificates.',
+  },
+];
+
+/**
+ * The local software market.
+ *
+ * Orientation questions asked by buyers and students who do not yet know what
+ * they are looking for. Deliberately not a ranking, and deliberately not a
+ * list of other companies: this site is not in a position to verify which
+ * multinationals currently staff an Islamabad office, and publishing an
+ * unverified list of third parties is the kind of claim that is wrong within a
+ * year and reflects on us rather than on them.
+ */
+export const marketFaqs: FaqItem[] = [
+  {
+    q: 'What is the difference between a software house and an IT company?',
+    a: 'The terms overlap and are often used interchangeably in Pakistan, but they usually describe different centres of gravity. A software house designs and builds software: requirements, architecture, engineering, testing and long-term maintenance of a system somebody commissioned. An IT company more often covers infrastructure and operations, which can include networks, hardware, managed services, support desks and licensing alongside development. Neither label tells you whether a company is any good at your particular problem. What tells you is whether they have built something with the same constraints as the thing you need.',
+  },
+  {
+    q: 'Is a multinational technology company a better choice than a local software house?',
+    a: 'Not inherently, and the honest answer is that they fail in different ways. A multinational brings process, scale and continuity, and you may find your project is small enough to sit low in its priority order. A local firm gives you shorter decision chains and direct access to the people writing the code, and carries more key-person risk if that team is small. For work touching Pakistani regulators, proximity matters more than size: the State Bank\'s AML/CFT framework, FMU reporting and the national identity infrastructure are learned by building against them, not from documentation. Judge the specific team you would get, not the category the company belongs to.',
+  },
+  {
+    q: 'What services do software houses in Islamabad typically offer?',
+    a: 'Most cover custom software, web and mobile development, and increasingly cloud and AI work; the differences show up in depth rather than in the list. A firm that has genuinely delivered payment or clinical systems can describe what a scheme certification or a HIPAA review demanded of the architecture, and one that has not will describe the same services in general terms. Ask for the specifics of a comparable build and the difference becomes obvious in about ten minutes. Our own practice areas, and the sector constraints behind them, are linked below this section.',
+  },
+  {
+    q: 'Why is Islamabad considered a technology hub in Pakistan?',
+    a: 'Three things concentrate here. The regulators and federal institutions that software in finance, health and government has to integrate with, which means the engineers who have built against them are here too. A steady supply of computer science and software engineering graduates from universities across Islamabad and Rawalpindi. And a timezone that overlaps most of a working day with the Gulf, most of a morning with the UK and Europe, and reaches the US east coast before lunch there. There is a fuller account of this on our Islamabad page, linked below.',
+  },
+  {
+    q: 'Can software companies in Islamabad work with international clients?',
+    a: 'Yes, and remote delivery to clients abroad is normal here rather than exceptional. What is worth checking before you commit is contractual rather than technical: who owns the intellectual property and from when, which entity you are actually contracting with, where your data will be stored and whether that satisfies your own regulator, how the team is reachable during your working hours, and what happens to the code and the accounts if the relationship ends. A firm that answers those crisply has done it before.',
+  },
+  {
+    q: 'Where can I find a reliable list of software houses in Islamabad and Rawalpindi?',
+    a: 'Company directories, LinkedIn, the Pakistan Software Export Board register and university placement offices are all reasonable starting points, and every one of them goes stale. Companies merge, relocate, change focus and stop hiring without updating their entries, so treat any list as a set of leads to verify rather than as current fact. Before contacting a firm, check that its own website is live and recently updated, that the services it lists match what you need, and that the contact details on the directory and the site agree.',
+  },
+];
+
 export const faqDirectory: FaqDirectoryGroup[] = [
   {
     title: 'Working with us',
