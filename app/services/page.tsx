@@ -14,6 +14,8 @@ import HealthcareServiceSection from '@/components/sections/services/HealthcareS
 import ComplianceServiceSection from '@/components/sections/services/ComplianceServiceSection';
 import CloudServiceSection from '@/components/sections/services/CloudServiceSection';
 import ServicesCta from '@/components/sections/services/ServicesCta';
+import PageFaq from '@/components/sections/shared/PageFaq';
+import { servicesHubFaqs } from '@/content/pageFaqs';
 
 export const metadata: Metadata = {
   title: 'Enterprise Software Development Services',
@@ -164,6 +166,18 @@ export default function ServicesPage() {
       <HealthcareServiceSection />
       <ComplianceServiceSection />
       <CloudServiceSection />
+      {/* The hub was the only top-level commercial page on the site without a
+          FAQ block. These answer the questions asked before a buyer knows
+          which practice area they need, so they belong here rather than on
+          any one service page. */}
+      <PageFaq
+        items={servicesHubFaqs}
+        path="/services"
+        heading="Choosing a"
+        headingAccent="service"
+        intro="What buyers ask before they know which track fits."
+      />
+
       <ServicesCta />
     </>
   );

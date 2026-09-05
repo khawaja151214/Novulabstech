@@ -257,6 +257,10 @@ export const servicePages: ServicePage[] = [
         q: 'Can you modernise a legacy core banking system incrementally?',
         a: 'That is usually the only sane approach. We favour strangler-pattern migration, routing specific capabilities to new services behind a stable interface while the legacy core continues to run, over a cutover, which concentrates all the risk on a single night.',
       },
+      {
+        q: 'What does a payment integration actually involve?',
+        a: 'Considerably more than calling an API. A production payment path needs idempotency enforced at the database so a retried request cannot take money twice, reconciliation as a scheduled process rather than an error path, handling for the states between success and failure where most real incidents live, and an audit trail an examiner can follow. If cards are involved, the scope also includes what falls inside PCI-DSS and what can be kept out of it, which is an architecture decision rather than a compliance form.',
+      },
     ],
     context: {
       sectorLead: 'Payment and banking work carries sector obligations we describe in more detail across',
@@ -430,6 +434,14 @@ export const servicePages: ServicePage[] = [
         q: 'What happens after launch?',
         a: 'A custom platform needs ongoing ownership: typically 15–20% of the original build cost annually for maintenance, dependency patching and change. We offer tiered support, but we would rather you plan for that cost explicitly than discover it in year two.',
       },
+      {
+        q: 'What actually counts as enterprise software development?',
+        a: 'Software that supports a process the organisation cannot stop running, and that somebody outside the team can audit. In practice that means ERP, CRM, financial and clinical platforms, workflow automation, government portals and reporting systems. The label matters less than the constraints it brings: multiple user roles with real separation between them, integrations with systems you do not control, data that must survive a migration, permissions somebody will inspect, and a maintenance life measured in years rather than releases. A tool used by one team with no external obligations is not enterprise software just because a large company bought it.',
+      },
+      {
+        q: 'How is this different from just building a bigger application?',
+        a: 'Scale changes the failure modes, not only the size. A small application that breaks inconveniences its users; an enterprise system that breaks stops a process the business is contractually or legally committed to, which is why the engineering weight moves from features to guarantees. Most of the effort goes into things a feature list does not show: what happens during a partial failure, how a change is rolled back, who can see which records, how the system proves what it did six months ago, and how it is upgraded without a weekend outage.',
+      },
     ],
     context: {
       sectorLead: 'The sectors we build enterprise systems for, and the constraints each imposes, are described under',
@@ -535,6 +547,14 @@ export const servicePages: ServicePage[] = [
         q: 'Do you handle app store submission?',
         a: 'Yes, including the additional documentation Apple and Google routinely request for finance and health category apps. We treat review as a schedule dependency rather than a final step.',
       },
+      {
+        q: 'What does a mobile project involve beyond the app itself?',
+        a: 'Usually more than the app. A production mobile build normally needs an API layer designed for intermittent connectivity, an authentication model that survives a lost session, local storage decisions that satisfy whatever rules apply to the data, push infrastructure, crash and performance reporting, and a release process for two app stores with their own review timelines. For finance and health apps, the store review also asks questions about data handling that need answering before submission rather than after a rejection.',
+      },
+      {
+        q: 'Should we build one cross-platform app or two native ones?',
+        a: 'Cross-platform is the efficient default and native is the considered exception. Choose native when the product depends on platform-specific capability, needs new OS APIs the moment they ship, or has performance requirements a shared runtime layer would eat into. Choose cross-platform when the app is largely screens over an API, which describes most business applications. The decision is worth making explicitly and early, because it is expensive to reverse once the codebase exists.',
+      },
     ],
     context: {
       sectorLead: 'Apps in finance and health inherit the obligations of the systems behind them, which we set out under',
@@ -639,6 +659,10 @@ export const servicePages: ServicePage[] = [
         q: 'Do you use AI in compliance systems?',
         a: 'Beside the rules, never inside them. Deterministic rules produce alerts of record because each decision needs an explainable reason for an examiner; a model prioritises the analyst queue. That gives you the throughput benefit without an unexplainable artefact on the regulatory critical path.',
       },
+      {
+        q: 'Do we need AI, or do we need automation?',
+        a: 'They solve different problems and get confused constantly. Automation executes a rule you already know: if this, then that, every time, auditable afterwards. AI estimates an answer you cannot express as a rule, and is right most of the time rather than always. If you can write the rule down, automate it, because a model adds cost and unpredictability without adding capability. Use a model where the input is genuinely unstructured, such as documents, free text or anomaly detection, and where being wrong occasionally is recoverable.',
+      },
     ],
     context: {
       sectorLead: 'What cloud and automation work has to satisfy differs sharply by sector, as described under',
@@ -741,6 +765,10 @@ export const servicePages: ServicePage[] = [
       {
         q: 'Can you improve an existing site\'s Core Web Vitals?',
         a: 'Usually, yes. Most of the gains come from a short list: bounding image dimensions, removing third-party requests from the critical path, deferring non-essential JavaScript, and setting an actual LCP budget. We measure on representative devices and networks, not on a developer laptop.',
+      },
+      {
+        q: 'What is the difference between a website, a web application and a portal?',
+        a: 'How much of the work happens after the page loads. A website presents content and its hard problems are performance, accessibility and being findable. A web application has state, permissions and business logic, so its hard problems are correctness and data. A portal is a web application whose users are external and often unauthenticated at first contact, which adds identity, throttling and a much larger surface to defend. They are frequently quoted as the same job and they are not, which is where most web project overruns start.',
       },
     ],
     context: {
@@ -898,6 +926,10 @@ export const servicePages: ServicePage[] = [
       {
         q: 'Will the product pass an enterprise security review?',
         a: 'That depends on decisions taken at the architecture stage, which is why we raise them then. We design for environment separation, least-privilege access with the access logged, encryption in transit and at rest, dependency patching, and restore-tested backups. We do not claim certification we cannot evidence; what we can do is make sure the answers to the questionnaire exist and are true.',
+      },
+      {
+        q: 'What is SaaS development, and how does it differ from building a normal web application?',
+        a: 'SaaS is a delivery model: customers reach the software over the internet and you run it, rather than shipping them something to install and maintain. The engineering difference is that you are building for many customers on one system at once. That introduces problems a single-customer web application never has: keeping one tenant\'s data unreachable from another\'s, metering and billing usage, releasing a change to everybody simultaneously without breaking anyone, and supporting customers whose data you can see. Most of what makes SaaS hard follows from those four, not from the features.',
       },
     ],
     context: {

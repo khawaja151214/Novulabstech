@@ -10,6 +10,8 @@ import {
   whyClientsChoose,
   hasPlaceholderTestimonials,
 } from '@/content/testimonials';
+import PageFaq from '@/components/sections/shared/PageFaq';
+import { testimonialFaqs } from '@/content/pageFaqs';
 
 /**
  * /testimonials
@@ -303,6 +305,15 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
+
+      {/* The page a sceptical buyer reads while wondering how much of this to
+          believe, so the questions answer that rather than defend the quotes. */}
+      <PageFaq
+        items={testimonialFaqs}
+        path="/testimonials"
+        heading="Verifying what a"
+        headingAccent="supplier claims"
+      />
     </>
   );
 }

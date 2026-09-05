@@ -154,3 +154,64 @@ export const blogFaqs: FaqItem[] = [
     a: 'That is what it is written for. The guides are aimed at the engineer or architect who has to build the thing, and they include the parts that are usually left out: what each decision costs, where the effort goes, and which constraints are worth resolving before writing any code.',
   },
 ];
+
+/**
+ * /services hub.
+ *
+ * The hub carried no FAQ block at all, which made it the only top-level
+ * commercial page on the site with none. These are the questions asked before
+ * a buyer knows which of the eight practice areas they need, so they belong
+ * here rather than on any single service page.
+ */
+export const servicesHubFaqs: FaqItem[] = [
+  {
+    q: 'What types of software can a software house actually build?',
+    a: 'Broadly: web and mobile applications, SaaS products, enterprise systems such as ERP and CRM, industry platforms for finance, health and government, the API and integration layers between them, and the cloud infrastructure underneath. The useful question is not what a firm can build but what it has built under constraints resembling yours. Almost every software company can list the same categories; far fewer can describe what a payment scheme certification or a clinical audit demanded of the architecture.',
+    link: { href: '/portfolio', label: 'See how nine systems were architected' },
+  },
+  {
+    q: 'How do I know which service I need?',
+    a: 'Start from the problem rather than the technology, because the right track is usually obvious once the problem is stated precisely and almost never obvious from a feature list. If an external body will inspect the system, you are in compliance or fintech territory whatever the software is called. If the difficulty is that two existing systems disagree, it is an integration problem rather than a new build. If you are selling the same software to many customers, it is SaaS and the tenancy decision matters more than the features. If none of those fit, the first call is the fastest way to find out.',
+    link: { href: '/contact', label: 'Book a technical call' },
+  },
+  {
+    q: 'Do you take on projects that are already underway?',
+    a: 'Yes, and we start by reading the code rather than by quoting. Inheriting an unfamiliar system without assessing it first is how a maintenance engagement turns into an unplanned rewrite halfway through. The assessment covers architecture, dependency and security posture, test coverage, deployment process and operational risk, and it ends in a written recommendation that is sometimes to maintain, sometimes to modernise incrementally, and occasionally to rebuild.',
+    link: { href: '/services/legacy-system-modernization', label: 'How legacy modernisation works' },
+  },
+  {
+    q: 'Will you tell us if we should buy something off the shelf instead?',
+    a: 'Yes, and before a proposal rather than after one. Payroll, general ledger, statutory filing and standard procurement are governed by rules you do not control, and executing them differently from your competitors gains you nothing. Building there means paying to rebuild licensable functionality and inheriting its maintenance. The case for custom development is specific: the workflow that constitutes your advantage, or a regulatory obligation no product covers.',
+    link: { href: '/solutions', label: 'The platforms we already maintain' },
+  },
+  {
+    q: 'What does engaging your team look like in practice?',
+    a: 'A free technical call with an engineer who would be accountable for the work, then a paid discovery phase before any fixed scope or price. We do not quote a firm figure on an unread brief, because a fixed price set before discovery is a bet against the client rather than a commitment to them. After that the shape is a fixed-scope project, a dedicated team, or an advisory engagement, chosen by which one fits the work.',
+    link: { href: '/about', label: 'What engaging us actually involves' },
+  },
+];
+
+/**
+ * /testimonials.
+ *
+ * The page had no FAQ block, and it is the page where a sceptical buyer is
+ * most likely to be asking how much of this to believe. These answer that
+ * directly rather than defending the testimonials.
+ */
+export const testimonialFaqs: FaqItem[] = [
+  {
+    q: 'How should I verify claims a software company makes about its work?',
+    a: 'Ask for specifics that are expensive to fake. Which regulator or standard the system had to satisfy, what the integration surface was, which architectural decision was reversed and why. A firm that built the thing can answer in detail without preparation; a firm that did not will stay at the level of adjectives. Where clients are under NDA and cannot be named, the engineering description is what remains checkable, so judge that.',
+    link: { href: '/portfolio', label: 'Read the engineering write-ups' },
+  },
+  {
+    q: 'Why are clients described by category rather than named here?',
+    a: 'Every engagement is covered by a non-disclosure agreement. That costs us credibility with some buyers and we accept it, because the alternative is disclosing a client relationship we agreed to keep confidential, which tells you something worse about how we would treat yours. A supplier in this sector publishing named regulated clients and logos is worth a question about how that was permitted.',
+    link: { href: '/portfolio', label: 'How the case studies are written' },
+  },
+  {
+    q: 'Are the outcome figures in these testimonials independently audited?',
+    a: 'No. Where a figure appears it is reported by the client and has not been independently verified, and it is marked as such rather than presented as an audited result. What we can evidence directly is the engineering: the standards each system was built to, the architecture decisions and their rejected alternatives, and the integration surfaces involved.',
+    link: { href: '/about', label: 'What we do and do not claim' },
+  },
+];

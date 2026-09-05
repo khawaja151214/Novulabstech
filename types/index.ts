@@ -94,6 +94,9 @@ export interface BlogPost {
   /** Primary-source citations. Regulatory content without them reads as
    *  unverified to quality raters and to LLM retrieval pipelines. */
   sources?: { label: string; href: string }[];
+  /** Optional per-post Q&A, rendered visibly and as FAQPage schema. Posts
+   *  without it render nothing, so this is additive per article. */
+  faqs?: FaqItem[];
 }
 
 export interface TeamMemberProfile {
