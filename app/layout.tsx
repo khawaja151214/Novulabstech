@@ -53,7 +53,8 @@ import Footer from '@/components/layout/Footer';
 // Viewport
 // ---------------------------------------------------------------------------
 export const viewport: Viewport = {
-  themeColor: '#C9A84C',
+  // Matches the ink ground of the hero, which is the first thing painted.
+  themeColor: '#0C1F33',
   width: 'device-width',
   initialScale: 1,
 };

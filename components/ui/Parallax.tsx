@@ -44,6 +44,22 @@ export default function Parallax() {
     ).matches;
     if (prefersReduced) return;
 
+    // Where the browser can run this off a scroll timeline, the CSS in
+    // globals.css §14.3 already drives the same [data-parallax] elements, on
+    // the compositor and without JavaScript. Standing down here does two
+    // things: it removes the scroll listener, the IntersectionObserver and the
+    // rAF loop from every modern browser, and it guarantees the two
+    // implementations can never both write `transform` on the same element.
+    // This file stays for Safari and Firefox, which do not support
+    // scroll-driven animations yet.
+    if (
+      typeof CSS !== 'undefined' &&
+      CSS.supports &&
+      CSS.supports('animation-timeline', 'view()')
+    ) {
+      return;
+    }
+
     const visible = new Set<HTMLElement>();
     let ticking = false;
 

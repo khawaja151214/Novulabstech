@@ -27,8 +27,8 @@ export default function GlobalError({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#0A1628',
-          color: '#E8EDF5',
+          background: '#0C1F33',
+          color: '#F2EFE8',
           fontFamily: 'system-ui, -apple-system, Segoe UI, sans-serif',
           padding: '2rem',
           textAlign: 'center',
@@ -41,7 +41,7 @@ export default function GlobalError({
               fontSize: '0.72rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: '#8797AA',
+              color: '#A9B4C0',
             }}
           >
             NovuLabs
@@ -49,16 +49,16 @@ export default function GlobalError({
           <h1 style={{ margin: '0 0 1rem', fontSize: '1.6rem', lineHeight: 1.25, fontWeight: 700 }}>
             The site failed to load
           </h1>
-          <p style={{ margin: '0 0 1.5rem', color: '#AEBBCB', lineHeight: 1.7 }}>
+          <p style={{ margin: '0 0 1.5rem', color: '#C3CEDA', lineHeight: 1.7 }}>
             This is a fault on our side. Reloading will usually fix it. If it keeps
             happening, email{' '}
-            <a href="mailto:info@novulabs.net" style={{ color: '#5DE0E6' }}>
+            <a href="mailto:info@novulabs.net" style={{ color: '#D8B25E' }}>
               info@novulabs.net
             </a>{' '}
             and we will look into it.
           </p>
           {error.digest && (
-            <p style={{ margin: '0 0 1.5rem', fontSize: '0.78rem', color: '#8797AA' }}>
+            <p style={{ margin: '0 0 1.5rem', fontSize: '0.78rem', color: '#A9B4C0' }}>
               Reference: {error.digest}
             </p>
           )}
@@ -66,7 +66,7 @@ export default function GlobalError({
             type="button"
             onClick={reset}
             style={{
-              background: '#00488D',
+              background: '#16324F',
               color: '#FFFFFF',
               border: 0,
               borderRadius: '8px',
