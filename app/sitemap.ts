@@ -48,7 +48,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // emitting `https://www.novulabs.net` while its own rel=canonical says
     // `https://www.novulabs.net/`. A sitemap URL that does not match the page's
     // declared canonical is a (mild) mixed signal, and it costs nothing to fix.
-    url: canonical(r.path),
+    // Root is emitted WITHOUT the trailing slash. canonical('/') returns
+    // `.../` for the schema graph, but the homepage's own rel=canonical
+    // renders as `https://www.novulabs.net` because Next.js normalises the
+    // slash away and will not be overridden. A sitemap URL that disagrees with
+    // the page's declared canonical is a mixed signal, so the sitemap follows
+    // the page here rather than the other way round.
+    url: r.path === '' ? SITE_URL : canonical(r.path),
     lastModified: buildDate,
     changeFrequency: r.changeFrequency,
     priority: r.priority,

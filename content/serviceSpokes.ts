@@ -346,46 +346,6 @@ export const serviceSpokes: ServiceSpoke[] = [
     relatedCaseStudies: [],
     relatedPosts: [],
   },
-  {
-    slug: 'custom-saas-development',
-    parentSlug: 'enterprise-software-development',
-    navLabel: 'Custom SaaS Platforms',
-    h1: 'Custom SaaS Platform Development',
-    seoTitle: 'Custom SaaS Development Services',
-    description:
-      'Multi-tenant SaaS development with subscription billing and tenant isolation designed in from the start, not retrofitted after the first paying customer.',
-    summary: 'Multi-tenant SaaS built with tenant isolation and billing designed in from day one, not bolted on after customer one.',
-    icon: 'bi-layers-fill',
-    intro: [
-      'Multi-tenancy is a decision that is expensive to change after the fact. How tenant data is isolated, how billing ties to usage, and whether a customer can white-label the product all shape the database schema and the deployment model from the first release, not just the marketing page.',
-      'We build SaaS platforms with those decisions made deliberately at the start: data isolation strategy, subscription and billing logic, and the deployment model for tenants that need dedicated infrastructure.',
-    ],
-    offerings: [
-      { title: 'Tenant isolation architecture', body: 'A data isolation model, shared schema, separate schema, or fully separate infrastructure, chosen based on your actual compliance and scale requirements rather than defaulted.' },
-      { title: 'Subscription and billing', body: 'Usage-based, seat-based or tiered billing logic integrated with the product itself, so plan limits and metering are enforced where the feature actually lives.' },
-      { title: 'White-labelling and customisation', body: 'Tenant-level branding and configuration that does not require a code branch per customer to maintain.' },
-      { title: 'Onboarding and admin tooling', body: 'Internal tools for provisioning, supporting and monitoring tenants, which is usually the part a first SaaS build underinvests in and regrets within a year.' },
-    ],
-    howWeHelp: [
-      'The most expensive SaaS mistake we see is a data model built for a single customer, then adapted tenant by tenant as new customers arrive. Every adaptation makes the next one harder, and eventually a genuine multi-tenant rebuild becomes unavoidable while the business is still running on the old system.',
-      'We also build the internal tooling most teams defer, provisioning, support access and usage monitoring, because a SaaS platform without it means every customer issue becomes an engineering escalation.',
-    ],
-    approach: [
-      'Tenant isolation strategy is decided against your actual regulatory and scale requirements before the schema is designed, since retrofitting isolation later usually means a migration with the business already live.',
-      'Billing logic lives close to the feature it governs, so a plan limit is enforced in the same place the feature is implemented, not in a separate system that can drift out of sync.',
-    ],
-    technologies: ['Node.js', 'React', 'TypeScript', 'PostgreSQL', 'Kubernetes', 'AWS'],
-    industries: ['Banking & Fintech', 'Healthcare & MedTech', 'E-Commerce & Retail'],
-    faqs: [
-      { q: 'What tenant isolation model is right for us: shared schema or separate infrastructure?', a: 'It depends on your compliance requirements and the size of your largest customers. A shared schema with row-level isolation is usually cheaper to run and sufficient for most SaaS products; regulated or enterprise customers sometimes require dedicated infrastructure, which we design for where genuinely needed rather than by default.' },
-      { q: 'Can you migrate an existing single-tenant application to multi-tenant?', a: 'Yes, though the scope depends heavily on how the current data model assumes a single customer. This is usually a larger project than it first appears, and we scope it after reviewing the existing schema.' },
-      { q: 'How is billing handled: is that something you build or integrate?', a: 'Both are options depending on complexity. Simple subscription tiers often integrate cleanly with a payment processor’s billing product; usage-based or seat-based billing with plan enforcement inside the product usually needs custom logic tied to the feature itself.' },
-      { q: 'Do you build the admin tools for managing tenants, or just the customer-facing product?', a: 'Both, and we treat the admin side as a first-class part of the build. Tenant provisioning, support access and usage visibility are what let your team run the platform without every issue becoming an engineering ticket.' },
-    ],
-    relatedSpokes: ['legacy-system-modernization', 'erp-software-development'],
-    relatedCaseStudies: [],
-    relatedPosts: ['why-custom-saas-outperforms-off-the-shelf-erp'],
-  },
 
   // ===========================================================================
   // PILLAR: fintech-software-development

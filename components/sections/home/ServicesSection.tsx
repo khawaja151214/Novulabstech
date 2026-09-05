@@ -1,6 +1,7 @@
 import React from 'react';
 import { services } from '@/content/siteData';
 import ServiceCard from '@/components/ui/ServiceCard';
+import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 const ServicesSection: React.FC = () => {
@@ -12,6 +13,14 @@ const ServicesSection: React.FC = () => {
             <span className="stag">What We Build</span>
             <h2 className="stitle mt-3">What we <span className="gtxt">build</span></h2>
             <p className="ssub mx-auto">From compliant fintech platforms to AI-powered automation, mission-critical software that enterprises depend on.</p>
+            {/* The audit found no body link from the homepage to /solutions at
+                all, which left a primary navigation section on three inbound
+                links at crawl depth 2. */}
+            <p className="ssub mx-auto mt-3">
+              Some of it we have already built: see{' '}
+              <Link href="/solutions">our four enterprise platforms</Link> before commissioning
+              anything custom.
+            </p>
           </div>
         </div>
         <div className="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4">

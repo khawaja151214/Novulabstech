@@ -212,6 +212,24 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                     </ul>
                   </>
                 )}
+
+                {/* Sideways links into the two sections the audit found had no
+                    inbound body links from any service page at all. Wording and
+                    anchor text come from this page's own `context` block, so it
+                    is editorial text per page instead of one repeated sentence,
+                    which is the difference between an internal link that
+                    carries topical signal and one that reads as chrome. */}
+                {svc.context && (
+                  <>
+                    <h2>Where this sits in our work</h2>
+                    <p>
+                      {svc.context.sectorLead}{' '}
+                      <Link href="/industries">{svc.context.sectorAnchor}</Link>.{' '}
+                      {svc.context.platformLead}{' '}
+                      <Link href="/solutions">{svc.context.platformAnchor}</Link>.
+                    </p>
+                  </>
+                )}
               </article>
             </div>
           </div>
@@ -332,7 +350,16 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
   const pillar = getServicePage(spoke.parentSlug);
   const path = `/services/${spoke.slug}`;
-  const siblingSpokes = spoke.relatedSpokes.map((s) => getServiceSpoke(s)).filter(Boolean);
+  // `relatedSpokes` may name a slug that has since been promoted to a pillar
+  // (custom-saas-development was). Falling back to getServicePage keeps those
+  // four inbound links alive instead of silently filtering them out, which
+  // would have cost the promoted page exactly the link equity the promotion
+  // was meant to give it. Both shapes expose slug/navLabel/icon/summary, which
+  // is all the card below reads.
+  const siblingSpokes: { slug: string; navLabel: string; icon: string; summary: string }[] =
+    spoke.relatedSpokes
+      .map((s) => getServiceSpoke(s) ?? getServicePage(s))
+      .filter(Boolean) as { slug: string; navLabel: string; icon: string; summary: string }[];
   const relatedCases = spoke.relatedCaseStudies
     .map((s) => caseStudies.find((c) => c.slug === s))
     .filter(Boolean);

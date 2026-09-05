@@ -51,6 +51,25 @@ export interface ServicePage {
   relatedCaseStudies: string[];
   relatedPosts: string[];
   relatedServices: string[];
+  /**
+   * Two sentences placing this service in the rest of the site: the sectors it
+   * is delivered into, and the existing platform that already covers part of
+   * the requirement.
+   *
+   * The audit found zero body links from any service page to /industries or
+   * /solutions, which left /solutions on three inbound links at crawl depth 2
+   * despite being a primary navigation section. This closes that gap.
+   *
+   * Every field is written per page, anchor text included, because the same
+   * sentence repeated across 29 pages is chrome, and chrome does not carry the
+   * topical signal that a varied, contextual anchor does.
+   */
+  context?: {
+    sectorLead: string;
+    sectorAnchor: string;
+    platformLead: string;
+    platformAnchor: string;
+  };
   /** Legacy /services#anchor this page replaces, so old links can be mapped. */
   legacyAnchor: string;
 }
@@ -151,6 +170,12 @@ export const servicePages: ServicePage[] = [
         a: 'Primarily the SBP AML/CFT/CPF regulatory framework and FMU reporting obligations under the Anti-Money Laundering Act 2010, aligned to the FATF Recommendations. We also build to sanctions obligations imposed by correspondent banking relationships.',
       },
     ],
+    context: {
+      sectorLead: 'The institutions this is built for, and what their regulators expect of a system, are set out under',
+      sectorAnchor: 'banking and financial services',
+      platformLead: 'Where a screening and monitoring engine already covers the requirement, we start from',
+      platformAnchor: 'NovuShield, our compliance platform',
+    },
     relatedCaseStudies: ['corebanking-aml-suite', 'finsync-digital-wallet'],
     relatedPosts: ['navigating-aml-cft-regulations-pakistan-2026'],
     relatedServices: ['fintech-software-development', 'enterprise-software-development'],
@@ -233,6 +258,12 @@ export const servicePages: ServicePage[] = [
         a: 'That is usually the only sane approach. We favour strangler-pattern migration, routing specific capabilities to new services behind a stable interface while the legacy core continues to run, over a cutover, which concentrates all the risk on a single night.',
       },
     ],
+    context: {
+      sectorLead: 'Payment and banking work carries sector obligations we describe in more detail across',
+      sectorAnchor: 'our regulated industry pages',
+      platformLead: 'For card processing and switching specifically, part of this already exists as',
+      platformAnchor: 'NovuPay, our payment platform',
+    },
     relatedCaseStudies: ['tranzaxis-payment-gateway', 'finsync-digital-wallet', 'corebanking-aml-suite'],
     relatedPosts: ['navigating-aml-cft-regulations-pakistan-2026'],
     relatedServices: ['aml-cft-compliance-software', 'mobile-app-development'],
@@ -315,6 +346,12 @@ export const servicePages: ServicePage[] = [
         a: 'It needs clinical review, mapping a local code to SNOMED CT is a clinical judgement. We build the tooling, the validation and the test coverage, and we work alongside your clinical staff or an appointed terminologist for the judgement calls.',
       },
     ],
+    context: {
+      sectorLead: 'Clinical and provider requirements, including what an inspection asks of a records system, are covered under',
+      sectorAnchor: 'healthcare and MedTech',
+      platformLead: 'Where a platform component fits, it is listed among',
+      platformAnchor: 'the products we already maintain',
+    },
     relatedCaseStudies: ['medicore-ehr-platform', 'carepulse-telemedicine-app'],
     relatedPosts: ['scaling-healthcare-software-hipaa-hl7-fhir'],
     relatedServices: ['cloud-ai-automation', 'mobile-app-development'],
@@ -394,6 +431,12 @@ export const servicePages: ServicePage[] = [
         a: 'A custom platform needs ongoing ownership: typically 15–20% of the original build cost annually for maintenance, dependency patching and change. We offer tiered support, but we would rather you plan for that cost explicitly than discover it in year two.',
       },
     ],
+    context: {
+      sectorLead: 'The sectors we build enterprise systems for, and the constraints each imposes, are described under',
+      sectorAnchor: 'the industries we serve',
+      platformLead: 'Before commissioning a build we check it against',
+      platformAnchor: 'NovuERP and NovuCRM',
+    },
     relatedCaseStudies: ['omnierp-manufacturing-suite', 'novucrm-intelligence-suite'],
     relatedPosts: ['why-custom-saas-outperforms-off-the-shelf-erp'],
     relatedServices: ['cloud-ai-automation', 'web-development'],
@@ -493,6 +536,12 @@ export const servicePages: ServicePage[] = [
         a: 'Yes, including the additional documentation Apple and Google routinely request for finance and health category apps. We treat review as a schedule dependency rather than a final step.',
       },
     ],
+    context: {
+      sectorLead: 'Apps in finance and health inherit the obligations of the systems behind them, which we set out under',
+      sectorAnchor: 'regulated delivery',
+      platformLead: 'Where the app is a client of a platform we already run, that platform is listed with',
+      platformAnchor: 'our enterprise products',
+    },
     relatedCaseStudies: ['finsync-digital-wallet', 'carepulse-telemedicine-app'],
     relatedPosts: ['scaling-healthcare-software-hipaa-hl7-fhir'],
     relatedServices: ['fintech-software-development', 'healthcare-software-development'],
@@ -591,6 +640,12 @@ export const servicePages: ServicePage[] = [
         a: 'Beside the rules, never inside them. Deterministic rules produce alerts of record because each decision needs an explainable reason for an examiner; a model prioritises the analyst queue. That gives you the throughput benefit without an unexplainable artefact on the regulatory critical path.',
       },
     ],
+    context: {
+      sectorLead: 'What cloud and automation work has to satisfy differs sharply by sector, as described under',
+      sectorAnchor: 'banking, healthcare and government',
+      platformLead: 'Some of this capability ships already configured inside',
+      platformAnchor: 'our four platforms',
+    },
     relatedCaseStudies: ['novucrm-intelligence-suite', 'omnierp-manufacturing-suite'],
     relatedPosts: ['why-custom-saas-outperforms-off-the-shelf-erp'],
     relatedServices: ['enterprise-software-development', 'aml-cft-compliance-software'],
@@ -688,10 +743,173 @@ export const servicePages: ServicePage[] = [
         a: 'Usually, yes. Most of the gains come from a short list: bounding image dimensions, removing third-party requests from the critical path, deferring non-essential JavaScript, and setting an actual LCP budget. We measure on representative devices and networks, not on a developer laptop.',
       },
     ],
+    context: {
+      sectorLead: 'Public-facing platforms for regulated and public-sector clients carry the constraints described under',
+      sectorAnchor: 'government and public sector',
+      platformLead: 'Where a portal fronts a system we already build, that system is listed among',
+      platformAnchor: 'our platform products',
+    },
     relatedCaseStudies: ['natid-verification-portal', 'taxlink-revenue-portal'],
     relatedPosts: ['why-custom-saas-outperforms-off-the-shelf-erp'],
     relatedServices: ['enterprise-software-development', 'cloud-ai-automation'],
     legacyAnchor: 'web',
+  },
+
+  // ---------------------------------------------------------------------------
+  // SaaS. PROMOTED, NOT CREATED.
+  //
+  // This slug already existed as a spoke under enterprise-software-development
+  // (content/serviceSpokes.ts) at roughly 720 words. The URL is unchanged, so
+  // no redirect is needed and nothing that already links to it breaks. What
+  // changed is its position in the hierarchy: moving the entry here puts it in
+  // the primary navigation, the services hub, the footer service list and the
+  // Islamabad page's practice-area list automatically, and raises it from 0.7
+  // to 0.9 in the sitemap, because every one of those surfaces is generated
+  // from `servicePages`.
+  //
+  // The reason for the promotion is that SaaS was the shallowest treatment of a
+  // headline commercial objective on the site: seven inbound links and no case
+  // study, while carrying a query cluster (SaaS development company, custom /
+  // enterprise / multi-tenant SaaS, SaaS MVP, SaaS architecture, SaaS cost) that
+  // no other page addressed at all.
+  // ---------------------------------------------------------------------------
+  {
+    slug: 'custom-saas-development',
+    navLabel: 'SaaS Development',
+    icon: 'bi-layers-fill',
+    h1: 'Custom SaaS Development',
+    // 31 chars + " | NovuLabs" = 42 rendered.
+    seoTitle: 'Custom SaaS Development Company',
+    description:
+      'SaaS product engineering from MVP to enterprise: multi-tenant architecture, subscription billing, cloud infrastructure and the security review your buyers will run.',
+    serviceType: 'SaaS product development',
+    summary:
+      'Multi-tenant SaaS built with tenant isolation, billing and the enterprise security questionnaire designed in from the first release, not retrofitted after customer one.',
+    keywords: [
+      'SaaS development company',
+      'custom SaaS development',
+      'SaaS product development',
+      'enterprise SaaS development',
+      'multi-tenant SaaS development',
+      'SaaS MVP development',
+      'SaaS application development',
+      'SaaS architecture',
+      'SaaS development cost',
+      'SaaS development company in Islamabad',
+    ],
+    sections: [
+      {
+        heading: 'Who this is for',
+        body: [
+          'Three kinds of organisation come to us for SaaS work. Founders with a validated problem and no engineering team, who need a first version that can carry paying customers without being thrown away in year two. Established companies productising something they already run internally, which is a different job: the software exists, but it assumes one customer everywhere. And enterprises whose buyers now demand a hosted product where a licensed install used to be acceptable.',
+          'The engineering questions differ in emphasis but not in kind. All three meet the same wall eventually. It arrives as the first customer whose security team sends a questionnaire.',
+        ],
+      },
+      {
+        heading: 'Multi-tenancy is the decision you cannot cheaply reverse',
+        body: [
+          'How tenant data is separated determines your database schema, your deployment model, your backup and restore procedure, and what you are able to say in a due-diligence call. It is close to irreversible once you have live customers, and it is the decision most often made by default.',
+          'Shared schema with a tenant discriminator is cheapest to operate and hardest to defend in an enterprise security review. Schema per tenant sits in the middle. Database or infrastructure per tenant satisfies the review and complicates every migration you will run for the life of the product. None of these is universally correct. The wrong move is arriving at one by accident and discovering the constraint when a regulated buyer asks where their data physically lives.',
+          'We make that choice explicitly against the customers you intend to sell to, and we write down the reasoning with the options that were rejected, so the team maintaining it in three years understands why.',
+        ],
+      },
+      {
+        heading: 'From an MVP to something an enterprise will buy',
+        body: [
+          'An MVP is a commercial instrument, not a small version of the product. Its job is to answer a question you cannot answer by asking people. That means the scope should be set by the question, and everything not serving it should be visibly deferred instead of quietly dropped.',
+          'The parts we argue against cutting are the ones that are cheap now and structural later: tenant isolation, an authentication model that can accept single sign-on when a buyer requires it, and an audit log. Retrofitting any of the three into a live product with customers on it is a migration, not a feature.',
+          'Scalability is rarely what kills an early SaaS product. Operability is. A platform nobody on your team can provision, debug or support without an engineer costs more in attention than it ever does in servers.',
+        ],
+      },
+      {
+        heading: 'The backend, the API surface and the integrations you will be asked for',
+        body: [
+          'The API is the part of a SaaS product with the longest memory. Once a customer integrates against it you cannot change it casually, so it is worth deciding early what it represents, how it is versioned, and how a breaking change is communicated. Building the endpoints is the easy half. Deciding what they promise is the other one.',
+          'Billing logic belongs close to the feature it governs. A plan limit enforced in a separate billing service drifts out of sync with the feature it is supposed to cap, and the drift is discovered by a customer. Usage-based and seat-based models in particular need metering at the point the value is delivered.',
+          'Integrations are where roadmaps go to die if they are handled one customer at a time. We build them against a defined extension surface, so the tenth integration is configuration and not a code branch with a customer name in it.',
+        ],
+      },
+      {
+        heading: 'Cloud infrastructure, security and the questionnaire',
+        body: [
+          'At some point a buyer will send a security questionnaire, and the answers are set by decisions you made much earlier. Where data is stored and in which jurisdiction. Whether tenants can reach each other. Who on your team can read customer data and what record exists of it. How you would prove any of that after an incident.',
+          'We design the infrastructure so those answers exist: environment separation, least-privilege access with the access itself logged, encryption in transit and at rest, dependency and patch management, and backups that have been restored rather than merely configured. Where data residency is a hard requirement, it constrains the hosting choice, and discovering that after selecting a managed service means a rebuild instead of a configuration change.',
+          'For clients in regulated sectors this connects directly to our AML/CFT and healthcare engineering work, because a SaaS product serving banks or clinics inherits the obligations of the institutions using it.',
+        ],
+      },
+      {
+        heading: 'Interface work, judged by the support queue',
+        body: [
+          'SaaS interface design has a measurable test that marketing sites do not: the volume and shape of your support tickets. Screens people misuse are a design problem showing up as a staffing cost, and the admin side is where this bites hardest because it is the part first builds routinely underinvest in.',
+          'We treat tenant provisioning, support access and usage visibility as first-class product surfaces. A platform where every customer question becomes an engineering escalation does not scale, whatever the infrastructure does.',
+        ],
+      },
+      {
+        heading: 'After launch, and modernising a product that already exists',
+        body: [
+          'A SaaS platform is a running commitment. Dependencies age, the payment processor changes an API, a browser deprecates something, and a customer needs a feature the schema did not anticipate. Budget for that as ongoing ownership and it is manageable. Treat it as an unplanned interruption and it becomes the reason releases stop.',
+          'Where a single-tenant application already exists and needs to become a product, the work is usually larger than it first appears, because the data model assumes one customer in more places than anyone remembers. We scope that after reading the schema, not before, and the honest recommendation is sometimes an incremental extraction instead of a rewrite.',
+        ],
+      },
+    ],
+    includes: [
+      'SaaS product architecture and multi-tenant data isolation design',
+      'SaaS MVP definition and delivery',
+      'Subscription, usage-based and seat-based billing logic',
+      'Backend and API development, versioning and documentation',
+      'Third-party integrations against a defined extension surface',
+      'Cloud infrastructure, environment separation and deployment automation',
+      'Security architecture and enterprise security questionnaire readiness',
+      'Tenant provisioning, support and usage-monitoring tooling',
+      'SaaS interface design for the product and the admin surface',
+      'Single-tenant to multi-tenant modernisation',
+      'Ongoing maintenance, dependency patching and change delivery',
+    ],
+    stack: ['TypeScript', 'Node.js', 'React', 'Next.js', '.NET', 'PostgreSQL', 'Redis', 'Kubernetes', 'AWS', 'Azure', 'Terraform'],
+    faqs: [
+      {
+        q: 'What does SaaS development cost?',
+        a: 'We do not publish a rate card, because a number without a scope is not information. The variables that move a SaaS budget most are the tenant isolation model, whether billing is a simple subscription or metered against usage, how many third-party integrations are in the first release, and whether the product has to satisfy a regulated buyer. We give an indicative range after a free technical call and a firm figure only after a paid discovery phase.',
+      },
+      {
+        q: 'How do I build a SaaS product if I do not have a technical team?',
+        a: 'Start by writing down the question your first release has to answer, because that sets the scope more usefully than a feature list. From there we take the technical decisions your organisation would otherwise have to make and record them in language your team can audit. We would also insist that your company, not NovuLabs, owns the repository, the cloud accounts and the domain from the first commit.',
+      },
+      {
+        q: 'How long does a SaaS MVP take?',
+        a: 'Discovery is two to four weeks. A focused MVP with one tenant isolation model, a single billing tier and no external integrations is typically measured in months rather than weeks after that. Every integration, every additional billing dimension and every compliance requirement extends it, which is why we scope those explicitly instead of averaging them into a single timeline.',
+      },
+      {
+        q: 'Which tenant isolation model should we choose: shared schema or dedicated infrastructure?',
+        a: 'It depends on your compliance obligations and the size of your largest expected customer. Shared schema with row-level isolation is cheaper to operate and sufficient for many products. Regulated or enterprise buyers sometimes require dedicated infrastructure, which we design for where it is genuinely needed instead of by default. The decision belongs to the sales motion as much as to engineering.',
+      },
+      {
+        q: 'Can you turn our existing single-tenant application into a multi-tenant SaaS product?',
+        a: 'Yes, and we start by reading the schema rather than quoting. The scope depends on how deeply the current data model assumes one customer, which is usually in more places than the original team remembers. The output of that assessment is a written recommendation, which is sometimes an incremental extraction behind a stable interface instead of a rewrite.',
+      },
+      {
+        q: 'Do you build the admin and tenant-management tooling, or only the customer-facing product?',
+        a: 'Both, and we treat the admin side as part of the product. Tenant provisioning, scoped support access and usage visibility are what allow your team to run the platform without every customer issue becoming an engineering ticket.',
+      },
+      {
+        q: 'Are you a SaaS development company in Islamabad, and can you work with clients abroad?',
+        a: 'Yes to both. NovuLabs is based in I-10, Islamabad, and most SaaS engagements run remotely for clients in Pakistan, the Gulf, the UK and North America. Contracting and intellectual property assignment are handled through NovuLabs Technology Pvt Ltd, and code is committed to your repository from the start.',
+      },
+      {
+        q: 'Will the product pass an enterprise security review?',
+        a: 'That depends on decisions taken at the architecture stage, which is why we raise them then. We design for environment separation, least-privilege access with the access logged, encryption in transit and at rest, dependency patching, and restore-tested backups. We do not claim certification we cannot evidence; what we can do is make sure the answers to the questionnaire exist and are true.',
+      },
+    ],
+    context: {
+      sectorLead: 'SaaS products sold into regulated buyers inherit their obligations, which we cover under',
+      sectorAnchor: 'the industries we work in',
+      platformLead: 'Where a requirement is already solved, it may be cheaper to configure one of',
+      platformAnchor: 'our existing platforms',
+    },
+    relatedCaseStudies: ['omnierp-manufacturing-suite', 'novucrm-intelligence-suite'],
+    relatedPosts: ['why-custom-saas-outperforms-off-the-shelf-erp'],
+    relatedServices: ['enterprise-software-development', 'cloud-ai-automation', 'web-development'],
+    legacyAnchor: 'saas',
   },
 ];
 

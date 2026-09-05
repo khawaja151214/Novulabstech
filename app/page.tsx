@@ -45,6 +45,9 @@ export const metadata: Metadata = {
     'PCI-DSS payment software',
     'software outsourcing Pakistan',
   ],
+  // Renders as `https://www.novulabs.net` with no trailing slash: Next.js
+  // normalises that away and an absolute URL here does not override it. The
+  // sitemap is matched to this form instead, in app/sitemap.ts.
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Enterprise Software House in Islamabad | NovuLabs',
