@@ -21,7 +21,7 @@ const PortfolioPreviewSection: React.FC = () => {
         <div className="row justify-content-between align-items-end mb-5">
           <div className="col-lg-7" data-reveal="up">
             <span className="stag">Our work</span>
-            <h2 className="stitle mt-3">Three engagements, <span className="gtxt">in detail</span></h2>
+            <h2 className="stitle mt-3">Enterprise software <span className="gtxt">case studies</span></h2>
             <p className="ssub mt-3 mb-0">
               Each case study covers the problem, the constraints we designed within, and what
               changed. Client names are withheld under NDA and described by category.

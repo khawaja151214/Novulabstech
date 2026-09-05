@@ -22,8 +22,6 @@ import { teamMembers } from '@/content/siteData';
  *    date now carries it.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const buildDate = new Date();
-
   const staticRoutes: MetadataRoute.Sitemap = [
     { path: '', priority: 1.0, changeFrequency: 'weekly' as const },
     // Local landing page for the 'software house in Islamabad' cluster.
@@ -55,7 +53,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // the page's declared canonical is a mixed signal, so the sitemap follows
     // the page here rather than the other way round.
     url: r.path === '' ? SITE_URL : canonical(r.path),
-    lastModified: buildDate,
+    // No lastModified on the static routes, deliberately.
+    //
+    // Every one of them previously carried `buildDate`, which told Google that
+    // all 13 pages changed the moment the site was deployed, including on a
+    // deploy that touched none of them. Google's guidance is explicit that it
+    // ignores lastmod when the value is not consistently accurate, and an
+    // always-now timestamp is the textbook example. Omitting it is better than
+    // publishing one that is wrong: the crawler falls back to its own
+    // heuristics instead of learning to distrust the whole file.
+    //
+    // The routes that DO have a real modification date, the blog posts, still
+    // carry theirs below, and those are now the only lastmod values in the
+    // sitemap, which is what makes them worth reading.
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
@@ -63,7 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dedicated service pages; the highest-value commercial URLs on the site.
   const serviceRoutes: MetadataRoute.Sitemap = servicePages.map((s) => ({
     url: `${SITE_URL}/services/${s.slug}`,
-    lastModified: buildDate,
     changeFrequency: 'monthly',
     priority: 0.9,
   }));
@@ -74,14 +83,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // spend budget first, not a claim about the page's importance to the site.
   const serviceSpokeRoutes: MetadataRoute.Sitemap = serviceSpokes.map((s) => ({
     url: `${SITE_URL}/services/${s.slug}`,
-    lastModified: buildDate,
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
 
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((c) => ({
     url: `${SITE_URL}/portfolio/${c.slug}`,
-    lastModified: buildDate,
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
@@ -99,14 +106,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // which to build topical authority.
   const authorRoutes: MetadataRoute.Sitemap = teamMembers.map((m) => ({
     url: `${SITE_URL}/team/${m.slug}`,
-    lastModified: buildDate,
     changeFrequency: 'monthly',
     priority: 0.5,
   }));
 
   const legalRoutes: MetadataRoute.Sitemap = legalPages.map((p) => ({
     url: `${SITE_URL}/legal/${p.slug}`,
-    lastModified: buildDate,
     changeFrequency: 'yearly',
     priority: 0.2,
   }));

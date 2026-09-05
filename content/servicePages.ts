@@ -781,7 +781,7 @@ export const servicePages: ServicePage[] = [
     // 31 chars + " | NovuLabs" = 42 rendered.
     seoTitle: 'Custom SaaS Development Company',
     description:
-      'SaaS product engineering from MVP to enterprise: multi-tenant architecture, subscription billing, cloud infrastructure and the security review your buyers will run.',
+      'SaaS product engineering from MVP to enterprise: multi-tenant architecture, billing, cloud infrastructure and the security review your buyers run.',
     serviceType: 'SaaS product development',
     summary:
       'Multi-tenant SaaS built with tenant isolation, billing and the enterprise security questionnaire designed in from the first release, not retrofitted after customer one.',

@@ -158,7 +158,7 @@ export const legalPages: LegalPage[] = [
     title: 'Cookie Policy',
     seoTitle: 'Cookie Policy',
     description:
-      'What novulabs.net stores in your browser and why: which cookies are strictly necessary, what is not used, and how to clear them. Actual behaviour, not a template.',
+      'What novulabs.net stores in your browser and why: which cookies are necessary, what is not used, and how to clear them. Real behaviour, not boilerplate.',
     lastUpdated: '16 August 2026',
     intro:
       'This page describes what novulabs.net stores in your browser. It is written to match what the site actually does: if we add analytics or advertising technology later, this page will be updated before that goes live, not after.',

@@ -5,6 +5,7 @@ import { webPageSchema } from '@/lib/schema';
 import { canonical } from '@/lib/seo';
 import PortfolioHero from '@/components/sections/portfolio/PortfolioHero';
 import PortfolioGridSection from '@/components/sections/portfolio/PortfolioGridSection';
+import PortfolioContext from '@/components/sections/portfolio/PortfolioContext';
 import PortfolioCta from '@/components/sections/portfolio/PortfolioCta';
 import PageFaq from '@/components/sections/shared/PageFaq';
 import { portfolioFaqs } from '@/content/pageFaqs';
@@ -69,6 +70,7 @@ export default function PortfolioPage() {
       />
       <PortfolioHero />
       <div className="divider"></div>
+      <PortfolioContext />
       <PortfolioGridSection />
       <PortfolioCta />
       <PageFaq items={portfolioFaqs} path="/portfolio" />

@@ -43,7 +43,7 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="col-lg-7" data-reveal="left">
             <span className="stag">Who We Are</span>
-            <h2 className="stitle mt-3">What we do, <span className="gtxt">and who for</span></h2>
+            <h2 className="stitle mt-3">What NovuLabs does, <span className="gtxt">and who for</span></h2>
             {/* "across 40+ countries" removed, unevidenced. lib/seo.ts
                 declares five served markets (PK, AE, GB, US, SA). */}
             <p className="ssub mb-4">NovuLabs is an enterprise software house headquartered in Islamabad. We engineer platforms that power financial systems, healthcare networks and government portals, for institutions that answer to a regulator as well as to a user.</p>

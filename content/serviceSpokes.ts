@@ -109,7 +109,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     h1: 'Corporate Website Development',
     seoTitle: 'Corporate Website Development Services',
     description:
-      'Corporate and marketing website development built server-rendered and content-led, distinct from portal or web-app engineering. Fast, accessible, easy to update.',
+      'Corporate and marketing website development, server-rendered and content-led. Distinct from portal work: fast, accessible and easy to update.',
     summary: 'Marketing and corporate sites built to load fast, read cleanly and rank, not just look finished in a demo.',
     icon: 'bi-globe',
     intro: [
@@ -233,7 +233,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     h1: 'CRM Software Development',
     seoTitle: 'Custom CRM Software Development',
     description:
-      'Custom CRM development for sales and relationship processes that off-the-shelf CRM cannot express: lead scoring, pipeline logic and omnichannel data in one record.',
+      'Custom CRM development for processes off-the-shelf CRM cannot express: lead scoring, pipeline logic and omnichannel data in a single record.',
     summary: 'A CRM built around your sales and relationship process, when a general-purpose CRM makes you adapt to it instead.',
     icon: 'bi-people-fill',
     intro: [
@@ -357,7 +357,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     h1: 'Core Banking Software Development',
     seoTitle: 'Core Banking Software Development',
     description:
-      'Core banking platform development and modernization: account management, ledgers and lending systems engineered alongside your existing core, not a full replacement.',
+      'Core banking development and modernisation: accounts, ledgers and lending engineered alongside your existing core, not as a full replacement.',
     summary: 'Core banking and lending platform engineering, usually alongside an existing core rather than replacing it outright.',
     icon: 'bi-bank',
     intro: [
@@ -397,7 +397,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     h1: 'Payment Gateway Development',
     seoTitle: 'PCI-DSS Payment Gateway Development',
     description:
-      'Payment gateway development engineered to PCI-DSS requirements: card processing, local rail connectivity and settlement reconciliation for licensed institutions.',
+      'Payment gateway development engineered to PCI-DSS: card processing, local rail connectivity and settlement reconciliation for licensed institutions.',
     summary: 'Payment gateway and switching infrastructure engineered to PCI-DSS, connecting card networks and local payment rails.',
     icon: 'bi-credit-card-2-front',
     intro: [
@@ -481,7 +481,7 @@ export const serviceSpokes: ServiceSpoke[] = [
     h1: 'AML Case Management and Risk Scoring',
     seoTitle: 'AML Case Management Software',
     description:
-      'AML case management and risk scoring software: the analyst-facing workflow, investigation tooling and audit trail behind an alert, not just the detection engine.',
+      'AML case management and risk scoring: the analyst workflow, investigation tooling and audit trail behind an alert, not only the detection engine.',
     summary: 'The analyst-facing side of AML: case workflow, risk scoring and the audit trail an examiner reviews months later.',
     icon: 'bi-shield-lock-fill',
     intro: [

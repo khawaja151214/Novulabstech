@@ -7,7 +7,7 @@ import ContactFormSection from '@/components/sections/contact/ContactFormSection
 import ContactFaqSection from '@/components/sections/contact/ContactFaqSection';
 
 export const metadata: Metadata = {
-  title: 'Contact — Book a Free Technical Call',
+  title: 'Contact Us: Book a Free Consultation',
   description:
     'Book a free 45-minute technical call with a senior architect in Islamabad, in person or remote. No demos, no sales scripts, just an honest read on scope.',
   keywords: [
