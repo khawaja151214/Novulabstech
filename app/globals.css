@@ -3042,3 +3042,42 @@ footer a:not(.btn-grad) { color: var(--a1); }
   display: inline-block;
 }
 .faq-more a:hover::after { transform: translateX(3px); }
+
+/* ── Sitemap page ─────────────────────────────────────────────────────────
+   /site-map previously borrowed .ft-head and .ft-links from the footer. Those
+   are written for the footer's near-black ground: white headings and pale grey
+   links. On this page's white section that measured 1.00:1 and 1.95:1, so ten
+   group headings were invisible and eighty links were nearly so. These are the
+   same shapes drawn for a light ground. */
+.sm-head {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--p1);              /* 11.9:1 on paper */
+  font-family: var(--fm);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gb4);
+}
+.sm-links { list-style: none; padding: 0; margin: 0; }
+.sm-links li { margin-bottom: 7px; }
+.sm-links a {
+  font-size: .875rem;
+  color: var(--tx2);             /* 10.3:1 on paper */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  transition: color .16s ease, transform .16s ease;
+}
+.sm-links a i {
+  font-size: .58rem;
+  color: var(--a1);
+  flex-shrink: 0;
+  transition: transform .16s ease;
+}
+.sm-links a:hover {
+  color: var(--a1);              /* 6.7:1 on paper */
+  transform: translateX(3px);
+}

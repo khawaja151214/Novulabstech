@@ -46,6 +46,21 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Sitemap group.
+ *
+ * Previously rendered with .ft-head and .ft-links, which are the FOOTER
+ * classes. The footer sits on a near-black ground, so those rules set white
+ * headings (#FFFFFF) and pale grey links (#AEBBCB). On this page, whose
+ * section background is white, that measured 1.00:1 for all ten group
+ * headings and 1.95:1 for all eighty links: the headings were literally
+ * invisible and the links close to it.
+ *
+ * The heading is also a real <h2> now. A directory of eighty links with no
+ * heading elements gives a screen reader and a crawler no outline of the
+ * document at all, which for a page whose entire job is structure is the
+ * whole point missed.
+ */
 function Group({
   heading,
   links,
@@ -55,12 +70,12 @@ function Group({
 }) {
   return (
     <div className="col-md-6 col-lg-4 mb-4">
-      <div className="ft-head">{heading}</div>
-      <ul className="ft-links">
+      <h2 className="sm-head">{heading}</h2>
+      <ul className="sm-links">
         {links.map((l) => (
           <li key={l.href}>
             <Link href={l.href}>
-              <i className="bi bi-chevron-right"></i>
+              <i className="bi bi-chevron-right" aria-hidden="true"></i>
               {l.label}
             </Link>
           </li>
@@ -105,6 +120,9 @@ export default function SiteMapPage() {
                 { href: '/software-house-in-islamabad', label: 'Software house in Islamabad' },
                 { href: '/software-development-in-pakistan', label: 'Software development in Pakistan' },
                 { href: '/team', label: 'Engineering & compliance team' },
+                { href: '/team/muneeb-ali-jaffari', label: 'Muneeb Ali Jaffari' },
+                { href: '/team/shamroz-ali-zaidi', label: 'Shamroz Ali Zaidi' },
+                { href: '/team/ali-zaidi', label: 'Ali Zaidi' },
                 { href: '/industries', label: 'Industries served' },
                 { href: '/testimonials', label: 'Client testimonials & reviews' },
                 { href: '/faq', label: 'Frequently asked questions' },
