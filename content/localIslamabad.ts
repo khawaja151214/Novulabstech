@@ -99,44 +99,8 @@ export const ISLAMABAD_SECTIONS: LocalSection[] = [
 
 export const ISLAMABAD_FAQS: FaqItem[] = [
   {
-    q: 'What does a software house in Islamabad actually do?',
-    a: 'A software house designs, builds, tests, deploys and maintains custom software for other organisations. Unlike a product company, which builds one product for many customers, a software house is engaged to own a system for a single client, from requirements and architecture through to long-term maintenance. NovuLabs works this way for banks, payment institutions, healthcare providers, government departments and enterprises.',
-  },
-  {
     q: 'Which is the best software agency in Islamabad?',
     a: 'There is no single answer, because the right team depends entirely on what you are building. A company that has certified a payment switch against a card scheme is not necessarily the right choice for a consumer marketplace, and the reverse is equally true. Rather than ranking vendors, evaluate them on domain evidence: ask who will write the code, what they have built under the same regulator you answer to, how they estimate, and who owns the source code and infrastructure. Any firm that claims to be best at everything is answering a marketing question, not an engineering one.',
-  },
-  {
-    q: 'Where is NovuLabs located in Islamabad?',
-    a: 'NovuLabs is based in I-10/4, I-10, Islamabad, Islamabad Capital Territory, Pakistan. You can reach us on +92 326 8292152 or at info@novulabs.net. Office hours are Monday to Friday, 9:00am to 6:00pm Pakistan Standard Time. Enterprise support arrangements for existing clients run outside those hours and are agreed per contract.',
-  },
-  {
-    q: 'What does custom software development cost in Islamabad?',
-    a: 'We do not publish rate cards, because a number without a scope is not information. Cost is driven by regulatory surface area more than by feature count: a system that must survive a central bank inspection, a PCI-DSS assessment or a HIPAA review carries audit, documentation and security work that a comparable unregulated system does not. We give an indicative range after a free technical call, and a firm figure only after a paid discovery phase, when we know what we are actually pricing.',
-  },
-  {
-    q: 'Do you build mobile apps as well as enterprise systems?',
-    a: 'Yes. We build native iOS and Android apps and cross-platform apps, and in most of our engagements the app is one client of a larger platform instead of a standalone product. That matters for regulated work: a banking or health app inherits the compliance obligations of the system behind it, including data residency, session handling, audit logging and secure storage on the device.',
-  },
-  {
-    q: 'Can you work with a client who has no in-house technical team?',
-    a: 'Yes, and it is common. In that case we take on the technical decisions your organisation would otherwise have to make, and we write them down in language your team can audit rather than in language that requires us to interpret it. We would also insist that your organisation, not NovuLabs, holds the source code repository, the cloud accounts and the domain from day one, so you are never dependent on us for access to your own system.',
-  },
-  {
-    q: 'How long does a typical software project take?',
-    a: 'Discovery is usually two to four weeks. A well-scoped integration, for example goAML reporting or a payment gateway connection, is typically measured in months rather than weeks once discovery is complete. A core platform such as an EHR, an AML engine or a core banking component is a multi-quarter programme, and any firm quoting one of those in weeks has either misunderstood the scope or is planning to renegotiate later.',
-  },
-  {
-    q: 'Do you sign NDAs and assign intellectual property to the client?',
-    a: 'Yes. We sign non-disclosure agreements before discovery, and intellectual property in work produced for a client is assigned to that client under the engagement contract with NovuLabs Technology Pvt Ltd. Code is committed to your repository under your organisation from the first commit.',
-  },
-  {
-    q: 'Which industries do you serve from Islamabad?',
-    a: 'Primarily banking and financial services, payments, healthcare, and government and public sector, with supporting work in retail, logistics, education and manufacturing. The common thread is not the sector, it is the presence of an external body that can audit the system: a regulator, a payment scheme, a health authority or a procurement office.',
-  },
-  {
-    q: 'Do you take on maintenance of software someone else built?',
-    a: 'Yes, and we start with an assessment rather than a promise. Inheriting an unfamiliar codebase without reading it first is how a maintenance engagement turns into an unplanned rewrite. The assessment covers architecture, dependency and security posture, test coverage, deployment process and operational risk, and it ends with a written recommendation that may be to maintain, to modernise incrementally, or in some cases to rebuild.',
   },
   {
     q: 'How do I shortlist the best software agency in Islamabad for my project?',
@@ -147,6 +111,42 @@ export const ISLAMABAD_FAQS: FaqItem[] = [
     a: 'Three things, none of them a specification. First, the business outcome you are trying to reach and how you will know it worked. Second, the constraints that are genuinely fixed: a regulatory deadline, a system you cannot replace, a budget ceiling, a data residency rule. Third, who inside your organisation can make a decision. A vague brief is fine. An unclear decision-maker is what actually stalls projects.',
   },
   {
+    q: 'What does a software house in Islamabad actually do?',
+    a: 'A software house designs, builds, tests, deploys and maintains custom software for other organisations. Unlike a product company, which builds one product for many customers, a software house is engaged to own a system for a single client, from requirements and architecture through to long-term maintenance. NovuLabs works this way for banks, payment institutions, healthcare providers, government departments and enterprises.',
+  },
+  {
+    q: 'Which industries do you serve from Islamabad?',
+    a: 'Primarily banking and financial services, payments, healthcare, and government and public sector, with supporting work in retail, logistics, education and manufacturing. The common thread is not the sector, it is the presence of an external body that can audit the system: a regulator, a payment scheme, a health authority or a procurement office.',
+  },
+  {
+    q: 'Can we start with a small pilot before committing to a full build?',
+    a: 'Yes, and for a first engagement we usually recommend it. A paid discovery phase or a narrow first module gives both sides real information: you see how we work, we see the true state of your data and systems, and the estimate for the rest is then based on evidence instead of assumption. It is also the cheapest point at which either side can decide not to continue.',
+  },
+  {
+    q: 'How long does a typical software project take?',
+    a: 'Discovery is usually two to four weeks. A well-scoped integration, for example goAML reporting or a payment gateway connection, is typically measured in months rather than weeks once discovery is complete. A core platform such as an EHR, an AML engine or a core banking component is a multi-quarter programme, and any firm quoting one of those in weeks has either misunderstood the scope or is planning to renegotiate later.',
+  },
+  {
+    q: 'How soon can you start on a new project?',
+    a: 'Discovery can usually begin within a few weeks; a full delivery team depends on what is finishing at the time, and we will tell you the real date rather than the one you want to hear. If the timing does not work we would rather say so at the first call. An agency that promises an immediate start on a large regulated build is telling you something about how busy it is.',
+  },
+  {
+    q: 'Can you work with a client who has no in-house technical team?',
+    a: 'Yes, and it is common. In that case we take on the technical decisions your organisation would otherwise have to make, and we write them down in language your team can audit rather than in language that requires us to interpret it. We would also insist that your organisation, not NovuLabs, holds the source code repository, the cloud accounts and the domain from day one, so you are never dependent on us for access to your own system.',
+  },
+  {
+    q: 'Do you work with startups, or only banks and government departments?',
+    a: 'Both, with one qualification. Our depth is in regulated systems, so we are a strong fit for a startup building in fintech, healthtech or govtech, where getting the compliance architecture right early is cheaper than retrofitting it after a funding round. For a consumer product with no regulatory surface, a smaller generalist team is often the better value, and we will point you towards that rather than take the work.',
+  },
+  {
+    q: 'Do you build mobile apps as well as enterprise systems?',
+    a: 'Yes. We build native iOS and Android apps and cross-platform apps, and in most of our engagements the app is one client of a larger platform instead of a standalone product. That matters for regulated work: a banking or health app inherits the compliance obligations of the system behind it, including data residency, session handling, audit logging and secure storage on the device.',
+  },
+  {
+    q: 'What does custom software development cost in Islamabad?',
+    a: 'We do not publish rate cards, because a number without a scope is not information. Cost is driven by regulatory surface area more than by feature count: a system that must survive a central bank inspection, a PCI-DSS assessment or a HIPAA review carries audit, documentation and security work that a comparable unregulated system does not. We give an indicative range after a free technical call, and a firm figure only after a paid discovery phase, when we know what we are actually pricing.',
+  },
+  {
     q: 'Is hiring a software agency in Islamabad cheaper than building an in-house team?',
     a: 'For a fixed-duration build, usually yes, because you are not carrying recruitment, salary, equipment and retention costs for skills you need for eighteen months and not afterwards. For a permanent product with a roadmap that never ends, an in-house team is often the better long-run answer, and we will say so. The honest middle case is a hybrid: an agency builds the first version and trains the in-house team that inherits it, which is an engagement shape we run regularly.',
   },
@@ -155,31 +155,31 @@ export const ISLAMABAD_FAQS: FaqItem[] = [
     a: 'Materially lower on day rate, and that is the least important part of the comparison. What decides total cost is whether the system is built correctly the first time: a rebuild costs more than the entire day-rate difference on any project we have seen. Judge an offshore supplier on the same evidence you would apply locally, and treat the cost saving as a bonus for choosing well rather than as the reason to choose.',
   },
   {
-    q: 'Can we start with a small pilot before committing to a full build?',
-    a: 'Yes, and for a first engagement we usually recommend it. A paid discovery phase or a narrow first module gives both sides real information: you see how we work, we see the true state of your data and systems, and the estimate for the rest is then based on evidence instead of assumption. It is also the cheapest point at which either side can decide not to continue.',
-  },
-  {
     q: 'What happens when the scope changes mid-project?',
     a: 'It gets priced and decided in the open, not absorbed silently. Scope change is normal on any system worth building, so the mechanism matters more than the intention: a change is written down with its cost and its effect on the timeline, and you decide whether to take it. What we avoid is the pattern where changes are quietly absorbed until the schedule slips and nobody can point to why.',
   },
   {
-    q: 'Will the engineers who start our project still be on it later?',
-    a: 'That is the right question to ask any agency, and the honest answer is that people do occasionally change over a multi-year engagement. What we commit to is that a named technical lead stays accountable for the system, that architecture decisions are written down with their reasoning so they survive a handover, and that you are told about a change before it happens rather than noticing it in a standup.',
+    q: 'Do you sign NDAs and assign intellectual property to the client?',
+    a: 'Yes. We sign non-disclosure agreements before discovery, and intellectual property in work produced for a client is assigned to that client under the engagement contract with NovuLabs Technology Pvt Ltd. Code is committed to your repository under your organisation from the first commit.',
   },
   {
     q: 'Where is our data stored, and can it stay in Pakistan?',
     a: 'Wherever your regulator or your policy requires, and that is decided before the architecture, not after. For clients under State Bank of Pakistan supervision, data residency inside Pakistan is a normal requirement and we design for it. For others we deploy into your own cloud accounts in the region you choose. In every case the infrastructure accounts are yours, not ours, so residency remains something you control rather than something you trust us about.',
   },
   {
-    q: 'How soon can you start on a new project?',
-    a: 'Discovery can usually begin within a few weeks; a full delivery team depends on what is finishing at the time, and we will tell you the real date rather than the one you want to hear. If the timing does not work we would rather say so at the first call. An agency that promises an immediate start on a large regulated build is telling you something about how busy it is.',
+    q: 'Will the engineers who start our project still be on it later?',
+    a: 'That is the right question to ask any agency, and the honest answer is that people do occasionally change over a multi-year engagement. What we commit to is that a named technical lead stays accountable for the system, that architecture decisions are written down with their reasoning so they survive a handover, and that you are told about a change before it happens rather than noticing it in a standup.',
   },
   {
     q: 'What happens if we want to move the work to another agency later?',
     a: 'You can, and the handover is a deliverable rather than a negotiation. The source code, the infrastructure accounts, the domain and the data are yours from day one, the architecture decisions are documented, and we will run a transition period with the incoming team. Any agency that makes leaving difficult has designed its commercial model around lock-in, which is worth checking for before you sign, not after.',
   },
   {
-    q: 'Do you work with startups, or only banks and government departments?',
-    a: 'Both, with one qualification. Our depth is in regulated systems, so we are a strong fit for a startup building in fintech, healthtech or govtech, where getting the compliance architecture right early is cheaper than retrofitting it after a funding round. For a consumer product with no regulatory surface, a smaller generalist team is often the better value, and we will point you towards that rather than take the work.',
+    q: 'Do you take on maintenance of software someone else built?',
+    a: 'Yes, and we start with an assessment rather than a promise. Inheriting an unfamiliar codebase without reading it first is how a maintenance engagement turns into an unplanned rewrite. The assessment covers architecture, dependency and security posture, test coverage, deployment process and operational risk, and it ends with a written recommendation that may be to maintain, to modernise incrementally, or in some cases to rebuild.',
+  },
+  {
+    q: 'Where is NovuLabs located in Islamabad?',
+    a: 'NovuLabs is based in I-10/4, I-10, Islamabad, Islamabad Capital Territory, Pakistan. You can reach us on +92 326 8292152 or at info@novulabs.net. Office hours are Monday to Friday, 9:00am to 6:00pm Pakistan Standard Time. Enterprise support arrangements for existing clients run outside those hours and are agreed per contract.',
   },
 ];

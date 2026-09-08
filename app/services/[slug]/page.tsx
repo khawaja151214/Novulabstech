@@ -426,6 +426,30 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
                   <p key={i}>{para}</p>
                 ))}
 
+                {/* Symptom list, placed before the explanation rather than
+                    after it. A reader arrives with a problem, not with an
+                    interest in the topic, and recognising their own situation
+                    in a four-item list takes seconds. Everything below then
+                    reads as the answer to a question they have already asked
+                    themselves. */}
+                {spoke.symptoms.length > 0 && (
+                  <aside className="symptom-box" aria-labelledby="symptom-heading">
+                    <h2 id="symptom-heading" className="symptom-heading">
+                      This page is probably for you if
+                    </h2>
+                    <ul className="symptom-list">
+                      {spoke.symptoms.map((sym) => (
+                        <li key={sym}>{sym}</li>
+                      ))}
+                    </ul>
+                    <p className="symptom-foot">
+                      Any of these sound familiar?{' '}
+                      <Link href="/contact">Describe it to an architect</Link> and get a straight
+                      answer on whether it is worth building.
+                    </p>
+                  </aside>
+                )}
+
                 <h2>What We Offer</h2>
                 {spoke.offerings.map((o) => (
                   <React.Fragment key={o.title}>

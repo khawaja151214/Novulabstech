@@ -3081,3 +3081,61 @@ footer a:not(.btn-grad) { color: var(--a1); }
   color: var(--a1);              /* 6.7:1 on paper */
   transform: translateX(3px);
 }
+
+/* ── SYMPTOM BOX (service spoke pages) ────────────────────────
+   "This page is probably for you if" — sits directly under the
+   intro so a buyer can self-identify before any explanation.
+   Visually set apart from the article prose because it is a
+   different kind of content: a checklist, not a paragraph. */
+.symptom-box{
+  margin:28px 0 34px;
+  padding:24px 26px;
+  border-radius:12px;
+  background:rgba(93,224,230,.06);
+  border:1px solid rgba(93,224,230,.22);
+  border-left:3px solid var(--a1);
+}
+.symptom-heading{
+  font-family:var(--fh);
+  font-size:1rem !important;
+  font-weight:700;
+  letter-spacing:-.01em;
+  color:var(--tx1);
+  margin:0 0 14px !important;
+  padding:0 !important;
+  border:0 !important;
+}
+.symptom-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.symptom-list li{
+  position:relative;
+  padding-left:26px;
+  font-size:.95rem;
+  line-height:1.6;
+  color:var(--tx2);
+}
+.symptom-list li::before{
+  content:'';
+  position:absolute;
+  left:2px;top:.5em;
+  width:9px;height:9px;
+  border-radius:2px;
+  border:2px solid var(--a1);
+  opacity:.8;
+}
+.symptom-foot{
+  margin:16px 0 0 !important;
+  font-size:.88rem !important;
+  color:var(--tx3);
+}
+
+@media (max-width:575.98px){
+  .symptom-box{padding:20px 18px;margin:22px 0 28px}
+  .symptom-list li{font-size:.92rem}
+}

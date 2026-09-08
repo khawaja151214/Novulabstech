@@ -34,13 +34,24 @@ export const services: ServiceItem[] = [
   { icon: 'bi-android2', title: 'Android Development', desc: 'Kotlin-first apps for diverse device ecosystems and enterprise Play Store deployment.', color: 'i-g', slug: 'android-app-development' }
 ];
 
+/**
+ * Why-us cards.
+ *
+ * Rewritten away from the category labels these used to carry ("Infinite
+ * Scalability", "Rapid Delivery", "Global Delivery Model"). Every agency's
+ * site claims those, which makes them worth nothing to a buyer comparing three
+ * suppliers: a differentiator every competitor also asserts is not a
+ * differentiator. Each card now states something specific enough that a
+ * competitor either cannot copy it or would be caught out if they did, and
+ * concrete enough that a buyer can test it on the first call.
+ */
 export const whyUs: WhyUsItem[] = [
-  { num: '01', icon: 'bi-shield-check', title: 'Security-First Engineering', desc: 'OWASP, PCI-DSS, ISO 27001, and HIPAA compliance built in from day one, never an afterthought.', color: 'i-t' },
-  { num: '02', icon: 'bi-graph-up-arrow', title: 'Infinite Scalability', desc: 'Cloud-native architectures designed to scale from 1,000 to 100 million users without re-platforming.', color: 'i-b' },
-  { num: '03', icon: 'bi-award-fill', title: 'Regulatory Expertise', desc: 'Deep knowledge of FATF, FMU Pakistan, SBP, FCA, and global financial compliance, coded precisely.', color: 'i-v' },
-  { num: '04', icon: 'bi-lightning-fill', title: 'Rapid Delivery', desc: 'Agile sprints with CI/CD pipelines deliver production-ready features every two weeks, consistently.', color: 'i-o' },
-  { num: '05', icon: 'bi-headset', title: '24/7 Dedicated Support', desc: 'Round-the-clock NOC monitoring, SLA-backed support tiers, and dedicated account managers.', color: 'i-c' },
-  { num: '06', icon: 'bi-globe2', title: 'Global Delivery Model', desc: 'Office in Islamabad, follow-the-sun development velocity.', color: 'i-t' }
+  { num: '01', icon: 'bi-person-video3', title: 'The architect takes the first call', desc: 'Not a salesperson who hands you over afterwards. The person who scopes your system is the one accountable for building it.', color: 'i-t' },
+  { num: '02', icon: 'bi-shield-check', title: 'Built for the examiner, not just the user', desc: 'Audit trails, access logging and decision records designed in the first sprint. Retrofitting them before an inspection costs a quarter.', color: 'i-b' },
+  { num: '03', icon: 'bi-file-earmark-code', title: 'We have been rejected by the FMU', desc: 'And fixed it. goAML schema work, STR and CTR filing, SBP inspections. Ask any supplier for that story and see how specific the answer gets.', color: 'i-v' },
+  { num: '04', icon: 'bi-hand-thumbs-down', title: 'We will talk you out of it', desc: 'A real share of enquiries describe something an off-the-shelf product already does. We say so in week one rather than month fourteen.', color: 'i-o' },
+  { num: '05', icon: 'bi-key', title: 'You hold the keys from day one', desc: 'Your repository, your cloud accounts, your domain, your data. Nothing about leaving us is difficult, which is the point.', color: 'i-c' },
+  { num: '06', icon: 'bi-journal-text', title: 'Decisions are written down', desc: 'Architecture choices recorded with their reasoning and rejected alternatives, so month-two decisions still make sense in year three.', color: 'i-t' }
 ];
 
 export const industries: IndustryItem[] = [

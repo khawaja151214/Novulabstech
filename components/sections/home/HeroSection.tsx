@@ -54,17 +54,31 @@ const HeroSection: React.FC = () => {
                   <KineticHeading text="in Islamabad" delayStep={55} />
                 </span>
               </h1>
+              {/* Two sentences, doing two jobs: what we build (with the terms a
+                  buyer searches), then the one promise that is checkable on the
+                  next click. The previous version spent its second sentence
+                  restating the category, which the H1 directly above already
+                  said. */}
               <p className="hero-sub">
-                A software development agency in Islamabad building AML/CFT compliance systems for
-                SBP-regulated banks, HIPAA healthcare platforms and payment infrastructure. Every
-                enquiry is answered by an architect, not a salesperson.
+                We build the systems banks, hospitals and government departments get audited on:
+                AML and transaction monitoring, payment infrastructure, patient records. The kind
+                of software where being wrong is expensive and being unable to explain why is
+                worse.
+              </p>
+              <p className="hero-sub">
+                Your first call is with the architect who would own the build. No account manager,
+                no discovery deck, and an honest answer if we are the wrong firm for it.
               </p>
               <div className="hero-btns">
+                {/* "Talk to an architect" instead of "Book a Free Consultation":
+                    it describes what actually happens and it is the specific
+                    promise the copy above just made. Generic CTA labels ask for
+                    a commitment without saying what is on the other side. */}
                 <Button href="/contact" variant="grad">
-                  <i className="bi bi-rocket-takeoff me-1"></i>Book a Free Consultation
+                  <i className="bi bi-rocket-takeoff me-1"></i>Talk to an architect
                 </Button>
                 <Button href="/portfolio" variant="glass">
-                  <i className="bi bi-folder2-open me-1"></i>View Our Work
+                  <i className="bi bi-folder2-open me-1"></i>See how we built it
                 </Button>
               </div>
             </div>

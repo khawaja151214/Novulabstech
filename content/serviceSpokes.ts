@@ -79,6 +79,17 @@ export interface ServiceSpoke {
   icon: string;
   /** Intro paragraph(s), before any heading. */
   intro: string[];
+  /**
+   * "You probably need this if..." — the symptoms a buyer recognises in their
+   * own organisation, rendered high on the page before any explanation.
+   *
+   * These pages previously opened by teaching the topic, which is the wrong
+   * order for a commercial page: a reader arrives with a symptom, not with a
+   * curiosity about architecture. Naming the symptom first lets them self-
+   * identify in about five seconds, and everything below then reads as the
+   * answer to a question they have already asked themselves.
+   */
+  symptoms: string[];
   /** "What We Offer", rendered as H3 subsections. */
   offerings: { title: string; body: string }[];
   /** "How We Help": the business problems this solves, as paragraphs. */
@@ -112,6 +123,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Corporate and marketing website development, server-rendered and content-led. Distinct from portal work: fast, accessible and easy to update.',
     summary: 'Marketing and corporate sites built to load fast, read cleanly and rank, not just look finished in a demo.',
     icon: 'bi-globe',
+    symptoms: [
+      'Your site takes more than four seconds to load on a phone and you have stopped checking',
+      'Every content change needs a developer, so the site is months out of date',
+      'It was built by an agency that has since stopped answering email',
+      'You rank for your own company name and almost nothing else',
+    ],
     intro: [
       'A corporate website is a different engineering problem than a customer portal or an admin console. It is read far more than it is used, most of its visitors arrive from a search result rather than a login screen, and its job is to load fast, explain the business clearly, and hand off cleanly to a contact form or a sales conversation.',
       'This page covers that specific work: marketing sites, corporate sites and content-led public sites. Portals, dashboards and authenticated web applications are a related but different service, covered on the parent web platform page linked below.',
@@ -156,6 +173,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Modernizing legacy enterprise systems: migrating aging platforms, replacing unsupported stacks, and untangling business logic without stopping the business.',
     summary: 'Replacing or re-platforming an aging system that the business depends on but nobody wants to touch anymore.',
     icon: 'bi-cpu-fill',
+    symptoms: [
+      'One person understands the system and they are talking about retiring',
+      'The vendor stopped supporting your version and upgrades are no longer offered',
+      'A change that should take two days takes three weeks and nobody can say why',
+      'You are paying maintenance on something you are afraid to touch',
+    ],
     intro: [
       'Most organisations do not decide to modernise a system because it stopped working. They decide because the vendor stopped supporting it, the one engineer who understood it left, or every new feature now takes three times as long as it should. The system still runs; the risk is that it keeps running exactly until the day it cannot be fixed.',
       'This work sits underneath our broader enterprise software practice, specifically for organisations replacing or re-platforming something that already exists rather than building from a blank page.',
@@ -196,6 +219,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Custom ERP development covering finance, HR, procurement and supply chain in one system, built around how your organisation actually operates, not a template.',
     summary: 'ERP built around your actual processes, for organisations where an off-the-shelf module list stops fitting.',
     icon: 'bi-diagram-3-fill',
+    symptoms: [
+      'Finance, procurement and the warehouse each keep their own spreadsheet',
+      'Month-end close involves reconciling three exports by hand',
+      'Your process is genuinely unusual and every ERP demo requires a workaround',
+      'Nobody in the business can get a current number without asking someone',
+    ],
     intro: [
       'Off-the-shelf ERP works well for organisations whose processes look like the software vendor’s template. It works less well for a manufacturer with a specific production workflow, or an organisation whose finance and procurement processes exist for a genuine regulatory or operational reason that the standard module cannot express.',
       'We build ERP systems around the process, not the other way round, integrating finance, HR, procurement and supply chain data into one authoritative system rather than reconciling spreadsheets between departments.',
@@ -236,6 +265,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Custom CRM development for processes off-the-shelf CRM cannot express: lead scoring, pipeline logic and omnichannel data in a single record.',
     summary: 'A CRM built around your sales and relationship process, when a general-purpose CRM makes you adapt to it instead.',
     icon: 'bi-people-fill',
+    symptoms: [
+      'Your reps keep the real pipeline in a spreadsheet next to the CRM',
+      'Reporting numbers do not match what the sales team believes is true',
+      'You have customised the platform so heavily that upgrades now break things',
+      'Customer history lives in four tools and none of them agree',
+    ],
     intro: [
       'General-purpose CRM platforms are built to fit as many sales processes as possible, which means every organisation ends up customising pipeline stages, fields and automations until the underlying platform is barely visible. At a certain point, the customisation itself becomes the maintenance burden.',
       'A custom CRM makes sense once your relationship data, lead scoring logic, or pipeline structure has outgrown what the platform’s configuration options can express without workarounds.',
@@ -276,6 +311,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Government-grade portal development: identity verification, tax filing and digital signatures built to the audit standard public-sector contracts require.',
     summary: 'Public-sector portals built for the security, availability and audit trail a government contract requires.',
     icon: 'bi-buildings-fill',
+    symptoms: [
+      'A procurement security review is coming and the documentation does not exist',
+      'Citizens abandon the process halfway and you cannot see where',
+      'Identity verification works in testing and fails for real applicants',
+      'The system cannot show who accessed a record, or when',
+    ],
     intro: [
       'A government portal is judged differently than a commercial one. Availability, security and auditability are contractual requirements rather than quality goals, and the system has to hold up under a security review from people who will never use it day to day, not just a user acceptance test.',
       'We build national identity, tax filing, and citizen-service portals with that review in mind from the architecture stage, including the identity and digital-signature infrastructure they depend on.',
@@ -316,6 +357,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'RESTful and GraphQL API development for enterprise systems, plus integration work connecting existing platforms that were never designed to talk to each other.',
     summary: 'APIs and integrations that connect the systems your organisation already runs, built with the security a shared endpoint needs.',
     icon: 'bi-plug-fill',
+    symptoms: [
+      'Two systems hold the same customer and disagree about the details',
+      'Every new integration is a bespoke project rather than a configuration',
+      'A partner has asked for API access and you have nothing to give them',
+      'Data moves between systems by scheduled export and someone watching it',
+    ],
     intro: [
       'Most enterprise problems that look like "we need a new system" are integration problems: two platforms that hold overlapping data and never agreed on which one is authoritative. Building an API is the easy part; deciding what the API represents, and securing it properly, is where the real work is.',
       'We design and build APIs for new systems and integration layers connecting existing ones, whether that means a public developer-facing API or an internal service boundary nobody outside the organisation will ever see.',
@@ -360,6 +407,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Core banking development and modernisation: accounts, ledgers and lending engineered alongside your existing core, not as a full replacement.',
     summary: 'Core banking and lending platform engineering, usually alongside an existing core rather than replacing it outright.',
     icon: 'bi-bank',
+    symptoms: [
+      'Your core cannot give you a real-time view of a transaction',
+      'Launching a product means a change request to a vendor and a long queue',
+      'Reconciliation between the ledger and the rail is a manual morning job',
+      'You need a capability the core was never designed to support',
+    ],
     intro: [
       'Most institutions do not replace their core banking system outright; the risk and cost of a full replacement is rarely justified when the actual need is a specific capability the existing core cannot support. Our core banking work usually means building alongside an incumbent core, at the transaction event and customer record level.',
       'This covers account management, ledger systems, digital wallets and lending platforms, whether that is a new capability layered on an existing core or a modernised replacement for one part of it.',
@@ -400,6 +453,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Payment gateway development engineered to PCI-DSS: card processing, local rail connectivity and settlement reconciliation for licensed institutions.',
     summary: 'Payment gateway and switching infrastructure engineered to PCI-DSS, connecting card networks and local payment rails.',
     icon: 'bi-credit-card-2-front',
+    symptoms: [
+      'Failed payments leave the ledger and the network disagreeing',
+      'You are scoped for PCI-DSS and the assessment is looming',
+      'A processor outage takes your payments down with no fallback',
+      'Settlement discrepancies are found days later, by a person',
+    ],
     intro: [
       'A payment gateway sits at the point where a transaction can fail expensively and publicly, so the engineering discipline around it is different from most software: every state has to be recoverable, every failure mode has to be handled explicitly, and the system has to be built to PCI-DSS requirements from the start rather than audited into compliance afterwards.',
       'We build payment gateways and switching infrastructure that connect card networks and local payment rails, for licensed institutions and EMIs that need infrastructure they control instead of a black-box processor.',
@@ -440,6 +499,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Card scheme integration for issuing and acquiring, including MDES and VTS tokenization, taken through scheme certification with the operating institution.',
     summary: 'Card scheme issuing and acquiring integration, including tokenization, taken through certification with the institution that operates it.',
     icon: 'bi-patch-check-fill',
+    symptoms: [
+      'Scheme certification has failed once already and the feedback is opaque',
+      'You need tokenisation for a wallet and MDES or VTS is unfamiliar ground',
+      'Issuing and acquiring are being quoted as one project by someone who has done neither',
+      'Your processor\'s roadmap does not include what you need this year',
+    ],
     intro: [
       'Integrating with Mastercard and Visa is not a single API call; it is a certification process the scheme runs against the institution operating the platform, covering issuing, acquiring, and tokenisation depending on what the institution offers. We build the technical integration and support the institution through that certification process.',
       'This work is scheme-specific and detail-heavy: message formats, tokenisation flows and the specific test cases each network requires before granting production access.',
@@ -484,6 +549,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'AML case management and risk scoring: the analyst workflow, investigation tooling and audit trail behind an alert, not only the detection engine.',
     summary: 'The analyst-facing side of AML: case workflow, risk scoring and the audit trail an examiner reviews months later.',
     icon: 'bi-shield-lock-fill',
+    symptoms: [
+      'Case status is tracked in a spreadsheet outside the monitoring system',
+      'Analysts cannot show why a case was closed six months later',
+      'Risk scoring rules need an engineering ticket to change',
+      'An examination found gaps in your decision records',
+    ],
     intro: [
       'An alert is not a decision. Between a transaction monitoring system flagging something and a filed STR or a cleared case, there is a workflow: an analyst investigates, a risk score gets applied or adjusted, a decision gets made, and all of it has to be reconstructable by an examiner who was not there when it happened.',
       'This is that layer: risk scoring, case assignment, investigation tooling and the audit trail, separate from the detection engine covered on the transaction monitoring page and the alerting logic itself.',
@@ -524,6 +595,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Sanctions and PEP screening software for onboarding and ongoing monitoring: name matching against OFAC and NACTA lists, tuned to reduce false positives.',
     summary: 'Name-matching and screening against sanctions and PEP lists, tuned so analysts are not drowning in false positives.',
     icon: 'bi-flag-fill',
+    symptoms: [
+      'Analysts clear ten false positives for every real match',
+      'Screening happens at onboarding and never again after that',
+      'A list update silently broke matching and nobody noticed for weeks',
+      'Name transliteration is producing misses you only find by accident',
+    ],
     intro: [
       'Screening a customer against a sanctions or politically-exposed-persons list sounds like a lookup. In practice it is a fuzzy-matching problem: names transliterate differently across languages, dates of birth are sometimes missing, and a screening engine tuned too loosely buries analysts in false positives while one tuned too tight misses genuine matches.',
       'We build screening systems for onboarding and ongoing monitoring against OFAC, NACTA and equivalent sanctions and PEP data sources, tuned for your actual customer base instead of a generic default.',
@@ -564,6 +641,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Real-time transaction monitoring systems combining deterministic rules with model-assisted prioritization, designed so every alert has an explainable reason.',
     summary: 'Real-time monitoring built on rules an examiner can follow, with machine learning prioritizing the analyst queue rather than deciding it.',
     icon: 'bi-activity',
+    symptoms: [
+      'Alert volume exceeds what your team can honestly review',
+      'Rules were set years ago and nobody remembers the reasoning',
+      'You cannot reproduce why an alert fired last quarter',
+      'A model scores transactions and nobody can explain a single score',
+    ],
     intro: [
       'Transaction monitoring is the detection layer of an AML programme: watching transaction patterns in real time or near real time and generating alerts when something matches a defined typology. The engineering challenge is scale (monitoring millions of transactions) combined with precision (not burying analysts in noise).',
       'We build monitoring engines around deterministic rules, since every alert needs an explainable reason for an examiner, with machine learning used to prioritise the analyst queue rather than replacing the rules that generate alerts.',
@@ -604,6 +687,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'ISO 20022, SWIFT and goAML XML schema integration for regulatory reporting and financial messaging: validated internally before anything reaches a regulator.',
     summary: 'ISO 20022, SWIFT and goAML XML integration, validated against the schema before anything is submitted to a regulator or network.',
     icon: 'bi-filetype-xml',
+    symptoms: [
+      'Submissions are being rejected and the error messages are unhelpful',
+      'A schema version changed and you found out from the rejections',
+      'Validation happens after submission rather than before it',
+      'Message mapping lives in one engineer\'s head',
+    ],
     intro: [
       'Financial and regulatory messaging runs on strict schemas: ISO 20022 for payments messaging, SWIFT XML for correspondent banking, goAML XML for AML reporting to Pakistan’s Financial Monitoring Unit. Getting the schema wrong does not fail gracefully; it means a rejected submission, a bounced payment, or a compliance filing that has to be corrected and resubmitted.',
       'We build the integration layer that generates, validates and submits these messages, checking conformance against the schema in your own environment before anything reaches the regulator or the network.',
@@ -644,6 +733,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'goAML integration and FMU Pakistan regulatory reporting: STR and CTR filing pipelines built for the Anti-Money Laundering Act 2010 and SBP requirements.',
     summary: 'STR and CTR filing pipelines built directly for goAML and Pakistan’s Financial Monitoring Unit reporting obligations.',
     icon: 'bi-bank2',
+    symptoms: [
+      'Filings are re-typed into the goAML portal by hand',
+      'You cannot connect a filed report back to the case that produced it',
+      'STR narratives are assembled from scattered analyst notes at filing time',
+      'An FMU rejection took days to diagnose',
+    ],
     intro: [
       'Institutions regulated under Pakistan’s Anti-Money Laundering Act 2010 report suspicious and currency transactions to the Financial Monitoring Unit through the goAML system. That reporting obligation touches case management, schema-accurate XML generation, and the submission workflow itself, and a gap in any part of that chain becomes a compliance finding.',
       'This page covers the FMU reporting pipeline specifically: taking a case decision through to a correctly filed STR or CTR. The XML schema work behind it is covered on the messaging integration page linked below.',
@@ -688,6 +783,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Electronic health record and clinical systems development built to HL7 FHIR interoperability and the HIPAA Security Rule, including telemedicine integration.',
     summary: 'Electronic health record and clinical software built for real HL7 FHIR interoperability, not a translation layer bolted on at the end.',
     icon: 'bi-heart-pulse-fill',
+    symptoms: [
+      'A lab or referring provider wants to exchange data and it is a project every time',
+      'Clinicians share logins because the real workflow is too slow',
+      'Patient data is structured as free text and cannot be analysed',
+      'A HIPAA review is scheduled and audit logging is incomplete',
+    ],
     intro: [
       'An EHR is only as useful as its ability to exchange data with the rest of a patient’s care: labs, pharmacy, referring providers, and eventually other hospital systems. Building interoperability as a genuine architectural principle rather than a translation layer added at the end determines whether that data exchange is fast or painful for years afterward.',
       'We build EHR and clinical systems, including telemedicine integration, to the HIPAA Security Rule and to HL7 FHIR interoperability, distinct from the revenue-cycle and billing work covered on the medical billing page.',
@@ -728,6 +829,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Medical billing and revenue cycle software with ICD-10/CPT coding, claim management and payer integration, built alongside or separate from a clinical EHR.',
     summary: 'Revenue-cycle software: ICD-10/CPT coding, claim management and payer integration, distinct from the clinical record itself.',
     icon: 'bi-clipboard2-pulse-fill',
+    symptoms: [
+      'Denials are found weeks later and the reason is unclear',
+      'Coding errors are caught by the payer rather than by your system',
+      'Each payer needs a different manual process',
+      'Days in accounts receivable is climbing and nobody can attribute it',
+    ],
     intro: [
       'Medical billing is a different problem from clinical documentation, even though the two are closely related and often need to share data. Billing software has its own domain: coding accuracy, claim submission, payer-specific rules, and denial management, and it is worth engineering as its own system rather than an afterthought bolted onto an EHR.',
       'We build billing and revenue-cycle systems with ICD-10 and CPT coding, claim management and payer integration, either alongside a clinical system we are also building or integrated with an EHR the provider already runs.',
@@ -772,6 +879,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Cross-platform mobile app development with Flutter and React Native, for products that need one codebase across iOS and Android without native rework.',
     summary: 'One codebase across iOS and Android with Flutter or React Native, for products where native-per-platform is not worth the duplicated cost.',
     icon: 'bi-phone-fill',
+    symptoms: [
+      'Maintaining separate iOS and Android codebases has doubled your release cycle',
+      'The app is unusable on a weak connection and your users have weak connections',
+      'Features ship on one platform months before the other',
+      'You need an app but not two teams',
+    ],
     intro: [
       'Cross-platform development is the right default for most mobile products: one codebase targeting both iOS and Android, which means one team, one release cycle, and roughly half the ongoing maintenance of building and keeping two native codebases in sync. It stops being the right default when an app needs deep platform-specific capability that a cross-platform framework cannot expose cleanly, which is when native development, covered on the iOS and Android pages, is the better call.',
       'This page covers Flutter and React Native development specifically. We will tell you honestly which approach fits your product before proposing either.',
@@ -812,6 +925,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Native iOS app development in Swift and SwiftUI, for apps that need platform-specific performance, App Store approval discipline, and deep iOS API access.',
     summary: 'Native Swift and SwiftUI development for apps that need the platform’s full capability, not a cross-platform approximation of it.',
     icon: 'bi-apple',
+    symptoms: [
+      'App Store review has rejected you and the reason is not obvious',
+      'You need a platform API that your cross-platform framework does not expose',
+      'Performance or battery behaviour is failing on real devices',
+      'Biometric and secure storage requirements are beyond a wrapper',
+    ],
     intro: [
       'Native iOS development makes sense when an app depends on platform-specific capability a cross-platform framework cannot expose well: deep hardware integration, the newest iOS APIs on release day, or performance requirements where a compiled cross-platform layer introduces measurable overhead.',
       'We build in Swift and SwiftUI, with the App Store approval process, Apple’s review guidelines and platform conventions treated as part of the build, not an afterthought at submission time.',
@@ -852,6 +971,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Native Android app development in Kotlin for a diverse device ecosystem, including enterprise Google Play deployment and platform-specific integration.',
     summary: 'Kotlin-first native development built for the range of devices and OS versions an Android product has to run on.',
     icon: 'bi-android2',
+    symptoms: [
+      'It works on a flagship and fails on the mid-range devices your users own',
+      'Background sync and notifications behave differently per manufacturer',
+      'You need managed distribution rather than the public Play Store',
+      'A device fleet in the field is running versions you cannot control',
+    ],
     intro: [
       'Android’s device diversity is the real engineering challenge native Android development solves: a product built for a flagship phone on the latest OS version behaves differently on a mid-range device three OS versions behind, and both are real users. That diversity is also why native development sometimes pays off over cross-platform, when an app needs to run well across genuinely varied hardware.',
       'We build Kotlin-first native Android apps, including enterprise deployment through Google Play, with device and OS-version diversity treated as a design constraint from the start.',
@@ -896,6 +1021,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Cloud migration and infrastructure engineering on AWS, Azure and GCP: architecture, migration planning and managed Kubernetes infrastructure for enterprises.',
     summary: 'Cloud migration and infrastructure architecture on AWS, Azure or GCP, planned around your actual data residency and uptime constraints.',
     icon: 'bi-cloud-fill',
+    symptoms: [
+      'Your cloud bill grew after migration instead of shrinking',
+      'Infrastructure was configured by hand and nobody can reproduce it',
+      'A regulator has asked where the data physically sits and the answer is vague',
+      'You migrated the servers and kept every on-premise assumption',
+    ],
     intro: [
       'Cloud migration is rarely just "move the servers." It usually means re-architecting for how a cloud platform actually wants to run software: managed services instead of self-hosted equivalents, infrastructure defined as code instead of manually configured, and a cost model that behaves very differently from a fixed-cost data centre if the architecture is not designed for it.',
       'We plan and execute cloud migrations on AWS, Azure and GCP, and build the Kubernetes platform infrastructure underneath applications that need it, distinct from the applied AI and automation work covered on the AI development page.',
@@ -936,6 +1067,12 @@ export const serviceSpokes: ServiceSpoke[] = [
       'Applied AI development: machine learning pipelines, NLP and document processing, and predictive analytics, scoped to problems where a model output is auditable.',
     summary: 'Applied ML, NLP and document processing built for problems where the model’s output needs to be explainable, not a generic AI feature bolted on.',
     icon: 'bi-robot',
+    symptoms: [
+      'Someone has asked for AI and nobody has defined the problem',
+      'Staff spend hours on document work that follows a stable pattern',
+      'A model is in production and no one can explain an individual output',
+      'You need prioritisation, not automation, and the vendors keep offering automation',
+    ],
     intro: [
       'Applied AI work in regulated or high-stakes environments has a specific constraint most generic AI development does not: a model’s output often has to be explainable, or at minimum bounded, because someone downstream (an examiner, a clinician, an auditor) needs to understand why the system made a recommendation.',
       'We build machine learning pipelines, NLP and document processing, and predictive analytics with that constraint designed in, distinct from the infrastructure and cloud platform work covered on the cloud migration page.',
