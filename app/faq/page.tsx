@@ -217,9 +217,12 @@ export default function FaqPage() {
                         </li>
                       ))}
                     </ul>
+                    {/* Names the group rather than repeating "Read the
+                        answers" on all 16 cards. Identical anchor text across
+                        16 different destinations describes none of them. */}
                     <Link href={group.href} className="carr">
                       <i className="bi bi-arrow-right-circle" aria-hidden="true"></i>
-                      Read the answers
+                      {group.title} answers
                     </Link>
                   </div>
                 </div>

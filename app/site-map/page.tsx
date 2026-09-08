@@ -24,7 +24,7 @@ import { canonical } from '@/lib/seo';
  * fix for orphan and near-orphan pages.
  */
 export const metadata: Metadata = {
-  title: 'Sitemap',
+  title: 'Sitemap: Every Page on This Site',
   // 148 chars: was 112, which left SERP real estate unused.
   description:
     'Every page on novulabs.net in one place: services, platforms, case studies, technical articles, testimonials, company pages, FAQs and policies.',
@@ -137,7 +137,7 @@ export default function SiteMapPage() {
               ]}
             />
             <Group
-              heading="All 22 services"
+              heading={`All ${serviceSpokes.length} services`}
               links={serviceSpokes.map((s) => ({ href: `/services/${s.slug}`, label: s.h1 }))}
             />
             <Group

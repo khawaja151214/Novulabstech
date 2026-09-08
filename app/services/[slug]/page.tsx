@@ -281,7 +281,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                       <div className="ctitle">{s!.navLabel}</div>
                       <p className="ctext">{s!.summary}</p>
                       <Link href={`/services/${s!.slug}`} className="carr">
-                        <i className="bi bi-arrow-right-circle"></i>Read more
+                        <i className="bi bi-arrow-right-circle"></i>
+                        {s!.navLabel}
                       </Link>
                     </div>
                   </div>
@@ -568,7 +569,8 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
                     <div className="ctitle">{s!.navLabel}</div>
                     <p className="ctext">{s!.summary}</p>
                     <Link href={`/services/${s!.slug}`} className="carr">
-                      <i className="bi bi-arrow-right-circle"></i>Read more
+                      <i className="bi bi-arrow-right-circle"></i>
+                      {s!.navLabel}
                     </Link>
                   </div>
                 </div>
@@ -584,7 +586,8 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
                     <div className="ctitle">{pillar.navLabel}</div>
                     <p className="ctext">{pillar.summary}</p>
                     <Link href={`/services/${pillar.slug}`} className="carr">
-                      <i className="bi bi-arrow-right-circle"></i>See the full practice area
+                      <i className="bi bi-arrow-right-circle"></i>
+                      All {pillar.navLabel} services
                     </Link>
                   </div>
                 </div>

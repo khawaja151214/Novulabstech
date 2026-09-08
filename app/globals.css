@@ -3139,3 +3139,9 @@ footer a:not(.btn-grad) { color: var(--a1); }
   .symptom-box{padding:20px 18px;margin:22px 0 28px}
   .symptom-list li{font-size:.92rem}
 }
+
+/* Card titles that are links: inherit the title styling rather than looking
+   like inline body links. Used where the card's single descriptive anchor is
+   the title itself. */
+.card-title-link{color:inherit;text-decoration:none}
+.card-title-link:hover,.card-title-link:focus-visible{color:var(--a1)}
