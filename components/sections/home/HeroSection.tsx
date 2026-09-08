@@ -43,7 +43,7 @@ const HeroSection: React.FC = () => {
                   without it; rankings for "best …" queries come from what the
                   page proves, not from the word appearing in the heading. */}
               <h1 className="hero-title">
-                <KineticHeading text="Enterprise Software House" />
+                <KineticHeading text="Enterprise Software Agency" />
                 {/* Explicit space, not just the <br/>. Text extractors — Google's
                     included — concatenate across the break, and without this the
                     H1 reads as "Housein Islamabad", which loses the exact-match
@@ -55,7 +55,9 @@ const HeroSection: React.FC = () => {
                 </span>
               </h1>
               <p className="hero-sub">
-                We build AML/CFT compliance systems for SBP-regulated banks, HIPAA healthcare platforms, and payment infrastructure. Every enquiry is answered by an architect, not a salesperson.
+                A software development agency in Islamabad building AML/CFT compliance systems for
+                SBP-regulated banks, HIPAA healthcare platforms and payment infrastructure. Every
+                enquiry is answered by an architect, not a salesperson.
               </p>
               <div className="hero-btns">
                 <Button href="/contact" variant="grad">

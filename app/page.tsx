@@ -15,24 +15,26 @@ import InsightsSection from '@/components/sections/home/InsightsSection';
 import CtaSection from '@/components/sections/home/CtaSection';
 
 export const metadata: Metadata = {
-  // 50 chars. Matches the H1 wording exactly rather than a shortened version of
+  // 51 chars. Matches the H1 wording exactly rather than a shortened version of
   // it, so title, H1 and description all target one intent instead of three.
   //
-  // No "Best" or "#1" here, on purpose, same reasoning as the H1 comment in
-  // HeroSection.tsx: it is an unverifiable superlative about the business
-  // itself, which reads as a negative E-E-A-T signal, and in most markets a
-  // comparative claim in advertising needs substantiation this site does not
-  // publish. Ranking for "best software house in islamabad" searches comes
-  // from what the page demonstrates, not from the word "best" sitting in the
-  // title tag — Google resolves that query by relevance and trust signals, not
-  // by string-matching a superlative.
-  title: { absolute: 'Enterprise Software House in Islamabad | NovuLabs' },
+  // "Agency" rather than "house" because that is the wording buyers use as
+  // often as the local term, and the page now needs to read naturally for both.
+  //
+  // The "best software agency in Islamabad" comparison query is owned by
+  // /software-house-in-islamabad, not by this page. Putting the same phrase in
+  // both H1s would set the homepage and the landing page competing for one
+  // query, which is the cannibalisation this cluster was built to avoid. The
+  // homepage owns the category term and links down; the landing page owns the
+  // comparison term and converts it.
+  title: { absolute: 'Enterprise Software Agency in Islamabad | NovuLabs' },
   // 158 chars: was 189, which Google truncated mid-clause at ~160.
   description:
-    'Enterprise software house in Islamabad building AML/CFT compliance systems, HIPAA healthcare platforms and PCI-DSS payments. Talk to an architect, not a rep.',
+    'Enterprise software agency in Islamabad building AML/CFT compliance systems, HIPAA healthcare platforms and PCI-DSS payments. Talk to an architect, not a rep.',
   keywords: [
+    'software agency in Islamabad',
+    'software development agency in Islamabad',
     'software house in Islamabad',
-    'software house Islamabad',
     'software company in Islamabad',
     'enterprise software house Pakistan',
     'AML software Pakistan',
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
   // sitemap is matched to this form instead, in app/sitemap.ts.
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Enterprise Software House in Islamabad | NovuLabs',
+    title: 'Enterprise Software Agency in Islamabad | NovuLabs',
     // "200+ projects. 40+ countries." removed — neither figure is evidenced
     // anywhere on the site or in lib/seo.ts (which declares five served
     // markets). Same claim class as the certification wording removed in
@@ -71,9 +73,9 @@ export default function Home() {
           is emitted by FaqSection, alongside the visible Q&A it describes. */}
       <JsonLd
         data={webPageSchema({
-          name: 'NovuLabs — AML, Fintech & Healthcare Software House',
+          name: 'NovuLabs, an AML, fintech and healthcare software agency',
           description:
-            'Enterprise software house in Islamabad building AML/CFT compliance systems, HIPAA healthcare platforms and PCI-DSS payment infrastructure.',
+            'Enterprise software agency in Islamabad building AML/CFT compliance systems, HIPAA healthcare platforms and PCI-DSS payment infrastructure.',
           path: '/',
         })}
       />
