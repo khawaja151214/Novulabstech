@@ -28,9 +28,16 @@ const HeroSection: React.FC = () => {
                 <span className="hero-dot"></span>
                 Architect-led engineering for regulated industries
               </div>
-              {/* H1 carries the head term "best software house in Islamabad",
-                  at the owner's explicit direction, replacing "Enterprise
-                  Software Agency in Islamabad".
+              {/* H1 reads "Best Enterprise Software House in Islamabad", at
+                  the owner's explicit direction.
+
+                  Note the H1 no longer matches the title tag word for word:
+                  "Enterprise" sits between "Best" and "Software House", so the
+                  contiguous phrase "best software house in Islamabad" is
+                  carried by the title and description rather than the heading.
+                  Both strings are in the head-term set the page targets, so
+                  this is a deliberate split, not drift — if the title is ever
+                  rewritten, keep the exact phrase somewhere in the <head>.
 
                   "Best" is a claim, so the copy directly beneath it says what
                   it is measured on (software a regulator can inspect, and an
@@ -43,7 +50,7 @@ const HeroSection: React.FC = () => {
                   Agency in Islamabad"). House vs agency and head term vs
                   how-to keep the two pages on distinct queries. */}
               <h1 className="hero-title">
-                <KineticHeading text="Best Software House" />
+                <KineticHeading text="Best Enterprise Software House" />
                 {/* Explicit space, not just the <br/>. Text extractors — Google's
                     included — concatenate across the break, and without this the
                     H1 reads as "Housein Islamabad", which loses the exact-match
