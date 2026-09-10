@@ -41,7 +41,9 @@ export interface IndustryItem {
 export interface TestimonialCard {
   service: string;
   quote: string;
-  role: string;
+  /** Real name and company, or role and sector under NDA. Optional because
+   *  these are published unattributed; never fill it with an invented person. */
+  role?: string;
   stars: number;
   /** True until a real, attributable client has said these words. Drives the
    *  visible sample notice on the section, exactly as content/testimonials.ts

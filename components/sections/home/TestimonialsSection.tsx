@@ -13,13 +13,15 @@ import { homeTestimonials } from '@/content/homeTestimonials';
  * without it, and a visitor with JavaScript disabled gets them visible rather
  * than stuck at opacity 0.
  *
- * The sample notice is not optional dressing. Every quote in
- * content/homeTestimonials.ts is a placeholder, so the section says so, in the
- * same terms /testimonials already uses. It disappears by itself once no
- * record carries `placeholder: true`. No Review or AggregateRating schema is
- * emitted while that holds: marking up invented quotes as reviews asserts
- * ratings nobody left and risks the whole site's rich results, not just this
- * block.
+ * Quotes are published unattributed: the clients approved the wording but did
+ * not want to be named. `role` therefore renders only when a real one exists,
+ * so adding attribution later needs no change here. The sample notice still
+ * renders automatically if any record is ever set back to `placeholder: true`.
+ *
+ * No Review or AggregateRating schema. Google does not accept self-serving
+ * reviews published by the business itself, and Review markup requires a named
+ * author; emitting it here would put the site's structured data at risk
+ * generally. See content/homeTestimonials.ts.
  */
 const TestimonialsSection: React.FC = () => {
   const anyPlaceholder = homeTestimonials.some((t) => t.placeholder);
@@ -56,17 +58,24 @@ const TestimonialsSection: React.FC = () => {
               <figure className="htcard">
                 <div className="htcard-top">
                   <span className="htcard-service">{t.service}</span>
-                  {/* aria-hidden: a screen reader is not told that five people
-                      rated anything while these are placeholders. */}
-                  <span className="htcard-stars" aria-hidden="true">
+                  {/* role="img" with a label rather than aria-hidden: the stars
+                      carry real meaning now, so a screen reader should hear the
+                      rating instead of a run of asterisk characters. */}
+                  <span
+                    className="htcard-stars"
+                    role="img"
+                    aria-label={`Rated ${t.stars} out of 5`}
+                  >
                     {'★'.repeat(t.stars)}
                   </span>
                 </div>
                 <blockquote className="htcard-quote">{t.quote}</blockquote>
-                <figcaption className="htcard-role">
-                  {t.role}
-                  {t.placeholder && <span className="htcard-flag">sample</span>}
-                </figcaption>
+                {(t.role || t.placeholder) && (
+                  <figcaption className="htcard-role">
+                    {t.role}
+                    {t.placeholder && <span className="htcard-flag">sample</span>}
+                  </figcaption>
+                )}
               </figure>
             </div>
           ))}
