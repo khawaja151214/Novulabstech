@@ -15,22 +15,18 @@ import InsightsSection from '@/components/sections/home/InsightsSection';
 import CtaSection from '@/components/sections/home/CtaSection';
 
 export const metadata: Metadata = {
-  // 51 chars. Matches the H1 wording exactly rather than a shortened version of
+  // 43 chars. Matches the H1 wording exactly rather than a shortened version of
   // it, so title, H1 and description all target one intent instead of three.
   //
-  // "Agency" rather than "house" because that is the wording buyers use as
-  // often as the local term, and the page now needs to read naturally for both.
+  // Head term is "best software house in Islamabad", at the owner's direction.
   //
-  // The "best software agency in Islamabad" comparison query is owned by
-  // /software-house-in-islamabad, not by this page. Putting the same phrase in
-  // both H1s would set the homepage and the landing page competing for one
-  // query, which is the cannibalisation this cluster was built to avoid. The
-  // homepage owns the category term and links down; the landing page owns the
-  // comparison term and converts it.
-  // Head term moved to "best software house in Islamabad" at the owner's
-  // direction. 43 chars rendered.
+  // Cannibalisation check: /software-house-in-islamabad owns the comparison
+  // phrasing ("How to Choose the Best Software Agency in Islamabad") — agency
+  // vs house, and how-to vs head term, keep the two pages off one query. The
+  // homepage owns the head term and links down; the landing page converts the
+  // comparison.
   title: { absolute: 'Best Software House in Islamabad | NovuLabs' },
-  // 158 chars: was 189, which Google truncated mid-clause at ~160.
+  // 151 chars, inside the ~160 Google renders before truncating.
   description:
     'Choosing the best software house in Islamabad? NovuLabs builds custom software, mobile apps and compliance systems for banks, hospitals and government.',
   keywords: [
