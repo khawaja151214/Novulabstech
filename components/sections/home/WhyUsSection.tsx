@@ -36,9 +36,9 @@ const WhyUsSection: React.FC = () => {
               <Link href="/software-house-in-islamabad">
                 How to choose the best software agency in Islamabad
               </Link>{' '}
-              sets out the seven questions worth asking. Or read{' '}
-              <Link href="/testimonials">what clients say about working with us</Link> and how those
-              engagements were structured in our <Link href="/portfolio">case studies</Link>.
+              sets out the seven questions worth asking. You can also see how past engagements
+              were structured in our <Link href="/portfolio">case studies</Link>, and{' '}
+              <Link href="/faq#verifying-a-supplier">how to verify any supplier&apos;s claims</Link>.
             </p>
           </div>
         </div>

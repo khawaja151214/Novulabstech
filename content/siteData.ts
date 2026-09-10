@@ -46,12 +46,12 @@ export const services: ServiceItem[] = [
  * concrete enough that a buyer can test it on the first call.
  */
 export const whyUs: WhyUsItem[] = [
-  { num: '01', icon: 'bi-person-video3', title: 'The architect takes the first call', desc: 'Not a salesperson who hands you over afterwards. The person who scopes your system is the one accountable for building it.', color: 'i-t' },
-  { num: '02', icon: 'bi-shield-check', title: 'Built for the examiner, not just the user', desc: 'Audit trails, access logging and decision records designed in the first sprint. Retrofitting them before an inspection costs a quarter.', color: 'i-b' },
-  { num: '03', icon: 'bi-file-earmark-code', title: 'We have been rejected by the FMU', desc: 'And fixed it. goAML schema work, STR and CTR filing, SBP inspections. Ask any supplier for that story and see how specific the answer gets.', color: 'i-v' },
-  { num: '04', icon: 'bi-hand-thumbs-down', title: 'We will talk you out of it', desc: 'A real share of enquiries describe something an off-the-shelf product already does. We say so in week one rather than month fourteen.', color: 'i-o' },
-  { num: '05', icon: 'bi-key', title: 'You hold the keys from day one', desc: 'Your repository, your cloud accounts, your domain, your data. Nothing about leaving us is difficult, which is the point.', color: 'i-c' },
-  { num: '06', icon: 'bi-journal-text', title: 'Decisions are written down', desc: 'Architecture choices recorded with their reasoning and rejected alternatives, so month-two decisions still make sense in year three.', color: 'i-t' }
+  { num: '', icon: 'bi-person-video3', title: 'The architect takes the first call', desc: 'Not a salesperson who hands you over afterwards. The person who scopes your system is the one accountable for building it.', color: 'i-t' },
+  { num: '', icon: 'bi-shield-check', title: 'Built for the examiner, not just the user', desc: 'Audit trails, access logging and decision records designed in the first sprint. Retrofitting them before an inspection costs a quarter.', color: 'i-b' },
+  { num: '', icon: 'bi-file-earmark-code', title: 'We have been rejected by the FMU', desc: 'And fixed it. goAML schema work, STR and CTR filing, SBP inspections. Ask any supplier for that story and see how specific the answer gets.', color: 'i-v' },
+  { num: '', icon: 'bi-hand-thumbs-down', title: 'We will talk you out of it', desc: 'A real share of enquiries describe something an off-the-shelf product already does. We say so in week one rather than month fourteen.', color: 'i-o' },
+  { num: '', icon: 'bi-key', title: 'You hold the keys from day one', desc: 'Your repository, your cloud accounts, your domain, your data. Nothing about leaving us is difficult, which is the point.', color: 'i-c' },
+  { num: '', icon: 'bi-journal-text', title: 'Decisions are written down', desc: 'Architecture choices recorded with their reasoning and rejected alternatives, so month-two decisions still make sense in year three.', color: 'i-t' }
 ];
 
 export const industries: IndustryItem[] = [
@@ -95,7 +95,7 @@ export const portfolioProjects: PortfolioProject[] = [
     img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=75',
     tags: 'Fintech · AML · Compliance',
     title: 'CoreBanking AML Suite',
-    desc: 'Real-time transaction monitoring and GOAML-integrated compliance for a Tier-1 bank processing 2M+ daily transactions.',
+    desc: 'Real-time transaction monitoring and goAML-integrated compliance for a Tier-1 bank.',
     tech: ['Python', 'React', 'PostgreSQL', 'FMU']
   },
   {

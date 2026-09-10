@@ -629,7 +629,7 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
                       chrome across pages is not the duplicate-content problem a
                       repeated paragraph inside <article> was. */}
                   <p className="cta-card-note">
-                    <Link href="/testimonials">Client testimonials</Link> ·{' '}
+                    <Link href="/portfolio">Case studies</Link> ·{' '}
                     <Link href="/about">How we work</Link>
                   </p>
                 </div>

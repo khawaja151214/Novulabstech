@@ -124,7 +124,6 @@ export default function SiteMapPage() {
                 { href: '/team/shamroz-ali-zaidi', label: 'Shamroz Ali Zaidi' },
                 { href: '/team/ali-zaidi', label: 'Ali Zaidi' },
                 { href: '/industries', label: 'Industries served' },
-                { href: '/testimonials', label: 'Client testimonials & reviews' },
                 { href: '/faq', label: 'Frequently asked questions' },
                 { href: '/contact', label: 'Contact & consultation' },
               ]}
