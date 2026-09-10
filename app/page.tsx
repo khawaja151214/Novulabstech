@@ -27,11 +27,16 @@ export const metadata: Metadata = {
   // query, which is the cannibalisation this cluster was built to avoid. The
   // homepage owns the category term and links down; the landing page owns the
   // comparison term and converts it.
-  title: { absolute: 'Enterprise Software Agency in Islamabad | NovuLabs' },
+  // Head term moved to "best software house in Islamabad" at the owner's
+  // direction. 43 chars rendered.
+  title: { absolute: 'Best Software House in Islamabad | NovuLabs' },
   // 158 chars: was 189, which Google truncated mid-clause at ~160.
   description:
-    'Enterprise software agency in Islamabad building AML/CFT compliance systems, HIPAA healthcare platforms and PCI-DSS payments. Talk to an architect, not a rep.',
+    'Choosing the best software house in Islamabad? NovuLabs builds custom software, mobile apps and compliance systems for banks, hospitals and government.',
   keywords: [
+    'best software house in Islamabad',
+    'best software company in Islamabad',
+    'top software house in Islamabad',
     'software agency in Islamabad',
     'software development agency in Islamabad',
     'software house in Islamabad',
@@ -52,13 +57,13 @@ export const metadata: Metadata = {
   // sitemap is matched to this form instead, in app/sitemap.ts.
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Enterprise Software Agency in Islamabad | NovuLabs',
+    title: 'Best Software House in Islamabad | NovuLabs',
     // "200+ projects. 40+ countries." removed — neither figure is evidenced
     // anywhere on the site or in lib/seo.ts (which declares five served
     // markets). Same claim class as the certification wording removed in
     // 6daaa0c; see artifacts/FINDINGS.md.
     description:
-      'Mission-critical fintech, AML/CFT compliance, healthcare and government software, engineered in Islamabad for institutions a regulator audits.',
+      'A software house in Islamabad for work a regulator inspects: fintech, AML/CFT compliance, healthcare and government software, with an architect on the first call.',
     url: 'https://www.novulabs.net',
     images: [{ url: '/og/enterprise-software-development.jpg', width: 1200, height: 630, alt: 'NovuLabs' }],
   },
@@ -73,9 +78,9 @@ export default function Home() {
           is emitted by FaqSection, alongside the visible Q&A it describes. */}
       <JsonLd
         data={webPageSchema({
-          name: 'NovuLabs, an AML, fintech and healthcare software agency',
+          name: 'Best Software House in Islamabad: NovuLabs',
           description:
-            'Enterprise software agency in Islamabad building AML/CFT compliance systems, HIPAA healthcare platforms and PCI-DSS payment infrastructure.',
+            'NovuLabs is a software house in Islamabad building custom software, mobile apps and compliance systems for banks, hospitals and government departments.',
           path: '/',
         })}
       />

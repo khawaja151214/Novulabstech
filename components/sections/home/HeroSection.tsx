@@ -28,22 +28,22 @@ const HeroSection: React.FC = () => {
                 <span className="hero-dot"></span>
                 Architect-led engineering for regulated industries
               </div>
-              {/* H1 targets "software house in Islamabad"; the head term for
-                  this business, and previously absent from the H1 entirely
-                  ("Next-Gen Enterprise Software House" carried no location and
-                  no query intent).
+              {/* H1 carries the head term "best software house in Islamabad",
+                  at the owner's explicit direction, replacing "Enterprise
+                  Software Agency in Islamabad".
 
-                  "Best" is deliberately not used. It is an unverifiable
-                  superlative about the business itself, which is an E-E-A-T
-                  liability in a YMYL-adjacent vertical, is the kind of
-                  self-declared claim Google's helpful-content guidance treats
-                  as a negative signal, and in most markets a comparative
-                  superiority claim in advertising requires substantiation the
-                  site does not publish. The exact-match phrase is carried
-                  without it; rankings for "best …" queries come from what the
-                  page proves, not from the word appearing in the heading. */}
+                  "Best" is a claim, so the copy directly beneath it says what
+                  it is measured on (software a regulator can inspect, and an
+                  architect on the first call) rather than leaving it as bare
+                  puffery. That keeps the heading consistent with the rest of
+                  the site, which argues that "best" depends on the project.
+
+                  Cannibalisation check: /software-house-in-islamabad targets
+                  the comparison phrasing ("How to Choose the Best Software
+                  Agency in Islamabad"). House vs agency and head term vs
+                  how-to keep the two pages on distinct queries. */}
               <h1 className="hero-title">
-                <KineticHeading text="Enterprise Software Agency" />
+                <KineticHeading text="Best Software House" />
                 {/* Explicit space, not just the <br/>. Text extractors — Google's
                     included — concatenate across the break, and without this the
                     H1 reads as "Housein Islamabad", which loses the exact-match

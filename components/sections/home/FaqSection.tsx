@@ -22,7 +22,7 @@ const FaqSection: React.FC = () => {
         <div className="row justify-content-center text-center mb-5">
           <div className="col-lg-6" data-reveal="up">
             <span className="stag">FAQ</span>
-            <h2 className="stitle mt-3">Frequently asked <span className="gtxt">questions</span></h2>
+            <h2 className="stitle mt-3">Hiring a software house <span className="gtxt">in Islamabad</span></h2>
           </div>
         </div>
         <div className="row justify-content-center">

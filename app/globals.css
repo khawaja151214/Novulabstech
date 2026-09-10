@@ -3171,3 +3171,13 @@ footer a:not(.btn-grad) { color: var(--a1); }
 @media (max-width: 640px) {
   .facts-row { grid-template-columns: 1fr; gap: 4px; }
 }
+
+
+/* ── Sitemap: section descriptions and nested sub-services ── */
+.sm-intro { max-width: 70ch; margin: 0 auto 36px; text-align: center; color: var(--tx2); }
+.sm-desc { font-size: .86rem; line-height: 1.55; color: var(--tx3); margin: -4px 0 12px; }
+.sm-sub { list-style: none; margin: 4px 0 6px 18px; padding: 0 0 0 12px; border-left: 1px solid var(--gb4); }
+.sm-sub li { margin-bottom: 5px; }
+.sm-sub a { font-size: .82rem; color: var(--tx3); min-height: 26px; }
+.sm-sub a:hover { color: var(--a1); }
+.sm-wide { grid-column: 1 / -1; }

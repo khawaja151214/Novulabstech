@@ -168,12 +168,44 @@ export const portfolioProjects: PortfolioProject[] = [
   }
 ];
 
+/**
+ * Homepage FAQ. Rewritten: the previous five were generic, one duplicated a
+ * question answered on /faq, and two made claims the site cannot evidence
+ * ("live deployments at multiple SBP-regulated institutions", a "4-hour
+ * guaranteed response" SLA). Every answer now ends in a link to the page that
+ * treats the subject in full. No question here is asked anywhere else.
+ */
 export const faqs: FaqItem[] = [
-  { q: 'What industries does NovuLabs specialize in?', a: 'Banking & Fintech, Healthcare, Government, Manufacturing, and E-Commerce. Our deepest expertise is in AML, CFT, and FMU Pakistan compliance for regulated financial institutions.' },
-  { q: 'How do I start a project with NovuLabs?', a: 'Book a free consultation: a 45-minute discovery call with a senior architect, zero commitment. We listen first, then advise on the right approach for your specific needs.' },
-  { q: 'Do you offer post-launch support and maintenance?', a: 'Yes. Tiered SLA packages from standard business-hours support to 24/7 platinum tiers with 4-hour guaranteed response. All enterprise clients get a dedicated account manager.' },
-  { q: 'Are your solutions compliant with FMU Pakistan regulations?', a: 'Absolutely. We have live deployments at multiple SBP-regulated institutions: GOAML integration, STR/CTR reporting, AML/CFT screening, all under FMU and FATF frameworks.' },
-  { q: 'Can you work alongside our existing team?', a: 'Yes. Staff augmentation, co-development, and full outsourcing: we adapt to your stack, tools, and methodologies. Many clients embed our engineers alongside their in-house teams.' }
+  {
+    q: 'Is NovuLabs the best software house in Islamabad for my project?',
+    a: 'It depends on what you are building, and we would rather tell you that on the first call than after a contract. We are a strong fit for software that someone outside your organisation will inspect: AML and transaction monitoring, payment infrastructure, patient records and government portals. We are the wrong choice for a consumer game or a marketing microsite, and we will say so. The guide to choosing a software house in Islamabad sets out the seven questions that separate the right team from the loudest one.',
+    link: { href: '/software-house-in-islamabad', label: 'How to choose a software house in Islamabad' },
+  },
+  {
+    q: 'Why choose a software house in Islamabad rather than one in Lahore or Karachi?',
+    a: 'For regulated work, proximity to the regulator matters more than rent. SECP, NADRA, the Financial Monitoring Unit and the federal ministries are here, so a compliance or government question can be settled in a meeting instead of a two-week email thread. Karachi is where the banks are headquartered and Lahore has the largest general technology base; both are good places to hire for other kinds of work.',
+    link: { href: '/software-development-in-pakistan', label: 'How the Pakistani software market is laid out' },
+  },
+  {
+    q: 'What kinds of projects does NovuLabs turn down?',
+    a: 'Anything a mature commercial product already does well, because building it would sell you years of maintenance for a problem that is already solved. We also will not quote a fixed price on a brief nobody has scoped, and we insist that you, not we, hold the repository, the cloud accounts and the domain from the first day. Saying no early is cheaper for both sides than finding the mismatch in month three.',
+    link: { href: '/about', label: 'What we do and do not do' },
+  },
+  {
+    q: 'What do we receive at the end of a paid discovery phase?',
+    a: 'A written account of what should be built: the architecture we recommend and the alternatives we rejected, the integration surfaces and regulatory constraints we found, the risks ranked by cost, and a firm estimate. Discovery usually takes two to four weeks. If the honest conclusion is that you should not build, that is the recommendation you get.',
+    link: { href: '/contact', label: 'Start with a free technical call' },
+  },
+  {
+    q: 'Will our system pass an SBP or FMU inspection if NovuLabs builds it?',
+    a: 'Passing an inspection is your institution\'s outcome, and no supplier can honestly promise it. What we can do is build so the evidence exists: an append-only transaction store so any alert can be reconstructed exactly as the system saw it, goAML XML validated against the schema before it reaches FMU, and screening thresholds versioned with the testing and approval behind every change. Those are the questions an examiner asks.',
+    link: { href: '/services/aml-cft-compliance-software', label: 'How we build AML/CFT systems' },
+  },
+  {
+    q: 'Can one team build our backend, web platform and mobile app together?',
+    a: 'Yes, and it usually works better that way, because the API is designed once for every client that will use it instead of being bent later to fit a second one. A mobile app inherits the security obligations of the system behind it, so session handling, audit logging and on-device storage get decided alongside the server, not after it.',
+    link: { href: '/services', label: 'All our software development services' },
+  },
 ];
 
 /**
