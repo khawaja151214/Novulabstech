@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   // homepage owns the head term and links down; the landing page converts the
   // comparison.
   title: { absolute: 'Best Software House in Islamabad | NovuLabs' },
-  // 157 chars, inside the ~160 Google renders before truncating.
+  // 155 chars, inside the ~160 Google renders before truncating.
   //
   // Targets the H1's phrase, "best enterprise software house in Islamabad",
   // which the title tag cannot carry without losing the shorter head term.
@@ -35,15 +35,27 @@ export const metadata: Metadata = {
   // contains the shorter phrase as a substring anyway.
   //
   // Structure: exact phrase up front while it is still visible in the SERP,
-  // then the qualifier that makes "best" mean something checkable, then the
-  // CTA, which is the booking invitation the /contact page fulfils.
+  // then three named standards, then the CTA the /contact page fulfils.
+  //
+  // The middle clause names AML/CFT, HIPAA and PCI-DSS and the regulator
+  // (SBP) rather than saying "compliance systems". Specifics are what make
+  // "best" land as a description of the work instead of self-praise, they
+  // match how a buyer with an actual obligation searches, and they are the
+  // terms an AI answer engine can attach the page to. All three are already
+  // evidenced on the page and in /services — nothing new is claimed here.
+  //
+  // "Book a free consultation" matches the wording on /contact, so the
+  // snippet and the landing page make the same promise. It also avoids
+  // committing the page to who answers; the hero button below says
+  // "Talk to an architect", which is the stronger claim and the site's actual
+  // differentiator.
   //
   // A description cannot carry a link of its own — the whole snippet resolves
   // to this page — so the route to the booking form is made explicit three
   // other ways: the hero's primary button, the ReserveAction on the WebPage
   // node below, and the SiteNavigationElement entry for /contact.
   description:
-    'NovuLabs is the best enterprise software house in Islamabad for regulated work: AML/CFT compliance, healthcare and payment systems. Talk to a representative.',
+    'NovuLabs is the best enterprise software house in Islamabad: AML/CFT for SBP-regulated banks, HIPAA healthcare, PCI-DSS payments. Book a free consultation.',
   keywords: [
     'best enterprise software house in Islamabad',
     'best software house in Islamabad',
