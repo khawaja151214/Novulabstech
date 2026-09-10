@@ -8,6 +8,11 @@ export interface ServiceItem {
    *  and each now has its own indexable page rather than linking straight to
    *  /contact with no detail in between. */
   slug: string;
+  /** Category heading this card sits under in the homepage services grid.
+   *  The 22 services are grouped rather than listed flat, so a visitor scanning
+   *  for "mobile app development" finds three related cards together instead of
+   *  three cards scattered through a grid of twenty-two. */
+  group: string;
 }
 
 export interface WhyUsItem {
@@ -23,6 +28,25 @@ export interface IndustryItem {
   title: string;
   desc: string;
   color: string;
+  /** Slug of this sector's own page under /industries. Every industry card
+   *  links to its own page rather than all ten pointing at the /industries
+   *  hub, which told a crawler nothing about any individual sector. */
+  slug: string;
+  /** Anchor text for the card's link, naming the destination. "Explore
+   *  Healthcare" is a usable anchor; ten identical "Explore this" links are
+   *  not, and an on-page audit flags them first. */
+  cta: string;
+}
+
+export interface TestimonialCard {
+  service: string;
+  quote: string;
+  role: string;
+  stars: number;
+  /** True until a real, attributable client has said these words. Drives the
+   *  visible sample notice on the section, exactly as content/testimonials.ts
+   *  does for /testimonials. Never set false without a real quote behind it. */
+  placeholder: boolean;
 }
 
 export interface TechStackItem {
@@ -129,4 +153,23 @@ export interface ContactFormData {
   email: string;
   subject: string;
   message: string;
+}
+
+export interface IndustryPage {
+  slug: string;
+  name: string;
+  h1: string;
+  title: string;
+  description: string;
+  intro: string;
+  /** What we build for this sector. Four entries, each a real capability with
+   *  its own page or portfolio work behind it. */
+  builds: { title: string; desc: string }[];
+  /** What makes the sector hard. This is the section a buyer reads to decide
+   *  whether the supplier has done their kind of work before, so it names
+   *  obligations and failure modes rather than benefits. */
+  constraints: string[];
+  /** Services from content/siteData.ts most relevant to this sector; each
+   *  links to that service's own page. */
+  services: { slug: string; label: string }[];
 }

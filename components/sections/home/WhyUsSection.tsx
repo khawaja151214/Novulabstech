@@ -10,17 +10,20 @@ const WhyUsSection: React.FC = () => {
         <div className="row justify-content-center text-center mb-5">
           <div className="col-lg-7" data-reveal="up">
             <span className="stag">Why NovuLabs</span>
-            {/* Carries the "best software agency in Islamabad" phrasing in the
-                form a buyer actually searches it, and routes that intent to
-                /software-house-in-islamabad, which owns the comparison query.
-                The H1 above stays on the category term so the two pages do not
-                compete for the same result. */}
+            {/* "Why choose ..." is how this comparison is typed. The
+                comparison-query intent still routes to
+                /software-house-in-islamabad through the link below the cards,
+                which owns that query; this section answers the question on the
+                homepage rather than competing for the same result. */}
             <h2 className="stitle mt-3">
-              What makes the best software agency <span className="gtxt">in Islamabad</span>
+              Why choose <span className="gtxt">NovuLabs</span>
             </h2>
             <p className="ssub mx-auto">
-              Rarely the language list. We work with organisations whose software is inspected by
-              someone other than their own users: a regulator, an auditor, or a payment scheme.
+              Rarely the language list. Every supplier claims scalability, quality and on-time
+              delivery, which makes those claims worth nothing to a buyer comparing three of them.
+              Each point below is specific enough that a competitor either cannot copy it or would
+              be caught out if they did, and concrete enough that you can test it on the first
+              call rather than take it on trust.
             </p>
           </div>
         </div>

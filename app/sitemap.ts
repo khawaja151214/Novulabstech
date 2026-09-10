@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { SITE_URL, canonical } from '@/lib/seo';
 import { servicePages } from '@/content/servicePages';
 import { serviceSpokes } from '@/content/serviceSpokes';
+import { industryPages } from '@/content/industryPages';
 import { caseStudies } from '@/content/caseStudies';
 import { blogPosts } from '@/content/blogPosts';
 import { legalPages } from '@/content/legalPages';
@@ -81,6 +82,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // set below the pillars: each spoke targets a narrower search intent than
   // its parent, and priority is a relative hint to crawlers about where to
   // spend budget first, not a claim about the page's importance to the site.
+  // Ten sector pages, one per homepage industry card. Without these the cards
+  // would link to routes absent from the sitemap.
+  const industryRoutes: MetadataRoute.Sitemap = industryPages.map((p) => ({
+    url: `${SITE_URL}/industries/${p.slug}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   const serviceSpokeRoutes: MetadataRoute.Sitemap = serviceSpokes.map((s) => ({
     url: `${SITE_URL}/services/${s.slug}`,
     changeFrequency: 'monthly',
@@ -116,5 +125,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.2,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...serviceSpokeRoutes, ...caseStudyRoutes, ...blogRoutes, ...authorRoutes, ...legalRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...serviceSpokeRoutes, ...industryRoutes, ...caseStudyRoutes, ...blogRoutes, ...authorRoutes, ...legalRoutes];
 }

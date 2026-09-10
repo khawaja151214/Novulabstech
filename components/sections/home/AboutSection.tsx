@@ -44,38 +44,44 @@ const AboutSection: React.FC = () => {
           <div className="col-lg-7" data-reveal="left">
             <span className="stag">Who We Are</span>
             <h2 className="stitle mt-3">
-              Software that has to survive <span className="gtxt">an inspection</span>
+              An enterprise software house <span className="gtxt">in Islamabad</span>
             </h2>
-            {/* Leads with the buyer's situation rather than a company
-                description. "We are an enterprise software house headquartered
-                in Islamabad" is true and tells a buyer nothing they can act on;
-                the distinction below is the actual reason someone picks us over
-                a generalist, so it goes first. */}
             <p className="ssub mb-4">
-              Most software only has to satisfy the people using it. Ours has to satisfy someone who
-              arrives a year later, asks why the system made a particular decision, and is entitled
-              to a documented answer. That is a different engineering problem, and it is the one we
-              have chosen.
+              NovuLabs is an enterprise software house based in I-10, Islamabad, focused on
+              building intelligent, secure, and scalable digital solutions for businesses and
+              organizations around the world. From custom enterprise software and mobile
+              applications to AI-powered solutions, cloud platforms, and digital transformation,
+              we combine strong engineering expertise with a deep understanding of the problems
+              businesses need to solve.
             </p>
             <p className="ssub mb-4">
-              In practice that means banks under State Bank supervision, hospital groups handling
-              patient records, government departments answering to procurement review, and the
-              companies that supply them. If a regulator, an auditor or a payment scheme can open
-              your system and ask questions, we have probably built something like it.
+              We believe that systems should be built around the people who use them, delivering
+              experiences that are reliable, intuitive, and purposeful. We work closely with our
+              clients from strategy and architecture through development, deployment, and ongoing
+              support. Our team combines engineering expertise with a business-first approach to
+              create secure and reliable technology tailored to each client&apos;s unique needs.
+            </p>
+            <p className="ssub mb-4">
+              At NovuLabs, we aim to be more than a development vendor. We work as a long-term
+              technology partner, helping businesses build software that performs today while
+              remaining scalable and adaptable for tomorrow.
             </p>
 
-            {/* Contextual link into the local landing page. The homepage is
-                the strongest internal source of link equity on the site, and
-                the anchor text here is the head term itself in a sentence that
-                actually needs it, not a bolted-on keyword link. */}
+            {/* Contextual links into the service pages the paragraph above
+                describes, plus the two local landing pages. Anchor text is the
+                service name in a sentence that needed it, not a keyword row
+                bolted on underneath. */}
             <p className="ssub mb-4">
-              If you are comparing suppliers locally, the{' '}
-              <Link href="/software-house-in-islamabad">
-                software house in Islamabad
-              </Link>{' '}
-              page covers where we are, how we engage, and the questions worth asking any firm
-              before you sign. For the national picture, including the regulators involved and
-              what to settle in a contract, see{' '}
+              In practice that means{' '}
+              <Link href="/services/legacy-system-modernization">enterprise software development</Link>,{' '}
+              <Link href="/services/corporate-website-development">custom website development</Link>,{' '}
+              <Link href="/services/cross-platform-app-development">mobile app development</Link>,{' '}
+              <Link href="/services/ai-development-services">AI automation</Link> and{' '}
+              <Link href="/services/cloud-migration-services">cloud architecture</Link>. If you are
+              comparing suppliers locally, the{' '}
+              <Link href="/software-house-in-islamabad">software house in Islamabad</Link> page
+              covers how we engage and the questions worth asking any firm before you sign; for the
+              national picture see{' '}
               <Link href="/software-development-in-pakistan">software development in Pakistan</Link>.
             </p>
 

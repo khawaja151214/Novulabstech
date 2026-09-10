@@ -3181,3 +3181,66 @@ footer a:not(.btn-grad) { color: var(--a1); }
 .sm-sub a { font-size: .82rem; color: var(--tx3); min-height: 26px; }
 .sm-sub a:hover { color: var(--a1); }
 .sm-wide { grid-column: 1 / -1; }
+
+/* ── HOMEPAGE TESTIMONIAL CARDS ──────────────────────────────────────────
+   Cards rather than a carousel: eight quotes are readable at a glance in a
+   grid, and a carousel would hide seven of them from a crawler behind a
+   control nobody clicks. Scroll animation comes from the existing
+   [data-reveal-group] system, which already respects prefers-reduced-motion. */
+.htcard{
+  background:var(--g-card);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--gb2);border-radius:var(--r-lg);
+  padding:22px;height:100%;margin:0;
+  display:flex;flex-direction:column;gap:12px;
+  box-shadow:var(--sh-sm),var(--sh-inner);transition:var(--t);
+}
+.htcard:hover{border-color:var(--gb4);transform:translateY(-4px);box-shadow:var(--sh-md),var(--sh-inner)}
+.htcard-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.htcard-service{
+  font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--a1);line-height:1.3;
+}
+.htcard-stars{font-size:.78rem;color:#e0a92b;letter-spacing:.06em;flex-shrink:0}
+.htcard-quote{
+  margin:0;font-size:.86rem;line-height:1.68;color:var(--tx2);
+  border-left:2px solid rgba(15,97,87,.18);padding-left:13px;
+}
+.htcard-role{
+  margin-top:auto;padding-top:6px;font-size:.74rem;color:var(--tx3);
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.htcard-flag{
+  font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#8a5d18;background:rgba(224,169,43,.14);
+  border:1px solid rgba(224,169,43,.3);border-radius:3px;padding:1px 6px;
+}
+.sample-notice{
+  font-size:.85rem;line-height:1.6;color:var(--tx2);margin:0;
+  background:rgba(224,169,43,.1);border:1px solid rgba(224,169,43,.28);
+  border-left:3px solid #e0a92b;border-radius:0 var(--r-sm,6px) var(--r-sm,6px) 0;
+  padding:13px 16px;
+}
+
+/* ── SERVICE GROUP HEADINGS ──────────────────────────────────────────────
+   The 22 service cards are grouped into eight categories. The number is the
+   group's position in a fixed sequence of eight, not a ranking. */
+.svc-group-head{display:flex;align-items:center;gap:14px;margin:0 0 20px}
+.svc-group-num{
+  font-size:.74rem;font-weight:700;color:var(--a1);letter-spacing:.06em;
+  font-variant-numeric:tabular-nums;flex-shrink:0;
+}
+.svc-group-title{
+  font-size:1.06rem;font-weight:700;color:var(--tx1);margin:0;
+  letter-spacing:-.01em;flex-shrink:0;
+}
+.svc-group-rule{flex:1;height:1px;background:linear-gradient(90deg,var(--gb3),transparent);min-width:20px}
+
+/* ── INDUSTRY CARD CTA ───────────────────────────────────────────────────
+   Each industry card now links to that sector's own page, and this names the
+   destination. A span, not a nested anchor: the card itself is the link. */
+.icard-cta{
+  display:inline-flex;align-items:center;gap:6px;margin-top:9px;
+  font-size:.76rem;font-weight:700;color:var(--a1);
+}
+.icard-cta i{transition:transform .22s ease;font-size:.8rem}
+.icard:hover .icard-cta i{transform:translateX(4px)}

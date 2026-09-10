@@ -8,30 +8,45 @@ import { ServiceItem, WhyUsItem, IndustryItem, TechStackItem, PortfolioItem, Faq
 // its own page. Nothing here was renamed for its own sake; every card still
 // links to real content about the same underlying capability.
 export const services: ServiceItem[] = [
-  { icon: 'bi-globe', title: 'Website Development', desc: 'High-performance corporate sites, portals & web apps with SEO-first architecture.', color: 'i-b', slug: 'corporate-website-development' },
-  { icon: 'bi-cpu-fill', title: 'Enterprise Software', desc: 'Custom multi-tenant SaaS, enterprise middleware, and mission-critical platforms.', color: 'i-v', slug: 'legacy-system-modernization' },
-  { icon: 'bi-bank', title: 'Financial Software', desc: 'Core banking, digital wallets, lending systems, and investment management platforms.', color: 'i-t', slug: 'core-banking-software-development' },
-  { icon: 'bi-credit-card-2-front', title: 'Payment Gateways', desc: 'PCI-DSS compliant integrations supporting global payment rails and local acquirers.', color: 'i-c', slug: 'payment-gateway-development' },
-  // "Certified" removed — scheme certification is issued to the institution operating the
+  // Group 1: Web & Software Development
+  { icon: 'bi-globe', title: 'Custom Website Development', desc: 'Fast, modern, SEO-optimized websites and web platforms built for performance, usability, and search visibility.', color: 'i-b', slug: 'corporate-website-development', group: 'Web & Software Development' },
+  { icon: 'bi-cpu-fill', title: 'Enterprise Software Development', desc: 'Scalable enterprise software systems built around complex workflows, teams, data, and business requirements.', color: 'i-v', slug: 'legacy-system-modernization', group: 'Web & Software Development' },
+  { icon: 'bi-diagram-3-fill', title: 'ERP Systems', desc: 'Connected ERP solutions that bring finance, HR, operations, procurement, and business data together.', color: 'i-v', slug: 'erp-software-development', group: 'Web & Software Development' },
+  { icon: 'bi-people-fill', title: 'CRM Systems', desc: 'Custom CRM development that helps teams manage customers, leads, sales pipelines, and relationships more effectively.', color: 'i-o', slug: 'crm-software-development', group: 'Web & Software Development' },
+  { icon: 'bi-layers-fill', title: 'Custom SaaS Platform Development', desc: 'Flexible SaaS products built with the features, workflows, and architecture your business actually needs.', color: 'i-o', slug: 'custom-saas-development', group: 'Web & Software Development' },
+  { icon: 'bi-plug-fill', title: 'API Development & Integration', desc: 'Secure, reliable APIs that connect applications, services, data, and business systems seamlessly.', color: 'i-c', slug: 'api-development-integration', group: 'Web & Software Development' },
+
+  // Group 2: Mobile App Development
+  { icon: 'bi-phone-fill', title: 'Cross-Platform Mobile Apps', desc: 'User-focused mobile applications built for modern devices, smooth experiences, and real-world business needs.', color: 'i-g', slug: 'cross-platform-app-development', group: 'Mobile App Development' },
+  { icon: 'bi-apple', title: 'iOS App Development', desc: 'Native iOS applications engineered with Swift for performance, reliability, and a polished Apple experience.', color: 'i-b', slug: 'ios-app-development', group: 'Mobile App Development' },
+  { icon: 'bi-android2', title: 'Android App Development', desc: 'Kotlin-powered Android applications built to perform across the diverse device ecosystem in use today.', color: 'i-g', slug: 'android-app-development', group: 'Mobile App Development' },
+
+  // Group 3: Financial Technology (FinTech) Software
+  { icon: 'bi-bank', title: 'Custom Financial Software Development', desc: 'Secure financial platforms for banking, lending, digital wallets, investments, and complex financial workflows.', color: 'i-t', slug: 'core-banking-software-development', group: 'Financial Technology (FinTech) Software' },
+  { icon: 'bi-credit-card-2-front', title: 'Payment Gateway Integration', desc: 'Reliable payment integrations connecting your platform with global payment networks and local acquiring systems.', color: 'i-c', slug: 'payment-gateway-development', group: 'Financial Technology (FinTech) Software' },
+  // "Certified" removed - scheme certification is issued to the institution operating the
   // platform, not to the development firm. Matches app/layout.tsx:121 and the /services FAQ.
-  { icon: 'bi-patch-check-fill', title: 'Mastercard / Visa', desc: 'Direct integrations with Mastercard and Visa networks, issuing and acquiring.', color: 'i-o', slug: 'mastercard-visa-integration' },
-  { icon: 'bi-phone-fill', title: 'Mobile Apps', desc: 'Cross-platform iOS & Android apps built with Flutter and native Swift/Kotlin.', color: 'i-g', slug: 'cross-platform-app-development' },
-  { icon: 'bi-heart-pulse-fill', title: 'Healthcare Software', desc: 'HIPAA-compliant EHR, telemedicine, and clinical workflow platforms for providers.', color: 'i-p', slug: 'ehr-clinical-software-development' },
-  { icon: 'bi-clipboard2-pulse-fill', title: 'Medical Billing', desc: 'End-to-end billing with ICD-10/CPT coding, claim management, and payer integration.', color: 'i-c', slug: 'medical-billing-software-development' },
-  { icon: 'bi-diagram-3-fill', title: 'ERP Systems', desc: 'Custom ERP integrating finance, HR, supply chain, and procurement in one system.', color: 'i-v', slug: 'erp-software-development' },
-  { icon: 'bi-people-fill', title: 'CRM Systems', desc: 'AI-powered CRM with lead scoring, pipeline analytics, and omnichannel engagement.', color: 'i-o', slug: 'crm-software-development' },
-  { icon: 'bi-shield-lock-fill', title: 'AML Systems', desc: 'Real-time monitoring, risk scoring, and regulatory reporting for compliant institutions.', color: 'i-t', slug: 'aml-case-management-risk-scoring' },
-  { icon: 'bi-flag-fill', title: 'CFT Compliance', desc: 'Counter-Financing of Terrorism with PEP screening and automated STR generation.', color: 'i-b', slug: 'sanctions-pep-screening-software' },
-  { icon: 'bi-activity', title: 'Transaction Monitoring', desc: 'ML-powered analytics detecting suspicious patterns across millions of transactions.', color: 'i-p', slug: 'transaction-monitoring-software-development' },
-  { icon: 'bi-filetype-xml', title: 'XML Schema Integration', desc: 'ISO 20022, SWIFT XML, and HL7 FHIR schema processing for financial messaging.', color: 'i-y', slug: 'financial-messaging-schema-integration' },
-  { icon: 'bi-buildings-fill', title: 'Government Portals', desc: 'National identity portals with NADRA/CNIC API, digital signature, and e-gov services.', color: 'i-g', slug: 'government-portal-development' },
-  { icon: 'bi-bank2', title: 'FMU Pakistan', desc: 'Full GOAML integration, STR/CTR filing, and SBP regulatory compliance dashboards.', color: 'i-v', slug: 'goaml-fmu-reporting-integration' },
-  { icon: 'bi-plug-fill', title: 'API Development', desc: 'RESTful & GraphQL APIs with enterprise security, rate limiting, and developer portals.', color: 'i-c', slug: 'api-development-integration' },
-  { icon: 'bi-cloud-fill', title: 'Cloud Solutions', desc: 'AWS, Azure & GCP architecture, migration, and managed infrastructure for enterprises.', color: 'i-b', slug: 'cloud-migration-services' },
-  { icon: 'bi-robot', title: 'AI Automation', desc: 'ML pipelines, NLP chatbots, document processing, and predictive analytics platforms.', color: 'i-t', slug: 'ai-development-services' },
-  { icon: 'bi-layers-fill', title: 'Custom SaaS Platforms', desc: 'Multi-tenant SaaS with subscription billing, white-labeling, and analytics dashboards.', color: 'i-o', slug: 'custom-saas-development' },
-  { icon: 'bi-apple', title: 'iOS Development', desc: 'Native Swift & SwiftUI apps optimized for performance, security, and App Store approval.', color: 'i-b', slug: 'ios-app-development' },
-  { icon: 'bi-android2', title: 'Android Development', desc: 'Kotlin-first apps for diverse device ecosystems and enterprise Play Store deployment.', color: 'i-g', slug: 'android-app-development' }
+  { icon: 'bi-patch-check-fill', title: 'Card Network Integrations (Mastercard / Visa)', desc: 'Direct Mastercard and Visa integrations for secure card payments, transaction processing, and acquiring workflows.', color: 'i-o', slug: 'mastercard-visa-integration', group: 'Financial Technology (FinTech) Software' },
+  { icon: 'bi-activity', title: 'Transaction Monitoring Systems', desc: 'Intelligent transaction monitoring systems designed to identify unusual activity and support financial risk management.', color: 'i-p', slug: 'transaction-monitoring-software-development', group: 'Financial Technology (FinTech) Software' },
+  { icon: 'bi-filetype-xml', title: 'ISO 20022 & SWIFT Messaging Integration', desc: 'Financial messaging integrations supporting ISO 20022 XML-based standards and SWIFT MT and MX message formats.', color: 'i-y', slug: 'financial-messaging-schema-integration', group: 'Financial Technology (FinTech) Software' },
+
+  // Group 4: Healthcare Software Development
+  { icon: 'bi-heart-pulse-fill', title: 'Custom Healthcare Software', desc: 'Digital healthcare platforms designed around clinical workflows, patient experiences, and secure health data.', color: 'i-p', slug: 'ehr-clinical-software-development', group: 'Healthcare Software Development' },
+  { icon: 'bi-clipboard2-pulse-fill', title: 'Medical Billing Software', desc: 'End-to-end medical billing systems supporting claims, coding, billing workflows, and payment processes.', color: 'i-c', slug: 'medical-billing-software-development', group: 'Healthcare Software Development' },
+
+  // Group 5: Compliance & Regulatory Technology
+  { icon: 'bi-shield-lock-fill', title: 'AML Systems', desc: 'AML platforms that help organizations monitor risk, analyze transactions, and support regulatory compliance.', color: 'i-t', slug: 'aml-case-management-risk-scoring', group: 'Compliance & Regulatory Technology' },
+  { icon: 'bi-flag-fill', title: 'CFT Compliance Systems', desc: 'Counter-financing of terrorism systems supporting risk assessment, screening, monitoring, and regulatory workflows.', color: 'i-b', slug: 'sanctions-pep-screening-software', group: 'Compliance & Regulatory Technology' },
+  { icon: 'bi-bank2', title: 'FMU Pakistan Reporting Systems', desc: 'Regulatory technology supporting FMU workflows, STR and CTR reporting, and compliance operations in Pakistan.', color: 'i-v', slug: 'goaml-fmu-reporting-integration', group: 'Compliance & Regulatory Technology' },
+
+  // Group 6: Government & Digital Public Services
+  { icon: 'bi-buildings-fill', title: 'Government Portal Development', desc: 'Secure digital government platforms connecting citizens, organizations, APIs, and essential public services.', color: 'i-g', slug: 'government-portal-development', group: 'Government & Digital Public Services' },
+
+  // Group 7: AI Solutions
+  { icon: 'bi-robot', title: 'AI Automation & Intelligent Assistants', desc: 'AI-powered automation for repetitive workflows, document processing, intelligent assistants, and business operations.', color: 'i-t', slug: 'ai-development-services', group: 'AI Solutions' },
+
+  // Group 8: Cloud Solutions
+  { icon: 'bi-cloud-fill', title: 'Cloud Architecture & Migration', desc: 'Cloud architecture, migration, and infrastructure solutions built for secure, scalable, and reliable applications.', color: 'i-b', slug: 'cloud-migration-services', group: 'Cloud Solutions' }
 ];
 
 /**
@@ -55,12 +70,16 @@ export const whyUs: WhyUsItem[] = [
 ];
 
 export const industries: IndustryItem[] = [
-  { icon: 'bi-bank2', title: 'Banking & Fintech', desc: 'Core banking, AML/CFT, payment rails, digital wallets', color: 'i-t' },
-  { icon: 'bi-hospital-fill', title: 'Healthcare & MedTech', desc: 'EHR, telemedicine, medical billing, HIPAA solutions', color: 'i-p' },
-  { icon: 'bi-buildings-fill', title: 'Government & Public Sector', desc: 'Identity portals, citizen services, e-government', color: 'i-b' },
-  { icon: 'bi-cart-fill', title: 'E-Commerce & Retail', desc: 'B2B/B2C platforms, inventory, order processing', color: 'i-o' },
-  { icon: 'bi-gear-wide-connected', title: 'Manufacturing & Logistics', desc: 'ERP, supply chain, warehouse automation, IoT', color: 'i-v' },
-  { icon: 'bi-mortarboard-fill', title: 'Education & EdTech', desc: 'LMS, virtual classrooms, student management', color: 'i-c' }
+  { icon: 'bi-bank2', title: 'Financial Services', desc: 'Secure software for banking, fintech, payments, lending, compliance, and financial operations.', color: 'i-t', slug: 'financial-services', cta: 'Explore Financial Services' },
+  { icon: 'bi-hospital-fill', title: 'Healthcare', desc: 'Healthcare software for clinical workflows, patient services, medical billing, and healthcare operations.', color: 'i-p', slug: 'healthcare', cta: 'Explore Healthcare' },
+  { icon: 'bi-buildings-fill', title: 'Government', desc: 'Digital government platforms for public services, citizen portals, secure workflows, and connected systems.', color: 'i-b', slug: 'government', cta: 'Explore Government Solutions' },
+  { icon: 'bi-cup-hot-fill', title: 'Hospitality', desc: 'Technology solutions for hotels, resorts, bookings, guest experiences, and hospitality operations.', color: 'i-y', slug: 'hospitality', cta: 'Explore Hospitality' },
+  { icon: 'bi-house-door-fill', title: 'Real Estate', desc: 'Custom software for property management, real estate operations, listings, CRM, and customer engagement.', color: 'i-g', slug: 'real-estate', cta: 'Explore Real Estate' },
+  { icon: 'bi-mortarboard-fill', title: 'Education', desc: 'Digital platforms for schools, institutions, learning management, administration, and education services.', color: 'i-c', slug: 'education', cta: 'Explore Education' },
+  { icon: 'bi-cart-fill', title: 'E-commerce', desc: 'Scalable e-commerce software for online stores, payments, inventory, customers, and digital commerce.', color: 'i-o', slug: 'ecommerce', cta: 'Explore E-commerce' },
+  { icon: 'bi-truck', title: 'Logistics & Transportation', desc: 'Software for logistics operations, fleet management, tracking, delivery workflows, and transportation networks.', color: 'i-v', slug: 'logistics-transportation', cta: 'Explore Logistics & Transportation' },
+  { icon: 'bi-gear-wide-connected', title: 'Manufacturing', desc: 'Digital systems for manufacturing operations, supply chains, inventory, production, and business management.', color: 'i-b', slug: 'manufacturing', cta: 'Explore Manufacturing' },
+  { icon: 'bi-briefcase-fill', title: 'Professional Services', desc: 'Custom business software for consulting firms, agencies, legal teams, and other professional organizations.', color: 'i-c', slug: 'professional-services', cta: 'Explore Professional Services' }
 ];
 
 export const techStack: TechStackItem[] = [
@@ -177,34 +196,53 @@ export const portfolioProjects: PortfolioProject[] = [
  */
 export const faqs: FaqItem[] = [
   {
-    q: 'Is NovuLabs the best software house in Islamabad for my project?',
-    a: 'It depends on what you are building, and we would rather tell you that on the first call than after a contract. We are a strong fit for software that someone outside your organisation will inspect: AML and transaction monitoring, payment infrastructure, patient records and government portals. We are the wrong choice for a consumer game or a marketing microsite, and we will say so. The guide to choosing a software house in Islamabad sets out the seven questions that separate the right team from the loudest one.',
+    q: 'What does a software house in Islamabad do?',
+    a: 'A software house develops digital products and systems that help businesses solve operational, customer, or technical problems. This can include custom business software, enterprise platforms, web applications, mobile apps, AI-powered solutions, cloud systems, integrations, and software modernization. NovuLabs works with businesses to understand their requirements and build software around their specific needs.',
     link: { href: '/software-house-in-islamabad', label: 'How to choose a software house in Islamabad' },
   },
   {
-    q: 'Why choose a software house in Islamabad rather than one in Lahore or Karachi?',
-    a: 'For regulated work, proximity to the regulator matters more than rent. SECP, NADRA, the Financial Monitoring Unit and the federal ministries are here, so a compliance or government question can be settled in a meeting instead of a two-week email thread. Karachi is where the banks are headquartered and Lahore has the largest general technology base; both are good places to hire for other kinds of work.',
-    link: { href: '/software-development-in-pakistan', label: 'How the Pakistani software market is laid out' },
+    q: 'What software development services does NovuLabs provide?',
+    a: 'NovuLabs provides a broad range of software development services, including custom software development, enterprise software, web and mobile application development, AI software development, financial software, cloud development, DevOps, API development, UI/UX design, software integration, cybersecurity, testing and QA, legacy modernization, and other specialized software solutions.',
+    link: { href: '/services', label: 'See all services' },
   },
   {
-    q: 'What kinds of projects does NovuLabs turn down?',
-    a: 'Anything a mature commercial product already does well, because building it would sell you years of maintenance for a problem that is already solved. We also will not quote a fixed price on a brief nobody has scoped, and we insist that you, not we, hold the repository, the cloud accounts and the domain from the first day. Saying no early is cheaper for both sides than finding the mismatch in month three.',
-    link: { href: '/about', label: 'What we do and do not do' },
+    q: 'Does NovuLabs build custom software?',
+    a: 'Yes. NovuLabs develops custom software for organizations whose requirements cannot be fully addressed by off-the-shelf products. Custom software can be designed around your business processes, users, integrations, data, security requirements, and long-term objectives.',
+    link: { href: '/services/legacy-system-modernization', label: 'Enterprise software development' },
   },
   {
-    q: 'What do we receive at the end of a paid discovery phase?',
-    a: 'A written account of what should be built: the architecture we recommend and the alternatives we rejected, the integration surfaces and regulatory constraints we found, the risks ranked by cost, and a firm estimate. Discovery usually takes two to four weeks. If the honest conclusion is that you should not build, that is the recommendation you get.',
-    link: { href: '/contact', label: 'Start with a free technical call' },
+    q: 'How do I know if my business needs custom software?',
+    a: 'Custom software can make sense when existing tools do not fit your workflows, multiple systems need to be connected, manual processes are becoming difficult to manage, or you need functionality that standard software does not provide. The right approach depends on the problem, existing technology, budget, users, and expected growth.',
   },
   {
-    q: 'Will our system pass an SBP or FMU inspection if NovuLabs builds it?',
-    a: 'Passing an inspection is your institution\'s outcome, and no supplier can honestly promise it. What we can do is build so the evidence exists: an append-only transaction store so any alert can be reconstructed exactly as the system saw it, goAML XML validated against the schema before it reaches FMU, and screening thresholds versioned with the testing and approval behind every change. Those are the questions an examiner asks.',
-    link: { href: '/services/aml-cft-compliance-software', label: 'How we build AML/CFT systems' },
+    q: 'What industries does NovuLabs serve?',
+    a: 'NovuLabs develops software for organizations across industries including finance, healthcare, government, hospitality, education, real estate, e-commerce, logistics, manufacturing, and professional services. Each project is approached according to its specific industry requirements, workflows, users, data, and operational needs.',
+    link: { href: '/industries', label: 'Industries we serve' },
   },
   {
-    q: 'Can one team build our backend, web platform and mobile app together?',
-    a: 'Yes, and it usually works better that way, because the API is designed once for every client that will use it instead of being bent later to fit a second one. A mobile app inherits the security obligations of the system behind it, so session handling, audit logging and on-device storage get decided alongside the server, not after it.',
-    link: { href: '/services', label: 'All our software development services' },
+    q: 'Can NovuLabs develop software for businesses outside Islamabad?',
+    a: 'Yes. NovuLabs is a software house based in Islamabad, but its development services can support businesses in other cities, countries, and international markets. Remote collaboration allows requirements, development, meetings, testing, and project communication to take place across geographical boundaries.',
+    link: { href: '/software-development-in-pakistan', label: 'Software development in Pakistan' },
+  },
+  {
+    q: 'Can NovuLabs modernize an existing software system?',
+    a: 'Yes. Not every project needs to start from scratch. NovuLabs can help modernize software that has become difficult to maintain, integrate, secure, or scale. Depending on the system, modernization may involve updating the technology stack, improving architecture, replacing outdated components, introducing integrations, or gradually replacing parts of the platform.',
+    link: { href: '/services/legacy-system-modernization', label: 'Legacy system modernization' },
+  },
+  {
+    q: 'Can NovuLabs integrate new software with existing systems?',
+    a: 'Yes. NovuLabs can connect applications, databases, APIs, third-party services, and internal systems so they can exchange information and work together. Effective software integration can reduce duplicated work, improve data flow, and create a more connected technology environment.',
+    link: { href: '/services/api-development-integration', label: 'API development and integration' },
+  },
+  {
+    q: 'Does NovuLabs develop AI-powered software?',
+    a: 'Yes. NovuLabs develops AI-powered software where artificial intelligence can provide practical value to a product or business process. Depending on the project, AI can support automation, intelligent search, conversational interfaces, recommendations, prediction, classification, document processing, and other data-driven applications.',
+    link: { href: '/services/ai-development-services', label: 'AI development services' },
+  },
+  {
+    q: 'How do I get started with NovuLabs?',
+    a: 'Start by telling us about the software you want to build, improve, integrate, or replace. You do not need a complete technical specification. Sharing your business problem, product idea, existing system, or desired outcome gives us a useful starting point for understanding your requirements and discussing the right development approach.',
+    link: { href: '/contact', label: 'Book a free consultation' },
   },
 ];
 

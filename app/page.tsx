@@ -12,6 +12,7 @@ import ProcessSection from '@/components/sections/home/ProcessSection';
 import FaqSection from '@/components/sections/home/FaqSection';
 import CaseStudyRail from '@/components/sections/home/CaseStudyRail';
 import InsightsSection from '@/components/sections/home/InsightsSection';
+import TestimonialsSection from '@/components/sections/home/TestimonialsSection';
 import CtaSection from '@/components/sections/home/CtaSection';
 
 export const metadata: Metadata = {
@@ -123,6 +124,7 @@ export default function Home() {
       <PortfolioPreviewSection />
       <ProcessSection />
       <CaseStudyRail />
+      <TestimonialsSection />
       <InsightsSection />
       <FaqSection />
       <CtaSection />
