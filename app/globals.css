@@ -533,9 +533,13 @@ img{max-width:100%;display:block}
   font-size:1rem;font-weight:700;margin-bottom:8px;
   color:var(--tx1);line-height:1.28;letter-spacing:-.015em;
 }
+/* No line clamp. The service card descriptions are ~50 words and explain what
+   each service actually is; clamping them to four lines hid roughly half of
+   that behind an invisible cut, with no affordance telling a reader there was
+   more. Cards in a Bootstrap row stretch to the tallest in the row anyway, so
+   letting them size to their content costs nothing but vertical space. */
 .ctext {
   font-size:.84rem;color:var(--tx3);line-height:1.72;
-  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;
 }
 .carr {
   display:inline-flex;align-items:center;gap:7px;
@@ -868,7 +872,9 @@ img{max-width:100%;display:block}
 .icard:hover{border-color:var(--gb4);transform:translateX(5px);box-shadow:var(--sh-md),var(--sh-inner);color:inherit}
 .iico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
 .icard h5,.icard .industry-card-title{font-size:.92rem;font-weight:700;margin-bottom:4px;color:var(--tx1)}
-.icard p {font-size:.8rem;color:var(--tx3);margin:0;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* Clamp raised from 2 to 4: the industry blurbs now name the buyer type and
+   the systems built for them, which does not fit in two lines. */
+.icard p {font-size:.8rem;color:var(--tx3);margin:0;line-height:1.5;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 
 /* ── TECH ITEMS ── */
 .titem{

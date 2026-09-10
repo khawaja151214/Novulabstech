@@ -43,31 +43,54 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="col-lg-7" data-reveal="left">
             <span className="stag">Who We Are</span>
+            {/* Section brief, in order: introduce the company, establish
+                Islamabad and Pakistan, say what the work actually is, then
+                link onward into the services that do it. The links are placed
+                where a sentence already needed them rather than appended as a
+                keyword row; the homepage is the strongest internal link source
+                on the site, so what it points at matters. */}
             <h2 className="stitle mt-3">
-              Software that has to survive <span className="gtxt">an inspection</span>
+              An enterprise software house <span className="gtxt">in Islamabad</span>
             </h2>
-            {/* Leads with the buyer's situation rather than a company
-                description. "We are an enterprise software house headquartered
-                in Islamabad" is true and tells a buyer nothing they can act on;
-                the distinction below is the actual reason someone picks us over
-                a generalist, so it goes first. */}
             <p className="ssub mb-4">
-              Most software only has to satisfy the people using it. Ours has to satisfy someone who
-              arrives a year later, asks why the system made a particular decision, and is entitled
-              to a documented answer. That is a different engineering problem, and it is the one we
-              have chosen.
+              NovuLabs is a software development company headquartered in Islamabad, Pakistan. We
+              build custom software, web and mobile applications, enterprise platforms and
+              AI-powered systems for organisations that cannot buy what they need off a shelf. One
+              in-house engineering team, no subcontracted delivery, and an architect rather than an
+              account manager on the first call.
             </p>
             <p className="ssub mb-4">
-              In practice that means banks under State Bank supervision, hospital groups handling
-              patient records, government departments answering to procurement review, and the
-              companies that supply them. If a regulator, an auditor or a payment scheme can open
-              your system and ask questions, we have probably built something like it.
+              Being based in Islamabad is not incidental to the work. It puts us in the same city as
+              the State Bank, the Financial Monitoring Unit, NADRA and the federal ministries whose
+              rules our clients build against, and in the same time zone as the banks, hospitals and
+              departments we deliver for. It also means engineering rates that make a custom build
+              realistic for companies that would otherwise settle for a package that almost fits.
+            </p>
+            <p className="ssub mb-4">
+              Most software only has to satisfy the people using it. A good deal of ours has to
+              satisfy someone who arrives a year later, asks why the system made a particular
+              decision, and is entitled to a documented answer. That is a different engineering
+              problem, and it is the one we have chosen: banks under State Bank supervision,
+              hospital groups handling patient records, government departments answering to
+              procurement review, and the companies that supply them.
+            </p>
+            <p className="ssub mb-4">
+              In practice the work divides into four kinds.{' '}
+              <Link href="/services/legacy-system-modernization">Enterprise software development</Link>{' '}
+              for the internal systems a business runs on.{' '}
+              <Link href="/services/corporate-website-development">Web development</Link> and{' '}
+              <Link href="/services/cross-platform-app-development">mobile app development</Link>{' '}
+              for the products your customers touch.{' '}
+              <Link href="/services/ai-development-services">AI development</Link>, from document
+              processing to predictive analytics. And the compliance software that regulated
+              institutions are obliged to run, including{' '}
+              <Link href="/services/aml-case-management-risk-scoring">AML and CFT systems</Link> and{' '}
+              <Link href="/services/goaml-fmu-reporting-integration">goAML reporting to the FMU</Link>.
             </p>
 
-            {/* Contextual link into the local landing page. The homepage is
-                the strongest internal source of link equity on the site, and
-                the anchor text here is the head term itself in a sentence that
-                actually needs it, not a bolted-on keyword link. */}
+            {/* Contextual link into the local landing page. The anchor text is
+                the head term itself in a sentence that actually needs it, not a
+                bolted-on keyword link. */}
             <p className="ssub mb-4">
               If you are comparing suppliers locally, the{' '}
               <Link href="/software-house-in-islamabad">

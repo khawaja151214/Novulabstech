@@ -26,36 +26,29 @@ export const metadata: Metadata = {
   // homepage owns the head term and links down; the landing page converts the
   // comparison.
   title: { absolute: 'Best Software House in Islamabad | NovuLabs' },
-  // 155 chars, inside the ~160 Google renders before truncating.
+  // 159 chars, inside the ~160 Google renders before truncating.
   //
-  // Targets the H1's phrase, "best enterprise software house in Islamabad",
-  // which the title tag cannot carry without losing the shorter head term.
-  // Between them the two strings cover both: title has "best software house in
-  // Islamabad", description has the "enterprise" variant, and the description
-  // contains the shorter phrase as a substring anyway.
+  // Structure: the exact head term up front while it is still visible in the
+  // SERP, then the four service categories a buyer actually searches by name.
   //
-  // Structure: exact phrase up front while it is still visible in the SERP,
-  // then three named standards, then the CTA the /contact page fulfils.
+  // The category list is deliberately generic where the rest of the site is
+  // specific. "Custom software, web and mobile apps, enterprise systems, AI"
+  // is the vocabulary of someone who does not yet know they need AML case
+  // management, and the homepage is the page that has to catch them. The
+  // named standards (AML/CFT, HIPAA, PCI-DSS) still lead the OG description
+  // below, the service cards and every service page, where the reader has
+  // already self-selected into the regulated work.
   //
-  // The middle clause names AML/CFT, HIPAA and PCI-DSS and the regulator
-  // (SBP) rather than saying "compliance systems". Specifics are what make
-  // "best" land as a description of the work instead of self-praise, they
-  // match how a buyer with an actual obligation searches, and they are the
-  // terms an AI answer engine can attach the page to. All three are already
-  // evidenced on the page and in /services — nothing new is claimed here.
+  // "for businesses in Pakistan" is the second geography signal after
+  // Islamabad, and it matches the national landing page at
+  // /software-development-in-pakistan.
   //
-  // "Book a free consultation" matches the wording on /contact, so the
-  // snippet and the landing page make the same promise. It also avoids
-  // committing the page to who answers; the hero button below says
-  // "Talk to an architect", which is the stronger claim and the site's actual
-  // differentiator.
-  //
-  // A description cannot carry a link of its own — the whole snippet resolves
-  // to this page — so the route to the booking form is made explicit three
-  // other ways: the hero's primary button, the ReserveAction on the WebPage
-  // node below, and the SiteNavigationElement entry for /contact.
+  // A description cannot carry a link of its own, since the whole snippet
+  // resolves to this page, so the route to the booking form is made explicit
+  // three other ways: the hero's primary button, the ReserveAction on the
+  // WebPage node below, and the SiteNavigationElement entry for /contact.
   description:
-    'NovuLabs is the best enterprise software house in Islamabad: AML/CFT for SBP-regulated banks, HIPAA healthcare, PCI-DSS payments. Book a free consultation.',
+    'NovuLabs is the best software house in Islamabad, building custom software, web and mobile apps, enterprise systems and AI software for businesses in Pakistan.',
   keywords: [
     'best enterprise software house in Islamabad',
     'best software house in Islamabad',
@@ -116,9 +109,14 @@ export default function Home() {
       <AboutSection />
       <div className="divider"></div>
       <ServicesSection />
-      <WhyUsSection />
       <div className="divider"></div>
+      {/* Order follows the question a buyer asks in sequence: who are you,
+          what do you build, have you built it for someone like me, and why
+          you rather than the next firm. Industries therefore sits between the
+          service list and the reasons-to-choose block, where it used to sit
+          after it. */}
       <IndustriesSection />
+      <WhyUsSection />
       <TechStackSection />
       <PortfolioPreviewSection />
       <ProcessSection />
