@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   // homepage owns the head term and links down; the landing page converts the
   // comparison.
   title: { absolute: 'Best Software House in Islamabad | NovuLabs' },
-  // 153 chars, inside the ~160 Google renders before truncating.
+  // 157 chars, inside the ~160 Google renders before truncating.
   //
   // Targets the H1's phrase, "best enterprise software house in Islamabad",
   // which the title tag cannot carry without losing the shorter head term.
@@ -36,9 +36,14 @@ export const metadata: Metadata = {
   //
   // Structure: exact phrase up front while it is still visible in the SERP,
   // then the qualifier that makes "best" mean something checkable, then the
-  // differentiator as the CTA.
+  // CTA, which is the booking invitation the /contact page fulfils.
+  //
+  // A description cannot carry a link of its own — the whole snippet resolves
+  // to this page — so the route to the booking form is made explicit three
+  // other ways: the hero's primary button, the ReserveAction on the WebPage
+  // node below, and the SiteNavigationElement entry for /contact.
   description:
-    'NovuLabs is the best enterprise software house in Islamabad for regulated work: AML/CFT compliance, healthcare and payment systems. Talk to an architect.',
+    'NovuLabs is the best enterprise software house in Islamabad for regulated work: AML/CFT compliance, healthcare and payment systems. Talk to a representative.',
   keywords: [
     'best enterprise software house in Islamabad',
     'best software house in Islamabad',
@@ -89,6 +94,10 @@ export default function Home() {
           description:
             'NovuLabs is a software house in Islamabad building custom software, mobile apps and compliance systems for banks, hospitals and government departments.',
           path: '/',
+          // Declares the booking form as this page's primary action, so a
+          // "book a meeting with NovuLabs" query has a machine-readable target
+          // rather than leaving the crawler to infer it from a button label.
+          reserveActionPath: '/contact',
         })}
       />
       <HeroSection />

@@ -355,6 +355,19 @@ export function webPageSchema(opts: {
    *  Honest for editorial pages the company wrote as a company; blog posts
    *  attribute to a named Person instead, via blogPostingSchema. */
   byOrganisation?: boolean;
+  /**
+   * Path to the page that books a meeting, declared as the page's
+   * potentialAction. Emits a ReserveAction, which is the vocabulary for
+   * "reserve a slot with this organisation" — the closest true description of
+   * a consultation form. It gives an assistant answering "book a call with
+   * NovuLabs" an explicit target instead of guessing from button text.
+   *
+   * Only set this where the target really does take a booking. A
+   * potentialAction pointing at a page with no form is a broken promise in
+   * markup, and it is the sort of mismatch that gets structured data ignored
+   * sitewide.
+   */
+  reserveActionPath?: string;
 }) {
   return clean({
     '@context': 'https://schema.org',
@@ -377,6 +390,23 @@ export function webPageSchema(opts: {
           mentions: opts.mentions.map((m) =>
             clean({ '@type': 'Organization', name: m.name, url: m.url ?? null })
           ),
+        }
+      : {}),
+    ...(opts.reserveActionPath
+      ? {
+          potentialAction: {
+            '@type': 'ReserveAction',
+            name: 'Book a free technical consultation',
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: canonical(opts.reserveActionPath),
+              actionPlatform: [
+                'http://schema.org/DesktopWebPlatform',
+                'http://schema.org/MobileWebPlatform',
+              ],
+            },
+            result: { '@type': 'Reservation', name: 'Consultation booking' },
+          },
         }
       : {}),
   });
