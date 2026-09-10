@@ -26,10 +26,21 @@ export const metadata: Metadata = {
   // homepage owns the head term and links down; the landing page converts the
   // comparison.
   title: { absolute: 'Best Software House in Islamabad | NovuLabs' },
-  // 151 chars, inside the ~160 Google renders before truncating.
+  // 153 chars, inside the ~160 Google renders before truncating.
+  //
+  // Targets the H1's phrase, "best enterprise software house in Islamabad",
+  // which the title tag cannot carry without losing the shorter head term.
+  // Between them the two strings cover both: title has "best software house in
+  // Islamabad", description has the "enterprise" variant, and the description
+  // contains the shorter phrase as a substring anyway.
+  //
+  // Structure: exact phrase up front while it is still visible in the SERP,
+  // then the qualifier that makes "best" mean something checkable, then the
+  // differentiator as the CTA.
   description:
-    'Choosing the best software house in Islamabad? NovuLabs builds custom software, mobile apps and compliance systems for banks, hospitals and government.',
+    'NovuLabs is the best enterprise software house in Islamabad for regulated work: AML/CFT compliance, healthcare and payment systems. Talk to an architect.',
   keywords: [
+    'best enterprise software house in Islamabad',
     'best software house in Islamabad',
     'best software company in Islamabad',
     'top software house in Islamabad',
