@@ -9,7 +9,7 @@ import { ServiceItem, WhyUsItem, IndustryItem, TechStackItem, PortfolioItem, Faq
 // links to real content about the same underlying capability.
 export const services: ServiceItem[] = [
   // Group 1: Web & Software Development
-  { icon: 'bi-globe', title: 'Custom Website Development', desc: 'Fast, modern, SEO-optimized websites and web platforms built for performance, usability, and search visibility.', color: 'i-b', slug: 'corporate-website-development', group: 'Web & Software Development' },
+  { icon: 'bi-globe', title: 'Custom Website Development', desc: 'Fast, modern, SEO-optimized websites and web platforms built for performance, usability, and search visibility.', color: 'i-b', slug: 'website-development', group: 'Web & Software Development' },
   { icon: 'bi-cpu-fill', title: 'Enterprise Software Development', desc: 'Scalable enterprise software systems built around complex workflows, teams, data, and business requirements.', color: 'i-v', slug: 'legacy-system-modernization', group: 'Web & Software Development' },
   { icon: 'bi-diagram-3-fill', title: 'ERP Systems', desc: 'Connected ERP solutions that bring finance, HR, operations, procurement, and business data together.', color: 'i-v', slug: 'erp-software-development', group: 'Web & Software Development' },
   { icon: 'bi-people-fill', title: 'CRM Systems', desc: 'Custom CRM development that helps teams manage customers, leads, sales pipelines, and relationships more effectively.', color: 'i-o', slug: 'crm-software-development', group: 'Web & Software Development' },

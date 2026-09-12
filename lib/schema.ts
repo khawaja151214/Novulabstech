@@ -368,6 +368,18 @@ export function webPageSchema(opts: {
    * sitewide.
    */
   reserveActionPath?: string;
+  /**
+   * Site-relative paths this page deliberately links to, emitted as
+   * schema.org `relatedLink`.
+   *
+   * This is the structured-data half of internal linking: the rendered <a>
+   * tags tell a crawler where it can go, and this tells it which of those
+   * destinations the author considers part of the same topic cluster. It is
+   * only a signal if it stays honest — pass the handful of pages genuinely
+   * related to this one, not every URL on the site, and only paths that are
+   * also linked in the visible markup.
+   */
+  relatedLink?: string[];
 }) {
   return clean({
     '@context': 'https://schema.org',
@@ -408,6 +420,9 @@ export function webPageSchema(opts: {
             result: { '@type': 'Reservation', name: 'Consultation booking' },
           },
         }
+      : {}),
+    ...(opts.relatedLink?.length
+      ? { relatedLink: opts.relatedLink.map((p) => canonical(p)) }
       : {}),
   });
 }

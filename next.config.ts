@@ -37,6 +37,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // /services/corporate-website-development was retired: the page scoped
+      // itself to "corporate" sites while the homepage card that linked to it
+      // said "Website Development", so it under-claimed the head term it was
+      // the only page positioned for. Rewritten and reissued at
+      // /services/website-development. 301 rather than 410 because the old URL
+      // held the same intent \u2014 the replacement is a superset of it.
+      {
+        source: '/services/corporate-website-development',
+        destination: '/services/website-development',
+        permanent: true,
+      },
+
       // /portfolio's own title tag says "Case Studies", so external parties and
       // Google will probe /case-studies. It returned 404. Claim it.
       { source: '/case-studies', destination: '/portfolio', permanent: true },

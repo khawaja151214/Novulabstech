@@ -116,7 +116,7 @@ export const industryPages: IndustryPage[] = [
       'Integration with incumbent PMS platforms that rarely offer modern APIs',
     ],
     services: [
-      { slug: 'corporate-website-development', label: 'Custom website development' },
+      { slug: 'website-development', label: 'Custom website development' },
       { slug: 'cross-platform-app-development', label: 'Cross-platform mobile apps' },
       { slug: 'payment-gateway-development', label: 'Payment gateway integration' },
       { slug: 'api-development-integration', label: 'API development and integration' },
@@ -144,7 +144,7 @@ export const industryPages: IndustryPage[] = [
     ],
     services: [
       { slug: 'crm-software-development', label: 'CRM systems' },
-      { slug: 'corporate-website-development', label: 'Custom website development' },
+      { slug: 'website-development', label: 'Custom website development' },
       { slug: 'custom-saas-development', label: 'Custom SaaS platform development' },
       { slug: 'cross-platform-app-development', label: 'Cross-platform mobile apps' },
     ],
@@ -171,7 +171,7 @@ export const industryPages: IndustryPage[] = [
     ],
     services: [
       { slug: 'custom-saas-development', label: 'Custom SaaS platform development' },
-      { slug: 'corporate-website-development', label: 'Custom website development' },
+      { slug: 'website-development', label: 'Custom website development' },
       { slug: 'cross-platform-app-development', label: 'Cross-platform mobile apps' },
       { slug: 'payment-gateway-development', label: 'Payment gateway integration' },
     ],
@@ -197,7 +197,7 @@ export const industryPages: IndustryPage[] = [
       'Returns and refund flows that touch stock, payment and accounts at once',
     ],
     services: [
-      { slug: 'corporate-website-development', label: 'Custom website development' },
+      { slug: 'website-development', label: 'Custom website development' },
       { slug: 'payment-gateway-development', label: 'Payment gateway integration' },
       { slug: 'erp-software-development', label: 'ERP systems' },
       { slug: 'api-development-integration', label: 'API development and integration' },
@@ -281,7 +281,7 @@ export const industryPages: IndustryPage[] = [
       { slug: 'crm-software-development', label: 'CRM systems' },
       { slug: 'custom-saas-development', label: 'Custom SaaS platform development' },
       { slug: 'legacy-system-modernization', label: 'Enterprise software development' },
-      { slug: 'corporate-website-development', label: 'Custom website development' },
+      { slug: 'website-development', label: 'Custom website development' },
     ],
   },
 ];

@@ -348,6 +348,46 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 // ---------------------------------------------------------------------------
 // Spoke page, one of the 22 narrower service pages nested under a pillar.
 // ---------------------------------------------------------------------------
+/**
+ * Renders `[label](href)` inline links inside otherwise plain body copy.
+ *
+ * Spoke content fields are `string[]`, rendered straight into `<p>`, so a URL
+ * written into the copy previously printed as unclickable text. Rather than
+ * pulling in a Markdown renderer for one syntax, this handles the only inline
+ * construct the content files use. Internal paths go through next/link so
+ * client-side navigation still applies; anything else is treated as external.
+ *
+ * Text is never passed to dangerouslySetInnerHTML — labels and hrefs are
+ * rendered as React children/props, so content stays escaped.
+ */
+function withLinks(text: string): React.ReactNode {
+  const pattern = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+  const out: React.ReactNode[] = [];
+  let cursor = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > cursor) out.push(text.slice(cursor, match.index));
+    const [raw, label, href] = match;
+    out.push(
+      href.startsWith('/') ? (
+        <Link key={`${href}-${match.index}`} href={href}>
+          {label}
+        </Link>
+      ) : (
+        <a key={`${href}-${match.index}`} href={href} target="_blank" rel="noopener">
+          {label}
+        </a>
+      )
+    );
+    cursor = match.index + raw.length;
+  }
+
+  if (cursor === 0) return text;
+  if (cursor < text.length) out.push(text.slice(cursor));
+  return out;
+}
+
 function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
   const pillar = getServicePage(spoke.parentSlug);
   const path = `/services/${spoke.slug}`;
@@ -372,7 +412,19 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
     <>
       <JsonLd
         data={[
-          webPageSchema({ name: spoke.h1, description: spoke.description, path }),
+          webPageSchema({
+            name: spoke.h1,
+            description: spoke.description,
+            path,
+            // Declared internal cluster: the pillar this spoke sits under and
+            // the siblings it cross-links in the visible markup. Kept derived
+            // from the same fields that render the links, so schema and markup
+            // cannot drift apart.
+            relatedLink: [
+              `/services/${spoke.parentSlug}`,
+              ...spoke.relatedSpokes.map((s) => `/services/${s}`),
+            ],
+          }),
           serviceSchema({
             name: spoke.h1,
             description: spoke.description,
@@ -424,7 +476,7 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
                 style={{ fontSize: '1.05rem', lineHeight: '1.8', color: 'var(--tx2)' }}
               >
                 {spoke.intro.map((para, i) => (
-                  <p key={i}>{para}</p>
+                  <p key={i}>{withLinks(para)}</p>
                 ))}
 
                 {/* Symptom list, placed before the explanation rather than
@@ -455,18 +507,30 @@ function ServiceSpokePage({ spoke }: { spoke: ServiceSpoke }) {
                 {spoke.offerings.map((o) => (
                   <React.Fragment key={o.title}>
                     <h3>{o.title}</h3>
-                    <p>{o.body}</p>
+                    <p>{withLinks(o.body)}</p>
                   </React.Fragment>
                 ))}
 
                 <h2>How We Help</h2>
                 {spoke.howWeHelp.map((para, i) => (
-                  <p key={i}>{para}</p>
+                  <p key={i}>{withLinks(para)}</p>
                 ))}
 
                 <h2>Our Approach</h2>
                 {spoke.approach.map((para, i) => (
-                  <p key={i}>{para}</p>
+                  <p key={i}>{withLinks(para)}</p>
+                ))}
+
+                {/* Optional long-form body. Only spokes targeting a broad head
+                    term carry this; see the `sections` comment in
+                    content/serviceSpokes.ts for why most do not. */}
+                {spoke.sections?.map((sec) => (
+                  <React.Fragment key={sec.heading}>
+                    <h2>{sec.heading}</h2>
+                    {sec.body.map((para, i) => (
+                      <p key={i}>{withLinks(para)}</p>
+                    ))}
+                  </React.Fragment>
                 ))}
 
                 {spoke.technologies.length > 0 && (
