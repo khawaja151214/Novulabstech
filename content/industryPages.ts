@@ -117,7 +117,7 @@ export const industryPages: IndustryPage[] = [
     ],
     services: [
       { slug: 'website-development', label: 'Custom website development' },
-      { slug: 'cross-platform-app-development', label: 'Cross-platform mobile apps' },
+      { slug: 'mobile-app-development', label: 'Mobile app development' },
       { slug: 'payment-gateway-development', label: 'Payment gateway integration' },
       { slug: 'api-development-integration', label: 'API development and integration' },
     ],
@@ -146,7 +146,7 @@ export const industryPages: IndustryPage[] = [
       { slug: 'crm-software-development', label: 'CRM systems' },
       { slug: 'website-development', label: 'Custom website development' },
       { slug: 'custom-saas-development', label: 'Custom SaaS platform development' },
-      { slug: 'cross-platform-app-development', label: 'Cross-platform mobile apps' },
+      { slug: 'mobile-app-development', label: 'Mobile app development' },
     ],
   },
   {
@@ -172,7 +172,7 @@ export const industryPages: IndustryPage[] = [
     services: [
       { slug: 'custom-saas-development', label: 'Custom SaaS platform development' },
       { slug: 'website-development', label: 'Custom website development' },
-      { slug: 'cross-platform-app-development', label: 'Cross-platform mobile apps' },
+      { slug: 'mobile-app-development', label: 'Mobile app development' },
       { slug: 'payment-gateway-development', label: 'Payment gateway integration' },
     ],
   },
@@ -224,7 +224,7 @@ export const industryPages: IndustryPage[] = [
       'Carrier and third-party logistics integrations with inconsistent APIs',
     ],
     services: [
-      { slug: 'cross-platform-app-development', label: 'Cross-platform mobile apps' },
+      { slug: 'mobile-app-development', label: 'Mobile app development' },
       { slug: 'erp-software-development', label: 'ERP systems' },
       { slug: 'api-development-integration', label: 'API development and integration' },
       { slug: 'ai-development-services', label: 'AI automation and intelligent assistants' },

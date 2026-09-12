@@ -109,6 +109,7 @@ export default function SiteMapPage() {
       links: [
         { href: '/', label: 'Home: best software house in Islamabad' },
         { href: '/software-house-in-islamabad', label: 'How to choose a software house in Islamabad' },
+        { href: '/mobile-app-development-in-islamabad', label: 'Mobile app development in Islamabad' },
         { href: '/software-development-in-pakistan', label: 'Software development in Pakistan' },
         { href: '/about', label: 'About NovuLabs, and what we do not do' },
         { href: '/contact', label: 'Contact and technical consultation' },

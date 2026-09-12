@@ -17,7 +17,7 @@ export const services: ServiceItem[] = [
   { icon: 'bi-plug-fill', title: 'API Development & Integration', desc: 'Secure, reliable APIs that connect applications, services, data, and business systems seamlessly.', color: 'i-c', slug: 'api-development-integration', group: 'Web & Software Development' },
 
   // Group 2: Mobile App Development
-  { icon: 'bi-phone-fill', title: 'Cross-Platform Mobile Apps', desc: 'User-focused mobile applications built for modern devices, smooth experiences, and real-world business needs.', color: 'i-g', slug: 'cross-platform-app-development', group: 'Mobile App Development' },
+  { icon: 'bi-phone-fill', title: 'Mobile App Development', desc: 'Native Android and iOS, Flutter and React Native, plus the backend and integrations behind the app.', color: 'i-g', slug: 'mobile-app-development', href: '/mobile-app-development-in-islamabad', group: 'Mobile App Development' },
   { icon: 'bi-apple', title: 'iOS App Development', desc: 'Native iOS applications engineered with Swift for performance, reliability, and a polished Apple experience.', color: 'i-b', slug: 'ios-app-development', group: 'Mobile App Development' },
   { icon: 'bi-android2', title: 'Android App Development', desc: 'Kotlin-powered Android applications built to perform across the diverse device ecosystem in use today.', color: 'i-g', slug: 'android-app-development', group: 'Mobile App Development' },
 

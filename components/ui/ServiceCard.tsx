@@ -29,7 +29,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ item, index }) => {
               22 identical "Learn more" links pointing at 22 different pages
               tells a crawler nothing about any of them, and it is the anchor
               text an on-page audit flags first. */}
-          <Link href={`/services/${item.slug}`} className="carr">
+          <Link href={item.href ?? `/services/${item.slug}`} className="carr">
             <i className="bi bi-arrow-right-circle"></i>
             {item.title}
           </Link>

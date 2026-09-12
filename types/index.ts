@@ -8,6 +8,17 @@ export interface ServiceItem {
    *  and each now has its own indexable page rather than linking straight to
    *  /contact with no detail in between. */
   slug: string;
+  /**
+   * Optional absolute path that overrides the default `/services/{slug}` link.
+   *
+   * Almost every card links to its spoke under /services. The exception is a
+   * card whose best destination is a root-level landing page — geo pages like
+   * /mobile-app-development-in-islamabad live outside the services tree on
+   * purpose, so that a city page does not compete with the pillar it belongs
+   * to. `slug` stays required and must still name a real page, because other
+   * code reads it; this only changes where the card points.
+   */
+  href?: string;
   /** Category heading this card sits under in the homepage services grid.
    *  The 22 services are grouped rather than listed flat, so a visitor scanning
    *  for "mobile app development" finds three related cards together instead of

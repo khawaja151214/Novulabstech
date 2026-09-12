@@ -75,7 +75,7 @@ const AboutSection: React.FC = () => {
               In practice that means{' '}
               <Link href="/services/legacy-system-modernization">enterprise software development</Link>,{' '}
               <Link href="/services/website-development">custom website development</Link>,{' '}
-              <Link href="/services/cross-platform-app-development">mobile app development</Link>,{' '}
+              <Link href="/mobile-app-development-in-islamabad">mobile app development</Link>,{' '}
               <Link href="/services/ai-development-services">AI automation</Link> and{' '}
               <Link href="/services/cloud-migration-services">cloud architecture</Link>. If you are
               comparing suppliers locally, the{' '}

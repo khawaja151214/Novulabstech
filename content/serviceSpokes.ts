@@ -978,52 +978,6 @@ export const serviceSpokes: ServiceSpoke[] = [
   // PILLAR: mobile-app-development
   // ===========================================================================
   {
-    slug: 'cross-platform-app-development',
-    parentSlug: 'mobile-app-development',
-    navLabel: 'Cross-Platform Apps',
-    h1: 'Cross-Platform Mobile App Development',
-    seoTitle: 'Cross-Platform App Development Services',
-    description:
-      'Cross-platform mobile app development with Flutter and React Native, for products that need one codebase across iOS and Android without native rework.',
-    summary: 'One codebase across iOS and Android with Flutter or React Native, for products where native-per-platform is not worth the duplicated cost.',
-    icon: 'bi-phone-fill',
-    symptoms: [
-      'Maintaining separate iOS and Android codebases has doubled your release cycle',
-      'The app is unusable on a weak connection and your users have weak connections',
-      'Features ship on one platform months before the other',
-      'You need an app but not two teams',
-    ],
-    intro: [
-      'Cross-platform development is the right default for most mobile products: one codebase targeting both iOS and Android, which means one team, one release cycle, and roughly half the ongoing maintenance of building and keeping two native codebases in sync. It stops being the right default when an app needs deep platform-specific capability that a cross-platform framework cannot expose cleanly, which is when native development, covered on the iOS and Android pages, is the better call.',
-      'This page covers Flutter and React Native development specifically. We will tell you honestly which approach fits your product before proposing either.',
-    ],
-    offerings: [
-      { title: 'Flutter development', body: 'Single-codebase apps with native-compiled performance, well suited to products where UI consistency across platforms matters as much as native feel.' },
-      { title: 'React Native development', body: 'Cross-platform apps sharing code with a React-based web product where one exists, useful when a team already has React expertise in-house.' },
-      { title: 'Offline-first architecture', body: 'Local data persistence and sync logic for field or connectivity-constrained environments, so the app remains usable when the network is not.' },
-      { title: 'Push notifications and background sync', body: 'Notification infrastructure via Firebase and background data sync that behaves correctly across both platforms’ different lifecycle rules.' },
-    ],
-    howWeHelp: [
-      'The decision between cross-platform and native is a real engineering trade-off, and we make it honestly rather than defaulting to whichever framework we most recently used. Cross-platform wins when time-to-market and one shared codebase outweigh needing the newest platform-specific APIs on day one.',
-      'A recurring problem we solve within cross-platform apps specifically is connectivity: field operations, wallet apps used in low-signal areas, or telemedicine access in regions with unreliable networks all need an offline-first design, not just error handling for a dropped connection.',
-    ],
-    approach: [
-      'We assess whether cross-platform genuinely fits before proposing it, including what platform-specific capability the product might need later, not just what it needs at launch.',
-      'For connectivity-sensitive products, offline behaviour is designed from the data layer up, not added as a fallback once the online-only version is built.',
-    ],
-    technologies: ['Flutter', 'React Native', 'Firebase', 'WebRTC'],
-    industries: ['Banking & Fintech', 'Healthcare & MedTech', 'E-Commerce & Retail'],
-    faqs: [
-      { q: 'Should we build cross-platform or native for our app?', a: 'It depends on what the app needs to do and how much platform-specific capability matters. Cross-platform is usually right for most business apps; native makes more sense when you need the newest platform APIs immediately or truly platform-specific performance. We will tell you which fits before proposing either.' },
-      { q: 'Flutter or React Native, which do you recommend?', a: 'It depends on your existing team and product. React Native is a strong fit if you already have React expertise or a React web product to share code with; Flutter tends to give more consistent UI behaviour across platforms out of the box. We make this call based on your specific situation, not a default preference.' },
-      { q: 'Can the app work reliably in areas with poor connectivity?', a: 'Yes, that is a design requirement we build for specifically, with local data persistence and sync logic, rather than an app that simply shows an error when the connection drops.' },
-      { q: 'Can we start cross-platform and move to native later if we need to?', a: 'In some cases, yes, particularly if the initial architecture anticipates it. It is worth raising this possibility during initial scoping so the app is not built in a way that makes a later native migration harder than it needs to be.' },
-    ],
-    relatedSpokes: ['ios-app-development', 'android-app-development'],
-    relatedCaseStudies: ['finsync-digital-wallet', 'carepulse-telemedicine-app'],
-    relatedPosts: [],
-  },
-  {
     slug: 'ios-app-development',
     parentSlug: 'mobile-app-development',
     navLabel: 'iOS Development',
@@ -1065,7 +1019,7 @@ export const serviceSpokes: ServiceSpoke[] = [
       { q: 'Do you handle biometric authentication and secure data storage?', a: 'Yes, using iOS’s native security capabilities like Keychain and biometric authentication as the platform intends, which is particularly relevant for financial and healthcare apps handling sensitive data.' },
       { q: 'Can a native iOS app share a backend with an Android or web app?', a: 'Yes, the backend and API layer are typically shared across platforms regardless of whether the client apps are native or cross-platform. Native development affects the client only, not the server architecture.' },
     ],
-    relatedSpokes: ['android-app-development', 'cross-platform-app-development'],
+    relatedSpokes: ['android-app-development', 'api-development-integration'],
     relatedCaseStudies: ['finsync-digital-wallet'],
     relatedPosts: [],
   },
@@ -1111,7 +1065,7 @@ export const serviceSpokes: ServiceSpoke[] = [
       { q: 'When does native Android make more sense than cross-platform?', a: 'When device diversity or platform-specific behaviour (background processing, deep hardware integration, manufacturer-specific OS quirks) genuinely needs to be handled at the native level. For most business apps without that constraint, cross-platform is the more efficient choice.' },
       { q: 'Can this integrate with the same backend as an iOS or web app?', a: 'Yes, the backend and API layer are shared across platforms regardless of client technology. Choosing native Android affects the client application only.' },
     ],
-    relatedSpokes: ['ios-app-development', 'cross-platform-app-development'],
+    relatedSpokes: ['ios-app-development', 'api-development-integration'],
     relatedCaseStudies: [],
     relatedPosts: [],
   },
